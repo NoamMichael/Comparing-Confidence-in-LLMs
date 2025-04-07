@@ -21,7 +21,7 @@ Our methodology utilizes a custom, standardized system prompt specifically desig
 **Brier Score**:  This metric calculates the weighted average error of the estimated “probabilities” thus resulting in a single value that we can use to compare different models. Essentially, we are taking the squared difference of the accuracy and confidence. 
 
 ## Benchmarks Used
-We tested Claude Sonnet 3.7, Llama-3.1 and GPT-4 on three different benchmarks:
+We tested Claude Sonnet 3.7, Llama-3.1 and GPT-4 on three different benchmarks:<br>
 **LSAT** – Tests logical thinking and puzzles, requiring the model to understand the data and perform critical thinking to fully formulate an answer. Consists of a sample of 1567 LSAT questions (for this presentation, we used a sample of 200) from approximately 90 LSAT exams administered between  1991 and 2016. 
 
 **SciQ** – The SciQ dataset contains 13,679 crowdsourced science exam questions about Physics, Chemistry and Biology, among others. The questions are in multiple-choice format with 4 answer options each. For the majority of the questions, an additional paragraph with supporting evidence for the correct answer is provided.
