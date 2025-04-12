@@ -26,4 +26,14 @@ We tested Claude Sonnet 3.7, Llama-3.1 and GPT-4 on three different benchmarks:<
 
 **SciQ** – The SciQ dataset contains 13,679 crowdsourced science exam questions about Physics, Chemistry and Biology, among others. The questions are in multiple-choice format with 4 answer options each. For the majority of the questions, an additional paragraph with supporting evidence for the correct answer is provided.
 
+## Additional Visualizations
+<img width="1432" alt="image" src="https://github.com/user-attachments/assets/8b84e99e-d362-4b8b-9912-29b6ad5c6ad0" />
+<img width="1437" alt="image" src="https://github.com/user-attachments/assets/d472dbc1-37d9-40f1-9238-ce57a580bb90" />
+<img width="1431" alt="image" src="https://github.com/user-attachments/assets/e09439d6-422d-4bd1-ab1a-0c8d8a9e35a7" />
+<img width="1433" alt="image" src="https://github.com/user-attachments/assets/c352e728-1961-42a3-bedc-99b1efacc2f8" />
+
+
+
+
+
 
