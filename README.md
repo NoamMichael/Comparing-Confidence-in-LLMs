@@ -26,6 +26,21 @@ We tested Claude Sonnet 3.7, Llama-3.1 and GPT-4 on three different benchmarks:<
 
 **SciQ** – The SciQ dataset contains 13,679 crowdsourced science exam questions about Physics, Chemistry and Biology, among others. The questions are in multiple-choice format with 4 answer options each. For the majority of the questions, an additional paragraph with supporting evidence for the correct answer is provided.
 
+
+## Discussion
+Across a range of tasks, there appears to be an inverse relationship between a model’s calibration and its overall proficiency. As task complexity increases, models struggle to assign well-calibrated confidence scores to their predictions. Ideally, a model should express lower certainty when it is less well-suited to a particular task, mirroring a human's intuitive self-assessment. However, current language models often lack this adaptive uncertainty. Notably, in open-source models such as Llama, internal logit probabilities tend to align with their stated confidence, suggesting that the model possesses an implicit sense of certainty, even if it lacks an accurate awareness of task difficulty. Furthermore, task difficulty is exacerbated by an increase in the number of answer choices; for instance, empirical results show that GPT-4 exhibits lower expected calibration error (ECE) on tasks with fewer answer options, such as SciQ compared to the LSAT, indicating improved confidence alignment in simpler settings. Additionally, when explicitly prompted to report confidence levels, language models tend to emulate human tendencies by rounding their confidence scores to the nearest multiple of ten (e.g., 70% rather than 73.56%), reflecting learned patterns in probabilistic expression.
+
+## Next Steps
+Moving forward, we aim to investigate the relationship between task difficulty and model calibration, with particular attention to whether increased difficulty serves as a reliable indicator of how responsive a model’s confidence is to its actual accuracy. Unlike humans, who are often aware when they lack knowledge in a specific domain, large language models (LLMs) do not reliably exhibit such meta-cognitive awareness. This raises important concerns about the degree to which LLMs are well-calibrated in their confidence judgments.
+
+Another key direction involves generating and analyzing controlled hallucinations. By systematically eliciting hallucinated responses, we hope to isolate and identify the underlying factors that contribute to these errors. This would facilitate a more precise understanding of the mechanisms behind hallucination and inform strategies for mitigation.
+
+In parallel, we plan to conduct a more granular analysis of model performance across different types of questions—such as mathematical reasoning, logical inference, and reading comprehension—leveraging our labeled dataset to determine the specific domains in which LLMs perform reliably versus those where they are more prone to error.
+
+Lastly, we seek to examine the models’ ability to differentiate between correct and incorrect answers. This line of inquiry will shed light on the extent to which current LLMs possess internal mechanisms for answer verification and whether these mechanisms can be refined to enhance both performance and trustworthiness.
+
+
+
 ## Additional Visualizations
 <img width="1432" alt="image" src="https://github.com/user-attachments/assets/8b84e99e-d362-4b8b-9912-29b6ad5c6ad0" />
 <img width="1437" alt="image" src="https://github.com/user-attachments/assets/d472dbc1-37d9-40f1-9238-ce57a580bb90" />
