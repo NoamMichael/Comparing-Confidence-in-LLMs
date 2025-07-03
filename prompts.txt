@@ -1,0 +1,131 @@
+______________________________________________________________________________________________________________________
+                                           Prompts for Question Sets:
+______________________________________________________________________________________________________________________
+
+This is the prompt format we want to follow for each dataset. As these models are probabilistic in nature, 
+some small modifications can be made to the prompt across models to give each model a fair shot (e.g. special tokens).
+
+______________________________________________________________________________________________________________________
+
+LSAT-AR:
+----------------------------------------------------------------------------------------------------------------------
+prompt1 = '''
+Given the following question, analyze the options, and provide a concise reasoning for your selected answer. Your 
+reasoning should not exceed 100 words. After your explanation, clearly state your answer by choosing one of the options 
+listed (A, B, C, D, or E).
+
+Question: ${Question}
+Options:
+A) ${Option A}
+B) ${Option B}
+C) ${Option C}
+D) ${Option D}
+E) ${Option E}
+
+Please provide your reasoning first, limited to 100 words, and consider how certain you should be of your answer.
+Reasoning: <Your concise reasoning here. Max 100 words>
+'''
+
+prompt2 = '''
+Based on the reasoning above, Provide the best answer and the likelihood that each option is correct from 0.0 to 1.0 
+in a JSON format. The probabilities should sum to 1.0. For example:
+
+{
+'A': <Probability choice A is correct. As a float from 0.0 to 1.0>,
+'B': <Probability choice B is correct. As a float from 0.0 to 1.0>,
+'C': <Probability choice C is correct. As a float from 0.0 to 1.0>,
+'D': <Probability choice D is correct. As a float from 0.0 to 1.0>,
+'E': <Probability choice E is correct. As a float from 0.0 to 1.0>,
+'Answer': <Your answer choice here, as a single letter and nothing else.>
+}
+
+All options have a non-zero probability of being correct. No option should have a probability of 0 or 1.
+Be modest about your certainty.  Do not provide any additional reasoning.
+
+Response:
+'''
+
+______________________________________________________________________________________________________________________
+
+SciQ:
+----------------------------------------------------------------------------------------------------------------------
+
+prompt1 = '''
+Given the following question, analyze the options, and provide a concise reasoning for your selected answer. Your 
+reasoning should not exceed 100 words. After your explanation, clearly state your answer by choosing one of the 
+options listed (A, B, C, or D).
+
+Question: ${Question}
+Options:
+A) ${Option A}
+B) ${Option B}
+C) ${Option C}
+D) ${Option D}
+
+
+Please provide your reasoning first, limited to 100 words, and consider how certain you should be of your answer.
+Reasoning: <Your concise reasoning here. Max 100 words>
+'''
+prompt2 = '''
+Based on the reasoning above, Provide the best answer and the likelihood that each option is correct from 0.0 to 1.0
+in a JSON format. The probabilities should sum to 1.0. For example:
+
+{
+'A': <Probability choice A is correct. As a float from 0.0 to 1.0>,
+'B': <Probability choice B is correct. As a float from 0.0 to 1.0>,
+'C': <Probability choice C is correct. As a float from 0.0 to 1.0>,
+'D': <Probability choice D is correct. As a float from 0.0 to 1.0>,
+'Answer': <Your answer choice here, as a single letter and nothing else.>
+}
+
+All options have a non-zero probability of being correct. No option should have a probability of 0 or 1.
+Be modest about your certainty.  Do not provide any additional reasoning.
+
+Response:
+'''
+______________________________________________________________________________________________________________________
+BoolQ:
+----------------------------------------------------------------------------------------------------------------------
+
+prompt1 = '''
+Analyze the following question and determine whether it is 'True' or 'False'. In a JSON format provide your reasoning, 
+answer, and confidence. Your reasoning should be consice. DO not exceed 100 words. After your explanation, clearly 
+state your answer.
+
+For example:
+
+Question: ${Question}
+
+Response: {
+  'Reasoning': <Your concise reasoning here. Max 100 words>
+  'Answer': <True or False>
+  'Confidence': <Probability that your answer is correct. As a float from 0.0 to 1.0>
+}
+
+
+Be modest about your certainty.  Do not provide any additional reasoning.
+'''
+______________________________________________________________________________________________________________________
+TruthfulQA:
+----------------------------------------------------------------------------------------------------------------------
+
+______________________________________________________________________________________________________________________
+Math-500:
+----------------------------------------------------------------------------------------------------------------------
+
+______________________________________________________________________________________________________________________
+SAT-EN:
+----------------------------------------------------------------------------------------------------------------------
+
+
+______________________________________________________________________________________________________________________
+HaluEval:
+----------------------------------------------------------------------------------------------------------------------
+
+______________________________________________________________________________________________________________________
+LifeEval:
+----------------------------------------------------------------------------------------------------------------------
+
+______________________________________________________________________________________________________________________
+BoolQ:
+----------------------------------------------------------------------------------------------------------------------
