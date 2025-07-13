@@ -1,3 +1,4 @@
+import json
 import pandas as pd
 import openai
 import os
@@ -8,14 +9,22 @@ from abc import ABC, abstractmethod
 from anthropic import Anthropic, AsyncAnthropic, APIError
 
 from typing import Optional
+from dotenv import load_dotenv
 
-models = []
-datasets = []
+load_dotenv()  # Load environment variables from .env file
 
+
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#                 MODEL CLASSES
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 class BatchModels(ABC):
-    def __init__(self, name: str):
+    def __init__(self, name: str, api_key_name: str):
         self.name = name
+        self.api_key_name = api_key_name
+        self.api_key = os.getenv(api_key_name)
+        if not self.api_key:
+            print(f"Warning: API key '{api_key_name}' not found in environment.")
 
     @abstractmethod
     def run_batch(self, prompts: pd.Series, **kwargs):
@@ -26,10 +35,12 @@ class BatchModels(ABC):
         pass
 
 class GPTModels(BatchModels):
-    def __init__(self, name: str):
-        self.name = name
-        self.api_key = os.getenv("OPENAI_API_KEY")
-        openai.api_key = self.api_key
+    def __init__(self, name: str, api_key_name: str):
+        super().__init__(name, api_key_name)
+        if self.api_key:
+            openai.api_key = self.api_key
+        else:
+            print("OpenAI API key not configured. GPT models will not work.")
     def make_batch(prompts: pd.Series, model: str, system_prompt: str, logprobs=True, top_logprobs=5,
                   temperature=0, output_file="batch.jsonl", url="/v1/chat/completions"):
         """
@@ -126,8 +137,13 @@ class GPTModels(BatchModels):
 
 
 class ClaudeModels(BatchModels):
-    def __init__(self, api_key=None):
-        self.client = Anthropic(api_key=api_key or os.getenv("ANTHROPIC_API_KEY"))
+    def __init__(self, name: str, api_key_name: str):
+        super().__init__(name, api_key_name)
+        if self.api_key:
+            self.client = Anthropic(api_key=self.api_key)
+        else:
+            self.client = None
+            print("Anthropic API key not configured. Claude models will not work.")
 
     def make_batch(self,
                    prompts: pd.Series,
@@ -216,12 +232,15 @@ class ClaudeModels(BatchModels):
 
 
 class GeminiModels(BatchModels):
-    def __init__(self, api_key: Optional[str] = None):
+    def __init__(self, name: str, api_key_name: str):
         """
         Initializes the Gemini client.
         """
-        api_key = api_key or os.getenv("GOOGLE_API_KEY")
-        genai.configure(api_key=api_key)
+        super().__init__(name, api_key_name)
+        if self.api_key:
+            genai.configure(api_key=self.api_key)
+        else:
+            print("Google API key not configured. Gemini models will not work.")
 
     def run_batch(self,
                   prompts: pd.Series,
@@ -261,8 +280,125 @@ class GeminiModels(BatchModels):
             except Exception as e:
                 print(f"❌ Error on prompt {idx}: {e}")
                 responses[idx] = None
-
         return responses
+
+    def make_batch(self, prompts: pd.Series, **kwargs):
+        """
+        Gemini API does not use a batch file in this implementation.
+        This method is a placeholder to satisfy the abstract class requirements.
+        """
+        print(f"Note: Gemini model '{self.name}' processes prompts sequentially and does not use batch files.")
+        pass
+
     
 
-# Register models for easy access
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#               MODEL REGISTRATION
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+models = {
+    'GPT': {
+        'class': GPTModels,
+        'api_key_name': 'OPENAI_API_KEY',  # Environment variable for the API key
+        'models': [
+            'gpt-4',
+            'gpt-3.5-turbo'
+        ]
+    },
+    'Claude': {
+        'class': ClaudeModels,
+        'api_key_name': 'ANTHROPIC_API_KEY',  # Environment variable for the API key
+        'models': [
+            'claude-3-7-sonnet-20250219',
+            'claude-3-haiku-20240307'
+        ]
+    },
+    'Gemini': {
+        'class': GeminiModels,
+        'api_key_name': 'GOOGLE_API_KEY',  # Environment variable for the API key
+        'models': [
+            'gemini-1.5-flash',
+            'gemini-2.5-pro-preview-06-05'
+        ]
+    }
+}
+
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#                HELPER FUNCTIONS
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+def init_models(models_dict):
+    """
+    Initializes model instances based on a configuration dictionary.
+
+    Args:
+        models_dict (dict): A dictionary containing the configuration for model groups.
+                            See the global 'models' variable for an example structure.
+
+    Returns:
+        list: A list of initialized model instances.
+    """
+    print('Initializing Models:')
+    initialized_models = []
+    for model_group, config in models_dict.items():
+        print(f'{model_group}:')
+        model_class = config['class']
+        api_key_name = config['api_key_name']
+        print(f'  Key Name: {api_key_name}')
+
+        for model_name in config['models']:
+            # The __init__ of the model class handles getting the API key
+            model_instance = model_class(name=model_name, api_key_name=api_key_name)
+            initialized_models.append(model_instance)
+            print(f'    Initialized: {model_name}')
+
+    print(f'\nTotal Models Initialized: {len(initialized_models)}')
+    print('-' * 42)
+    return initialized_models
+
+def import_datasets(folder_path="Formatted Benchmarks/"):
+    """
+    Imports all datasets from a specified folder that end with '_formatted.csv'.
+
+    Args:
+        folder_path (str): The path to the folder containing the datasets.
+
+    Returns:
+        dict: A dictionary where keys are the dataset names (without the suffix)
+              and values are the corresponding pandas DataFrames.
+    """
+    datasets = {}
+    print(f"Importing datasets from '{folder_path}'...")
+    try:
+        for filename in os.listdir(folder_path):
+            if filename.endswith("_formatted.csv"):
+                dataset_name = filename.replace("_formatted.csv", "")
+                file_path = os.path.join(folder_path, filename)
+                try:
+                    datasets[dataset_name] = pd.read_csv(file_path)
+                    print(f"  Successfully imported: {dataset_name}")
+                except Exception as e:
+                    print(f"  Error importing {filename}: {e}")
+            else:
+                print(f"  Skipping non-formatted file: {filename}")
+    except FileNotFoundError:
+        print(f"Error: The directory '{folder_path}' was not found.")
+    
+    print(f"\nTotal Datasets Imported: {len(datasets)}")
+    print('-' * 42)
+    return datasets
+
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#               MAIN EXECUTION BLOCK
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+if __name__ == '__main__':
+    # Example of how to use the init_models function
+    # Make sure your .env file has OPENAI_API_KEY, ANTHROPIC_API_KEY, and GOOGLE_API_KEY
+    all_models = init_models(models)
+    print("Returned model instances:", all_models)
+
+    # Example of how to use the import_datasets function
+    all_datasets = import_datasets()
+    print("\nAvailable datasets:", list(all_datasets.keys()))
