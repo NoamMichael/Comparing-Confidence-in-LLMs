@@ -41,7 +41,7 @@ class GPTModels(BatchModels):
             openai.api_key = self.api_key
         else:
             print("OpenAI API key not configured. GPT models will not work.")
-    def make_batch(prompts: pd.Series, model: str, system_prompt: str, logprobs=True, top_logprobs=5,
+    def make_batch(self, prompts: pd.Series, model: str, system_prompt: str, logprobs=True, top_logprobs=5,
                   temperature=0, output_file="batch.jsonl", url="/v1/chat/completions"):
         """
         Creates a JSONL file for the OpenAI batch API from a series of prompts using the chat completions format.
@@ -86,6 +86,8 @@ class GPTModels(BatchModels):
                 f.write(json.dumps(req) + "\n")
 
         print(f"Saved {len(requests)} prompts to {output_file}")
+
+        
     def run_batch(self,
                   prompts: pd.Series,
                   system_prompt: str,
@@ -110,7 +112,7 @@ class GPTModels(BatchModels):
             endpoint_id (str or None): Optional endpoint ID for Azure OpenAI or special routing.
         """
         # Step 1: Create the batch file
-        make_batch(prompts, self.name, system_prompt, logprobs, top_logprobs, temperature, output_file, url)
+        self.make_batch(prompts, self.name, system_prompt, logprobs, top_logprobs, temperature, output_file, url)
 
         # Step 2: Upload the file
         try:
