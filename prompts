@@ -1,0 +1,48 @@
+{
+    "lsat":
+    {
+        "system_prompt": "You are a helpful assistant that answers LSAT questions.",
+        "order": ["question", "options", "model_reasoning", "model_answer", "model_confidence"],
+        "options": ["A", "B", "C", "D", "E"],
+        "header": {
+            "Question ID": "String identifier for the question",
+            "Question": "String containing the prompt, question text, options",
+            "Answer": "Response from model. Should beJSON formatted string containing the answer letter and confidence score for each option",
+            "Reasoning": "String explaining answer",
+            "Error": "String indicating if the script encountered an error and what it was",
+            "Correct Answer Letter": "String containing the letter of the correct option, capitalized",
+            "Stated Prob A": "Float indicating the model's stated probability for option A",
+            "Stated Prob B": "Float indicating the model's stated probability for option B",
+            "Stated Prob C": "Float indicating the model's stated probability for option C",
+            "Stated Prob D": "Float indicating the model's stated probability for option D",
+            "Stated Prob E": "Float indicating the model's stated probability for option E",
+            "Stated Answer": "String containing the letter of the answer chosen by the model",
+            "Correct": "Boolean indicating if the model's answer is correct",
+        },
+        "notes": "None"
+    },
+    "boolq":
+    {
+        "system_prompt": "You are a helpful assistant that answers boolean questions.",
+        "order": ["question", "model_reasoning", "model_answer", "model_confidence"],
+        "header": {
+            "Question ID": "String identifier for the question",
+            "Question": "String containing the question text",
+            "Answer": "Response from model. Should be JSON formatted string containing the reasoning, answer and confidence score",
+            "Reasoning": "String explaining answer",
+            "Error": "String indicating if the script encountered an error and what it was"
+        }
+    },
+    "sciq":
+    {
+        "system_prompt": "You are a helpful assistant that answers scientific questions.",
+        "order": ["question", "model_reasoning", "model_answer", "model_confidence"],
+        "header": {
+            "Question ID": "String identifier for the question",
+            "Question": "String containing the question text",
+            "Answer": "Response from model. Should be JSON formatted string containing the reasoning, answer and confidence score",
+            "Reasoning": "String explaining answer",
+            "Error": "String indicating if the script encountered an error and what it was"
+        }
+    }
+}
