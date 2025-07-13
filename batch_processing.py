@@ -1,3 +1,17 @@
+## Version 1.0.0
+# batch_processing.py
+# This module provides classes and functions for batch processing of prompts using various LLM APIs.
+# It supports OpenAI's GPT, Anthropic's Claude, and Google's Gemini models.
+# It includes functionality for creating batch files, uploading them, and submitting batch jobs.
+#--------------------------------------------------------------
+# Next Steps:
+#--------------------------------------------------------------
+
+# 1. Add in function prompting method for each dataset.
+# 2. Implement error handling and logging for API requests.
+
+
+
 import json
 import pandas as pd
 import openai
@@ -398,6 +412,7 @@ def import_datasets(folder_path="Formatted Benchmarks/"):
 if __name__ == '__main__':
     # Example of how to use the init_models function
     # Make sure your .env file has OPENAI_API_KEY, ANTHROPIC_API_KEY, and GOOGLE_API_KEY
+
     all_models = init_models(models)
     print("Returned model instances:", all_models)
 
