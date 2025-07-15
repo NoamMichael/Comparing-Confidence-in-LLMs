@@ -259,7 +259,7 @@ class GeminiModels(BatchModels):
 
     def run_batch(self,
                   prompts: pd.Series,
-                  model: str = "gemini-1.5-pro-latest",
+                  model: str,
                   system_prompt: str = "",
                   temperature: float = 0.0,
                   safety_settings: Optional[list] = None,
@@ -369,7 +369,7 @@ def boolq_valid_prompts(df):
     output_df = pd.DataFrame(output_rows, columns=header)
     return output_df
 
-def halu_eval_prompts(): pass
+def halu_eval_qa_prompts(df): pass
 
 def life_eval_prompts(df): 
     system_prompt = """
@@ -392,7 +392,7 @@ def life_eval_prompts(df):
         full_prompt = row['Question Prompt'] + ' '+ row['Confidence Prompt'] + '\nResponse:\n'
         output_rows.append([row['Question ID'], full_prompt, system_prompt])
     output_df = pd.DataFrame(output_rows, columns=header)
-    return
+    return output_df
 
 def lsat_ar_test_prompts(df):  ## Takes in the csv from GitHub and outputs prompts
   ## Takes in a dataframe in the form:
@@ -630,7 +630,7 @@ def sciq_test_prompts(df):
   #----------------------------------------------------------------------------#
 
   ## Format questions for benchmark
-  letters = ['A', 'B', 'C', 'D', 'E']
+  letters = ['A', 'B', 'C', 'D']
   options = ['Option A', 'Option B', 'Option C', 'Option D']
 
   for i in range(len(df)):
@@ -638,35 +638,7 @@ def sciq_test_prompts(df):
 
     sys_prompt_temp1 = sys_prompt1
     sys_prompt_temp2 = sys_prompt2
-    ## Reformat system prompt in order to fit number of options in benchmark
-    if type(df['Option E'][i]) == float: ## ABCD
-      sys_prompt_temp1 = (sys_prompt1
-                    .replace('(A, B, C, D, or E)', '(A, B, C, or D)')
-                    .replace('E) ${Option E}', '')
-          )
-      sys_prompt_temp2 = (sys_prompt2
-                    .replace('(A, B, C, D, or E)', '(A, B, C, or D)')
-                    .replace('E) ${Option E}', '')
-          )
-      if type(df['Option D'][i]) == float: ## ABC
-        sys_prompt_temp1 = (sys_prompt_temp1
-                      .replace('(A, B, C, or D)', '(A, B, or C)')
-                      .replace('D) ${Option D}', '')
-            )
-        sys_prompt_temp2 = (sys_prompt_temp2
-                    .replace('(A, B, C, or D)', '(A, B, or C)')
-                    .replace('D) ${Option D}', '')
-          )
 
-        if type(df['Option C'][i]) == float: ## AB
-          sys_prompt_temp1 = (sys_prompt_temp1
-                        .replace('(A, B, or C)', '(A or B)')
-                        .replace('C) ${Option C}', '')
-              )
-          sys_prompt_temp2 = (sys_prompt_temp2
-                      .replace('(A, B, or C)', '(A or B)')
-                      .replace('C) ${Option C}', '')
-            )
 
     option_text = df[options[:num_options]].iloc[i].to_list()
     ## Prompt for specific question
@@ -684,13 +656,13 @@ def sciq_test_prompts(df):
 
   return output_df
     
-def truthful_qa_prompts(): pass
+def truthful_qa_prompts(df): pass
 
 ## Map functions to dataset
 
 functions_map = {
     'boolq_valid': boolq_valid_prompts,
-    'halu_eval': halu_eval_prompts,
+    'halu_eval_qa': halu_eval_qa_prompts,
     'life_eval': life_eval_prompts,
     'lsat_ar_test': lsat_ar_test_prompts,
     'math_500': math_500_prompts,
@@ -780,14 +752,48 @@ def format_prompts(question_set_dict, metadata_path='prompts_metadata.json'):
     """
     with open(metadata_path, 'r') as f:
         prompts_metadata = json.load(f)
+    prompts = {}
+    for df_name, df in question_set_dict.items():
+        print(f"Processing {df_name} with formatter...")
 
-    for df_name, df in question_set_dict:
-        
         format_function = functions_map[df_name]
 
-        
-        
-        print(f"Processing DataFrame with metadata...")
+        prompts_df = format_function(df)
+
+        prompts[df_name] = prompts_df
+
+    print(f'\nTotal Prompt Datasets Formatted: {len(prompts)}')
+    print('------------------------------------------\n')
+    return prompts
+
+def save_prompts(prompts_dict, folder_path = 'Prompts/'):
+    saved = 0
+    for df_name, df in prompts_dict.items():
+        path = folder_path + df_name + '_prompts.csv'
+        if df is not None:
+            print(f'Saving {df_name} to: {path}')
+            df.to_csv(path, index = False)
+            saved += 1
+    print(f'\nTotal Prompt Datasets Saved: {saved}')
+    print('------------------------------------------\n')
+    
+def run_all_batch(debug = False):
+    for model in all_models:
+        print(f'Submiting Batch Process for {model.name}')
+    for qset_name, qset in prompts_dict.items():
+        try:
+            if debug:
+                prompts = qset['Full Prompt'].iloc[:3]
+            else:
+                prompts = qset['Full Prompt']
+            system = qset['System Prompt'].iloc[0]
+
+            model.run_batch(prompts, model.name)
+            #print(f'    {qset_name} Complete ✅')
+        except Exception as e:
+            print(f'    Error completing batch request for {model.name} on {qset_name}:\n{e}')
+            
+      
 
 
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -813,4 +819,8 @@ if __name__ == '__main__':
     all_datasets = import_datasets()
     print("\nAvailable datasets:", list(all_datasets.keys()))
 
-    formatted_prompts = format_prompts(all_datasets)
+    prompts_dict = format_prompts(all_datasets)
+
+    save_prompts(prompts_dict)
+
+    run_all_batch(debug = True)
