@@ -1,0 +1,106 @@
+{
+    "lsat_ar_test":
+    {
+        "system_prompt": "You are a helpful assistant that answers LSAT questions.",
+        "order": ["question", "options", "model_reasoning", "model_answer", "model_confidence"],
+        "options": ["A", "B", "C", "D", "E"],
+        "header": {
+            "Question ID": "String identifier for the question",
+            "Question": "String containing the prompt, question text, options",
+            "Response": "Response from model. Should be JSON formatted string containing the answer letter and confidence score for each option",
+            "Reasoning": "String explaining answer",
+            "Error": "String indicating if the script encountered an error and what it was",
+            "Correct Answer Letter": "String containing the letter of the correct option, capitalized",
+            "Stated Prob A": "Float indicating the model's stated probability for option A",
+            "Stated Prob B": "Float indicating the model's stated probability for option B",
+            "Stated Prob C": "Float indicating the model's stated probability for option C",
+            "Stated Prob D": "Float indicating the model's stated probability for option D",
+            "Stated Prob E": "Float indicating the model's stated probability for option E",
+            "Stated Answer": "String containing the letter of the answer chosen by the model",
+            "Correct": "Boolean indicating if the model's answer is correct"
+        },
+        "notes": "Edit previous collected data for analysis"
+    },
+    "boolq_valid":
+    {
+        "system_prompt": "You are a helpful assistant that answers boolean questions.",
+        "order": ["question", "model_reasoning", "model_answer", "model_confidence"],
+        "options": ["True", "False"],
+        "header": {
+            "Question ID": "String identifier for the question",
+            "Question": "String containing the question text",
+            "Response": "Response from model. Should be JSON formatted string containing the reasoning, answer and confidence score",
+            "Reasoning": "String explaining answer",
+            "Error": "String indicating if the script encountered an error and what it was"
+        },
+        "notes": "Edit previous collected data headers for analysis"
+    },
+    "sciq_test":
+    {
+        "system_prompt": "You are a helpful assistant that answers scientific questions.",
+        "order": ["question", "options", "model_reasoning", "model_answer", "model_confidence"],
+        "header": {
+            "Question ID": "String identifier for the question",
+            "Question": "String containing the question text",
+            "Response": "Response from model. Should be JSON formatted string containing the reasoning, answer and confidence score",
+            "Reasoning": "String explaining answer",
+            "Error": "String indicating if the script encountered an error and what it was"
+        },
+        "options": ["A", "B", "C", "D"],
+        "notes": "Edit previous collected data headers for analysis"
+    },
+    "life_eval":
+    {
+        "system_prompt": "You are a helpful assistant that answers life evaluation questions.",
+        "order": ["question", "model_reasoning", "model_answer", "model_confidence"],
+        "header": {
+            "Question ID": "String identifier for the question",
+            "Question": "String containing the question text",
+            "Gender": "String indicating gender",
+            "Min Age": "Integer indicating minimum age",
+            "Radius": "Integer indicating radius for the question (e.g. +- 10 years)",
+            "Response": "Response from model. Should be JSON formatted string containing the reasoning, answer and confidence score",
+            "Reasoning": "String explaining answer",
+            "Error": "String indicating if the script encountered an error and what it was"
+        }
+    },
+    "math_500":
+    {
+        "system_prompt": "You are a helpful assistant that answers math questions.",
+        "order": ["question", "model_reasoning", "model_answer", "model_confidence"],
+        "options": [],
+        "notes": "This dataset does not have options, so the model should provide a direct reasoning and answer. answer should be in '\boxed{}'.",
+        "header": {
+            "Question ID": "String identifier for the question",
+            "Question": "String containing the question text",
+            "Answer": "Response from model. Should be JSON formatted string containing the reasoning, answer and confidence score",
+            "Reasoning": "String explaining answer",
+            "Error": "String indicating if the script encountered an error and what it was"
+        }
+    },
+    "sat_en":
+    {
+        "system_prompt": "You are a helpful assistant that answers SAT questions.",
+        "order" : ["question", "options", "model_reasoning", "model_answer", "model_confidence"],
+        "notes": "full question with options already provided in dataset. TBD if will change to fragement.",
+        "options": ["A", "B", "C", "D"],
+        "header":{
+            "Question ID":"String identifier for the question",
+            "Question":"String containing the prompt, question text, options",
+            "Answer":"Response from model. Should be JSON formatted string containing the reasoning, answer and confidence score"
+
+        }
+
+
+    },
+    "truthful_qa":
+    {
+
+    },
+    "halu_eval_qa":
+    {
+    }
+}
+
+
+
