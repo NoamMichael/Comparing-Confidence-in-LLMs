@@ -7,8 +7,7 @@
 # Next Steps:
 #--------------------------------------------------------------
 
-# 1. Add in function prompting method for each dataset.
-# 2. Implement error handling and logging for API requests.
+# Occasional errors on Gem/ Claude errors. Google cloud yells at me sometimes about formatting. Claude can't get the response right.
 
 
 
@@ -24,6 +23,8 @@ from anthropic import Anthropic, AsyncAnthropic, APIError
 
 from typing import Optional
 from dotenv import load_dotenv
+from anthropic.types.message_create_params import MessageCreateParamsNonStreaming
+from anthropic.types.messages.batch_create_params import Request
 
 load_dotenv()  # Load environment variables from .env file
 
@@ -31,6 +32,9 @@ load_dotenv()  # Load environment variables from .env file
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #                 MODEL CLASSES
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 
 class BatchModels(ABC):
     def __init__(self, name: str, api_key_name: str):
@@ -41,12 +45,16 @@ class BatchModels(ABC):
             print(f"Warning: API key '{api_key_name}' not found in environment.")
 
     @abstractmethod
-    def run_batch(self, prompts: pd.Series, **kwargs):
+    def run_batch(self, prompts: pd.DataFrame, **kwargs):
         pass
 
     @abstractmethod
-    def make_batch(self, prompts: pd.Series, **kwargs):
+    def make_batch(self, prompts: pd.DataFrame, **kwargs):
         pass
+
+
+## make_batch(self, prompts, system, **kwargs)
+
 
 class GPTModels(BatchModels):
     def __init__(self, name: str, api_key_name: str):
@@ -55,42 +63,47 @@ class GPTModels(BatchModels):
             openai.api_key = self.api_key
         else:
             print("OpenAI API key not configured. GPT models will not work.")
-    def make_batch(self, prompts: pd.Series, model: str, system_prompt: str, logprobs=True, top_logprobs=5,
-                  temperature=0, output_file="batch.jsonl", url="/v1/chat/completions"):
+    def make_batch(self, prompts: pd.DataFrame, model: str, system_prompt: str, dataset_name: str, logprobs=True, top_logprobs=5,
+                  temperature=0, url="/v1/chat/completions"):
         """
         Creates a JSONL file for the OpenAI batch API from a series of prompts using the chat completions format.
 
         Args:
-            prompts (pd.Series): A pandas Series of prompt strings.
+            prompts (pd.DataFrame): A pandas DataFrame with 'Question ID' and 'Full Prompt' columns.
             model (str): The name of the OpenAI model to use (e.g., "gpt-4").
             system_prompt (str): The shared system message for all prompts.
+            dataset_name (str): The name of the dataset, used for the output filename.
             logprobs (bool): Whether to request logprobs in the output.
             top_logprobs (int): Number of top logprobs to include.
             temperature (float): Sampling temperature for generation.
-            output_file (str): File path for the resulting JSONL file.
             url (str): API endpoint URL, defaulting to the chat completions endpoint.
         """
+        output_dir = f"Batches/{self.name}"
+        os.makedirs(output_dir, exist_ok=True)
+        output_file = os.path.join(output_dir, f"{dataset_name}_batch.jsonl")
+        
         requests = []
 
-        for idx, user_prompt in prompts.items():
+        for _, row in prompts.iterrows():
             request = {
-                "custom_id": str(idx),
+                "custom_id": str(row['Question ID']),
                 "method": "POST",
                 "url": url,
                 "body": {
                     "model": model,
                     "messages": [
                         {"role": "system", "content": system_prompt},
-                        {"role": "user", "content": user_prompt}
+                        {"role": "user", "content": row['Full Prompt']}
                     ],
                     "temperature": temperature,
-                    "max_tokens": 256  # adjust as needed
+                    "max_tokens": 512  # adjust as needed
                 }
             }
 
             # Only include logprobs fields if requested
             if logprobs:
-                request["body"]["logprobs"] = top_logprobs
+                request["body"]["logprobs"] = True
+                request["body"]["top_logprobs"] = 5
 
             requests.append(request)
 
@@ -100,41 +113,43 @@ class GPTModels(BatchModels):
                 f.write(json.dumps(req) + "\n")
 
         print(f"Saved {len(requests)} prompts to {output_file}")
+        return output_file
 
-        
     def run_batch(self,
-                  prompts: pd.Series,
+                  prompts: pd.DataFrame,
+                  model: str,
                   system_prompt: str,
+                  dataset_name: str,
                   logprobs=True,
                   top_logprobs=5,
                   temperature=0,
-                  output_file="batch.jsonl",
                   url="/v1/chat/completions",
                   endpoint_id=None):
         """
         Creates and submits a batch job to the OpenAI API using a series of prompts.
 
         Args:
-            prompts (pd.Series): Series of user prompts.
+            prompts (pd.DataFrame): DataFrame with 'Question ID' and 'Full Prompt' columns.
             model (str): OpenAI model name (e.g., "gpt-4o").
             system_prompt (str): Shared system message for chat context.
+            dataset_name (str): The name of the dataset, used for the output filename.
             logprobs (bool): Whether to request logprobs.
             top_logprobs (int): Number of top logprobs to include.
             temperature (float): Sampling temperature.
-            output_file (str): Path to save intermediate JSONL file.
             url (str): API URL endpoint for the batch job.
             endpoint_id (str or None): Optional endpoint ID for Azure OpenAI or special routing.
         """
         # Step 1: Create the batch file
-        self.make_batch(prompts, self.name, system_prompt, logprobs, top_logprobs, temperature, output_file, url)
+        output_file = self.make_batch(prompts, model, system_prompt, dataset_name, logprobs, top_logprobs, temperature, url)
 
         # Step 2: Upload the file
         try:
-            upload = openai.files.create(file=open(output_file, "rb"), purpose="batch")
+            with open(output_file, "rb") as f:
+                upload = openai.files.create(file=f, purpose="batch")
             file_id = upload.id
             print(f"Uploaded file ID: {file_id}")
         except OpenAIError as e:
-            print(f"File upload failed: {e}")
+            print(f"File upload failed for model {model}: {e}")
             return None
 
         # Step 3: Submit the batch
@@ -143,14 +158,12 @@ class GPTModels(BatchModels):
                 input_file_id=file_id,
                 endpoint=url,
                 completion_window="24h",  # or "1h" for faster window if available
-                endpoint_id=endpoint_id  # Optional, pass None for default
             )
             print(f"Batch submitted. ID: {batch.id}, Status: {batch.status}")
             return batch
         except OpenAIError as e:
-            print(f"Batch submission failed: {e}")
+            print(f"Batch submission failed for model {model}: {e}")
             return None
-
 
 class ClaudeModels(BatchModels):
     def __init__(self, name: str, api_key_name: str):
@@ -161,90 +174,57 @@ class ClaudeModels(BatchModels):
             self.client = None
             print("Anthropic API key not configured. Claude models will not work.")
 
-    def make_batch(self,
-                   prompts: pd.Series,
-                   model: str,
-                   system_prompt: str,
-                   temperature=0,
-                   output_file="claude_batch.jsonl",
-                   url="/v1/messages"):
+    def make_batch(self, prompts: pd.DataFrame, **kwargs):
         """
-        Creates a JSONL file for Claude batch processing via the Anthropic API.
-
-        Args:
-            prompts (pd.Series): A pandas Series of user prompts.
-            model (str): Claude model name (e.g., "claude-3-opus-20240229").
-            system_prompt (str): System instruction for Claude.
-            temperature (float): Sampling temperature.
-            output_file (str): File path to save the batch JSONL.
-            url (str): API endpoint for Claude batch requests (default: "/v1/messages").
+        This method is not used for the Claude batch API implementation.
         """
-        requests = []
-
-        for idx, user_prompt in prompts.items():
-            req = {
-                "custom_id": str(idx),
-                "method": "POST",
-                "url": url,
-                "body": {
-                    "model": model,
-                    "system": system_prompt,
-                    "temperature": temperature,
-                    "max_tokens": 1024,
-                    "messages": [
-                        {"role": "user", "content": user_prompt}
-                    ]
-                }
-            }
-            requests.append(req)
-
-        with open(output_file, "w", encoding="utf-8") as f:
-            for item in requests:
-                f.write(json.dumps(item) + "\n")
-
-        print(f"Saved {len(requests)} prompts to {output_file}")
+        print("Note: ClaudeModels does not use a separate make_batch function.")
+        pass
 
     def run_batch(self,
-                  prompts: pd.Series,
+                  prompts: pd.DataFrame,
                   model: str,
                   system_prompt: str,
+                  dataset_name: str,
                   temperature=0,
-                  output_file="claude_batch.jsonl",
-                  url="/v1/messages",
-                  completion_window="24h"):
+                  **kwargs):
         """
-        Submits a batch job to Claude API.
+        Processes prompts using the Anthropic Messages Batch API.
 
         Args:
-            prompts (pd.Series): User prompts.
+            prompts (pd.DataFrame): DataFrame with 'Question ID' and 'Full Prompt' columns.
             model (str): Claude model name.
             system_prompt (str): System instruction.
+            dataset_name (str): The name of the dataset.
             temperature (float): Sampling temperature.
-            output_file (str): Output file for the batch JSONL.
-            url (str): Claude endpoint URL.
-            completion_window (str): Completion window, either "1h" or "24h".
         """
-        self.make_batch(prompts, model, system_prompt, temperature, output_file, url)
+        if not self.client:
+            print("Claude client not initialized. Skipping batch.")
+            return
 
-        try:
-            upload = self.client.files.create(file=open(output_file, "rb"), purpose="batch")
-            file_id = upload.id
-            print(f"Uploaded file with ID: {file_id}")
-        except APIError as e:
-            print(f"Upload failed: {e}")
-            return None
-
-        try:
-            batch = self.client.batches.create(
-                input_file_id=file_id,
-                endpoint=url,
-                completion_window=completion_window
+        requests = []
+        for _, row in prompts.iterrows():
+            requests.append(
+                Request(
+                    custom_id=str(row['Question ID']),
+                    params=MessageCreateParamsNonStreaming(
+                        model=model,
+                        max_tokens=512,
+                        messages=[{
+                            "role": "user",
+                            "content": row['Full Prompt']
+                        }],
+                        system=system_prompt,
+                        temperature=temperature
+                    )
+                )
             )
-            print(f"Batch submitted. ID: {batch.id}, Status: {batch.status}")
-            return batch
+        
+        try:
+            batch_job = self.client.messages.batches.create(requests=requests)
+            print(f"Successfully submitted batch job for {model} on {dataset_name}. Batch ID: {batch_job.id}")
         except APIError as e:
-            print(f"Batch creation failed: {e}")
-            return None
+            print(f"Error submitting batch job for {model} on {dataset_name}: {e}")
 
 class GeminiModels(BatchModels):
     def __init__(self, name: str, api_key_name: str):
@@ -258,52 +238,58 @@ class GeminiModels(BatchModels):
             print("Google API key not configured. Gemini models will not work.")
 
     def run_batch(self,
-                  prompts: pd.Series,
+                  prompts: pd.DataFrame,
                   model: str,
+                  dataset_name: str,
                   system_prompt: str = "",
                   temperature: float = 0.0,
-                  safety_settings: Optional[list] = None,
-                  generation_config: Optional[dict] = None):
+                  **kwargs):
         """
-        Submits prompts to Gemini one-by-one and returns responses in a dictionary.
+        Gemini API does not support asynchronous batch processing in the same way as OpenAI or Claude.
+        This function will create a batch file but will not submit it.
+        """
+        self.make_batch(prompts, model=model, dataset_name=dataset_name, system_prompt=system_prompt, temperature=temperature, **kwargs)
+        print(f"Note: Gemini model '{self.name}' batch file created. Manual processing required.")
+        pass
+
+    def make_batch(self,
+                   prompts: pd.DataFrame,
+                   model: str,
+                   dataset_name: str,
+                   system_prompt: str = "",
+                   temperature: float = 0.0,
+                   **kwargs):
+        """
+        Creates a JSONL file for Gemini batch predictions, following the Vertex AI format.
 
         Args:
-            prompts (pd.Series): Series of prompt strings.
-            model (str): Gemini model name.
-            system_prompt (str): Optional system-level prompt.
-            temperature (float): Sampling temperature.
-            safety_settings (list): Optional list of safety settings.
-            generation_config (dict): Optional dict for config (e.g., max_tokens).
-        
-        Returns:
-            dict: Mapping from prompt index to response text or error.
+            prompts (pd.DataFrame): A pandas DataFrame with 'Question ID' and 'Full Prompt' columns.
+            model (str): Gemini model name (not used in the file but kept for consistency).
+            dataset_name (str): The name of the dataset for the output filename.
+            system_prompt (str): System instruction (not directly supported in this simple batch format).
+            temperature (float): Sampling temperature (not directly supported in this simple batch format).
         """
-        gemini_model = genai.GenerativeModel(
-            model,
-            system_instruction=system_prompt if system_prompt else None,
-            safety_settings=safety_settings,
-            generation_config=generation_config or {"temperature": temperature}
-        )
+        output_dir = f"Batches/{self.name}"
+        os.makedirs(output_dir, exist_ok=True)
+        output_file = os.path.join(output_dir, f"{dataset_name}_batch.jsonl")
 
-        responses = {}
+        requests = []
+        for _, row in prompts.iterrows():
+            # Format for Vertex AI batch prediction.
+            request = {
+                "instance": {
+                    "prompt": row['Full Prompt']
+                },
+                "custom_id": str(row['Question ID'])
+            }
+            requests.append(request)
 
-        for idx, prompt in prompts.items():
-            try:
-                response = gemini_model.generate_content(prompt)
-                responses[idx] = response.text
-                print(f"✅ Completed prompt {idx}")
-            except Exception as e:
-                print(f"❌ Error on prompt {idx}: {e}")
-                responses[idx] = None
-        return responses
+        with open(output_file, "w", encoding="utf-8") as f:
+            for req in requests:
+                f.write(json.dumps(req) + "\n")
 
-    def make_batch(self, prompts: pd.Series, **kwargs):
-        """
-        Gemini API does not use a batch file in this implementation.
-        This method is a placeholder to satisfy the abstract class requirements.
-        """
-        print(f"Note: Gemini model '{self.name}' processes prompts sequentially and does not use batch files.")
-        pass
+        print(f"Saved {len(requests)} prompts to {output_file} for Gemini/Vertex AI Batch Prediction.")
+        return output_file
 
     
 
@@ -369,7 +355,9 @@ def boolq_valid_prompts(df):
     output_df = pd.DataFrame(output_rows, columns=header)
     return output_df
 
-def halu_eval_qa_prompts(df): pass
+def halu_eval_qa_prompts(df):
+    print("Note: halu_eval_qa_prompts is not yet implemented.")
+    return None
 
 def life_eval_prompts(df): 
     system_prompt = """
@@ -778,20 +766,30 @@ def save_prompts(prompts_dict, folder_path = 'Prompts/'):
     print('------------------------------------------\n')
     
 def run_all_batch(debug = False):
-    for model in all_models:
-        print(f'Submiting Batch Process for {model.name}')
-    for qset_name, qset in prompts_dict.items():
-        try:
-            if debug:
-                prompts = qset['Full Prompt'].iloc[:3]
-            else:
-                prompts = qset['Full Prompt']
-            system = qset['System Prompt'].iloc[0]
+    for model_instance in all_models:
+        print(f'Submitting Batch Process for {model_instance.name}')
+        for qset_name, qset in prompts_dict.items():
+            try:
+                if debug:
+                    prompts_df = qset.iloc[:3]
+                else:
+                    prompts_df = qset
+                
+                system = prompts_df['System Prompt'].iloc[0]
+                
+                # Since each model in all_models is an instance of a model class,
+                # we can get the model name from the instance's name attribute.
+                model_name = model_instance.name
 
-            model.run_batch(prompts, model.name)
-            #print(f'    {qset_name} Complete ✅')
-        except Exception as e:
-            print(f'    Error completing batch request for {model.name} on {qset_name}:\n{e}')
+                model_instance.run_batch(
+                    prompts=prompts_df,
+                    model=model_name,
+                    system_prompt=system,
+                    dataset_name=qset_name
+                )
+                print(f'    {qset_name} Submitted ✅')
+            except Exception as e:
+                print(f'    Error completing batch request for {model_instance.name} on {qset_name}:\n{e}')
             
       
 
