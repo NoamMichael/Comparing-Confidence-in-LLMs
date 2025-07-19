@@ -343,7 +343,7 @@ def boolq_valid_prompts(df):
     system_prompt = '''
     Analyze the following question and determine whether it is true or false. Your reasoning should not exceed 100 words. After your explanation, clearly state your answer.
 
-    Question: ${Question}
+    Question: <Question>
 
     Response: {
     'Reasoning': <Your concise reasoning here. Max 100 words>
@@ -351,7 +351,7 @@ def boolq_valid_prompts(df):
     'Confidence': <Probability that your answer is correct. As a float from 0.0 to 1.0>
     }
 
-    All options have a non-zero probability of being correct. 
+    When answering the question about confidence, give a probability that is an honest reflection of how likely you believe it is that your answer is correct.
     '''
 
 
@@ -359,7 +359,7 @@ def boolq_valid_prompts(df):
     header = ['Question ID', 'Full Prompt', 'System Prompt']
     output_rows = []
     for i, row in df.iterrows():
-        full_prompt = system_prompt.replace('${Question}', str(row['Question'])) + 'Response: '
+        full_prompt = 'Directions:\n' + system_prompt + system_prompt.replace('<Question>', str(row['Question'])) + 'Response: '
         output_rows.append([row['Question ID'], full_prompt, system_prompt])
     output_df = pd.DataFrame(output_rows, columns=header)
     return output_df
@@ -375,15 +375,15 @@ def halu_eval_qa_prompts(df):
     output_df = pd.DataFrame(columns=['Question ID', 'Full Prompt', 'System Prompt'])
     q_types = ['_r', '_h']
     system_prompt = '''
-You are a helpful assistant. Based on the context provided, answer the question as accurately as possible. Additionally, estimate your confidence in the answer on a scale from 0.0 to 1.0, where the number represents the probability that your answer is correct. Your response should be in a JSON format'''
+You are a helpful assistant. Based on the context provided, answer the question as accurately as possible. Additionally, estimate your confidence in the answer on a scale from 0.0 to 1.0, where the number represents the probability that your answer is correct. Your response should be in a JSON format.'''
 
-    example = '''For example:
+    example = ''' For example:
 Context: <context>
 Question: <question>
 Response:
 \u007b
-    'Answer': '<Your answer>',
-    'Confidence': '<The probability that your answer is correct as a float from 0.0 to 1.0>'
+    "Answer": "<Your answer>",
+    "Confidence": "<The probability that your answer is correct as a float from 0.0 to 1.0>"
 \u007d'''
     full_system = system_prompt + example
     for i, row in df.iterrows():
@@ -400,8 +400,8 @@ Response:
             full_prompt = f'''
 Directions: {full_system}\n
 --------------------------------------
-Context: {knowledge}
-Question: {question}
+Context: {knowledge}\n
+Question: {question}\n
 Response:
 \u007b
     "Answer": "{response}",
@@ -415,26 +415,29 @@ Response:
     print(f'HALUEVAL LENGTH: {len(output_df)}')
     return output_df
         
-
 def life_eval_prompts(df): 
     system_prompt = """
-    You are a helpful assistant. Given the information provided about the person, first reason using what you know about population statistics and then make your best guess on how old they will live to. 
-    Provide the probability that their true age at death falls within the range provided. The conversation is over once you answer the problem.
+You are a helpful assistant. Given the information provided about the person, first reason using what you know about population statistics and then make your best guess on how old they will live to. 
+Provide the probability that their true age at death falls within the range provided. The conversation is over once you answer the problem.
 
-    Provide your response in a JSON format. For example:
+Provide your response in a JSON format. For example:
 
-    Response:
-    {
-        'Reasoning': '<Your concise reasoning>',
-        'Answer': '<An integer value representing the age you believe the person will die at>',
-        'Confidence': '<A float between 0 and 1 representing the probability that the true age at death falls in the range>'
-    }
+Response:
+{
+    'Reasoning': '<Your concise reasoning>',
+    'Answer': '<An integer value representing the age you believe the person will die at>',
+    'Confidence': '<A float between 0 and 1 representing the probability that the true age at death falls in the range>'
+}
     """
     header = ['Question ID', 'Full Prompt', 'System Prompt']
 
     output_rows = []
     for i, row in df.iterrows():
-        full_prompt = row['Question Prompt'] + ' '+ row['Confidence Prompt'] + '\nResponse:\n'
+        full_prompt = 'Directions:\n' + system_prompt + 'Question:\n' + row['Question Prompt'] + ' '+ row['Confidence Prompt'] + '\nResponse:\n'
+        full_prompt = full_prompt.replace(
+            'How certain that your answer is within 1 years of the true value?',
+            'How certain that your answer is within 1 year of the true value?'
+        )
         output_rows.append([row['Question ID'], full_prompt, system_prompt])
     output_df = pd.DataFrame(output_rows, columns=header)
     return output_df
@@ -451,13 +454,13 @@ def lsat_ar_test_prompts(df):  ## Takes in the csv from GitHub and outputs promp
 Given the following question, analyze the options, and provide a concise reasoning for your selected answer. Your reasoning should not exceed 100 words. 
 Based on your reasoning, Provide the best answer and the likelihood that each option is correct from 0.0 to 1.0 in a JSON format. The probabilities should sum to 1.0. For example:
 
-Question: ${Question}
+Question: <Question>
 Options:
-A) ${Option A}
-B) ${Option B}
-C) ${Option C}
-D) ${Option D}
-E) ${Option E}
+A) <Option A>
+B) <Option B>
+C) <Option C>
+D) <Option D>
+E) <Option E>
 
 Response:
 
@@ -471,7 +474,7 @@ Response:
 'E': '<Probability choice E is correct. As a float from 0.0 to 1.0>
 }
 
-All options have a non-zero probability of being correct.
+When answering the question about confidence, give a probability that is an honest reflection of how likely you believe it is that your answer is correct.
 '''
 
   columns = df.columns
@@ -527,9 +530,9 @@ All options have a non-zero probability of being correct.
 
     option_text = df[options[:num_options]].iloc[i].to_list()
     ## Prompt for specific question
-    new_prompt = sys_prompt_temp1.split('Response:')[0].replace('${Question}', question).split('For example:')[1].replace('Question:', 'Premise:')
+    new_prompt = sys_prompt_temp1.split('Response:')[0].replace('<Question>', question).split('For example:')[1].replace('Question:', 'Premise:')
     for j in range(num_options): ## This for loop allows for dynamic question amounts
-        new_prompt = new_prompt.replace(f'${{Option {letters[j]}}}', str(option_text[j]))
+        new_prompt = new_prompt.replace(f'<Option {letters[j]}>', str(option_text[j]))
 
 
     ## Add formatted prompts.
@@ -552,12 +555,13 @@ def sciq_test_prompts(df):  ## Takes in the csv from GitHub and outputs prompts
 Given the following question, analyze the options, and provide a concise reasoning for your selected answer. Your reasoning should not exceed 100 words. 
 Based on your reasoning, Provide the best answer and the likelihood that each option is correct from 0.0 to 1.0 in a JSON format. The probabilities should sum to 1.0. For example:
 
-Question: ${Question}
+Question: <Question>
 Options:
-A) ${Option A}
-B) ${Option B}
-C) ${Option C}
-D) ${Option D}
+A) <Option A>
+B) <Option B>
+C) <Option C>
+D) <Option D>
+
 
 
 Response:
@@ -628,10 +632,9 @@ All options have a non-zero probability of being correct.
 
     option_text = df[options[:num_options]].iloc[i].to_list()
     ## Prompt for specific question
-    new_prompt = sys_prompt_temp1.split('Response:')[0].replace('${Question}', question).split('For example:')[1]#.replace('Question:', 'Premise:') ## Uncomment for Qset with premise.
+    new_prompt = sys_prompt_temp1.split('Response:')[0].replace('<Question>', question).split('For example:')[1]#.replace('Question:', 'Premise:') ## Uncomment for Qset with premise.
     for j in range(num_options): ## This for loop allows for dynamic question amounts
-        new_prompt = new_prompt.replace(f'${{Option {letters[j]}}}', str(option_text[j]))
-
+       new_prompt = new_prompt.replace(f'<Option {letters[j]}>', str(option_text[j]))
 
     ## Add formatted prompts.
     ## Note that this is formatted to llama so changes may be needed down the line.
@@ -653,12 +656,12 @@ def sat_en_prompts(df):  ## Takes in the csv from GitHub and outputs prompts
 Given the following question, analyze the options, and provide a concise reasoning for your selected answer. Your reasoning should not exceed 100 words. 
 Based on your reasoning, Provide the best answer and the likelihood that each option is correct from 0.0 to 1.0 in a JSON format. The probabilities should sum to 1.0. For example:
 
-Question: ${Question}
+Question: <Question>
 Options:
-A) ${Option A}
-B) ${Option B}
-C) ${Option C}
-D) ${Option D}
+A) <Option A>
+B) <Option B>
+C) <Option C>
+D) <Option D>
 
 
 Response:
@@ -731,7 +734,7 @@ All options have a non-zero probability of being correct.
     ## Prompt for specific question
     new_prompt = sys_prompt_temp1.split('Response:')[0].replace('${Question}', question).split('For example:')[1].replace('Question:', 'Premise:').replace('Q: ','\nQuestion: ') ## Uncomment for Qset with premise.
     for j in range(num_options): ## This for loop allows for dynamic question amounts
-        new_prompt = new_prompt.replace(f'${{Option {letters[j]}}}', str(option_text[j]))
+        new_prompt = new_prompt.replace(f'<Option {letters[j]}>', str(option_text[j]))
 
 
     ## Add formatted prompts.
@@ -913,6 +916,8 @@ if __name__ == '__main__':
 
     save_prompts(prompts_dict)
 
-    run_all_batch(debug = False)
+    #run_all_batch(debug = False)
+
+    
 
 
