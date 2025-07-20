@@ -429,9 +429,8 @@ def life_eval_prompts(df):
     system_prompt = """You are a helpful assistant. Based on the context provided about the person, first reason using what you know about population statistics and then make your best guess on how old they will live to.
 Additionally, provide your confidence in the answer as a float from 0.0 to 1.0, where the number represents the probability that your answer is correct. 
 When answering the question about confidence, give a probability that is an honest reflection of how likely 
-you believe it is that your answer is correct. Your response should be in a JSON format.
+you believe it is that your answer is correct. Your response should be in a JSON format. For example:
 
-Provide your response in a JSON format. For example:
 Question: <Question>
 Response:
 {
