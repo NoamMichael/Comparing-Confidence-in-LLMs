@@ -344,7 +344,7 @@ def boolq_valid_prompts(df):
 You are a helpful assistant. Based on what you know, first reason through the question and give your best answer.
 Additionally, provide your confidence in the answer as a float from 0.0 to 1.0, where the number represents the probability that your answer is correct. 
 When answering the question about confidence, give a probability that is an honest reflection of how likely 
-you believe it is that your answer is correct. Your response should be in a JSON format.
+you believe it is that your answer is correct. Your response should be in a JSON format. For example:
 
 Question: <Question>
 
