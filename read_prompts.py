@@ -19,7 +19,7 @@ def read_first_prompt():
             try:
                 df = pd.read_csv(file_path, on_bad_lines='skip')
                 if 'Full Prompt' in df.columns and not df.empty:
-                    first_prompt = df['Full Prompt'].iloc[0]
+                    first_prompt = df['Full Prompt'].iloc[123]
                     print(f"--- {filename} ---")
                     print(first_prompt)
                     print("\\n" + "="*80 + "\\n")
@@ -32,3 +32,5 @@ def read_first_prompt():
 
 if __name__ == "__main__":
     read_first_prompt()
+
+

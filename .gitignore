@@ -1,2 +1,5 @@
 # Ignore the .env file
 .env
+practice_output.json
+read_prompts.py
+doodle.py
