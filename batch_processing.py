@@ -56,6 +56,7 @@ class BatchModels(ABC):
 class GPTModels(BatchModels):
     def __init__(self, name: str, api_key_name: str):
         super().__init__(name, api_key_name)
+        self.file_map = {}
         if self.api_key:
             openai.api_key = self.api_key
         else:
@@ -136,15 +137,28 @@ class GPTModels(BatchModels):
             url (str): API URL endpoint for the batch job.
             endpoint_id (str or None): Optional endpoint ID for Azure OpenAI or special routing.
         """
+        ## First read the results_metadata.json file
+        # 1. Load JSON file into dict
+        with open("results_metadata.json", "r") as f:
+            metadata = json.load(f)
+
+
+
+
         # Step 1: Create the batch file
         output_file = self.make_batch(prompts, model, system_prompt, dataset_name, logprobs, top_logprobs, temperature, url)
 
         # Step 2: Upload the file
         try:
             with open(output_file, "rb") as f:
-                upload = openai.files.create(file=f, purpose="batch")
+                upload = openai.files.create(
+                    file=f, 
+                    purpose="batch",
+                    
+                    )
             file_id = upload.id
             print(f"Uploaded file ID: {file_id}")
+            self.file_map[dataset_name] = file_id
         except OpenAIError as e:
             print(f"File upload failed for model {model}: {e}")
             return None
@@ -157,9 +171,22 @@ class GPTModels(BatchModels):
                 completion_window="24h",  # or "1h" for faster window if available
             )
             print(f"Batch submitted. ID: {batch.id}, Status: {batch.status}")
+            metadata.setdefault(dataset_name, {})
+            metadata[dataset_name].setdefault("models", {})
+            metadata[dataset_name]["models"].setdefault(self.name, {})
+
+            metadata[dataset_name]["models"][self.name]['file_id'] = file_id
+            metadata[dataset_name]["models"][self.name]['batch_id'] = batch.id
+            # Save the modified dict back to the same file
+            with open("results_metadata.json", "w") as f:
+                json.dump(metadata, f, indent=2)
+
             return batch
         except OpenAIError as e:
             print(f"Batch submission failed for model {model}: {e}")
+
+                # 2. Modify the dictionary (example: add a new key)
+
             return None
 
 class ClaudeModels(BatchModels):
@@ -198,6 +225,10 @@ class ClaudeModels(BatchModels):
         if not self.client:
             print("Claude client not initialized. Skipping batch.")
             return
+        
+        # 1. Load JSON file into dict
+        with open("results_metadata.json", "r") as f:
+            metadata = json.load(f)
 
         requests = []
         for _, row in prompts.iterrows():
@@ -220,6 +251,17 @@ class ClaudeModels(BatchModels):
         try:
             batch_job = self.client.messages.batches.create(requests=requests)
             print(f"Successfully submitted batch job for {model} on {dataset_name}. Batch ID: {batch_job.id}")
+
+            metadata.setdefault(dataset_name, {})
+            metadata[dataset_name].setdefault("models", {})
+            metadata[dataset_name]["models"].setdefault(self.name, {})
+
+            metadata[dataset_name]["models"][self.name]['file_id'] = dataset_name
+            metadata[dataset_name]["models"][self.name]['batch_id'] = batch_job.id
+            # Save the modified dict back to the same file
+            with open("results_metadata.json", "w") as f:
+                json.dump(metadata, f, indent=2)
+
         except APIError as e:
             print(f"Error submitting batch job for {model} on {dataset_name}: {e}")
 
@@ -313,15 +355,15 @@ models = {
         'class': GPTModels,
         'api_key_name': 'OPENAI_API_KEY',  # Environment variable for the API key
         'models': [
-            'gpt-4',
-            'gpt-3.5-turbo'
+            #'gpt-4o',
+            #'gpt-o3'
         ]
     },
     'Claude': {
         'class': ClaudeModels,
         'api_key_name': 'ANTHROPIC_API_KEY',  # Environment variable for the API key
         'models': [
-            'claude-3-7-sonnet-20250219',
+            #'claude-3-7-sonnet-20250219',
             'claude-3-haiku-20240307'
         ]
     },
@@ -329,8 +371,8 @@ models = {
         'class': GeminiModels,
         'api_key_name': 'GOOGLE_API_KEY',  # Environment variable for the API key
         'models': [
-            'gemini-1.5-flash',
-            'gemini-2.5-pro-preview-06-05'
+            #'gemini-1.5-flash',
+            #'gemini-2.5-pro-preview-06-05'
         ]
     }
 }
@@ -880,9 +922,12 @@ def run_all_batch(debug = False):
                     system_prompt=system,
                     dataset_name=qset_name
                 )
+
                 print(f'    {qset_name} Submitted ✅')
             except Exception as e:
                 print(f'    Error completing batch request for {model_instance.name} on {qset_name}:\n{e}')
+            if debug:
+                return 0
             
 
 
@@ -902,7 +947,7 @@ if __name__ == '__main__':
     # Example of how to use the init_models function
     # Make sure your .env file has OPENAI_API_KEY, ANTHROPIC_API_KEY, and GOOGLE_API_KEY
 
-    #all_models = init_models(models)
+    all_models = init_models(models)
     #print("Returned model instances:", all_models)
 
     # Example of how to use the import_datasets function
@@ -913,8 +958,4 @@ if __name__ == '__main__':
 
     save_prompts(prompts_dict)
 
-    #run_all_batch(debug = False)
-
-    
-
-
+    run_all_batch(debug = True)

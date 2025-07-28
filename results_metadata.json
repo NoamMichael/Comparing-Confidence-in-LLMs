@@ -1,0 +1,88 @@
+{
+  "boolq_valid": {
+    "fields": [
+      "Reasoning",
+      "Answer",
+      "Confidence"
+    ],
+    "models": {
+      "gpt-4o": {
+        "file_id": "file-1dGgAdsXS6fCEJR68yNfEv",
+        "batch_id": "batch_6884035926fc819083069d4bcf909f53"
+      },
+      "claude-3-haiku-20240307": {
+        "file_id": "boolq_valid",
+        "batch_id": "msgbatch_014NDdbsTWx4T4qCUcyBXwbA"
+      }
+    }
+  },
+  "lsat_ar_test": {
+    "fields": [
+      "Reasoning",
+      "Answer",
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "models": {
+      "gpt-4o": {
+        "file_id": "file-BLSfgxEbYnMQftBfye2Vip",
+        "batch_id": "batch_6882b9edb8888190a7273726ffd6f3ba"
+      }
+    }
+  },
+  "sciq_test": {
+    "fields": [
+      "Reasoning",
+      "Answer",
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "models": {
+      "gpt-4o": {
+        "file_id": "file-UidfV3UFVwtriK2xJ8dmqY",
+        "batch_id": "batch_6882b9f6ed908190ab2f6acea76f3b12"
+      }
+    }
+  },
+  "life_eval": {
+    "fields": [
+      "Reasoning",
+      "Answer",
+      "Confidence"
+    ],
+    "models": {
+      "gpt-4o": {
+        "file_id": "file-9YM5wSc4CSEgG1gbeNBccn",
+        "batch_id": "batch_6882b9ec28508190b161285d2f77395d"
+      }
+    }
+  },
+  "halu_eval_qa": {
+    "fields": [
+      "Answer",
+      "Confidence"
+    ],
+    "models": {}
+  },
+  "sat_en_qa": {
+    "fields": [
+      "Reasoning",
+      "Answer",
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "models": {
+      "gpt-4o": {
+        "file_id": "file-U4DBrYzFABs18Z8mPdsfco",
+        "batch_id": "batch_6882b9f307888190ac4769c47dac1eda"
+      }
+    }
+  }
+}
