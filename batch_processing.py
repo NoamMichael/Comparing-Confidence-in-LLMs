@@ -16,7 +16,10 @@ import pandas as pd
 import openai
 import os
 import anthropic
-import google.generativeai as genai
+#import google.generativeai as genai
+import google.genai as genai
+from google.genai import types
+
 from openai import OpenAIError
 from abc import ABC, abstractmethod
 from anthropic import Anthropic, AsyncAnthropic, APIError
@@ -138,7 +141,7 @@ class GPTModels(BatchModels):
             endpoint_id (str or None): Optional endpoint ID for Azure OpenAI or special routing.
         """
         ## First read the results_metadata.json file
-        # 1. Load JSON file into dict
+
         with open("results_metadata.json", "r") as f:
             metadata = json.load(f)
 
@@ -272,7 +275,8 @@ class GeminiModels(BatchModels):
         """
         super().__init__(name, api_key_name)
         if self.api_key:
-            genai.configure(api_key=self.api_key)
+            #genai.configure(api_key=self.api_key)
+            self.client = genai.Client(api_key=self.api_key, http_options={'api_version': 'v1alpha'})
         else:
             print("Google API key not configured. Gemini models will not work.")
 
@@ -310,38 +314,66 @@ class GeminiModels(BatchModels):
         """
         output_dir = f"Batches/{self.name}"
         os.makedirs(output_dir, exist_ok=True)
-        output_file = os.path.join(output_dir, f"{dataset_name}_batch.jsonl")
+        output_file = os.path.join(output_dir, f"{dataset_name}_batch.json")
 
         requests = []
         for _, row in prompts.iterrows():
             item = {
+                "key": str(row["Question ID"]),
                 "request": {
-                    "instances": [
+                    "contents": [
                         {
-                            "contents": [
-                                {
-                                    "role": "user",
-                                    "parts": [{"text": row["Full Prompt"]}]
-                                }
-                            ],
-                            "system_instruction": {
-                                "parts": [{"text": system_prompt}]
-                            }
+                            "role": "user",
+                            "parts": [{"text": system_prompt}]
+                        },
+                        {
+                            "role": "user",
+                            "parts": [{"text": row["Full Prompt"]}]
                         }
-                    ],
-                    "parameters": {
-                        "temperature": temperature
-                    }
-                },
-                "custom_id": str(row["Question ID"])
+                    ]
+
+                }
             }
             requests.append(item)
+        
 
         with open(output_file, "w", encoding="utf-8") as f:
             for req in requests:
                 f.write(json.dumps(req) + "\n")
 
+
         print(f"Saved {len(requests)} prompts to {output_file} for Gemini/Vertex AI Batch Prediction.")
+
+
+        uploaded_batch_requests = self.client.files.upload(
+            file=output_file,
+            config=types.UploadFileConfig(display_name='batch-input-file')
+        )
+        print(f"Uploaded file: {uploaded_batch_requests.name}")
+        batch_job_from_file = self.client.batches.create(
+            model=self.name,
+            src=uploaded_batch_requests.name,
+            config={
+                'display_name': f'{self.name}_{dataset_name}',
+            }
+        )
+        print(f"Created batch job from file: {batch_job_from_file.name}")
+
+        job_name = batch_job_from_file.name
+
+        with open("results_metadata.json", "r") as f:
+            metadata = json.load(f)
+
+            metadata.setdefault(dataset_name, {})
+            metadata[dataset_name].setdefault("models", {})
+            metadata[dataset_name]["models"].setdefault(self.name, {})
+
+            metadata[dataset_name]["models"][self.name]['file_id'] = 'none'
+            metadata[dataset_name]["models"][self.name]['batch_id'] = job_name
+            # Save the modified dict back to the same file
+            with open("results_metadata.json", "w") as f:
+                json.dump(metadata, f, indent=2)
+
         return output_file
         
 
@@ -356,7 +388,7 @@ models = {
         'api_key_name': 'OPENAI_API_KEY',  # Environment variable for the API key
         'models': [
             #'gpt-4o',
-            #'gpt-o3'
+            'o3-2025-04-16'
         ]
     },
     'Claude': {
@@ -364,7 +396,7 @@ models = {
         'api_key_name': 'ANTHROPIC_API_KEY',  # Environment variable for the API key
         'models': [
             #'claude-3-7-sonnet-20250219',
-            'claude-3-haiku-20240307'
+            #'claude-3-haiku-20240307'
         ]
     },
     'Gemini': {
@@ -372,7 +404,7 @@ models = {
         'api_key_name': 'GOOGLE_API_KEY',  # Environment variable for the API key
         'models': [
             #'gemini-1.5-flash',
-            #'gemini-2.5-pro-preview-06-05'
+            #'gemini-2.5-pro'
         ]
     }
 }
@@ -926,8 +958,10 @@ def run_all_batch(debug = False):
                 print(f'    {qset_name} Submitted ✅')
             except Exception as e:
                 print(f'    Error completing batch request for {model_instance.name} on {qset_name}:\n{e}')
+
             if debug:
                 return 0
+
             
 
 
@@ -958,4 +992,4 @@ if __name__ == '__main__':
 
     save_prompts(prompts_dict)
 
-    run_all_batch(debug = True)
+    run_all_batch(debug = False)

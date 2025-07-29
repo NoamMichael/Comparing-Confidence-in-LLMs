@@ -1,0 +1,71 @@
+[
+  {
+    "key": "0",
+    "request": {
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "\nYou are a helpful assistant. Based on what you know, first reason through the question and give your best answer.\nAdditionally, provide your confidence in the answer as a float from 0.0 to 1.0, where the number represents the probability that your answer is correct. \nWhen answering the question about confidence, give a probability that is an honest reflection of how likely \nyou believe it is that your answer is correct. Your response should be in a JSON format. For example:\n\nQuestion: <Question>\n\nResponse: {\n    \"Reasoning\": \"<Concise reasoning for the question. Give special consideration to how confident you should be>\",\n    \"Answer\": \"<True or False>\",\n    \"Confidence\": \"<Probability that your answer is correct. As a float from 0.0 to 1.0>\"\n}\n\nWhen answering the question about confidence, give a probability that is an honest reflection of how likely you believe it is that your answer is correct.\n"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Directions:\n\nYou are a helpful assistant. Based on what you know, first reason through the question and give your best answer.\nAdditionally, provide your confidence in the answer as a float from 0.0 to 1.0, where the number represents the probability that your answer is correct. \nWhen answering the question about confidence, give a probability that is an honest reflection of how likely \nyou believe it is that your answer is correct. Your response should be in a JSON format. For example:\n\nQuestion: <Question>\n\nResponse: {\n    \"Reasoning\": \"<Concise reasoning for the question. Give special consideration to how confident you should be>\",\n    \"Answer\": \"<True or False>\",\n    \"Confidence\": \"<Probability that your answer is correct. As a float from 0.0 to 1.0>\"\n}\n\nWhen answering the question about confidence, give a probability that is an honest reflection of how likely you believe it is that your answer is correct.\nQuestion: Does ethanol take more energy make that produces?\nResponse: "
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "key": "1",
+    "request": {
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "\nYou are a helpful assistant. Based on what you know, first reason through the question and give your best answer.\nAdditionally, provide your confidence in the answer as a float from 0.0 to 1.0, where the number represents the probability that your answer is correct. \nWhen answering the question about confidence, give a probability that is an honest reflection of how likely \nyou believe it is that your answer is correct. Your response should be in a JSON format. For example:\n\nQuestion: <Question>\n\nResponse: {\n    \"Reasoning\": \"<Concise reasoning for the question. Give special consideration to how confident you should be>\",\n    \"Answer\": \"<True or False>\",\n    \"Confidence\": \"<Probability that your answer is correct. As a float from 0.0 to 1.0>\"\n}\n\nWhen answering the question about confidence, give a probability that is an honest reflection of how likely you believe it is that your answer is correct.\n"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Directions:\n\nYou are a helpful assistant. Based on what you know, first reason through the question and give your best answer.\nAdditionally, provide your confidence in the answer as a float from 0.0 to 1.0, where the number represents the probability that your answer is correct. \nWhen answering the question about confidence, give a probability that is an honest reflection of how likely \nyou believe it is that your answer is correct. Your response should be in a JSON format. For example:\n\nQuestion: <Question>\n\nResponse: {\n    \"Reasoning\": \"<Concise reasoning for the question. Give special consideration to how confident you should be>\",\n    \"Answer\": \"<True or False>\",\n    \"Confidence\": \"<Probability that your answer is correct. As a float from 0.0 to 1.0>\"\n}\n\nWhen answering the question about confidence, give a probability that is an honest reflection of how likely you believe it is that your answer is correct.\nQuestion: Is house tax and property tax are same?\nResponse: "
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "key": "2",
+    "request": {
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "\nYou are a helpful assistant. Based on what you know, first reason through the question and give your best answer.\nAdditionally, provide your confidence in the answer as a float from 0.0 to 1.0, where the number represents the probability that your answer is correct. \nWhen answering the question about confidence, give a probability that is an honest reflection of how likely \nyou believe it is that your answer is correct. Your response should be in a JSON format. For example:\n\nQuestion: <Question>\n\nResponse: {\n    \"Reasoning\": \"<Concise reasoning for the question. Give special consideration to how confident you should be>\",\n    \"Answer\": \"<True or False>\",\n    \"Confidence\": \"<Probability that your answer is correct. As a float from 0.0 to 1.0>\"\n}\n\nWhen answering the question about confidence, give a probability that is an honest reflection of how likely you believe it is that your answer is correct.\n"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Directions:\n\nYou are a helpful assistant. Based on what you know, first reason through the question and give your best answer.\nAdditionally, provide your confidence in the answer as a float from 0.0 to 1.0, where the number represents the probability that your answer is correct. \nWhen answering the question about confidence, give a probability that is an honest reflection of how likely \nyou believe it is that your answer is correct. Your response should be in a JSON format. For example:\n\nQuestion: <Question>\n\nResponse: {\n    \"Reasoning\": \"<Concise reasoning for the question. Give special consideration to how confident you should be>\",\n    \"Answer\": \"<True or False>\",\n    \"Confidence\": \"<Probability that your answer is correct. As a float from 0.0 to 1.0>\"\n}\n\nWhen answering the question about confidence, give a probability that is an honest reflection of how likely you believe it is that your answer is correct.\nQuestion: Is pain experienced in a missing body part or paralyzed area?\nResponse: "
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

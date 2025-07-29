@@ -7,12 +7,28 @@
     ],
     "models": {
       "gpt-4o": {
-        "file_id": "file-1dGgAdsXS6fCEJR68yNfEv",
-        "batch_id": "batch_6884035926fc819083069d4bcf909f53"
+        "file_id": "file-12Pr3mz95PN2sGpZnCioLh",
+        "batch_id": "batch_68885a713de48190b5c616795507d7f4"
       },
       "claude-3-haiku-20240307": {
         "file_id": "boolq_valid",
-        "batch_id": "msgbatch_014NDdbsTWx4T4qCUcyBXwbA"
+        "batch_id": "msgbatch_01Eik9sN8Ek6cBd9haYdQoD9"
+      },
+      "gemini-2.5-pro": {
+        "file_id": "none",
+        "batch_id": "batches/40v60ylnpg26z17kst8c2tjbpb5lmrhn9rrf"
+      },
+      "claude-3-7-sonnet-20250219": {
+        "file_id": "boolq_valid",
+        "batch_id": "msgbatch_01RWsu2ZpM3ko5oo1rNm2DWL"
+      },
+      "gpt-o3": {
+        "file_id": "file-TN6XMLzoCJnLqA6WoHuCib",
+        "batch_id": "batch_68885ff4d0a48190a28f921d9bd225b9"
+      },
+      "o3-2025-04-16": {
+        "file_id": "file-K4omYaGtTJ4zQBfaPiYEDn",
+        "batch_id": "batch_6888608ff40c8190b7915d6ab6e8b11d"
       }
     }
   },
@@ -30,6 +46,26 @@
       "gpt-4o": {
         "file_id": "file-BLSfgxEbYnMQftBfye2Vip",
         "batch_id": "batch_6882b9edb8888190a7273726ffd6f3ba"
+      },
+      "claude-3-7-sonnet-20250219": {
+        "file_id": "lsat_ar_test",
+        "batch_id": "msgbatch_0188fScGVQkeKyTZLm4UUGuS"
+      },
+      "claude-3-haiku-20240307": {
+        "file_id": "lsat_ar_test",
+        "batch_id": "msgbatch_011VWy4skZeUZ5o3HcLG7hTJ"
+      },
+      "gemini-2.5-pro": {
+        "file_id": "none",
+        "batch_id": "batches/sklakmhs91rg1lcir2gbufjoewm4lharjbdz"
+      },
+      "gpt-o3": {
+        "file_id": "file-REaEz8gfyGVEuEZLjuAvo3",
+        "batch_id": "batch_68885ff94100819094631854f29f9676"
+      },
+      "o3-2025-04-16": {
+        "file_id": "file-YJTgxhs4gj4EhiT7FjzBGk",
+        "batch_id": "batch_68886095271c8190aeeb1ee58edf8c3f"
       }
     }
   },
@@ -46,6 +82,26 @@
       "gpt-4o": {
         "file_id": "file-UidfV3UFVwtriK2xJ8dmqY",
         "batch_id": "batch_6882b9f6ed908190ab2f6acea76f3b12"
+      },
+      "claude-3-7-sonnet-20250219": {
+        "file_id": "sciq_test",
+        "batch_id": "msgbatch_014N3KU3hA59c2ZoUUtZnrbr"
+      },
+      "claude-3-haiku-20240307": {
+        "file_id": "sciq_test",
+        "batch_id": "msgbatch_01NjTgZ6RktkRuwUfASQxUqB"
+      },
+      "gemini-2.5-pro": {
+        "file_id": "none",
+        "batch_id": "batches/ue71cdsj5hux192eiyeirffxftez46gd6i45"
+      },
+      "gpt-o3": {
+        "file_id": "file-H3LvBsFaADXHPAdCNVbdzH",
+        "batch_id": "batch_68885ffb31848190b11b309a3189860a"
+      },
+      "o3-2025-04-16": {
+        "file_id": "file-CdfGJmv2m8JuhUA91q38Ae",
+        "batch_id": "batch_688860987d148190b4e634948ce7ce24"
       }
     }
   },
@@ -59,6 +115,26 @@
       "gpt-4o": {
         "file_id": "file-9YM5wSc4CSEgG1gbeNBccn",
         "batch_id": "batch_6882b9ec28508190b161285d2f77395d"
+      },
+      "claude-3-7-sonnet-20250219": {
+        "file_id": "life_eval",
+        "batch_id": "msgbatch_01NukxNHBKhWXebAMT1drdEN"
+      },
+      "claude-3-haiku-20240307": {
+        "file_id": "life_eval",
+        "batch_id": "msgbatch_01JMcJ9u75p5VJ2kfUk7eufo"
+      },
+      "gemini-2.5-pro": {
+        "file_id": "none",
+        "batch_id": "batches/f7uyql7q0dw6qwiojyke77mvl7ojvnok8fpz"
+      },
+      "gpt-o3": {
+        "file_id": "file-21C6rySPqEDFML7UW8Lp3q",
+        "batch_id": "batch_68885ff862bc8190b4f065c430be01dd"
+      },
+      "o3-2025-04-16": {
+        "file_id": "file-WuiJh3MghReL7M8NVZNuhJ",
+        "batch_id": "batch_68886093762c81909c42c466372df0a3"
       }
     }
   },
@@ -67,21 +143,58 @@
       "Answer",
       "Confidence"
     ],
-    "models": {}
+    "models": {
+      "gpt-4o": {
+        "file_id": "file-9YM5wSc4CSEgG1gbeNBccn",
+        "batch_id": "batch_68885dc2a5988190b9a1bb1e6e75c0d7"
+      },
+      "claude-3-7-sonnet-20250219": {
+        "file_id": "halu_eval_qa",
+        "batch_id": "msgbatch_01431Cb7JxJgsX4PJ4A5eJur"
+      },
+      "claude-3-haiku-20240307": {
+        "file_id": "halu_eval_qa",
+        "batch_id": "msgbatch_014vkQHRi4wTjZjwCvByVmtc"
+      },
+      "gemini-2.5-pro": {
+        "file_id": "none",
+        "batch_id": "batches/dnxouw980f6m1h1lcocwjqstk44d0oyo6s7h"
+      },
+      "gpt-o3": {
+        "file_id": "file-2drNy581Jbm2JT87t7nVP6",
+        "batch_id": "batch_68885ff68a4081908b7c99541cde0f3a"
+      },
+      "o3-2025-04-16": {
+        "file_id": "file-3WVyiDuJ1e8Sc6A8KcFJVN",
+        "batch_id": "batch_68886092505481909980a211e808c2b9"
+      }
+    }
   },
-  "sat_en_qa": {
-    "fields": [
-      "Reasoning",
-      "Answer",
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
+  "sat_en": {
     "models": {
       "gpt-4o": {
         "file_id": "file-U4DBrYzFABs18Z8mPdsfco",
         "batch_id": "batch_6882b9f307888190ac4769c47dac1eda"
+      },
+      "claude-3-7-sonnet-20250219": {
+        "file_id": "sat_en",
+        "batch_id": "msgbatch_011C3SMP3ZEbwM2iNXFDuSgV"
+      },
+      "claude-3-haiku-20240307": {
+        "file_id": "sat_en",
+        "batch_id": "msgbatch_01WxyNHCFoyMJCuHDfWbionm"
+      },
+      "gemini-2.5-pro": {
+        "file_id": "none",
+        "batch_id": "batches/n5s6s4h9le8cm5ralygqzurxe5pe11y3jiiz"
+      },
+      "gpt-o3": {
+        "file_id": "file-MWqr359YKqDkYfJXpHQwE8",
+        "batch_id": "batch_68885ffa665081909f3ade2758bcb233"
+      },
+      "o3-2025-04-16": {
+        "file_id": "file-XkpR1xk2Rhua9KHBPAeuH3",
+        "batch_id": "batch_68886096c67c81908ea8a0f820946f18"
       }
     }
   }
