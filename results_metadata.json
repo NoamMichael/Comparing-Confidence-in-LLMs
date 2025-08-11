@@ -8,8 +8,9 @@
     "models": {
       "gpt-4o": {
         "file_id": "file-12Pr3mz95PN2sGpZnCioLh",
-        "batch_id": "batch_68885a713de48190b5c616795507d7f4",
-        "output_filename": "boolq_valid_gpt-4o.json"
+        "batch_id": "batch_6882b9e8c0b88190a6078d1259b0bbac",
+        "output_filename": "boolq_valid_gpt-4o.json",
+        "old_batch": "batch_68885a713de48190b5c616795507d7f4"
       },
       "claude-3-haiku-20240307": {
         "file_id": "boolq_valid",
@@ -261,6 +262,14 @@
     }
   },
   "sat_en": {
+    "fields":[
+      "Reasoning",
+      "Answer",
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
     "models": {
       "gpt-4o": {
         "file_id": "file-U4DBrYzFABs18Z8mPdsfco",

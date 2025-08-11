@@ -957,7 +957,6 @@ def run_all_batch(debug = True):
                 print(f'    {qset_name} Submitted ✅')
             except Exception as e:
                 print(f'    Error completing batch request for {model_instance.name} on {qset_name}:\n{e}')
-
             if debug:
                 return 0
 
