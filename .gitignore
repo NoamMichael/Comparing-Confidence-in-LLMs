@@ -1,5 +1,6 @@
 # Ignore the .env file
 .env
+.gitignore
 practice_output.json
 read_prompts.py
 doodle.py

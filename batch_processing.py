@@ -15,6 +15,7 @@ import json
 import pandas as pd
 import openai
 import os
+import time
 import anthropic
 #import google.generativeai as genai
 import google.genai as genai
@@ -86,25 +87,44 @@ class GPTModels(BatchModels):
         requests = []
 
         for _, row in prompts.iterrows():
-            request = {
-                "custom_id": str(row['Question ID']),
-                "method": "POST",
-                "url": url,
-                "body": {
-                    "model": model,
-                    "messages": [
-                        {"role": "system", "content": system_prompt},
-                        {"role": "user", "content": row['Full Prompt']}
-                    ],
-                    "temperature": temperature,
-                    "max_tokens": 512  # adjust as needed
+            if model == 'o3-2025-04-16':
+                logprobs = False
+                request = {
+                    "custom_id": str(row['Question ID']),
+                    "method": "POST",
+                    "url": url,
+                    "body": {
+                        "model": model,
+                        "messages": [
+                            {"role": "system", "content": system_prompt},
+                            {"role": "user", "content": row['Full Prompt']}
+                        ],
+                        "temperature": 1,
+                        "max_completion_tokens": 512  # adjust as needed
+                    }
                 }
-            }
+            else:    
+                request = {
+                    "custom_id": str(row['Question ID']),
+                    "method": "POST",
+                    "url": url,
+                    "body": {
+                        "model": model,
+                        "messages": [
+                            {"role": "system", "content": system_prompt},
+                            {"role": "user", "content": row['Full Prompt']}
+                        ],
+                        "temperature": temperature,
+                        "max_tokens": 512  # adjust as needed
+                    }
+                }
 
-            # Only include logprobs fields if requested
-            if logprobs:
-                request["body"]["logprobs"] = True
-                request["body"]["top_logprobs"] = 5
+                # Only include logprobs fields if requested
+
+                if logprobs:
+                    request["body"]["logprobs"] = True
+                    request["body"]["top_logprobs"] = 5
+
 
             requests.append(request)
 
@@ -293,6 +313,7 @@ class GeminiModels(BatchModels):
         """
         self.make_batch(prompts, model=model, dataset_name=dataset_name, system_prompt=system_prompt, temperature=temperature, **kwargs)
         print(f"Note: Gemini model '{self.name}' batch file created. Manual processing required.")
+        time.sleep(45) #Rate limit
         pass
 
     def make_batch(self,
@@ -382,32 +403,7 @@ class GeminiModels(BatchModels):
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-models = {
-    'GPT': {
-        'class': GPTModels,
-        'api_key_name': 'OPENAI_API_KEY',  # Environment variable for the API key
-        'models': [
-            #'gpt-4o',
-            'o3-2025-04-16'
-        ]
-    },
-    'Claude': {
-        'class': ClaudeModels,
-        'api_key_name': 'ANTHROPIC_API_KEY',  # Environment variable for the API key
-        'models': [
-            #'claude-3-7-sonnet-20250219',
-            #'claude-3-haiku-20240307'
-        ]
-    },
-    'Gemini': {
-        'class': GeminiModels,
-        'api_key_name': 'GOOGLE_API_KEY',  # Environment variable for the API key
-        'models': [
-            #'gemini-1.5-flash',
-            #'gemini-2.5-pro'
-        ]
-    }
-}
+
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #                Make prompts for Qset
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -826,7 +822,8 @@ functions_map = {
     'sciq_test': sciq_test_prompts
 }
 
-
+skip_datasets = ['boolq_valid','halu_eval_qa','life_eval']
+skip_datasets = []
 
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #                HELPER FUNCTIONS
@@ -932,10 +929,12 @@ def save_prompts(prompts_dict, folder_path = 'Prompts/'):
     print(f'\nTotal Prompt Datasets Saved: {saved}')
     print('------------------------------------------\n')
     
-def run_all_batch(debug = False):
+def run_all_batch(debug = True):
     for model_instance in all_models:
         print(f'Submitting Batch Process for {model_instance.name}')
         for qset_name, qset in prompts_dict.items():
+            if qset_name in skip_datasets: continue # Skips Dataset
+
             try:
                 if debug:
                     prompts_df = qset.iloc[:3]
@@ -976,6 +975,35 @@ def run_all_batch(debug = False):
 # 3. For each model, for each dataset write and run a batch
 #       - Make a skip dataset dict (e.g. skip LSAT, SCIQ, BoolQ for Claude)
 # 4. 
+models = {
+    'GPT': {
+        'class': GPTModels,
+        'api_key_name': 'OPENAI_API_KEY',  # Environment variable for the API key
+        'models': [
+            #'gpt-4o',
+            #'o3-2025-04-16'
+        ]
+    },
+    'Claude': {
+        'class': ClaudeModels,
+        'api_key_name': 'ANTHROPIC_API_KEY',  # Environment variable for the API key
+        'models': [
+            'claude-3-7-sonnet-20250219',
+            #'claude-3-haiku-20240307'
+            #'claude-sonnet-4-20250514'
+        ]
+    },
+    'Gemini': {
+        'class': GeminiModels,
+        'api_key_name': 'GOOGLE_API_KEY',  # Environment variable for the API key
+        'models': [
+            #'gemini-2.5-flash',
+            #'gemini-2.5-pro'
+        ]
+    }
+}
+
+
 
 if __name__ == '__main__':
     # Example of how to use the init_models function
