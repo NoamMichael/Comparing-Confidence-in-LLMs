@@ -24,7 +24,7 @@
       },
       "claude-3-7-sonnet-20250219": {
         "file_id": "boolq_valid",
-        "batch_id": "msgbatch_01G2yAtxwzZ22CiE7XmZTvQR",
+        "batch_id": "msgbatch_012oL94fp2HXhvcxAq4Z1BqR",
         "output_filename": "boolq_valid_claude-3-7-sonnet-20250219.jsonl"
       },
       "gemini-2.5-flash": {
@@ -36,6 +36,11 @@
         "file_id": "boolq_valid",
         "batch_id": "msgbatch_01UdsJtGrwuHrV9xv7kUPwVo",
         "output_filename": "boolq_valid_claude-sonnet-4-20250514.jsonl"
+      },
+      "o3-2025-04-16": {
+        "file_id": "file-V9UN7XXG5PossnbTdEPxLs",
+        "batch_id": "batch_689c1b3dd84c8190b4c64a5a528568f2",
+        "output_filename": "boolq_valid_o3-2025-04-16.jsonl"
       }
     }
   },
@@ -57,7 +62,7 @@
       },
       "claude-3-7-sonnet-20250219": {
         "file_id": "lsat_ar_test",
-        "batch_id": "msgbatch_01NQkyt5AQQnoRgJu1KSY15c",
+        "batch_id": "msgbatch_01Cc7X22iDyC3bWrK3ZxaJaS",
         "output_filename": "lsat_ar_test_claude-3-7-sonnet-20250219.jsonl"
       },
       "claude-3-haiku-20240307": {
@@ -75,8 +80,9 @@
         "batch_id": "batch_68993304145c8190b9b21b0190457fb8"
       },
       "o3-2025-04-16": {
-        "file_id": "file-U9FpkTqX6mGx3DNA2FLB8R",
-        "batch_id": "batch_689931c2548c8190b24fb1940f9014d2"
+        "file_id": "file-EP6yYBQDYuyj5mvkt1YZ9F",
+        "batch_id": "batch_689c1b41d28c81909b705f7a1c4738d5",
+        "output_filename": "lsat_ar_test_o3-2025-04-16.jsonl"
       },
       "gemini-2.5-flash": {
         "file_id": "none",
@@ -115,7 +121,7 @@
       },
       "claude-3-7-sonnet-20250219": {
         "file_id": "sciq_test",
-        "batch_id": "msgbatch_01JxY2FQnejAZ25uEqnPrUHu",
+        "batch_id": "msgbatch_011Bnpc2bN7eqWJrFV8mabhg",
         "output_filename": "sciq_test_claude-3-7-sonnet-20250219.jsonl"
       },
       "claude-3-haiku-20240307": {
@@ -133,8 +139,9 @@
         "batch_id": "batch_68993305df2c8190867649cd65d14ba4"
       },
       "o3-2025-04-16": {
-        "file_id": "file-R6bKoHjiszSvRozJ6yomWT",
-        "batch_id": "batch_689931c43e7c8190878ca7a52bfdc3c8"
+        "file_id": "file-V6un3mB1PybgUr14KNLLLw",
+        "batch_id": "batch_689c1b4514f0819082524f649646fed7",
+        "output_filename": "sciq_test_o3-2025-04-16.jsonl"
       },
       "gemini-2.5-flash": {
         "file_id": "none",
@@ -170,7 +177,7 @@
       },
       "claude-3-7-sonnet-20250219": {
         "file_id": "life_eval",
-        "batch_id": "msgbatch_018RohB3NVJJRP19eTrj2cyg",
+        "batch_id": "msgbatch_017CLiDL5sFo7YvgHYUkAm3N",
         "output_filename": "life_eval_claude-3-7-sonnet-20250219.jsonl"
       },
       "claude-3-haiku-20240307": {
@@ -188,8 +195,9 @@
         "batch_id": "batch_68993302af688190b47425b5c11b3144"
       },
       "o3-2025-04-16": {
-        "file_id": "file-8ENfFmtDGRWm6opzwRQ68w",
-        "batch_id": "batch_689931c125e88190b1ef2529654a2a21"
+        "file_id": "file-JmFXarHo8kBF7NCZ2QetWy",
+        "batch_id": "batch_689c1b40e46081909918068e373659db",
+        "output_filename": "life_eval_o3-2025-04-16.jsonl"
       },
       "gemini-2.5-flash": {
         "file_id": "none",
@@ -220,7 +228,7 @@
       },
       "claude-3-7-sonnet-20250219": {
         "file_id": "halu_eval_qa",
-        "batch_id": "msgbatch_01BhmRHTURbc2AYzNQzHp2LF",
+        "batch_id": "msgbatch_01QJ2ddxNDcvDdoENsvzoALX",
         "output_filename": "halu_eval_qa_claude-3-7-sonnet-20250219.jsonl"
       },
       "claude-3-haiku-20240307": {
@@ -238,8 +246,9 @@
         "batch_id": "batch_68993301f224819084242fda37b550dc"
       },
       "o3-2025-04-16": {
-        "file_id": "file-1EnKgSDpCfLbFRErCnnePw",
-        "batch_id": "batch_689931c03dfc8190bf68acde3fe34700"
+        "file_id": "file-5Vn7bFRMJShYrpcZqEPdJC",
+        "batch_id": "batch_689c1b3f8a0481908dbbe19900608dbe",
+        "output_filename": "halu_eval_qa_o3-2025-04-16.jsonl"
       },
       "gemini-2.5-flash": {
         "file_id": "none",
@@ -262,7 +271,7 @@
     }
   },
   "sat_en": {
-    "fields":[
+    "fields": [
       "Reasoning",
       "Answer",
       "A",
@@ -278,7 +287,7 @@
       },
       "claude-3-7-sonnet-20250219": {
         "file_id": "sat_en",
-        "batch_id": "msgbatch_01FVY5cCfTNFCRaKBTwf2KNi",
+        "batch_id": "msgbatch_017g65jXQ8oNSK2twX2sj7i2",
         "output_filename": "sat_en_claude-3-7-sonnet-20250219.jsonl"
       },
       "claude-3-haiku-20240307": {
@@ -296,8 +305,9 @@
         "batch_id": "batch_68993304d4d081908e053322af320149"
       },
       "o3-2025-04-16": {
-        "file_id": "file-2bUqmtFf5TRE8VK5Ca7QbE",
-        "batch_id": "batch_689931c34fa081908634ee60977d1182"
+        "file_id": "file-XhNLGiajuEKcPkSenTFG7d",
+        "batch_id": "batch_689c1b43a6308190ac30adb563dd51f0",
+        "output_filename": "sat_en_o3-2025-04-16.jsonl"
       },
       "gemini-2.5-flash": {
         "file_id": "none",

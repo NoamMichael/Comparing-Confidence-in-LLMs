@@ -100,7 +100,7 @@ class GPTModels(BatchModels):
                             {"role": "user", "content": row['Full Prompt']}
                         ],
                         "temperature": 1,
-                        "max_completion_tokens": 512  # adjust as needed
+                        "max_completion_tokens": 2048  # adjust as needed
                     }
                 }
             else:    
@@ -115,7 +115,7 @@ class GPTModels(BatchModels):
                             {"role": "user", "content": row['Full Prompt']}
                         ],
                         "temperature": temperature,
-                        "max_tokens": 512  # adjust as needed
+                        #"max_tokens": 2048  # adjust as needed
                     }
                 }
 
@@ -980,14 +980,14 @@ models = {
         'api_key_name': 'OPENAI_API_KEY',  # Environment variable for the API key
         'models': [
             #'gpt-4o',
-            #'o3-2025-04-16'
+            'o3-2025-04-16'
         ]
     },
     'Claude': {
         'class': ClaudeModels,
         'api_key_name': 'ANTHROPIC_API_KEY',  # Environment variable for the API key
         'models': [
-            'claude-3-7-sonnet-20250219',
+            #'claude-3-7-sonnet-20250219',
             #'claude-3-haiku-20240307'
             #'claude-sonnet-4-20250514'
         ]
