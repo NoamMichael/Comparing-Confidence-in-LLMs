@@ -6,9 +6,9 @@ Parsing:
 - [] Fix HaluEval Parser
 
 Plotting:
-- [] HaluEval
+- [X] HaluEval
 - [] LifeEval
-- [] LSAT
+- [X] LSAT
 - [] SAT-EN
 - [] SciQ
 
