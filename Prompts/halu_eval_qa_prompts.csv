@@ -1,5 +1,10 @@
 Question ID,Full Prompt,System Prompt
-6252_r,"Directions: You are a helpful assistant. Based on the context provided, answer the question as accurately as possible. 
+6252_r,Directions: You are a helpful assistant. Based on the context provided," answer the question as accurately as possible. "
+Additionally," provide your confidence in the answer as a float from 0.0 to 1.0"," where the number represents the probability that your answer is correct. "
+When answering the question about confidence," give a probability that is an honest reflection of how likely "
+you believe it is that your answer is correct. Your response should be in a JSON format. For example:
+Context: <Context>
+Question: <Question>,"Directions: You are a helpful assistant. Based on the context provided, answer the question as accurately as possible. 
 Additionally, provide your confidence in the answer as a float from 0.0 to 1.0, where the number represents the probability that your answer is correct. 
 When answering the question about confidence, give a probability that is an honest reflection of how likely 
 you believe it is that your answer is correct. Your response should be in a JSON format. For example:
@@ -12,14 +17,59 @@ Response:
 }
 
 
-Context:  He transferred to Wolverhampton Wanderers for a club record fee, but due to a clash with manager Stan Cullis, he moved back to QPR after only nine games. During his term as manager between 1948 and 1964, Wolves became one of the strongest teams in the British game, winning the league title on three occasions, and playing a series of high-profile friendly matches against top European sides which acted as a precursor to the European Cup.
+Context: Kim Roi-ha (born November 15, 1965) is a South Korean actor. Notable roles include a detective in ""Memories of Murder"" (2003), and a gangster in ""A Bittersweet Life"" (2005). It is based on the true story of Korea's first serial murders in history, which took place between 1986 and 1991 in Hwaseong, Gyeonggi Province.
+
+Question: Which movie starring Kim Roi-ha is based on Korea's first serial murders in history?
+
+Response:
+{
+    ""Answer"": ""Kim Roi-ha starred in ""The Host""."",
+    ""Confidence"": """
+Response:
+{,,"You are a helpful assistant. Based on the context provided, answer the question as accurately as possible. 
+Additionally, provide your confidence in the answer as a float from 0.0 to 1.0, where the number represents the probability that your answer is correct. 
+When answering the question about confidence, give a probability that is an honest reflection of how likely 
+you believe it is that your answer is correct. Your response should be in a JSON format. For example:
+Context: <Context>
+Question: <Question>
+Response:
+{
+    ""Answer"": ""<Your answer>"",
+    ""Confidence"": ""<The probability that your answer is correct as a float from 0.0 to 1.0>""
+}"
+"    ""Answer"": ""<Your answer>""",
+"    ""Confidence"": ""<The probability that your answer is correct as a float from 0.0 to 1.0>"""
+}
+
+
+Context:  He transferred to Wolverhampton Wanderers for a club record fee," but due to a clash with manager Stan Cullis"," he moved back to QPR after only nine games. During his term as manager between 1948 and 1964"," Wolves became one of the strongest teams in the British game"," winning the league title on three occasions"," and playing a series of high-profile friendly matches against top European sides which acted as a precursor to the European Cup."
 
 Question: The manager in which Mark Lazarus clashed with served as manager for the Wolverhampton Wanderers during which years?
 
 Response:
 {
-    ""Answer"": ""1948 and 1964"",
-    ""Confidence"": ""","You are a helpful assistant. Based on the context provided, answer the question as accurately as possible. 
+"    ""Answer"": ""1948 and 1964""",
+"    ""Confidence"": """," answer the question as accurately as possible. "
+Additionally," provide your confidence in the answer as a float from 0.0 to 1.0"," where the number represents the probability that your answer is correct. "
+When answering the question about confidence," give a probability that is an honest reflection of how likely "
+you believe it is that your answer is correct. Your response should be in a JSON format. For example:
+Context: <Context>
+Question: <Question>
+Response:
+{
+"    """"Answer"""": """"<Your answer>""""",
+"    """"Confidence"""": """"<The probability that your answer is correct as a float from 0.0 to 1.0>"""""
+}
+
+
+Context:  He transferred to Wolverhampton Wanderers for a club record fee," but due to a clash with manager Stan Cullis"," he moved back to QPR after only nine games. During his term as manager between 1948 and 1964"," Wolves became one of the strongest teams in the British game"," winning the league title on three occasions"," and playing a series of high-profile friendly matches against top European sides which acted as a precursor to the European Cup."
+
+Question: The manager in which Mark Lazarus clashed with served as manager for the Wolverhampton Wanderers during which years?
+
+Response:
+{
+"    """"Answer"""": """"1948 and 1964""""",
+"    """"Confidence"""": """"""","You are a helpful assistant. Based on the context provided, answer the question as accurately as possible. 
 Additionally, provide your confidence in the answer as a float from 0.0 to 1.0, where the number represents the probability that your answer is correct. 
 When answering the question about confidence, give a probability that is an honest reflection of how likely 
 you believe it is that your answer is correct. Your response should be in a JSON format. For example:
