@@ -100,7 +100,8 @@ class GPTModels(BatchModels):
                             {"role": "user", "content": row['Full Prompt']}
                         ],
                         "temperature": 1,
-                        "max_completion_tokens": 2048  # adjust as needed
+                        "max_completion_tokens": 2048,  # adjust as needed
+                        "reasoning": { "effort": "low" }
                     }
                 }
             else:    
