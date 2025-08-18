@@ -40,9 +40,12 @@ Question ID,content,answer,correct_format,coerce,Answer,Confidence
 9966_r,"1.0""
 }",,False,False,,
 9966_h,"{
-    ""Answer"": ""Based on the provided text, the former UFC Heavyweight Champion who attended the Art of War 12 event was Tim Sylvia, and his nationality is American."",
+    ""Answer"": ""Based on the provided text,{
+    "Answer": "Based on the context provided, the 2006 film \"Eragon\", for which \"Keep Holding On\" is the theme song, was directed by Stefen Fangmeier.",
+    "Confidence": 1.0
+}, and his nationality is American."",
     ""Confidence"": 1.0
-}","Based on the provided text, the former UFC Heavyweight Champion who attended the Art of War 12 event was Tim Sylvia, and his nationality is American.",True,True,"Based on the provided text, the former UFC Heavyweight Champion who attended the Art of War 12 event was Tim Sylvia, and his nationality is American.",1.0
+}","Based on the provided text,I am sorry, but the provided context does not contain information about the Pittsfield Colonials. The context discusses the history of the Nashua Pride and the American Defenders of New Hampshire., and his nationality is American.",True,True,"Based on the provided text, the former UFC Heavyweight Champion who attended the Art of War 12 event was Tim Sylvia, and his nationality is American.",1.0
 135_r,"1.0""
 }",,False,False,,
 135_h,"{
