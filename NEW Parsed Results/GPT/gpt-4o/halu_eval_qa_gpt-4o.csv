@@ -1,0 +1,6059 @@
+,Confidence,coerce,content,Question ID
+0,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6252_r
+1,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",6252_h
+2,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4684_r
+3,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4684_h
+4,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1731_r
+5,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",1731_h
+6,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4742_r
+7,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4742_h
+8,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4521_r
+9,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",4521_h
+10,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6340_r
+11,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",6340_h
+12,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",576_r
+13,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",576_h
+14,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5202_r
+15,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",5202_h
+16,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6363_r
+17,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6363_h
+18,0.95,True,"```json
+{
+    ""Confidence"": 0.95
+}
+```",439_r
+19,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",439_h
+20,0.95,True,"```json
+{
+    ""Confidence"": 0.95
+}
+```",2750_r
+21,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2750_h
+22,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7487_r
+23,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7487_h
+24,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5272_r
+25,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5272_h
+26,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5653_r
+27,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",5653_h
+28,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3999_r
+29,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3999_h
+30,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6033_r
+31,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6033_h
+32,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",582_r
+33,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",582_h
+34,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9930_r
+35,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",9930_h
+36,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7051_r
+37,0.1,True,"{
+    ""Confidence"": ""0.1""
+}",7051_h
+38,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8158_r
+39,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8158_h
+40,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",9896_r
+41,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9896_h
+42,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2249_r
+43,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2249_h
+44,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4640_r
+45,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4640_h
+46,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9485_r
+47,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9485_h
+48,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4947_r
+49,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4947_h
+50,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",9920_r
+51,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9920_h
+52,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1963_r
+53,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1963_h
+54,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8243_r
+55,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8243_h
+56,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6590_r
+57,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",6590_h
+58,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8847_r
+59,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8847_h
+60,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",321_r
+61,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",321_h
+62,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2678_r
+63,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2678_h
+64,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4625_r
+65,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",4625_h
+66,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4949_r
+67,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4949_h
+68,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8328_r
+69,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8328_h
+70,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3337_r
+71,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",3337_h
+72,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5589_r
+73,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",5589_h
+74,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",251_r
+75,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",251_h
+76,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3973_r
+77,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",3973_h
+78,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6630_r
+79,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",6630_h
+80,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5547_r
+81,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",5547_h
+82,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",35_r
+83,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",35_h
+84,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8362_r
+85,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",8362_h
+86,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1513_r
+87,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1513_h
+88,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9317_r
+89,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9317_h
+90,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",39_r
+91,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",39_h
+92,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4819_r
+93,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",4819_h
+94,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3465_r
+95,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3465_h
+96,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1760_r
+97,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",1760_h
+98,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2304_r
+99,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",2304_h
+100,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3723_r
+101,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",3723_h
+102,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8284_r
+103,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8284_h
+104,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4993_r
+105,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4993_h
+106,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8127_r
+107,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",8127_h
+108,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3032_r
+109,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3032_h
+110,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7938_r
+111,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",7938_h
+112,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3039_r
+113,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",3039_h
+114,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9655_r
+115,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9655_h
+116,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2545_r
+117,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",2545_h
+118,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2592_r
+119,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2592_h
+120,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1188_r
+121,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",1188_h
+122,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7966_r
+123,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7966_h
+124,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6077_r
+125,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",6077_h
+126,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",107_r
+127,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",107_h
+128,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1315_r
+129,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1315_h
+130,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8187_r
+131,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8187_h
+132,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2753_r
+133,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2753_h
+134,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9753_r
+135,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",9753_h
+136,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6231_r
+137,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",6231_h
+138,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2876_r
+139,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",2876_h
+140,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5323_r
+141,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5323_h
+142,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",799_r
+143,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",799_h
+144,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3570_r
+145,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",3570_h
+146,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",2894_r
+147,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",2894_h
+148,0.95,True,"```json
+{
+    ""Confidence"": ""0.95""
+}
+```",2927_r
+149,0.1,True,"{
+    ""Confidence"": ""0.1""
+}",2927_h
+150,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8178_r
+151,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8178_h
+152,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",971_r
+153,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",971_h
+154,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6687_r
+155,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",6687_h
+156,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8575_r
+157,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8575_h
+158,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2020_r
+159,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",2020_h
+160,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",9054_r
+161,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",9054_h
+162,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",952_r
+163,0.1,True,"{
+    ""Confidence"": ""0.1""
+}",952_h
+164,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5359_r
+165,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",5359_h
+166,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3857_r
+167,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",3857_h
+168,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5861_r
+169,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5861_h
+170,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3145_r
+171,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",3145_h
+172,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3305_r
+173,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",3305_h
+174,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3006_r
+175,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3006_h
+176,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9001_r
+177,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",9001_h
+178,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7770_r
+179,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7770_h
+180,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7438_r
+181,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7438_h
+182,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7942_r
+183,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7942_h
+184,0.95,True,"```json
+{
+    ""Confidence"": 0.95
+}
+```",9238_r
+185,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",9238_h
+186,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1056_r
+187,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",1056_h
+188,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3154_r
+189,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",3154_h
+190,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3787_r
+191,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",3787_h
+192,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9189_r
+193,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9189_h
+194,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7825_r
+195,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7825_h
+196,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7539_r
+197,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7539_h
+198,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7231_r
+199,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7231_h
+200,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",764_r
+201,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",764_h
+202,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5019_r
+203,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5019_h
+204,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4903_r
+205,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",4903_h
+206,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8093_r
+207,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",8093_h
+208,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6843_r
+209,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6843_h
+210,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2165_r
+211,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",2165_h
+212,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1862_r
+213,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",1862_h
+214,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7850_r
+215,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7850_h
+216,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9123_r
+217,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",9123_h
+218,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2340_r
+219,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",2340_h
+220,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5527_r
+221,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",5527_h
+222,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6743_r
+223,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",6743_h
+224,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4003_r
+225,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4003_h
+226,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1123_r
+227,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1123_h
+228,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8709_r
+229,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",8709_h
+230,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4049_r
+231,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",4049_h
+232,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7640_r
+233,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7640_h
+234,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",765_r
+235,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",765_h
+236,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2344_r
+237,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",2344_h
+238,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4071_r
+239,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",4071_h
+240,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7216_r
+241,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",7216_h
+242,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4216_r
+243,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4216_h
+244,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7952_r
+245,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",7952_h
+246,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5970_r
+247,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",5970_h
+248,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3350_r
+249,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",3350_h
+250,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",4695_r
+251,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",4695_h
+252,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3399_r
+253,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",3399_h
+254,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4081_r
+255,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4081_h
+256,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",9149_r
+257,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9149_h
+258,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1224_r
+259,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1224_h
+260,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6292_r
+261,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",6292_h
+262,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3122_r
+263,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",3122_h
+264,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",510_r
+265,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",510_h
+266,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5794_r
+267,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",5794_h
+268,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8181_r
+269,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8181_h
+270,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9417_r
+271,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9417_h
+272,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",96_r
+273,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",96_h
+274,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6681_r
+275,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",6681_h
+276,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1512_r
+277,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",1512_h
+278,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8791_r
+279,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8791_h
+280,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",119_r
+281,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",119_h
+282,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7791_r
+283,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7791_h
+284,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6517_r
+285,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",6517_h
+286,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",33_r
+287,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",33_h
+288,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7887_r
+289,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7887_h
+290,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6830_r
+291,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6830_h
+292,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5421_r
+293,0.1,True,"{
+    ""Confidence"": ""0.1""
+}",5421_h
+294,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1068_r
+295,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",1068_h
+296,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1347_r
+297,0.0,True,"{
+    ""Confidence"": 0.0
+}",1347_h
+298,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4747_r
+299,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4747_h
+300,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6005_r
+301,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",6005_h
+302,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6039_r
+303,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",6039_h
+304,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3817_r
+305,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3817_h
+306,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8446_r
+307,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8446_h
+308,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5269_r
+309,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",5269_h
+310,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6897_r
+311,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",6897_h
+312,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5309_r
+313,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5309_h
+314,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",31_r
+315,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",31_h
+316,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5674_r
+317,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5674_h
+318,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4386_r
+319,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4386_h
+320,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",29_r
+321,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",29_h
+322,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4202_r
+323,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4202_h
+324,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7507_r
+325,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",7507_h
+326,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",735_r
+327,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",735_h
+328,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2067_r
+329,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2067_h
+330,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",106_r
+331,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",106_h
+332,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",9644_r
+333,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",9644_h
+334,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8894_r
+335,0.6,True,"{
+    ""Confidence"": ""0.6""
+}",8894_h
+336,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8020_r
+337,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",8020_h
+338,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2232_r
+339,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",2232_h
+340,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",993_r
+341,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",993_h
+342,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9412_r
+343,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9412_h
+344,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7058_r
+345,0.3,True,"{
+    ""Confidence"": ""0.3""
+}",7058_h
+346,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6789_r
+347,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6789_h
+348,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",360_r
+349,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",360_h
+350,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",304_r
+351,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",304_h
+352,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2627_r
+353,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",2627_h
+354,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8965_r
+355,0.5,True,"{
+    ""Confidence"": ""0.5""
+}",8965_h
+356,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4513_r
+357,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4513_h
+358,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5910_r
+359,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",5910_h
+360,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8313_r
+361,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8313_h
+362,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3100_r
+363,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",3100_h
+364,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5703_r
+365,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5703_h
+366,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3898_r
+367,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3898_h
+368,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5440_r
+369,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",5440_h
+370,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7930_r
+371,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7930_h
+372,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",621_r
+373,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",621_h
+374,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7235_r
+375,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",7235_h
+376,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2498_r
+377,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",2498_h
+378,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",713_r
+379,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",713_h
+380,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8403_r
+381,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8403_h
+382,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2855_r
+383,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2855_h
+384,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4269_r
+385,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",4269_h
+386,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2908_r
+387,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2908_h
+388,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8080_r
+389,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8080_h
+390,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4516_r
+391,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",4516_h
+392,1.0,True,"```json
+{
+    ""Confidence"": ""1.0""
+}
+```",1261_r
+393,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",1261_h
+394,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3160_r
+395,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",3160_h
+396,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",970_r
+397,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",970_h
+398,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3912_r
+399,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3912_h
+400,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5198_r
+401,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5198_h
+402,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8846_r
+403,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8846_h
+404,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",259_r
+405,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",259_h
+406,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3790_r
+407,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",3790_h
+408,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9202_r
+409,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",9202_h
+410,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",487_r
+411,0.3,True,"{
+    ""Confidence"": ""0.3""
+}",487_h
+412,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7907_r
+413,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7907_h
+414,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",518_r
+415,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",518_h
+416,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8342_r
+417,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8342_h
+418,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",311_r
+419,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",311_h
+420,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",3231_r
+421,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3231_h
+422,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7932_r
+423,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7932_h
+424,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7457_r
+425,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7457_h
+426,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9783_r
+427,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9783_h
+428,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5183_r
+429,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",5183_h
+430,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8076_r
+431,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8076_h
+432,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6501_r
+433,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",6501_h
+434,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",6790_r
+435,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",6790_h
+436,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7772_r
+437,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7772_h
+438,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2737_r
+439,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",2737_h
+440,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7841_r
+441,1.0,True,"```json
+{
+    ""Confidence"": ""1.0""
+}
+```",7841_h
+442,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6261_r
+443,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",6261_h
+444,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8205_r
+445,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8205_h
+446,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1247_r
+447,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",1247_h
+448,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9335_r
+449,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",9335_h
+450,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4194_r
+451,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4194_h
+452,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8000_r
+453,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8000_h
+454,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7377_r
+455,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",7377_h
+456,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3434_r
+457,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3434_h
+458,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5381_r
+459,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5381_h
+460,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",958_r
+461,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",958_h
+462,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",416_r
+463,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",416_h
+464,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5741_r
+465,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",5741_h
+466,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6727_r
+467,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",6727_h
+468,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4381_r
+469,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4381_h
+470,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5196_r
+471,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5196_h
+472,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1112_r
+473,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",1112_h
+474,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2688_r
+475,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",2688_h
+476,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6472_r
+477,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",6472_h
+478,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8819_r
+479,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8819_h
+480,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7807_r
+481,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7807_h
+482,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3410_r
+483,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",3410_h
+484,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",80_r
+485,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",80_h
+486,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4613_r
+487,0.5,True,"{
+    ""Confidence"": ""0.5""
+}",4613_h
+488,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1373_r
+489,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1373_h
+490,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1509_r
+491,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",1509_h
+492,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6442_r
+493,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",6442_h
+494,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3070_r
+495,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",3070_h
+496,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3015_r
+497,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3015_h
+498,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4822_r
+499,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",4822_h
+500,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7821_r
+501,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7821_h
+502,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",92_r
+503,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",92_h
+504,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9420_r
+505,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",9420_h
+506,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6599_r
+507,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",6599_h
+508,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4442_r
+509,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",4442_h
+510,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7601_r
+511,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7601_h
+512,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3834_r
+513,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",3834_h
+514,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9701_r
+515,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",9701_h
+516,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4321_r
+517,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",4321_h
+518,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3393_r
+519,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",3393_h
+520,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4751_r
+521,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4751_h
+522,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7228_r
+523,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",7228_h
+524,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",9190_r
+525,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",9190_h
+526,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2360_r
+527,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",2360_h
+528,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1147_r
+529,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",1147_h
+530,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5665_r
+531,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5665_h
+532,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8074_r
+533,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8074_h
+534,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4942_r
+535,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4942_h
+536,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3662_r
+537,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",3662_h
+538,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1562_r
+539,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1562_h
+540,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4112_r
+541,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4112_h
+542,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9049_r
+543,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9049_h
+544,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9275_r
+545,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9275_h
+546,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8537_r
+547,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8537_h
+548,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",794_r
+549,0.6,True,"{
+    ""Confidence"": ""0.6""
+}",794_h
+550,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5853_r
+551,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",5853_h
+552,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7618_r
+553,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7618_h
+554,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1593_r
+555,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1593_h
+556,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7417_r
+557,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",7417_h
+558,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5266_r
+559,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5266_h
+560,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7146_r
+561,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",7146_h
+562,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",88_r
+563,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",88_h
+564,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8694_r
+565,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",8694_h
+566,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",9731_r
+567,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9731_h
+568,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9445_r
+569,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",9445_h
+570,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6753_r
+571,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6753_h
+572,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3501_r
+573,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3501_h
+574,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2233_r
+575,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",2233_h
+576,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2802_r
+577,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",2802_h
+578,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4423_r
+579,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4423_h
+580,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5662_r
+581,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5662_h
+582,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7169_r
+583,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7169_h
+584,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8336_r
+585,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8336_h
+586,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2147_r
+587,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2147_h
+588,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7968_r
+589,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7968_h
+590,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6550_r
+591,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",6550_h
+592,0.95,True,"```json
+{
+    ""Confidence"": 0.95
+}
+```",7642_r
+593,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",7642_h
+594,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6163_r
+595,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",6163_h
+596,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1494_r
+597,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",1494_h
+598,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7695_r
+599,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",7695_h
+600,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7093_r
+601,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7093_h
+602,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1408_r
+603,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",1408_h
+604,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6690_r
+605,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6690_h
+606,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3400_r
+607,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",3400_h
+608,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",108_r
+609,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",108_h
+610,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5635_r
+611,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",5635_h
+612,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8481_r
+613,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",8481_h
+614,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6603_r
+615,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",6603_h
+616,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",1090_r
+617,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",1090_h
+618,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5559_r
+619,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",5559_h
+620,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",9411_r
+621,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",9411_h
+622,0.95,True,"```json
+{
+    ""Confidence"": 0.95
+}
+```",8142_r
+623,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8142_h
+624,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8663_r
+625,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8663_h
+626,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6595_r
+627,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",6595_h
+628,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",623_r
+629,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",623_h
+630,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",6870_r
+631,0.3,True,"{
+    ""Confidence"": ""0.3""
+}",6870_h
+632,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4813_r
+633,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",4813_h
+634,1.0,True,"```json
+{
+    ""Confidence"": 1.0
+}
+```",6552_r
+635,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",6552_h
+636,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",7529_r
+637,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",7529_h
+638,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5795_r
+639,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",5795_h
+640,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7436_r
+641,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7436_h
+642,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4217_r
+643,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4217_h
+644,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5940_r
+645,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",5940_h
+646,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8500_r
+647,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8500_h
+648,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6428_r
+649,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",6428_h
+650,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6826_r
+651,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",6826_h
+652,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4130_r
+653,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4130_h
+654,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7801_r
+655,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",7801_h
+656,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7753_r
+657,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",7753_h
+658,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4721_r
+659,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",4721_h
+660,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1650_r
+661,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1650_h
+662,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4140_r
+663,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4140_h
+664,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1617_r
+665,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",1617_h
+666,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2029_r
+667,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",2029_h
+668,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8517_r
+669,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8517_h
+670,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4575_r
+671,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",4575_h
+672,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3992_r
+673,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",3992_h
+674,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7376_r
+675,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7376_h
+676,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6149_r
+677,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6149_h
+678,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4908_r
+679,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",4908_h
+680,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5026_r
+681,0.3,True,"{
+    ""Confidence"": ""0.3""
+}",5026_h
+682,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8260_r
+683,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8260_h
+684,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4731_r
+685,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4731_h
+686,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7548_r
+687,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",7548_h
+688,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8134_r
+689,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8134_h
+690,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1606_r
+691,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1606_h
+692,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4773_r
+693,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4773_h
+694,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8109_r
+695,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8109_h
+696,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6951_r
+697,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",6951_h
+698,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6004_r
+699,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",6004_h
+700,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7728_r
+701,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7728_h
+702,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3541_r
+703,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3541_h
+704,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",388_r
+705,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",388_h
+706,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1794_r
+707,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",1794_h
+708,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8731_r
+709,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8731_h
+710,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4919_r
+711,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4919_h
+712,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5537_r
+713,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",5537_h
+714,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3872_r
+715,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",3872_h
+716,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8868_r
+717,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8868_h
+718,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2254_r
+719,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",2254_h
+720,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3412_r
+721,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",3412_h
+722,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5459_r
+723,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",5459_h
+724,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4955_r
+725,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",4955_h
+726,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7396_r
+727,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",7396_h
+728,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5414_r
+729,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5414_h
+730,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7399_r
+731,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7399_h
+732,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7414_r
+733,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7414_h
+734,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9100_r
+735,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",9100_h
+736,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4851_r
+737,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",4851_h
+738,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",2025_r
+739,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2025_h
+740,0.6,True,"{
+    ""Confidence"": ""0.6""
+}",2615_r
+741,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2615_h
+742,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7388_r
+743,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7388_h
+744,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2926_r
+745,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2926_h
+746,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1121_r
+747,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1121_h
+748,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2910_r
+749,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",2910_h
+750,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8146_r
+751,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8146_h
+752,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7383_r
+753,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7383_h
+754,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3482_r
+755,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3482_h
+756,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",795_r
+757,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",795_h
+758,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1575_r
+759,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1575_h
+760,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6176_r
+761,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",6176_h
+762,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6266_r
+763,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6266_h
+764,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2458_r
+765,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",2458_h
+766,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3312_r
+767,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",3312_h
+768,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1253_r
+769,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1253_h
+770,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6834_r
+771,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",6834_h
+772,0.95,True,"```json
+{
+    ""Confidence"": 0.95
+}
+```",8794_r
+773,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8794_h
+774,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3837_r
+775,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3837_h
+776,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4398_r
+777,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4398_h
+778,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3595_r
+779,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3595_h
+780,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6621_r
+781,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",6621_h
+782,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8382_r
+783,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8382_h
+784,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2124_r
+785,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2124_h
+786,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3238_r
+787,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",3238_h
+788,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5403_r
+789,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5403_h
+790,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5998_r
+791,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",5998_h
+792,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5938_r
+793,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5938_h
+794,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2045_r
+795,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",2045_h
+796,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1578_r
+797,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",1578_h
+798,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",14_r
+799,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",14_h
+800,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2673_r
+801,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2673_h
+802,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7016_r
+803,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7016_h
+804,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8720_r
+805,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8720_h
+806,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8849_r
+807,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8849_h
+808,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4812_r
+809,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4812_h
+810,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1084_r
+811,0.6,True,"{
+    ""Confidence"": ""0.6""
+}",1084_h
+812,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4983_r
+813,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",4983_h
+814,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7155_r
+815,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7155_h
+816,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2884_r
+817,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",2884_h
+818,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",333_r
+819,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",333_h
+820,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7204_r
+821,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7204_h
+822,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4367_r
+823,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",4367_h
+824,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3079_r
+825,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3079_h
+826,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7203_r
+827,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",7203_h
+828,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9909_r
+829,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",9909_h
+830,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8864_r
+831,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8864_h
+832,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",263_r
+833,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",263_h
+834,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4337_r
+835,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4337_h
+836,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8895_r
+837,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8895_h
+838,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8447_r
+839,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8447_h
+840,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5903_r
+841,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",5903_h
+842,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1498_r
+843,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1498_h
+844,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4190_r
+845,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4190_h
+846,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7485_r
+847,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7485_h
+848,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",9643_r
+849,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9643_h
+850,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8310_r
+851,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8310_h
+852,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7590_r
+853,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7590_h
+854,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",500_r
+855,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",500_h
+856,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9155_r
+857,0.1,True,"{
+    ""Confidence"": ""0.1""
+}",9155_h
+858,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9414_r
+859,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9414_h
+860,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3095_r
+861,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",3095_h
+862,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4631_r
+863,0.9,True,"```json
+{
+    ""Confidence"": ""0.9""
+}
+```",4631_h
+864,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",367_r
+865,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",367_h
+866,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4058_r
+867,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4058_h
+868,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8174_r
+869,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",8174_h
+870,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4630_r
+871,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4630_h
+872,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6070_r
+873,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",6070_h
+874,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2664_r
+875,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",2664_h
+876,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1026_r
+877,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",1026_h
+878,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5908_r
+879,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",5908_h
+880,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5050_r
+881,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",5050_h
+882,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6328_r
+883,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",6328_h
+884,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9733_r
+885,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9733_h
+886,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1691_r
+887,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1691_h
+888,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",673_r
+889,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",673_h
+890,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5572_r
+891,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",5572_h
+892,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5766_r
+893,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5766_h
+894,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5156_r
+895,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5156_h
+896,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",733_r
+897,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",733_h
+898,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3526_r
+899,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",3526_h
+900,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",568_r
+901,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",568_h
+902,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",9187_r
+903,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9187_h
+904,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2922_r
+905,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",2922_h
+906,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7911_r
+907,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7911_h
+908,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1558_r
+909,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1558_h
+910,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",101_r
+911,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",101_h
+912,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3007_r
+913,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",3007_h
+914,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7201_r
+915,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",7201_h
+916,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",303_r
+917,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",303_h
+918,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",76_r
+919,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",76_h
+920,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6754_r
+921,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6754_h
+922,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8629_r
+923,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8629_h
+924,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1208_r
+925,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1208_h
+926,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7742_r
+927,0.3,True,"{
+    ""Confidence"": ""0.3""
+}",7742_h
+928,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8214_r
+929,0.1,True,"{
+    ""Confidence"": ""0.1""
+}",8214_h
+930,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8944_r
+931,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8944_h
+932,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8413_r
+933,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8413_h
+934,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1775_r
+935,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",1775_h
+936,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3473_r
+937,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",3473_h
+938,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",483_r
+939,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",483_h
+940,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2189_r
+941,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2189_h
+942,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",346_r
+943,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",346_h
+944,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5481_r
+945,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",5481_h
+946,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8361_r
+947,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",8361_h
+948,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1472_r
+949,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",1472_h
+950,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5100_r
+951,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5100_h
+952,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6765_r
+953,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6765_h
+954,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8706_r
+955,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8706_h
+956,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4929_r
+957,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4929_h
+958,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6329_r
+959,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",6329_h
+960,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2609_r
+961,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",2609_h
+962,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3_r
+963,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",3_h
+964,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2213_r
+965,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2213_h
+966,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4827_r
+967,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4827_h
+968,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",856_r
+969,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",856_h
+970,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6977_r
+971,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",6977_h
+972,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5885_r
+973,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5885_h
+974,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",624_r
+975,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",624_h
+976,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",290_r
+977,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",290_h
+978,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2018_r
+979,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",2018_h
+980,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",668_r
+981,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",668_h
+982,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8921_r
+983,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8921_h
+984,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8264_r
+985,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8264_h
+986,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9696_r
+987,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9696_h
+988,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1631_r
+989,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",1631_h
+990,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5170_r
+991,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5170_h
+992,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7205_r
+993,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",7205_h
+994,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2522_r
+995,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2522_h
+996,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2215_r
+997,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",2215_h
+998,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6968_r
+999,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",6968_h
+1000,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6496_r
+1001,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6496_h
+1002,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6213_r
+1003,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",6213_h
+1004,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7032_r
+1005,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",7032_h
+1006,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7420_r
+1007,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7420_h
+1008,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1107_r
+1009,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",1107_h
+1010,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",450_r
+1011,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",450_h
+1012,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6289_r
+1013,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6289_h
+1014,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9966_r
+1015,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",9966_h
+1016,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",135_r
+1017,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",135_h
+1018,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1785_r
+1019,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",1785_h
+1020,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",3404_r
+1021,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3404_h
+1022,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2906_r
+1023,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",2906_h
+1024,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8304_r
+1025,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8304_h
+1026,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7492_r
+1027,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7492_h
+1028,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6100_r
+1029,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",6100_h
+1030,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4504_r
+1031,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4504_h
+1032,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5053_r
+1033,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",5053_h
+1034,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5205_r
+1035,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",5205_h
+1036,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4080_r
+1037,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4080_h
+1038,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6918_r
+1039,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6918_h
+1040,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6802_r
+1041,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",6802_h
+1042,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5206_r
+1043,0.3,True,"{
+    ""Confidence"": ""0.3""
+}",5206_h
+1044,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",532_r
+1045,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",532_h
+1046,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4830_r
+1047,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4830_h
+1048,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4038_r
+1049,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",4038_h
+1050,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4084_r
+1051,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",4084_h
+1052,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3204_r
+1053,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",3204_h
+1054,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7110_r
+1055,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",7110_h
+1056,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",330_r
+1057,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",330_h
+1058,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4957_r
+1059,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4957_h
+1060,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3033_r
+1061,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",3033_h
+1062,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7684_r
+1063,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",7684_h
+1064,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1597_r
+1065,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",1597_h
+1066,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9919_r
+1067,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9919_h
+1068,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3597_r
+1069,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",3597_h
+1070,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9038_r
+1071,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",9038_h
+1072,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8001_r
+1073,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",8001_h
+1074,0.95,True,"```json
+{
+    ""Confidence"": 0.95
+}
+```",590_r
+1075,0.95,True,"```json
+{
+    ""Confidence"": ""0.95""
+}
+```",590_h
+1076,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",647_r
+1077,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",647_h
+1078,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9102_r
+1079,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9102_h
+1080,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8015_r
+1081,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8015_h
+1082,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3771_r
+1083,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",3771_h
+1084,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9039_r
+1085,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",9039_h
+1086,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5082_r
+1087,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5082_h
+1088,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7882_r
+1089,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7882_h
+1090,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9362_r
+1091,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9362_h
+1092,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4210_r
+1093,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4210_h
+1094,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8834_r
+1095,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8834_h
+1096,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8699_r
+1097,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8699_h
+1098,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",1795_r
+1099,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",1795_h
+1100,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2586_r
+1101,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",2586_h
+1102,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8355_r
+1103,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8355_h
+1104,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2316_r
+1105,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2316_h
+1106,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4185_r
+1107,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4185_h
+1108,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8827_r
+1109,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8827_h
+1110,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7072_r
+1111,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",7072_h
+1112,0.6,True,"{
+    ""Confidence"": ""0.6""
+}",5234_r
+1113,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5234_h
+1114,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8743_r
+1115,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8743_h
+1116,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8670_r
+1117,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8670_h
+1118,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4768_r
+1119,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",4768_h
+1120,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",9972_r
+1121,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9972_h
+1122,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7144_r
+1123,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7144_h
+1124,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",2913_r
+1125,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",2913_h
+1126,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9871_r
+1127,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",9871_h
+1128,0.95,True,"{
+    ""Confidence"": 0.95
+}",9893_r
+1129,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9893_h
+1130,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2075_r
+1131,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2075_h
+1132,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4302_r
+1133,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4302_h
+1134,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5822_r
+1135,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",5822_h
+1136,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2149_r
+1137,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",2149_h
+1138,0.6,True,"{
+    ""Confidence"": ""0.6""
+}",144_r
+1139,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",144_h
+1140,0.8,True,"{
+    ""Confidence"": 0.8
+}",4963_r
+1141,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4963_h
+1142,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8159_r
+1143,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",8159_h
+1144,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",9030_r
+1145,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9030_h
+1146,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4775_r
+1147,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",4775_h
+1148,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8933_r
+1149,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8933_h
+1150,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7749_r
+1151,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7749_h
+1152,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9828_r
+1153,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",9828_h
+1154,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9214_r
+1155,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9214_h
+1156,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6060_r
+1157,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",6060_h
+1158,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",9475_r
+1159,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9475_h
+1160,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6409_r
+1161,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",6409_h
+1162,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3317_r
+1163,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",3317_h
+1164,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7464_r
+1165,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7464_h
+1166,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3061_r
+1167,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",3061_h
+1168,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1355_r
+1169,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",1355_h
+1170,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4514_r
+1171,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4514_h
+1172,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5505_r
+1173,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5505_h
+1174,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5250_r
+1175,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5250_h
+1176,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4511_r
+1177,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",4511_h
+1178,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1730_r
+1179,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1730_h
+1180,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1758_r
+1181,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1758_h
+1182,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6650_r
+1183,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",6650_h
+1184,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6646_r
+1185,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6646_h
+1186,1.0,True,"```json
+{
+    ""Confidence"": ""1.0""
+}
+```",9860_r
+1187,0.1,True,"{
+    ""Confidence"": ""0.1""
+}",9860_h
+1188,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4139_r
+1189,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4139_h
+1190,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",9393_r
+1191,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9393_h
+1192,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5123_r
+1193,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5123_h
+1194,0.95,True,"```json
+{
+    ""Confidence"": ""0.95""
+}
+```",0_r
+1195,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",0_h
+1196,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1864_r
+1197,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",1864_h
+1198,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",543_r
+1199,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",543_h
+1200,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",349_r
+1201,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",349_h
+1202,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6906_r
+1203,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6906_h
+1204,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9765_r
+1205,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9765_h
+1206,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2523_r
+1207,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",2523_h
+1208,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3464_r
+1209,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3464_h
+1210,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",457_r
+1211,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",457_h
+1212,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3023_r
+1213,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",3023_h
+1214,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7261_r
+1215,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",7261_h
+1216,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",9515_r
+1217,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9515_h
+1218,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7872_r
+1219,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7872_h
+1220,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6625_r
+1221,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",6625_h
+1222,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2534_r
+1223,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",2534_h
+1224,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",131_r
+1225,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",131_h
+1226,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3704_r
+1227,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",3704_h
+1228,1.0,True,"```json
+{
+    ""Confidence"": 1.0
+}
+```",1372_r
+1229,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1372_h
+1230,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6200_r
+1231,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",6200_h
+1232,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4856_r
+1233,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4856_h
+1234,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4712_r
+1235,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",4712_h
+1236,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5544_r
+1237,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",5544_h
+1238,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1413_r
+1239,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1413_h
+1240,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4113_r
+1241,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",4113_h
+1242,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",655_r
+1243,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",655_h
+1244,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8137_r
+1245,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",8137_h
+1246,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4098_r
+1247,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4098_h
+1248,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",592_r
+1249,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",592_h
+1250,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8708_r
+1251,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8708_h
+1252,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3123_r
+1253,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",3123_h
+1254,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3047_r
+1255,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3047_h
+1256,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3887_r
+1257,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",3887_h
+1258,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",5735_r
+1259,0.6,True,"{
+    ""Confidence"": ""0.6""
+}",5735_h
+1260,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2184_r
+1261,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",2184_h
+1262,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2145_r
+1263,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",2145_h
+1264,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7047_r
+1265,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",7047_h
+1266,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3105_r
+1267,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3105_h
+1268,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9233_r
+1269,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9233_h
+1270,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9096_r
+1271,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",9096_h
+1272,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2769_r
+1273,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",2769_h
+1274,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5221_r
+1275,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5221_h
+1276,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5833_r
+1277,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",5833_h
+1278,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1732_r
+1279,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1732_h
+1280,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",265_r
+1281,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",265_h
+1282,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5144_r
+1283,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5144_h
+1284,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8267_r
+1285,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8267_h
+1286,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3937_r
+1287,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",3937_h
+1288,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",761_r
+1289,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",761_h
+1290,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7220_r
+1291,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7220_h
+1292,1.0,True,"```json
+{
+    ""Confidence"": 1.0
+}
+```",8439_r
+1293,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8439_h
+1294,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3257_r
+1295,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",3257_h
+1296,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4338_r
+1297,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",4338_h
+1298,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4362_r
+1299,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",4362_h
+1300,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",316_r
+1301,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",316_h
+1302,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8069_r
+1303,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8069_h
+1304,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1851_r
+1305,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1851_h
+1306,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2484_r
+1307,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",2484_h
+1308,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9873_r
+1309,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",9873_h
+1310,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9574_r
+1311,0.6,True,"{
+    ""Confidence"": ""0.6""
+}",9574_h
+1312,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1078_r
+1313,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1078_h
+1314,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8358_r
+1315,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8358_h
+1316,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7333_r
+1317,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",7333_h
+1318,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1071_r
+1319,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1071_h
+1320,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",103_r
+1321,0.5,True,"{
+    ""Confidence"": ""0.5""
+}",103_h
+1322,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5748_r
+1323,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5748_h
+1324,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1418_r
+1325,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",1418_h
+1326,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1658_r
+1327,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1658_h
+1328,0.95,True,"```json
+{
+    ""Confidence"": 0.95
+}
+```",5284_r
+1329,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",5284_h
+1330,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1149_r
+1331,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1149_h
+1332,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7150_r
+1333,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",7150_h
+1334,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1568_r
+1335,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1568_h
+1336,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1087_r
+1337,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",1087_h
+1338,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6085_r
+1339,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",6085_h
+1340,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8674_r
+1341,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",8674_h
+1342,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8341_r
+1343,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8341_h
+1344,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7811_r
+1345,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",7811_h
+1346,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6084_r
+1347,0.5,True,"{
+    ""Confidence"": ""0.5""
+}",6084_h
+1348,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8773_r
+1349,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8773_h
+1350,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8757_r
+1351,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8757_h
+1352,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1692_r
+1353,0.6,True,"{
+    ""Confidence"": ""0.6""
+}",1692_h
+1354,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4734_r
+1355,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",4734_h
+1356,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3387_r
+1357,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",3387_h
+1358,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3646_r
+1359,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",3646_h
+1360,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1683_r
+1361,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1683_h
+1362,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8_r
+1363,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8_h
+1364,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6062_r
+1365,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",6062_h
+1366,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6516_r
+1367,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",6516_h
+1368,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4123_r
+1369,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4123_h
+1370,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8729_r
+1371,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8729_h
+1372,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6045_r
+1373,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6045_h
+1374,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",567_r
+1375,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",567_h
+1376,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9161_r
+1377,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9161_h
+1378,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1803_r
+1379,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1803_h
+1380,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8501_r
+1381,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8501_h
+1382,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4900_r
+1383,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4900_h
+1384,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1599_r
+1385,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1599_h
+1386,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7931_r
+1387,0.3,True,"{
+    ""Confidence"": ""0.3""
+}",7931_h
+1388,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9547_r
+1389,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",9547_h
+1390,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2823_r
+1391,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",2823_h
+1392,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5467_r
+1393,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5467_h
+1394,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",3529_r
+1395,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3529_h
+1396,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8683_r
+1397,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8683_h
+1398,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1155_r
+1399,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1155_h
+1400,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6547_r
+1401,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6547_h
+1402,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9088_r
+1403,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9088_h
+1404,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7620_r
+1405,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7620_h
+1406,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8296_r
+1407,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8296_h
+1408,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4540_r
+1409,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4540_h
+1410,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9134_r
+1411,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",9134_h
+1412,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6482_r
+1413,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6482_h
+1414,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5826_r
+1415,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",5826_h
+1416,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1190_r
+1417,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1190_h
+1418,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7444_r
+1419,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",7444_h
+1420,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8520_r
+1421,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",8520_h
+1422,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",960_r
+1423,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",960_h
+1424,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7454_r
+1425,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7454_h
+1426,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",36_r
+1427,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",36_h
+1428,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7516_r
+1429,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7516_h
+1430,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7644_r
+1431,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7644_h
+1432,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4438_r
+1433,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",4438_h
+1434,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6161_r
+1435,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",6161_h
+1436,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7744_r
+1437,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7744_h
+1438,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9587_r
+1439,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",9587_h
+1440,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8119_r
+1441,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8119_h
+1442,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6967_r
+1443,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",6967_h
+1444,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5718_r
+1445,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5718_h
+1446,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",577_r
+1447,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",577_h
+1448,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9833_r
+1449,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9833_h
+1450,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4102_r
+1451,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",4102_h
+1452,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7646_r
+1453,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7646_h
+1454,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4151_r
+1455,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4151_h
+1456,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3130_r
+1457,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",3130_h
+1458,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4890_r
+1459,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",4890_h
+1460,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9975_r
+1461,0.6,True,"{
+    ""Confidence"": ""0.6""
+}",9975_h
+1462,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7471_r
+1463,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",7471_h
+1464,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1833_r
+1465,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1833_h
+1466,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9148_r
+1467,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",9148_h
+1468,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4891_r
+1469,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",4891_h
+1470,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2287_r
+1471,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",2287_h
+1472,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1330_r
+1473,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",1330_h
+1474,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2771_r
+1475,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",2771_h
+1476,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3686_r
+1477,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3686_h
+1478,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8283_r
+1479,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8283_h
+1480,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5928_r
+1481,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",5928_h
+1482,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",637_r
+1483,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",637_h
+1484,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",47_r
+1485,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",47_h
+1486,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2602_r
+1487,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",2602_h
+1488,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1965_r
+1489,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1965_h
+1490,0.95,True,"```json
+{
+    ""Confidence"": 0.95
+}
+```",2168_r
+1491,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",2168_h
+1492,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5049_r
+1493,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",5049_h
+1494,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3334_r
+1495,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",3334_h
+1496,0.85,True,"{
+    ""Confidence"": ""0.85""
+}",3019_r
+1497,0.3,True,"{
+    ""Confidence"": ""0.3""
+}",3019_h
+1498,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8764_r
+1499,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8764_h
+1500,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9176_r
+1501,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9176_h
+1502,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1360_r
+1503,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1360_h
+1504,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5798_r
+1505,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",5798_h
+1506,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9400_r
+1507,0.1,True,"{
+    ""Confidence"": ""0.1""
+}",9400_h
+1508,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3251_r
+1509,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3251_h
+1510,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6300_r
+1511,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",6300_h
+1512,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2251_r
+1513,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2251_h
+1514,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6027_r
+1515,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",6027_h
+1516,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1175_r
+1517,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",1175_h
+1518,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8799_r
+1519,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8799_h
+1520,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3279_r
+1521,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",3279_h
+1522,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2973_r
+1523,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2973_h
+1524,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3396_r
+1525,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",3396_h
+1526,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6939_r
+1527,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",6939_h
+1528,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",965_r
+1529,0.6,True,"{
+    ""Confidence"": ""0.6""
+}",965_h
+1530,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8574_r
+1531,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8574_h
+1532,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",742_r
+1533,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",742_h
+1534,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7514_r
+1535,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",7514_h
+1536,0.95,True,"```json
+{
+    ""Confidence"": ""0.95""
+}
+```",3314_r
+1537,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",3314_h
+1538,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4898_r
+1539,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",4898_h
+1540,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",9340_r
+1541,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9340_h
+1542,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4672_r
+1543,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4672_h
+1544,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8618_r
+1545,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8618_h
+1546,0.95,True,"```json
+{
+    ""Confidence"": ""0.95""
+}
+```",1217_r
+1547,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1217_h
+1548,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4397_r
+1549,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",4397_h
+1550,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6080_r
+1551,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",6080_h
+1552,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2614_r
+1553,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",2614_h
+1554,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2620_r
+1555,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",2620_h
+1556,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8714_r
+1557,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8714_h
+1558,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7282_r
+1559,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",7282_h
+1560,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",3379_r
+1561,0.6,True,"{
+    ""Confidence"": ""0.6""
+}",3379_h
+1562,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7301_r
+1563,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7301_h
+1564,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9857_r
+1565,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",9857_h
+1566,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5605_r
+1567,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",5605_h
+1568,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",9813_r
+1569,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",9813_h
+1570,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5786_r
+1571,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",5786_h
+1572,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8518_r
+1573,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8518_h
+1574,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6850_r
+1575,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",6850_h
+1576,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1516_r
+1577,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1516_h
+1578,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5098_r
+1579,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",5098_h
+1580,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7636_r
+1581,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7636_h
+1582,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9085_r
+1583,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9085_h
+1584,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8023_r
+1585,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8023_h
+1586,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2392_r
+1587,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",2392_h
+1588,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",586_r
+1589,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",586_h
+1590,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3519_r
+1591,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3519_h
+1592,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7653_r
+1593,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7653_h
+1594,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8946_r
+1595,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8946_h
+1596,0.9,True,"{
+    ""Confidence"": 0.9
+}",850_r
+1597,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",850_h
+1598,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",335_r
+1599,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",335_h
+1600,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6634_r
+1601,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",6634_h
+1602,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8972_r
+1603,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8972_h
+1604,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7493_r
+1605,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",7493_h
+1606,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2868_r
+1607,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2868_h
+1608,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4872_r
+1609,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4872_h
+1610,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3550_r
+1611,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",3550_h
+1612,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3842_r
+1613,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3842_h
+1614,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7262_r
+1615,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",7262_h
+1616,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5824_r
+1617,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",5824_h
+1618,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",23_r
+1619,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",23_h
+1620,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1453_r
+1621,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",1453_h
+1622,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1684_r
+1623,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1684_h
+1624,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2310_r
+1625,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",2310_h
+1626,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",9063_r
+1627,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9063_h
+1628,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9406_r
+1629,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",9406_h
+1630,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",381_r
+1631,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",381_h
+1632,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5814_r
+1633,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",5814_h
+1634,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5550_r
+1635,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",5550_h
+1636,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",9308_r
+1637,0.95,True,"```json
+{
+    ""Confidence"": 0.95
+}
+```",9308_h
+1638,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1618_r
+1639,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1618_h
+1640,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",789_r
+1641,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",789_h
+1642,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5983_r
+1643,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5983_h
+1644,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8672_r
+1645,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8672_h
+1646,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4475_r
+1647,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",4475_h
+1648,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5606_r
+1649,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5606_h
+1650,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9312_r
+1651,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9312_h
+1652,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5648_r
+1653,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5648_h
+1654,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6216_r
+1655,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",6216_h
+1656,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2286_r
+1657,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2286_h
+1658,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9993_r
+1659,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9993_h
+1660,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7578_r
+1661,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",7578_h
+1662,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1183_r
+1663,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1183_h
+1664,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6001_r
+1665,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",6001_h
+1666,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5090_r
+1667,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",5090_h
+1668,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2516_r
+1669,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2516_h
+1670,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4122_r
+1671,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4122_h
+1672,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5521_r
+1673,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5521_h
+1674,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5627_r
+1675,0.6,True,"{
+    ""Confidence"": ""0.6""
+}",5627_h
+1676,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8360_r
+1677,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8360_h
+1678,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5872_r
+1679,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5872_h
+1680,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8612_r
+1681,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8612_h
+1682,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7727_r
+1683,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",7727_h
+1684,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5968_r
+1685,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",5968_h
+1686,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",1180_r
+1687,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1180_h
+1688,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8762_r
+1689,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8762_h
+1690,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8235_r
+1691,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",8235_h
+1692,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",2818_r
+1693,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2818_h
+1694,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9964_r
+1695,0.1,True,"{
+    ""Confidence"": ""0.1""
+}",9964_h
+1696,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8703_r
+1697,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8703_h
+1698,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6608_r
+1699,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6608_h
+1700,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2820_r
+1701,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",2820_h
+1702,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7535_r
+1703,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",7535_h
+1704,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2260_r
+1705,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",2260_h
+1706,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2239_r
+1707,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2239_h
+1708,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6021_r
+1709,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",6021_h
+1710,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",782_r
+1711,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",782_h
+1712,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",932_r
+1713,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",932_h
+1714,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6202_r
+1715,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",6202_h
+1716,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2412_r
+1717,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2412_h
+1718,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6997_r
+1719,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6997_h
+1720,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",9115_r
+1721,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9115_h
+1722,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1156_r
+1723,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1156_h
+1724,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8107_r
+1725,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8107_h
+1726,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5805_r
+1727,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",5805_h
+1728,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4879_r
+1729,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",4879_h
+1730,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3309_r
+1731,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3309_h
+1732,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8961_r
+1733,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8961_h
+1734,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1702_r
+1735,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",1702_h
+1736,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2492_r
+1737,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",2492_h
+1738,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3706_r
+1739,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",3706_h
+1740,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8276_r
+1741,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",8276_h
+1742,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",286_r
+1743,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",286_h
+1744,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1608_r
+1745,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",1608_h
+1746,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6631_r
+1747,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",6631_h
+1748,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8278_r
+1749,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8278_h
+1750,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7315_r
+1751,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7315_h
+1752,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2252_r
+1753,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",2252_h
+1754,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7415_r
+1755,0.6,True,"{
+    ""Confidence"": ""0.6""
+}",7415_h
+1756,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8365_r
+1757,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8365_h
+1758,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1891_r
+1759,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1891_h
+1760,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5062_r
+1761,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5062_h
+1762,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6120_r
+1763,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6120_h
+1764,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",563_r
+1765,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",563_h
+1766,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",291_r
+1767,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",291_h
+1768,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4716_r
+1769,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4716_h
+1770,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7708_r
+1771,0.95,True,"```json
+{
+    ""Confidence"": ""0.95""
+}
+```",7708_h
+1772,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6349_r
+1773,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",6349_h
+1774,1.0,True,"```json
+{
+    ""Confidence"": ""1.0""
+}
+```",169_r
+1775,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",169_h
+1776,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",267_r
+1777,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",267_h
+1778,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4638_r
+1779,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",4638_h
+1780,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7077_r
+1781,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",7077_h
+1782,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3355_r
+1783,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",3355_h
+1784,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8279_r
+1785,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8279_h
+1786,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",315_r
+1787,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",315_h
+1788,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6728_r
+1789,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",6728_h
+1790,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",9495_r
+1791,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",9495_h
+1792,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4067_r
+1793,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",4067_h
+1794,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",245_r
+1795,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",245_h
+1796,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",252_r
+1797,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",252_h
+1798,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1111_r
+1799,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1111_h
+1800,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4801_r
+1801,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",4801_h
+1802,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1713_r
+1803,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1713_h
+1804,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",50_r
+1805,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",50_h
+1806,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1835_r
+1807,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",1835_h
+1808,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7896_r
+1809,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",7896_h
+1810,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3383_r
+1811,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3383_h
+1812,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6410_r
+1813,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",6410_h
+1814,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4313_r
+1815,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4313_h
+1816,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",872_r
+1817,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",872_h
+1818,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1254_r
+1819,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1254_h
+1820,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8881_r
+1821,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8881_h
+1822,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5851_r
+1823,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",5851_h
+1824,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",5702_r
+1825,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5702_h
+1826,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8103_r
+1827,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8103_h
+1828,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2098_r
+1829,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2098_h
+1830,0.95,True,"```json
+{
+    ""Confidence"": 0.95
+}
+```",5128_r
+1831,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5128_h
+1832,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",248_r
+1833,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",248_h
+1834,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6561_r
+1835,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",6561_h
+1836,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1339_r
+1837,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1339_h
+1838,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7017_r
+1839,0.3,True,"{
+    ""Confidence"": ""0.3""
+}",7017_h
+1840,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",2110_r
+1841,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",2110_h
+1842,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1569_r
+1843,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1569_h
+1844,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1726_r
+1845,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",1726_h
+1846,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8384_r
+1847,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8384_h
+1848,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6940_r
+1849,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",6940_h
+1850,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4395_r
+1851,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4395_h
+1852,0.95,True,"```json
+{
+    ""Confidence"": 0.95
+}
+```",2420_r
+1853,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2420_h
+1854,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3045_r
+1855,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",3045_h
+1856,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5503_r
+1857,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",5503_h
+1858,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",3703_r
+1859,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",3703_h
+1860,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8191_r
+1861,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",8191_h
+1862,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5331_r
+1863,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",5331_h
+1864,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",9808_r
+1865,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",9808_h
+1866,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",447_r
+1867,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",447_h
+1868,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7894_r
+1869,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7894_h
+1870,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",8728_r
+1871,0.3,True,"{
+    ""Confidence"": ""0.3""
+}",8728_h
+1872,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7828_r
+1873,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7828_h
+1874,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1768_r
+1875,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1768_h
+1876,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6808_r
+1877,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",6808_h
+1878,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4704_r
+1879,0.6,True,"{
+    ""Confidence"": ""0.6""
+}",4704_h
+1880,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3869_r
+1881,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",3869_h
+1882,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1655_r
+1883,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",1655_h
+1884,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3187_r
+1885,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3187_h
+1886,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",683_r
+1887,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",683_h
+1888,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4170_r
+1889,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",4170_h
+1890,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4477_r
+1891,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",4477_h
+1892,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",461_r
+1893,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",461_h
+1894,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5764_r
+1895,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",5764_h
+1896,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7522_r
+1897,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7522_h
+1898,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",4502_r
+1899,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4502_h
+1900,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9709_r
+1901,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9709_h
+1902,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",318_r
+1903,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",318_h
+1904,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1145_r
+1905,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1145_h
+1906,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5094_r
+1907,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5094_h
+1908,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1393_r
+1909,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1393_h
+1910,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",6623_r
+1911,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",6623_h
+1912,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1501_r
+1913,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1501_h
+1914,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6408_r
+1915,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",6408_h
+1916,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",376_r
+1917,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",376_h
+1918,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",410_r
+1919,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",410_h
+1920,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",1660_r
+1921,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",1660_h
+1922,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",3151_r
+1923,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3151_h
+1924,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1623_r
+1925,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1623_h
+1926,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",5609_r
+1927,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",5609_h
+1928,0.95,True,"```json
+{
+    ""Confidence"": ""0.95""
+}
+```",8532_r
+1929,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8532_h
+1930,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5802_r
+1931,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5802_h
+1932,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5306_r
+1933,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5306_h
+1934,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7086_r
+1935,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7086_h
+1936,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",8897_r
+1937,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8897_h
+1938,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",7488_r
+1939,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",7488_h
+1940,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9615_r
+1941,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9615_h
+1942,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9217_r
+1943,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9217_h
+1944,1.0,True,"```json
+{
+    ""Confidence"": 1.0
+}
+```",1672_r
+1945,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",1672_h
+1946,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2358_r
+1947,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",2358_h
+1948,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8467_r
+1949,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8467_h
+1950,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",274_r
+1951,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",274_h
+1952,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",2473_r
+1953,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",2473_h
+1954,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",5489_r
+1955,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",5489_h
+1956,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4771_r
+1957,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",4771_h
+1958,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2107_r
+1959,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",2107_h
+1960,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",7500_r
+1961,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7500_h
+1962,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",4414_r
+1963,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",4414_h
+1964,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",8138_r
+1965,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",8138_h
+1966,0.9,True,"```json
+{
+    ""Confidence"": ""0.9""
+}
+```",8660_r
+1967,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",8660_h
+1968,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",8239_r
+1969,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8239_h
+1970,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",2417_r
+1971,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",2417_h
+1972,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8771_r
+1973,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",8771_h
+1974,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",2236_r
+1975,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",2236_h
+1976,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3767_r
+1977,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",3767_h
+1978,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9791_r
+1979,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",9791_h
+1980,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9989_r
+1981,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",9989_h
+1982,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",9965_r
+1983,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",9965_h
+1984,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7323_r
+1985,0.2,True,"{
+    ""Confidence"": ""0.2""
+}",7323_h
+1986,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",1383_r
+1987,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",1383_h
+1988,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3101_r
+1989,0.0,True,"{
+    ""Confidence"": ""0.0""
+}",3101_h
+1990,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3921_r
+1991,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",3921_h
+1992,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",6685_r
+1993,0.7,True,"{
+    ""Confidence"": ""0.7""
+}",6685_h
+1994,1.0,True,"{
+    ""Confidence"": ""1.0""
+}",3194_r
+1995,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",3194_h
+1996,0.95,True,"{
+    ""Confidence"": ""0.95""
+}",1941_r
+1997,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",1941_h
+1998,0.9,True,"{
+    ""Confidence"": ""0.9""
+}",7713_r
+1999,0.8,True,"{
+    ""Confidence"": ""0.8""
+}",7713_h

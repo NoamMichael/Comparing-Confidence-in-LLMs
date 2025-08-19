@@ -100,8 +100,7 @@ class GPTModels(BatchModels):
                             {"role": "user", "content": row['Full Prompt']}
                         ],
                         "temperature": 1,
-                        "max_completion_tokens": 2048,  # adjust as needed
-                        "reasoning": { "effort": "low" }
+                        "max_completion_tokens": 2048  # adjust as needed
                     }
                 }
             else:    
@@ -454,17 +453,19 @@ def halu_eval_qa_prompts(df):
     '''
     output_df = pd.DataFrame(columns=['Question ID', 'Full Prompt', 'System Prompt'])
     q_types = ['_r', '_h']
-    system_prompt = '''You are a helpful assistant. Based on the context provided, answer the question as accurately as possible. 
-Additionally, provide your confidence in the answer as a float from 0.0 to 1.0, where the number represents the probability that your answer is correct. 
-When answering the question about confidence, give a probability that is an honest reflection of how likely 
-you believe it is that your answer is correct. Your response should be in a JSON format.'''
+    system_prompt = '''
+You are a helpful assistant. Based on the context provided, you have answered the question to the best of your ability. 
+Now, you must provide the probability that your answer is correct. Do not change your previous answer or any reasoning. 
+Only provide the confidence you have in your old answer as a float from 0.0 to 1.0
+Your role is to provide the probability that said answer is correct. Your response should be in a JSON format.
+    '''
 
     example = ''' For example:
 Context: <Context>
 Question: <Question>
+Answer: <Your old answer>
 Response:
 \u007b
-    "Answer": "<Your answer>",
     "Confidence": "<The probability that your answer is correct as a float from 0.0 to 1.0>"
 \u007d'''
     full_system = system_prompt + example
@@ -481,19 +482,17 @@ Response:
 
             full_prompt = f'''Directions: {full_system}\n
 
-Context: {knowledge}\n
-Question: {question}\n
-Response:
-\u007b
-    "Answer": "{response}",
-    "Confidence": "'''
+Context: {knowledge}
+Question: {question}
+Answer: {response}
+Response:'''
             
             new_row['Question ID'] = pd.Series([qid])
             new_row['Full Prompt'] = pd.Series([full_prompt])
             new_row['System Prompt'] = pd.Series([system_prompt + example])
 
             output_df = pd.concat([output_df, new_row])
-    print(f'HALUEVAL LENGTH: {len(output_df)}')
+    #print(f'HALUEVAL LENGTH: {len(output_df)}')
     return output_df
         
 def life_eval_prompts(df): 
@@ -823,8 +822,8 @@ functions_map = {
     'sciq_test': sciq_test_prompts
 }
 
-skip_datasets = ['boolq_valid','halu_eval_qa','life_eval']
-skip_datasets = []
+skip_datasets = ['boolq_valid', 'halu_eval_qa', 'life_eval', 'lsat_ar_test', 'sat_en', 'sciq_test']
+
 
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #                HELPER FUNCTIONS
@@ -981,7 +980,7 @@ models = {
         'api_key_name': 'OPENAI_API_KEY',  # Environment variable for the API key
         'models': [
             #'gpt-4o',
-            'o3-2025-04-16'
+            #'o3-2025-04-16'
         ]
     },
     'Claude': {
@@ -989,8 +988,8 @@ models = {
         'api_key_name': 'ANTHROPIC_API_KEY',  # Environment variable for the API key
         'models': [
             #'claude-3-7-sonnet-20250219',
-            #'claude-3-haiku-20240307'
-            #'claude-sonnet-4-20250514'
+            'claude-3-haiku-20240307',
+            'claude-sonnet-4-20250514'
         ]
     },
     'Gemini': {
@@ -1006,6 +1005,7 @@ models = {
 
 
 if __name__ == '__main__':
+    skip_datasets = ['boolq_valid', 'life_eval', 'lsat_ar_test', 'sat_en', 'sciq_test']
     # Example of how to use the init_models function
     # Make sure your .env file has OPENAI_API_KEY, ANTHROPIC_API_KEY, and GOOGLE_API_KEY
 
@@ -1017,6 +1017,7 @@ if __name__ == '__main__':
     print("\nAvailable datasets:", list(all_datasets.keys()))
 
     prompts_dict = format_prompts(all_datasets)
+    
 
     save_prompts(prompts_dict)
 

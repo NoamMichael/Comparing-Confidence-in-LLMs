@@ -9,7 +9,7 @@
       "gpt-4o": {
         "file_id": "file-12Pr3mz95PN2sGpZnCioLh",
         "batch_id": "batch_6882b9e8c0b88190a6078d1259b0bbac",
-        "output_filename": "boolq_valid_gpt-4o.json",
+        "output_filename": "boolq_valid_gpt-4o.jsonl",
         "old_batch": "batch_68885a713de48190b5c616795507d7f4"
       },
       "claude-3-haiku-20240307": {
@@ -58,7 +58,7 @@
       "gpt-4o": {
         "file_id": "file-BLSfgxEbYnMQftBfye2Vip",
         "batch_id": "batch_6882b9edb8888190a7273726ffd6f3ba",
-        "output_filename": "lsat_ar_test_gpt-4o.json"
+        "output_filename": "lsat_ar_test_gpt-4o.jsonl"
       },
       "claude-3-7-sonnet-20250219": {
         "file_id": "lsat_ar_test",
@@ -117,7 +117,7 @@
       "gpt-4o": {
         "file_id": "file-UidfV3UFVwtriK2xJ8dmqY",
         "batch_id": "batch_6882b9f6ed908190ab2f6acea76f3b12",
-        "output_filename": "sciq_test_gpt-4o.json"
+        "output_filename": "sciq_test_gpt-4o.jsonl"
       },
       "claude-3-7-sonnet-20250219": {
         "file_id": "sciq_test",
@@ -173,7 +173,7 @@
       "gpt-4o": {
         "file_id": "file-9YM5wSc4CSEgG1gbeNBccn",
         "batch_id": "batch_6882b9ec28508190b161285d2f77395d",
-        "output_filename": "life_eval_gpt-4o.json"
+        "output_filename": "life_eval_gpt-4o.jsonl"
       },
       "claude-3-7-sonnet-20250219": {
         "file_id": "life_eval",
@@ -217,28 +217,27 @@
   },
   "halu_eval_qa": {
     "fields": [
-      "Answer",
       "Confidence"
     ],
     "models": {
       "gpt-4o": {
-        "file_id": "file-9YM5wSc4CSEgG1gbeNBccn",
-        "batch_id": "batch_68885dc2a5988190b9a1bb1e6e75c0d7",
-        "output_filename": "halu_eval_qa_gpt-4o.json"
+        "file_id": "file-3pA8i8mEK2vMbor1nkaZwh",
+        "batch_id": "batch_68a34e88a850819083e99b221032a3ed",
+        "output_filename": "halu_eval_qa_gpt-4o.jsonl"
       },
       "claude-3-7-sonnet-20250219": {
         "file_id": "halu_eval_qa",
-        "batch_id": "msgbatch_01QJ2ddxNDcvDdoENsvzoALX",
+        "batch_id": "msgbatch_015MXrBsLFceTRUAuX8j6mY7",
         "output_filename": "halu_eval_qa_claude-3-7-sonnet-20250219.jsonl"
       },
       "claude-3-haiku-20240307": {
         "file_id": "halu_eval_qa",
-        "batch_id": "msgbatch_014vkQHRi4wTjZjwCvByVmtc",
+        "batch_id": "msgbatch_01CCjvUw8d6V9hfB2qWrApbQ",
         "output_filename": "halu_eval_qa_claude-3-haiku-20240307.jsonl"
       },
       "gemini-2.5-pro": {
         "file_id": "none",
-        "batch_id": "batches/dnxouw980f6m1h1lcocwjqstk44d0oyo6s7h",
+        "batch_id": "batches/kd194mqyg4r5y4iuwrnn3963kp08iezlw40p",
         "output_filename": "halu_eval_qa_gemini-2.5-pro.json"
       },
       "gpt-o3": {
@@ -246,13 +245,13 @@
         "batch_id": "batch_68993301f224819084242fda37b550dc"
       },
       "o3-2025-04-16": {
-        "file_id": "file-5Vn7bFRMJShYrpcZqEPdJC",
-        "batch_id": "batch_689c1b3f8a0481908dbbe19900608dbe",
+        "file_id": "file-QKitzVCgGqAHmFKdeDKnpM",
+        "batch_id": "batch_68a3645fd9b48190b47072a3c38c62a8",
         "output_filename": "halu_eval_qa_o3-2025-04-16.jsonl"
       },
       "gemini-2.5-flash": {
         "file_id": "none",
-        "batch_id": "batches/8km4am6rz0t3lawv24estzewea9i1g1n148e",
+        "batch_id": "batches/z0qglkwxokoujy9mmnp24lrawpmlxz632lpu",
         "output_filename": "halu_eval_qa_gemini-2.5-flash.json"
       },
       "gpt-o3-2025-04-16": {
@@ -265,8 +264,12 @@
       },
       "claude-sonnet-4-20250514": {
         "file_id": "halu_eval_qa",
-        "batch_id": "msgbatch_011swsRcuZvpPsVTpEVs9MFu",
+        "batch_id": "msgbatch_013qoeWmnW3NSzkB4ufkx8Bn",
         "output_filename": "halu_eval_qa_claude-sonnet-4-20250514.jsonl"
+      },
+      "claude-3-haiku-20240307claude-sonnet-4-20250514": {
+        "file_id": "halu_eval_qa",
+        "batch_id": "msgbatch_01Hn1i6KxKQ8mbfWWA1LwEPo"
       }
     }
   },
@@ -283,7 +286,7 @@
       "gpt-4o": {
         "file_id": "file-U4DBrYzFABs18Z8mPdsfco",
         "batch_id": "batch_6882b9f307888190ac4769c47dac1eda",
-        "output_filename": "sat_en_gpt-4o.json"
+        "output_filename": "sat_en_gpt-4o.jsonl"
       },
       "claude-3-7-sonnet-20250219": {
         "file_id": "sat_en",
