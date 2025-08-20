@@ -80,8 +80,8 @@
         "batch_id": "batch_68993304145c8190b9b21b0190457fb8"
       },
       "o3-2025-04-16": {
-        "file_id": "file-EP6yYBQDYuyj5mvkt1YZ9F",
-        "batch_id": "batch_689c1b41d28c81909b705f7a1c4738d5",
+        "file_id": "file-2hAVyaGX79bkEVos8EWi3i",
+        "batch_id": "batch_68a51081d7c081908c832f6fbf8521cd",
         "output_filename": "lsat_ar_test_o3-2025-04-16.jsonl"
       },
       "gemini-2.5-flash": {
@@ -245,8 +245,8 @@
         "batch_id": "batch_68993301f224819084242fda37b550dc"
       },
       "o3-2025-04-16": {
-        "file_id": "file-QKitzVCgGqAHmFKdeDKnpM",
-        "batch_id": "batch_68a3645fd9b48190b47072a3c38c62a8",
+        "file_id": "file-VYYvM2JC9CzgQMF1X6aWaq",
+        "batch_id": "batch_68a510805af88190b6e552898bac2c77",
         "output_filename": "halu_eval_qa_o3-2025-04-16.jsonl"
       },
       "gemini-2.5-flash": {

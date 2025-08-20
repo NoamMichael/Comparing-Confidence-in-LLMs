@@ -100,7 +100,7 @@ class GPTModels(BatchModels):
                             {"role": "user", "content": row['Full Prompt']}
                         ],
                         "temperature": 1,
-                        "max_completion_tokens": 2048  # adjust as needed
+                        "max_completion_tokens": 5000  # Just for LSAT
                     }
                 }
             else:    
@@ -980,7 +980,7 @@ models = {
         'api_key_name': 'OPENAI_API_KEY',  # Environment variable for the API key
         'models': [
             #'gpt-4o',
-            #'o3-2025-04-16'
+            'o3-2025-04-16'
         ]
     },
     'Claude': {
@@ -988,8 +988,8 @@ models = {
         'api_key_name': 'ANTHROPIC_API_KEY',  # Environment variable for the API key
         'models': [
             #'claude-3-7-sonnet-20250219',
-            'claude-3-haiku-20240307',
-            'claude-sonnet-4-20250514'
+            #'claude-3-haiku-20240307',
+            #'claude-sonnet-4-20250514'
         ]
     },
     'Gemini': {
@@ -1005,7 +1005,14 @@ models = {
 
 
 if __name__ == '__main__':
-    skip_datasets = ['boolq_valid', 'life_eval', 'lsat_ar_test', 'sat_en', 'sciq_test']
+    skip_datasets = [
+        'boolq_valid', 
+        'life_eval', 
+        'halu_eval_qa', 
+        'sat_en', 
+        'sciq_test',
+        #'lsat_ar_test'
+        ]
     # Example of how to use the init_models function
     # Make sure your .env file has OPENAI_API_KEY, ANTHROPIC_API_KEY, and GOOGLE_API_KEY
 
