@@ -218,6 +218,8 @@
   "halu_eval_qa": {
     "fields": [
       "Confidence"
+      
+      
     ],
     "models": {
       "gpt-4o": {
