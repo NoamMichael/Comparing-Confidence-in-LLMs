@@ -1639,7 +1639,7 @@
 ""D"": 0.5
 }
 ```",163
-164,"The passage does not provide specific numerical data from Table 1 regarding the mean number of instances that woodpecker finches raised without tool-using models used twigs as tools. Therefore, it is impossible to determine the correct answer based on the given information.",,0.25,0.25,0.25,0.25,True,"```json
+164,"The passage does not provide specific numerical data from Table 1 regarding the mean number of instances that woodpecker finches raised without tool-using models used twigs as tools. Therefore, it is impossible to determine the correct answer based on the given information.",,0.25,0.25,0.25,0.25,False,"```json
 {
 ""Reasoning"": ""The passage does not provide specific numerical data from Table 1 regarding the mean number of instances that woodpecker finches raised without tool-using models used twigs as tools. Therefore, it is impossible to determine the correct answer based on the given information."",
 ""Answer"": """",
@@ -1939,7 +1939,7 @@
 ""D"": 0.25
 }
 ```",193
-194,"The passage discusses the evolving nature of public knowledge and news authority but does not provide specific data or trends about the accuracy, bias, or fairness of news organizations over time. Therefore, none of the options can be directly supported by the passage.",None,0.0,0.0,0.0,0.0,True,"```json
+194,"The passage discusses the evolving nature of public knowledge and news authority but does not provide specific data or trends about the accuracy, bias, or fairness of news organizations over time. Therefore, none of the options can be directly supported by the passage.",None,0.0,0.0,0.0,0.0,False,"```json
 {
 ""Reasoning"": ""The passage discusses the evolving nature of public knowledge and news authority but does not provide specific data or trends about the accuracy, bias, or fairness of news organizations over time. Therefore, none of the options can be directly supported by the passage."",
 ""Answer"": ""None"",

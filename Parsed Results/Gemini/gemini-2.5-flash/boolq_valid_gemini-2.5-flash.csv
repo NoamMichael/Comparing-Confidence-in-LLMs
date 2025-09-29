@@ -2597,7 +2597,7 @@ The function f(y) = y^3 is continuous, monotonically increasing, and its range c
     ""Confidence"": 0.98
 }
 ```",1101
-372,"Vauxhall station is located in London and serves as a significant interchange. According to Transport for London (TfL) and various public transport maps, Vauxhall is officially designated as being in both Travelcard Zone 1 and Zone 2. This dual-zone designation is common for stations situated on the border of two zones, providing flexibility for fare calculations.",Both Zone 1 and Zone 2,1.0,True,"```json
+372,"Vauxhall station is located in London and serves as a significant interchange. According to Transport for London (TfL) and various public transport maps, Vauxhall is officially designated as being in both Travelcard Zone 1 and Zone 2. This dual-zone designation is common for stations situated on the border of two zones, providing flexibility for fare calculations.",Both Zone 1 and Zone 2,1.0,False,"```json
 {
     ""Reasoning"": ""Vauxhall station is located in London and serves as a significant interchange. According to Transport for London (TfL) and various public transport maps, Vauxhall is officially designated as being in both Travelcard Zone 1 and Zone 2. This dual-zone designation is common for stations situated on the border of two zones, providing flexibility for fare calculations."",
     ""Answer"": ""Both Zone 1 and Zone 2"",
@@ -5782,7 +5782,7 @@ The function f(y) = y^3 is continuous, monotonically increasing, and its range c
     ""Confidence"": 0.98
 }
 ```",1560
-831,"The Caribbean region, which includes the Caribbean Sea and its islands, is geographically located to the southeast of the North American mainland, east of Central America, and north of South America. It is universally classified as a subregion of North America. It is not part of South America.",North America,1.0,True,"```json
+831,"The Caribbean region, which includes the Caribbean Sea and its islands, is geographically located to the southeast of the North American mainland, east of Central America, and north of South America. It is universally classified as a subregion of North America. It is not part of South America.",North America,1.0,False,"```json
 {
     ""Reasoning"": ""The Caribbean region, which includes the Caribbean Sea and its islands, is geographically located to the southeast of the North American mainland, east of Central America, and north of South America. It is universally classified as a subregion of North America. It is not part of South America."",
     ""Answer"": ""North America"",
@@ -10197,7 +10197,7 @@ Since the question uses the broad term 'anything', it encompasses historical US 
     ""Confidence"": 1.0
 }
 ```",2198
-1469,"Port Louis is the capital city of Mauritius. Mauritius is an island nation located in the Indian Ocean, off the southeast coast of the African continent. Therefore, it is neither in the Atlantic nor the Pacific Ocean.",Neither. It is in the Indian Ocean.,1.0,True,"```json
+1469,"Port Louis is the capital city of Mauritius. Mauritius is an island nation located in the Indian Ocean, off the southeast coast of the African continent. Therefore, it is neither in the Atlantic nor the Pacific Ocean.",Neither. It is in the Indian Ocean.,1.0,False,"```json
 {
     ""Reasoning"": ""Port Louis is the capital city of Mauritius. Mauritius is an island nation located in the Indian Ocean, off the southeast coast of the African continent. Therefore, it is neither in the Atlantic nor the Pacific Ocean."",
     ""Answer"": ""Neither. It is in the Indian Ocean."",
@@ -17406,7 +17406,7 @@ In all possible scenarios, a triangle always has at least two acute angles.",Tru
     ""Answer"": ""False"",
     ""Confidence"": 0.95
 }",233
-2504,"In the United States, a right turn on a red light is generally permitted after coming to a complete stop, provided there is no sign prohibiting such a turn (e.g., 'No Turn on Red') and the maneuver can be made safely without interfering with other traffic or pedestrians. There are some exceptions, such as New York City where it's generally prohibited unless a sign permits it, and other specific intersections or states might have different rules. However, the general rule across most of the U.S. allows it.","True, under specific conditions and unless otherwise posted.",0.95,True,"```json
+2504,"In the United States, a right turn on a red light is generally permitted after coming to a complete stop, provided there is no sign prohibiting such a turn (e.g., 'No Turn on Red') and the maneuver can be made safely without interfering with other traffic or pedestrians. There are some exceptions, such as New York City where it's generally prohibited unless a sign permits it, and other specific intersections or states might have different rules. However, the general rule across most of the U.S. allows it.","True, under specific conditions and unless otherwise posted.",0.95,False,"```json
 {
     ""Reasoning"": ""In the United States, a right turn on a red light is generally permitted after coming to a complete stop, provided there is no sign prohibiting such a turn (e.g., 'No Turn on Red') and the maneuver can be made safely without interfering with other traffic or pedestrians. There are some exceptions, such as New York City where it's generally prohibited unless a sign permits it, and other specific intersections or states might have different rules. However, the general rule across most of the U.S. allows it."",
     ""Answer"": ""True, under specific conditions and unless otherwise posted."",

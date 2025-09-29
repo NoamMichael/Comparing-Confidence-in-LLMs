@@ -335,7 +335,7 @@ I am fairly confident in this answer (70% probability) because the data in the t
 ""D"": 0.1
 }",36
 37,"The passage describes a woman, Lady Carlotta, who is mistaken for a governess and ends up going along with the ruse. The passage focuses on her interactions with Mrs. Quabarl, the woman who hired her, and does not indicate that Lady Carlotta is weighing the pros and cons of accepting the job or seeking revenge on an acquaintance. The best summary is that a woman does not correct a stranger who mistakes her for someone else.
-""Answer"": ""B",,0.2,0.7,0.1,0.0,True,"{
+""Answer"": ""B",,0.2,0.7,0.1,0.0,False,"{
 ""Reasoning"": The passage describes a woman, Lady Carlotta, who is mistaken for a governess and ends up going along with the ruse. The passage focuses on her interactions with Mrs. Quabarl, the woman who hired her, and does not indicate that Lady Carlotta is weighing the pros and cons of accepting the job or seeking revenge on an acquaintance. The best summary is that a woman does not correct a stranger who mistakes her for someone else.
 ""Answer"": ""B"",
 ""A"": 0.2,
@@ -542,7 +542,7 @@ The best answer is B, because the data in the table do show that for each pathog
 ""D"": 0.05
 }",59
 60,"The last paragraph describes Mr. Peters' physical decline and his attempts to appear younger and wealthier than he is. The key details are that his hair is graying, he has lost weight, his clothes no longer fit well, and he is self-consciously displaying a diamond ring and getting a manicure - all in an effort to appear more youthful and prosperous. This suggests that the main idea is that Mr. Peters is behaving as if he is a younger version of himself, trying to maintain an image that does not match his actual physical state.
-""Answer"": ""B",,0.1,0.7,0.2,0.0,True,"{
+""Answer"": ""B",,0.1,0.7,0.2,0.0,False,"{
 ""Reasoning"": The last paragraph describes Mr. Peters' physical decline and his attempts to appear younger and wealthier than he is. The key details are that his hair is graying, he has lost weight, his clothes no longer fit well, and he is self-consciously displaying a diamond ring and getting a manicure - all in an effort to appear more youthful and prosperous. This suggests that the main idea is that Mr. Peters is behaving as if he is a younger version of himself, trying to maintain an image that does not match his actual physical state.
 ""Answer"": ""B"",
 ""A"": 0.1,
@@ -896,7 +896,7 @@ D: 0.05 - The passage does not indicate that the authors have different views on
 ""D"": 0.3
 }",98
 99,"The passage focuses on the importance of quality and craftsmanship in the production of ink, as evidenced by the detailed descriptions of the ink's properties and the care with which the father presents it to the customer. This suggests that the main theme is that quality is achieved through deliberate effort, rather than simply through family relationships, material compensation, or creative expression.
-""Answer"": ""B",,0.2,0.7,0.1,0.0,True,"{
+""Answer"": ""B",,0.2,0.7,0.1,0.0,False,"{
 ""Reasoning"": The passage focuses on the importance of quality and craftsmanship in the production of ink, as evidenced by the detailed descriptions of the ink's properties and the care with which the father presents it to the customer. This suggests that the main theme is that quality is achieved through deliberate effort, rather than simply through family relationships, material compensation, or creative expression.
 ""Answer"": ""B"",
 ""A"": 0.2,

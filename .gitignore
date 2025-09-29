@@ -6,3 +6,5 @@ read_prompts.py
 doodle.py
 Batches/
 Raw Results/
+eda.ipynb
+llm-confidence-correct.csv
