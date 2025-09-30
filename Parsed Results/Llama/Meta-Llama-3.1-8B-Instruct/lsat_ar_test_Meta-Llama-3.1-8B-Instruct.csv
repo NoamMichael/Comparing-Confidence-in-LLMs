@@ -1087,7 +1087,7 @@
 ""D"": ""0.0"",
 ""E"": ""0.5""
 }",128,0.004133458426403019,0.0006510779830218183,0.0003768476892530229,0.9934527401863973,0.0013858693793269675
-129,129,B,0.0,0.0,0.0,0.0,0.0,True,"{
+129,129,B,0.0,0.0,0.0,0.0,0.0,False,"{
 ""Reasoning"": ""Given that the western and sci-fi film are on the same screen, and the western begins before the horror film, the western and sci-fi film must be on screen 1 or 2. Since screen 3 shows only one movie, and the western begins before the horror film, the western cannot be on screen 3. The romance is not shown on screen 2, so it must be on screen 3. The horror film and mystery are on different screens, and the western and sci-fi film are on the same screen, so the horror film and mystery must be on screens 1 and 2. Since the western begins before the horror film, the western must be on screen 1, and the sci-fi film must be on screen 2. This means the mystery must be on screen 3, and it begins at 8 P.M. However, this contradicts option B, so option B is the only one that could be false."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",

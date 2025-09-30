@@ -560,7 +560,7 @@ Note: The probabilities are subjective and based on the analysis of the constrai
 }
 
 Note: The probability of option B being correct is 1.0, indicating that I am 100% confident that this is the correct answer. The probabilities of the other options being correct are 0.0, indicating that I am 0% confident that they are correct.",59,0.24644455192476694,0.2927069634434788,0.09209712684833622,0.2388766657339123,0.12987469204950572
-60,60,A,0.0,0.0,0.0,0.0,0.0,True,"{
+60,60,A,0.0,0.0,0.0,0.0,0.0,False,"{
 ""Reasoning"": ""Given the conditions, if Theresa tests G on the second day, we can deduce the following: Theresa must test H on the first day because she must be one of the testers for H. Since Theresa tests G on the second day, she cannot test H on the second day. Therefore, she must test H on the first day. This eliminates option C as a possibility for the second day, but it is actually a correct statement for the first day."",
 ""Answer"": ""A"",
 ""A"": ""0.0"",
@@ -1099,7 +1099,7 @@ Note: The probabilities are subjective and based on the analysis of the conditio
 ""D"": ""0.0"",
 ""E"": ""1.0""
 }",115,0.0013582365834429902,0.002136984560767851,0.0017711944107265073,0.017896764393601754,0.9768368200514609
-116,116,A,0.0,0.0,0.0,0.0,0.0,True,"{
+116,116,A,0.0,0.0,0.0,0.0,0.0,False,"{
 ""Reasoning"": ""Given the constraints, if Zircon performs in an earlier slot than Yardsign, then Zircon must perform in slot one or two, and Yardsign must perform in slot two or three. Since Wellspring must perform in an earlier slot than Xpert, and Xpert cannot perform in slot one, Wellspring must perform in slot one or two. However, if Zircon performs in slot one, then Wellspring cannot perform in slot one. Therefore, the earliest slot in which Wellspring could perform is slot two, but only if Zircon performs in slot one. If Zircon performs in slot two, then Wellspring could perform in slot one. However, this is not an option. Therefore, the earliest slot in which Wellspring could perform is slot two."",
 ""Answer"": ""A"",
 ""A"": ""0.0"",
@@ -1122,7 +1122,7 @@ Wait, I made a mistake. I should have assigned a probability of 1.0 to option A,
 ""D"": ""0.0"",
 ""E"": ""0.0""
 }",117,0.04469706813236693,0.7097811032215404,0.0031370380810114085,0.02585957425417677,0.21652521631090452
-118,118,A,0.0,0.0,0.0,0.0,0.0,True,"{
+118,118,A,0.0,0.0,0.0,0.0,0.0,False,"{
 ""Reasoning"": ""Given the constraints, if Zircon performs immediately before Wellspring, then Wellspring cannot perform in slot 6, as Xpert must perform after Wellspring. This means Xpert must perform in slot 6. Since Uneasy performs in one of the last three slots, and slot 6 is taken by Xpert, Uneasy must perform in either slot 4 or 5. However, if Zircon performs immediately before Wellspring, then Zircon and Wellspring must occupy slots 4 and 5, in that order, or slots 3 and 4, in that order. In either case, Uneasy must perform in slot 5 or slot 6, but since Xpert is in slot 6, Uneasy must perform in slot 5."",
 ""Answer"": ""A"",
 ""A"": ""0.0"",

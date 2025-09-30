@@ -1134,7 +1134,7 @@ Note: I've assigned a high probability to option B because it accurately reflect
 ""C"": ""0.1"",
 ""D"": ""0.1""
 }",137,0.9999621525620093,1.2039657439560621e-05,5.662215132466629e-06,2.0145565418670744e-05
-138,138,A,0.0,0.0,0.0,0.0,True,"Based on the passage, the question is asking about the characteristics of the four largest asteroid belt objects. The passage does not provide a table, but it does discuss the characteristics of different types of asteroids.
+138,138,A,0.0,0.0,0.0,0.0,False,"Based on the passage, the question is asking about the characteristics of the four largest asteroid belt objects. The passage does not provide a table, but it does discuss the characteristics of different types of asteroids.
 
 The passage mentions that Vesta is a differentiated asteroid with a diameter of more than 300 miles, and it is likely that Vesta is one of the four largest asteroid belt objects. The passage also mentions that Vesta is a type V asteroid.
 

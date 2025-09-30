@@ -5639,7 +5639,7 @@
 ""C"": 0.14,
 ""D"": 0.01
 }",704
-705,"B cells are a type of lymphocyte (white blood cell) that are produced in the bone marrow. They mature in the bone marrow before being released into the bloodstream. Lymphocytes are a category of cells that includes B cells, not a location where they're produced. Keratinocytes are skin cells, tumors are abnormal growths, and lungs are respiratory organs - none of these produce B cells.",A,0.0,0.0,0.0,0.0,True,"{
+705,"B cells are a type of lymphocyte (white blood cell) that are produced in the bone marrow. They mature in the bone marrow before being released into the bloodstream. Lymphocytes are a category of cells that includes B cells, not a location where they're produced. Keratinocytes are skin cells, tumors are abnormal growths, and lungs are respiratory organs - none of these produce B cells.",A,0.0,0.0,0.0,0.0,False,"{
 ""Reasoning"": ""B cells are a type of lymphocyte (white blood cell) that are produced in the bone marrow. They mature in the bone marrow before being released into the bloodstream. Lymphocytes are a category of cells that includes B cells, not a location where they're produced. Keratinocytes are skin cells, tumors are abnormal growths, and lungs are respiratory organs - none of these produce B cells."",
 ""Answer"": ""A"",
 ""A"": ""0.0"",
