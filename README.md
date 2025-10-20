@@ -18,7 +18,7 @@ We measure calibration on six datasets that span different cognitive demands:
 * **SAT-EN (206)** tests contextual understanding with passage-based comprehension.
 * **LSAT-AR (230)** stresses multi-step logical reasoning.
 * **HaluEval-QA (2,000)** evaluates self-monitoring by asking models to assess the correctness of provided answers, including hallucinated ones.
-* **LifeEval (808)** is our new estimation task: given a person’s current age and gender, the model estimates age at death and reports the probability that the true age lies within a tolerance radius ( r \in {1,5,10,20} ) of its guess. We score against **U.S. SSA Period Life Tables**, which provide the true conditional probability of the event. This gives a rare setting where probabilistic forecasts can be judged against known base rates.
+* **LifeEval (808)** is our new estimation task: given a person’s current age and gender, the model estimates age at death and reports the probability that the true age lies within a tolerance radius ( r $\in \{1,5,10,20\}$ ) of its guess. We score against **U.S. SSA Period Life Tables**, which provide the true conditional probability of the event. This gives a rare setting where probabilistic forecasts can be judged against known base rates.
 
 ---
 
@@ -30,7 +30,7 @@ For each question we collect the model’s chosen answer and a probability distr
 * **Confidence**: the probability the model assigns to its chosen answer.
 * **Expected Calibration Error (ECE)**: the average gap between accuracy and confidence across confidence bins.
 * **Overconfidence**: mean(confidence) − accuracy (positive means the model overstates certainty).
-* **Second-order confidence (Gini)**: (1 - \sum_k p_k^2), which summarizes how sharply the model distinguishes among options.
+* **Second-order confidence (Gini)**: ($1 - \sum_k p_k^2$), which summarizes how sharply the model distinguishes among options.
 
 When token-level probabilities are available, we also compare **stated** probabilities to **token-derived** probabilities to understand how verbalized confidence relates to the model’s internal scoring.
 
