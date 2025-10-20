@@ -1,54 +1,113 @@
-# Comparing-Confidence-in-LLMs
-Large Language Model Overconfidence Project within Moore Accuracy Lab at Berkeley Haas <br>
-_Authors: Noam Michael, Kelly Hu, Daniel BenShushan_ <br>
-_Advised By: Advised by Prof. Don Moore & Prof. Jacob Bien_<br>
-_In Collaboration with USC Marshall and Berkeley Haas_<br>
+# LifeEval: Measuring LLM Calibration and the Hard–Easy Effect
 
-See the link to our poster here: https://drive.google.com/file/d/1Y8K6BILDCSWpU2C1oj10JocpeBsS6-So/view?usp=sharing
+This repository evaluates whether large language models (LLMs) say “how sure” they are in a way that matches reality. We study calibration across six benchmarks and introduce **LifeEval**, a new estimation task with ground-truth probabilities derived from actuarial life tables. Across 11 models we observe a consistent **hard–easy effect**: models are overconfident on difficult tasks and underconfident on easy ones. The code and protocol are designed to help you reproduce these findings, extend them to new models, and audit confidence in your own applications.
 
-## Introduction
-Large Language Models (LLMs) like GPT, Claude and Llama have become increasingly prevalent, but they often generate inaccurate information or "hallucinations," undermining their reliability. As these models are becoming more ubiquitous, it is becoming more necessary to detect and mitigate these inaccuracies.  To address this issue, users should be armed with knowledge of a model’s overall proficiency and with its ability to self assess its answers. Borrowing from meteorology, we can analyze a model’s performance in the context of calibration. A well-calibrated model, for instance, would be correct 80% of the time when it expresses 80% confidence. We measure model confidence in the form of its Stated Probability as well as the probability it assigns to each answer token (Logit Probability. We compare models by assessing their respective Expected Calibration Error (ECE). 
+---
 
-## Methodology
-Our methodology utilizes a custom, standardized system prompt specifically designed for the SciQ and LSAT datasets. We implement a double prompting technique. In the first stage, the model is prompted to produce both answer and reasoning, This output is then integrated into a second prompt that incorporates the original question. The second prompt requests the model to provide its stated confidence for each answer option based on the initial reasoning. The resulting data is then aggregated into a table, from which we extract the probability assigned to each individual multiple choice option. These individual probabilities are grouped into confidence bins, enabling us to analyze both accuracy and calibration across all probability levels. Through analysing each individual option, we are able to have a more nuanced evaluation of the model’s performance.
+## Why calibration matters
 
+Accuracy alone is insufficient for safe deployment. A model that is right 60% of the time but **claims** 90% confidence creates operational risk; a model that is right 95% of the time but **claims** 70% confidence leaves performance untapped because users discount correct answers. We evaluate both **first-order confidence** (the probability assigned to the chosen answer) and **second-order confidence** (the decisiveness of the full option distribution) and relate these to observed correctness. This lets you see not just whether a model is right, but whether its probabilities are trustworthy and how that trust varies by task.
 
-## Measuring Confidence
-**Stated Confidence** - This is defined as what the model believes its confidence for each answer choice is in a number ranging from 0.0 to 1.0. This is the number a model outputs when prompted "Provide the likelihood that each answer is correct (A, B, C, D)." 
+---
 
-**Logit Confidence** - Large Language Models produce outputs in the form of “tokens”, where the next token outputted is decided based on a probability, and is a measuring of how likely the next token will be predicted. For a given question, we took the Logit of the answered token divided by the sum of the logits across the answer space. As GPT is not open source, we were unable to obtain the correct logits consistently.
+## What we tested
 
-**Brier Score**:  This metric calculates the weighted average error of the estimated “probabilities” thus resulting in a single value that we can use to compare different models. Essentially, we are taking the squared difference of the accuracy and confidence. 
+We measure calibration on six datasets that span different cognitive demands:
 
-## Benchmarks Used
-We tested Claude Sonnet 3.7, Llama-3.1 and GPT-4 on three different benchmarks:<br>
-**LSAT** – Tests logical thinking and puzzles, requiring the model to understand the data and perform critical thinking to fully formulate an answer. Consists of a sample of 1567 LSAT questions (for this presentation, we used a sample of 200) from approximately 90 LSAT exams administered between  1991 and 2016. 
+* **SciQ (1,000)** and **BoolQ (3,270)** probe ground-truth knowledge via multiple-choice and true/false questions.
+* **SAT-EN (206)** tests contextual understanding with passage-based comprehension.
+* **LSAT-AR (230)** stresses multi-step logical reasoning.
+* **HaluEval-QA (2,000)** evaluates self-monitoring by asking models to assess the correctness of provided answers, including hallucinated ones.
+* **LifeEval (808)** is our new estimation task: given a person’s current age and gender, the model estimates age at death and reports the probability that the true age lies within a tolerance radius ( r \in {1,5,10,20} ) of its guess. We score against **U.S. SSA Period Life Tables**, which provide the true conditional probability of the event. This gives a rare setting where probabilistic forecasts can be judged against known base rates.
 
-**SciQ** – The SciQ dataset contains 13,679 crowdsourced science exam questions about Physics, Chemistry and Biology, among others. The questions are in multiple-choice format with 4 answer options each. For the majority of the questions, an additional paragraph with supporting evidence for the correct answer is provided.
+---
 
+## How we quantify calibration
 
-## Discussion
-Across a range of tasks, there appears to be an inverse relationship between a model’s calibration and its overall proficiency. As task complexity increases, models struggle to assign well-calibrated confidence scores to their predictions. Ideally, a model should express lower certainty when it is less well-suited to a particular task, mirroring a human's intuitive self-assessment. However, current language models often lack this adaptive uncertainty. Notably, in open-source models such as Llama, internal logit probabilities tend to align with their stated confidence, suggesting that the model possesses an implicit sense of certainty, even if it lacks an accurate awareness of task difficulty. Furthermore, task difficulty is exacerbated by an increase in the number of answer choices; for instance, empirical results show that GPT-4 exhibits lower expected calibration error (ECE) on tasks with fewer answer options, such as SciQ compared to the LSAT, indicating improved confidence alignment in simpler settings. Additionally, when explicitly prompted to report confidence levels, language models tend to emulate human tendencies by rounding their confidence scores to the nearest multiple of ten (e.g., 70% rather than 73.56%), reflecting learned patterns in probabilistic expression.
+For each question we collect the model’s chosen answer and a probability distribution over all options (or, for LifeEval, a probability for each radius). We then compute:
 
-## Next Steps
-Moving forward, we aim to investigate the relationship between task difficulty and model calibration, with particular attention to whether increased difficulty serves as a reliable indicator of how responsive a model’s confidence is to its actual accuracy. Unlike humans, who are often aware when they lack knowledge in a specific domain, large language models (LLMs) do not reliably exhibit such meta-cognitive awareness. This raises important concerns about the degree to which LLMs are well-calibrated in their confidence judgments.
+* **Accuracy**: fraction of correct answers.
+* **Confidence**: the probability the model assigns to its chosen answer.
+* **Expected Calibration Error (ECE)**: the average gap between accuracy and confidence across confidence bins.
+* **Overconfidence**: mean(confidence) − accuracy (positive means the model overstates certainty).
+* **Second-order confidence (Gini)**: (1 - \sum_k p_k^2), which summarizes how sharply the model distinguishes among options.
 
-Another key direction involves generating and analyzing controlled hallucinations. By systematically eliciting hallucinated responses, we hope to isolate and identify the underlying factors that contribute to these errors. This would facilitate a more precise understanding of the mechanisms behind hallucination and inform strategies for mitigation.
+When token-level probabilities are available, we also compare **stated** probabilities to **token-derived** probabilities to understand how verbalized confidence relates to the model’s internal scoring.
 
-In parallel, we plan to conduct a more granular analysis of model performance across different types of questions—such as mathematical reasoning, logical inference, and reading comprehension—leveraging our labeled dataset to determine the specific domains in which LLMs perform reliably versus those where they are more prone to error.
+---
 
-Lastly, we seek to examine the models’ ability to differentiate between correct and incorrect answers. This line of inquiry will shed light on the extent to which current LLMs possess internal mechanisms for answer verification and whether these mechanisms can be refined to enhance both performance and trustworthiness.
+## Methodology at a glance
 
+We evaluate **11 models** spanning proprietary and open-source families. We use one-shot prompts and request JSON formatted outputs with per-option probabilities for MCQ tasks and per-radius probabilities for LifeEval. We set temperature to 0 and use greedy decoding wherever APIs allow. We exclude unparseable or incomplete outputs and, for cross-model comparisons, analyze the **intersection** of questions successfully answered by all models. We **preregistered** our plan before data collection to constrain analytic flexibility (OSF: `https://osf.io/y8rqv/`). Any deviations and API constraints are documented in the paper and mirrored here for transparency.
 
+---
 
-## Additional Visualizations
-<img width="1432" alt="image" src="https://github.com/user-attachments/assets/8b84e99e-d362-4b8b-9912-29b6ad5c6ad0" />
-<img width="1437" alt="image" src="https://github.com/user-attachments/assets/d472dbc1-37d9-40f1-9238-ce57a580bb90" />
-<img width="1431" alt="image" src="https://github.com/user-attachments/assets/e09439d6-422d-4bd1-ab1a-0c8d8a9e35a7" />
-<img width="1433" alt="image" src="https://github.com/user-attachments/assets/c352e728-1961-42a3-bedc-99b1efacc2f8" />
+## Data
 
+You can find all of our data in the `Parsed Results` folder. There you will find two files (`combined_raw.csv` & `combined_clean.csv`) with all data combined for easy comparisons across models/datasets. There are many NA values in this dataset as certain fields are not relevent to certain datasets or certain models and so are left blank. The columns of these files are:
 
+```text
+Question Set (str) ---------------- Required: The display name of the question set
+Question ID (str) ----------------- Required: The Question ID
+Model (str) ----------------------- Required: The model that provided the response (e.g. Llama-3.1-8B-Instruct)
+Model Type (str) ------------------ Required: The family of models which  the model (e.g. Llama)
+Coerce (Bool) --------------------- Required: Whether the parser was able to understand the response
 
+Question (str) -------------------- Required: The question posed to the model
+Correct Answer (str) -------------- Optional: Depends on Question Set (LifeEval is different than others)
+Content (str) --------------------- Optional: Depends on Coerce value (NA if Coerce == False)
+Reasoning (str) ------------------- Optional: Depends on Coerce value (NA if Coerce == False)
+Answer (str) ---------------------- Optional: Depends on Coerce value (NA if Coerce == False)
+Score (float) --------------------- Optional: Depends on Coerce value (NA if Coerce == False)
 
+Stated Confidence Answer (float) -- Optional: Depends on Question Set (NA if not available)
+Stated Confidence A (float) ------- Optional: Depends on Question Set (NA if not available)
+Stated Confidence B (float) ------- Optional: Depends on Question Set (NA if not available)
+Stated Confidence C (float) ------- Optional: Depends on Question Set (NA if not available)
+Stated Confidence D (float) ------- Optional: Depends on Question Set (NA if not available)
+Stated Confidence E (float)-------- Optional: Depends on Question Set (NA if not available)
 
+Token Probability Answer (float) -- Optional: Depends on Model Type (NA if not available)
+Token Probability A (float) ------- Optional: Depends on Model Type (NA if not available)
+Token Probability B (float) ------- Optional: Depends on Model Type (NA if not available)
+Token Probability C (float) ------- Optional: Depends on Model Type (NA if not available)
+Token Probability D (float) ------- Optional: Depends on Model Type (NA if not available)
+Token Probability E (float) ------- Optional: Depends on Model Type (NA if not available)
+
+```
+
+Additionally you will find specific results organized by `Model Type` $\rightarrow $ `Specific Model`  $\rightarrow $ `Question Set`
+
+---
+
+## What we found
+
+Across models and tasks, calibration tracks task difficulty.
+
+* On **hard reasoning** tasks (LSAT-AR) and **tight LifeEval radii**, models are **overconfident**. They keep assigning high probabilities even as accuracy falls, which inflates ECE and positive overconfidence.
+* On **easy knowledge** and **reading** tasks (SciQ, SAT-EN), models are often **underconfident**. Accuracy is high, yet reported confidence lags behind, yielding negative overconfidence.
+* On **self-evaluation** (HaluEval), many models struggle to lower confidence on incorrect or hallucinated content, reflecting weak self-monitoring.
+* **Stated vs token probabilities** are broadly aligned, with stated values sometimes slightly better calibrated. This suggests verbalized confidence can capture broader uncertainty than raw next-token scores.
+* Confidence values are **“lumpy.”** Many models round to coarse steps (e.g., 0.5, 0.6, 1.0), which limits resolution and likely contributes to residual ECE.
+
+These patterns replicate the **hard–easy effect** known from human judgment: overconfidence grows as difficulty rises, while underconfidence emerges when the task becomes trivial.
+
+---
+
+## Practical guidance
+
+If you plan to gate actions or escalate reviews based on model confidence:
+
+* Treat high confidence on **hard** reasoning tasks with caution. Use thresholds, secondary checks, or require corroborating signals.
+* Expect mild **underconfidence** on **easy** tasks; correct answers may deserve more trust than the reported number implies.
+* Prefer models or wrappers that expose token probabilities and make both **stated** and **token-derived** confidence auditable.
+* For estimation tasks like **LifeEval**, verify that confidence **scales with tolerance**. Flat scaling by ( r ) signals miscalibration.
+
+---
+
+## Limitations and notes
+
+Some benchmark items contain minor defects (typos, truncated text, missing figures). We keep them intentionally. A calibrated system should express **lower confidence** under ambiguity, and ECE should remain robust to a small fraction of noisy items. Certain APIs restrict decoding settings or hide log-probabilities; in those cases we analyze stated confidence only and document the constraint. For full details on exclusions, hedged responses, and API limitations, see the deviations and constraints notes in the paper.
+
+---
 
