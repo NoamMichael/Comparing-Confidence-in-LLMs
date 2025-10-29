@@ -1,5 +1,5 @@
-,Question ID,Answer,A,B,C,D,coerce,content,Question ID,A_prob,B_prob,C_prob,D_prob
-0,0,B,0.0,1.0,0.0,0.0,True,"{
+Question ID,Answer,A,B,C,D,coerce,content,Question ID,A_prob,B_prob,C_prob,D_prob
+0,B,0.0,1.0,0.0,0.0,True,"{
 ""Reasoning"": ""The passage describes a scene where Akira, a young man, visits Chie's home and asks for her daughter Naomi's hand in marriage. Chie is taken aback by the sudden proposal and is unsure of how to respond. The passage focuses on the interaction between Akira and Chie, and the surprise and uncertainty that Akira's request brings. Therefore, the best answer is the one that describes a character receiving a surprising request from another character."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -7,7 +7,7 @@
 ""C"": ""0.0"",
 ""D"": ""0.0""
 }",0,5.655989600607867e-05,0.9999173355366066,9.655113965210478e-06,1.6449453422210444e-05
-1,1,B,0.0,1.0,0.0,0.0,True,"{
+1,B,0.0,1.0,0.0,0.0,True,"{
 ""Reasoning"": ""The passage describes a meaningful encounter between Chie and Akira, where Akira asks for Naomi's hand in marriage. The passage focuses on the details of the encounter, including the setting, the characters' actions and dialogue, and their emotions. This suggests that the passage is primarily a detailed depiction of a meaningful encounter. I am very confident in this answer."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -15,7 +15,7 @@
 ""C"": ""0.0"",
 ""D"": ""0.0""
 }",1,2.509244719127603e-05,0.9999606030698494,4.470150924811644e-06,9.834332034585617e-06
-2,2,A,0.8,0.1,0.05,0.05,True,"{
+2,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""Akira's fear is evident in his apologetic tone and gentle voice when he senses that he has startled Chie. He is concerned that his unconventional approach, which deviates from tradition, will be viewed as inappropriate or presumptuous. This fear is rooted in his awareness of the significant social difference between him and Chie's family, as well as the potential consequences of not following the traditional protocol for proposing marriage."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -23,7 +23,7 @@
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",2,0.9977307708839275,0.0012058241778746554,0.0006658948962703268,0.00039751004192753263
-3,3,D,0.0,0.0,0.0,1.0,True,"{
+3,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""Akira's speech and actions convey a sense of respect towards Chie, as he addresses her with formal language and bows upon entering. However, his tone and words also convey a sense of urgency and sincerity, which suggests that he is not showing utter deference. He is not simply trying to appease Chie, but rather to persuade her of his genuine intentions. This is evident in his willingness to look her full in the face and to make his point, despite her initial reluctance."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -31,7 +31,7 @@
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",3,0.00038489035871113717,0.0004943480257795461,0.0023222195248631065,0.9967985420906462
-4,4,A,0.8,0.1,0.0,0.1,True,"{
+4,A,0.8,0.1,0.0,0.1,True,"{
 ""Reasoning"": ""The first paragraph sets the scene for the story, describing Akira's unconventional approach to asking for Chie's daughter's hand in marriage. The focus is on the cultural context and the deviation from tradition, which suggests that the main purpose is to describe a culture."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -39,7 +39,7 @@
 ""C"": ""0.0"",
 ""D"": ""0.1""
 }",4,0.9995127356012774,6.81872137172647e-05,0.00010889688764112116,0.0003101802973642006
-5,5,C,0.0,0.0,1.0,0.0,True,"{
+5,C,0.0,0.0,1.0,0.0,True,"{
 ""Reasoning"": ""The authors mention X-ray evidence and density to support their claim that the DNA molecule consists of two chains, not one. They state that the density, taken with the X-ray evidence, suggests very strongly that there are two chains. This information is used to justify their structural model of DNA, which is the main focus of the passage."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -47,7 +47,7 @@
 ""C"": ""1.0"",
 ""D"": ""0.0""
 }",5,2.014501430266215e-05,1.4721356605791573e-05,0.9999367041266585,2.8429502433046883e-05
-6,6,C,0.0,0.0,1.0,0.0,True,"{
+6,C,0.0,0.0,1.0,0.0,True,"{
 ""Reasoning"": ""The passage states that the purines are adenine and guanine, and the table shows the percentages of these bases in yeast DNA as 31.3% and 18.7%, respectively. Therefore, the correct answer is the option that matches these values."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -55,7 +55,7 @@
 ""C"": ""1.0"",
 ""D"": ""0.0""
 }",6,0.00028017686671414174,6.450029144355348e-05,0.976687615550603,0.02296770729123932
-7,7,A,1.0,0.0,0.0,0.0,True,"{
+7,A,1.0,0.0,0.0,0.0,True,"{
 ""Reasoning"": ""The authors propose that adenine pairs with thymine and guanine pairs with cytosine. To support this, we should see that the percentage of adenine is closest to the percentage of thymine, and the percentage of guanine is closest to the percentage of cytosine for each organism. Looking at the table, we can see that this is indeed the case for all organisms listed. Therefore, the data in the table support the authors' proposed pairing of bases in DNA."",
 ""Answer"": ""A"",
 ""A"": ""1.0"",
@@ -63,7 +63,7 @@
 ""C"": ""0.0"",
 ""D"": ""0.0""
 }",7,0.999874726926154,4.755847427646754e-05,5.304140614793999e-05,2.467319342162602e-05
-8,8,D,0.0,0.0,0.0,1.0,True,"{
+8,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The passage states that the bases are paired in a specific manner, with adenine always paired with thymine and guanine always paired with cytosine. In the table, the percentages of adenine and thymine in sea urchin DNA are 32.8% and 32.1%, respectively, which are very close to each other. This provides evidence in support of the specific base pairing. Therefore, the correct answer is the pair of base percentages that includes 32.8% and 32.1%."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -71,7 +71,7 @@
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",8,0.005640040423310696,0.2554586763232007,0.14543632949947086,0.5934649537540178
-9,9,B,0.1,0.8,0.05,0.05,True,"{
+9,B,0.1,0.8,0.05,0.05,True,"{
 ""Reasoning"": ""The passage is a call to action, urging the reader to think critically about the role of educated women in society and the direction of the 'procession of educated men'. The author emphasizes the importance of considering the implications of joining this procession and the need to think critically about the values and norms of society. The tone is one of urgency and importance, with the author stressing that the moment to think and act is short. Therefore, the main purpose of the passage is to stress the urgency of an issue."",
 ""Answer"": ""B"",
 ""A"": ""0.1"",
@@ -79,7 +79,7 @@
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",9,2.1099312317385155e-05,0.9999668013645175,5.662244830936694e-06,6.437078334117505e-06
-10,10,A,0.8,0.1,0.05,0.05,True,"{
+10,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The passage emphasizes the importance of educated women considering their role in society and making decisions about how to engage with existing institutions. The author encourages women to think critically about the 'procession of educated men' and whether they want to join it, on what terms, and where it is leading. This suggests that the central claim is about the agency and decision-making of educated women in the face of existing societal structures."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -89,7 +89,7 @@
 }
 
 Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",10,0.999949934715465,1.2993133367421435e-05,4.8873253950851265e-06,3.218482577251181e-05
-11,11,A,0.6,0.2,0.1,0.1,True,"{
+11,A,0.6,0.2,0.1,0.1,True,"{
 ""Reasoning"": ""The passage describes the bridge as a 'vantage ground' with a view of the River Thames, the city, and Westminster, suggesting that it provides a broad perspective on the world. Woolf also notes that it is a place to 'stand on by the hour, dreaming', implying that it is conducive to reflection and contemplation. While options B and C are also true, they do not capture the full significance of the setting. Option D is too abstract and not directly supported by the passage."",
 ""Answer"": ""A"",
 ""A"": ""0.6"",
@@ -97,7 +97,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",10
 ""C"": ""0.1"",
 ""D"": ""0.1""
 }",11,0.999617894347489,0.00023784735624318015,7.719607176313741e-05,6.706222450465605e-05
-12,12,D,0.1,0.1,0.1,0.7,True,"{
+12,D,0.1,0.1,0.1,0.7,True,"{
 ""Reasoning"": ""The passage suggests that the procession of educated men has traditionally been exclusive, but Woolf notes that 'we too can leave the house, can mount those steps, pass in and out of those doors...' indicating that women are now able to join this procession. This implies that the procession has become less exclusionary in its membership, allowing women to participate."",
 ""Answer"": ""D"",
 ""A"": ""0.1"",
@@ -105,7 +105,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",10
 ""C"": ""0.1"",
 ""D"": ""0.7""
 }",12,0.00013766029229987919,3.533876767698197e-05,1.8056739639334803e-05,0.9998089442003838
-13,13,A,0.8,0.1,0.05,0.05,True,"{
+13,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The author of Passage 1 suggests that space mining could provide materials that are vital for personal electronics and could meet earthly demands for precious metals, thus having a positive effect on Earth's economy. This is a direct benefit mentioned in the passage."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -113,7 +113,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",10
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",13,0.9998856916930937,4.130117658291229e-05,3.480503192557111e-05,3.82020983977587e-05
-14,14,B,0.1,0.8,0.05,0.05,True,"{
+14,B,0.1,0.8,0.05,0.05,True,"{
 ""Reasoning"": ""Passage 2 presents a balanced view of space mining, acknowledging both its potential benefits and the need for careful consideration of its consequences. The author notes that while space mining may seem to sidestep environmental concerns, its effects on Earth and in space merit careful consideration. The passage also highlights the importance of developing a regulatory framework to ensure the responsible exploitation of space resources. Therefore, the central claim of Passage 2 is that space mining's effects should be thoughtfully considered before it becomes a reality."",
 ""Answer"": ""B"",
 ""A"": ""0.1"",
@@ -121,7 +121,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",10
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",14,1.341069096707711e-05,0.9999760991685431,6.317925522267439e-06,4.1722149675351014e-06
-15,15,D,0.0,0.0,0.0,1.0,True,"{
+15,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""Passage 1 discusses the prospect of space mining and its potential benefits, while Passage 2 raises concerns and reservations about the same topic. Passage 2 does not refute the central claim of Passage 1, but rather provides a more nuanced and cautious perspective on the issue. It does not illustrate the phenomenon described in Passage 1, but rather offers a critical analysis of it. It does not argue against the practicality of the proposals, but rather highlights the need for careful consideration and regulation. Therefore, the correct answer is that Passage 2 expresses reservations about developments discussed in Passage 1."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -129,7 +129,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",10
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",15,2.467462425285506e-05,2.389981721109874e-05,1.8893371710519454e-05,0.9999325321868255
-16,16,A,0.8,0.0,0.1,0.1,True,"{
+16,A,0.8,0.0,0.1,0.1,True,"{
 ""Reasoning"": ""Passage 1 mentions that water mined from other worlds could become the most desired commodity, and Passage 2 states that the resources that are valuable in orbit and beyond may be very different to those we prize on Earth. This suggests that the resources highly valued in space may be different from those on Earth."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -137,7 +137,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",10
 ""C"": ""0.1"",
 ""D"": ""0.1""
 }",16,0.9998721649295301,2.1454837001941604e-05,1.323048281786399e-05,9.314975065009646e-05
-17,17,A,0.8,0.0,0.1,0.1,True,"{
+17,A,0.8,0.0,0.1,0.1,True,"{
 ""Reasoning"": ""The narrator is describing Miss Spivey's arrival in Threestep, Georgia, and her first day of teaching, from a perspective that suggests they were present in the classroom. The narrator also mentions their 'little brother Ralphord', indicating that they are likely a student in the class. The narrator's tone is also reflective and observational, suggesting that they are looking back on the event from a later time period."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -145,7 +145,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",10
 ""C"": ""0.1"",
 ""D"": ""0.1""
 }",17,0.9986618266376379,7.36209953010133e-05,0.0008966262269818146,0.0003679261400792341
-18,18,B,0.0,1.0,0.0,0.0,True,"{
+18,B,0.0,1.0,0.0,0.0,True,"{
 ""Reasoning"": ""The passage describes Threestep as a small town in Georgia where Miss Spivey arrives to work as a schoolteacher. The description of the town's burned grass and the fact that the citizens are excited to meet the new schoolteacher suggests a small, close-knit community. There is no indication that Threestep is a summer retreat, a town with a prominent university, or a comfortable suburb."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -153,7 +153,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",10
 ""C"": ""0.0"",
 ""D"": ""0.0""
 }",18,2.0145391315584053e-05,0.9999557755019048,1.221835863815009e-05,1.1860748141423746e-05
-19,19,D,0.0,0.0,0.0,1.0,True,"{
+19,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The passage states that Miss Spivey's remark about the heat in Georgia being 'nothing' compared to Timbuktu 'irritated some of the people gathered to welcome her'. This suggests that the people at the train station felt that Miss Spivey was downplaying the severity of the heat in Georgia, which they were experiencing firsthand. This would likely lead to feelings of resentment, as they might feel that she is not taking their discomfort seriously."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -161,7 +161,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",10
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",19,2.9740420366239867e-05,2.0800414244123674e-05,2.586641771332285e-05,0.9999235927476763
-20,20,A,0.8,0.1,0.05,0.05,True,"{
+20,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The interaction between Miss Spivey and Ralphord serves mainly to suggest that Miss Spivey has an exaggerated view of what information should be considered common knowledge. When Ralphord asks what she studied at Barnyard College, Miss Spivey explains that Barnard is the sister school of Columbia University, assuming that the students have heard of it. This implies that she may be overestimating the level of knowledge of her students."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -169,7 +169,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",10
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",20,0.9997871979959069,6.400149885074404e-05,8.479900639162827e-05,6.400149885074404e-05
-21,21,C,0.0,0.0,1.0,0.0,True,"{
+21,C,0.0,0.0,1.0,0.0,True,"{
 ""Reasoning"": ""The passage states that Miss Spivey told a cheery blue-suited woman from the WPA that she wanted to bring democracy and education to the poorest, darkest, most remote and forgotten corner of America, and they sent her to Threestep, Georgia. This indicates that her conversation with the WPA woman directly led to her assignment in Threestep."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -177,7 +177,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",10
 ""C"": ""1.0"",
 ""D"": ""0.0""
 }",21,1.5912235973095806e-05,2.5090079942596758e-05,0.9998644182140869,9.457946999738968e-05
-22,22,C,0.1,0.1,0.7,0.1,True,"{
+22,C,0.1,0.1,0.7,0.1,True,"{
 ""Reasoning"": ""The passage states that the students 'hung there for a minute, thinking hard' after Miss Spivey mentions seeing camels, and it is only when Mavis Davis makes a connection to the three kings that they seem to understand. This suggests that the students were initially confused or perplexed by Miss Spivey's statement, rather than delighted or fascinated."",
 ""Answer"": ""C"",
 ""A"": ""0.1"",
@@ -185,7 +185,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",10
 ""C"": ""0.7"",
 ""D"": ""0.1""
 }",22,3.820991382144382e-05,5.227783841093016e-05,0.999604011766746,0.00030550048102168423
-23,23,D,0.0,0.0,0.0,1.0,True,"{
+23,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The passage states that experiments blocking nerve fibers supported the notion that fast fibers were responsible for sensations of pressure and vibration. Therefore, blocking fast fibers would likely impair the ability to perceive vibrations."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -193,7 +193,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",10
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",23,7.484995147267875e-05,6.400385977838932e-05,4.070264080878948e-05,0.9998204435479402
-24,24,C,0.0,0.0,1.0,0.0,True,"{
+24,C,0.0,0.0,1.0,0.0,True,"{
 ""Reasoning"": ""The 1993 experiment by Olausson and his colleagues found that gentle stroking of the arm prompted two different signals, one immediate and one delayed. The delay was characteristic of slow, unmyelinated fibers, which confirmed the presence of these fibers in human hairy skin. This suggests that gentle pressure is sensed not only by fast fibers but also by slow fibers."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -201,7 +201,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",10
 ""C"": ""1.0"",
 ""D"": ""0.0""
 }",24,1.0609163253506135e-05,1.1681999987006754e-05,0.9999590533980047,1.8655438754760788e-05
-25,25,A,0.8,0.1,0.05,0.05,True,"{
+25,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The 1999 experiment aimed to investigate the characteristics of CT fibers, specifically their sensitivity to slow, gentle tactile stimulation, and their unresponsiveness to noxious stimuli. The experiment's goal was to understand the precise nature of sensations that CT fibers can convey, which is option A. The passage mentions that the researchers wanted to know if the same slow nerve can distinguish where the brush touches the arm, and whether it can discern the difference between a goat-hair brush and a feather, and most importantly, could that same fiber convey a pleasant sensation. This suggests that the experiment was focused on understanding the specific sensations that CT fibers can convey."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -209,7 +209,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",10
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",25,0.9999020798116881,4.6129169661238466e-05,2.6700087865936476e-05,2.509093078473048e-05
-26,26,A,0.9,0.0,0.0,0.1,True,"{
+26,A,0.9,0.0,0.0,0.1,True,"{
 ""Reasoning"": ""The passage states that when G.L.'s arm was gently brushed to activate CT fibers, only the insular cortex was active, whereas in normal subjects, both the somatosensory and insular cortices were activated. This suggests that G.L. differed from Olausson's other test subjects in terms of the number of cortices activated in the brain during gentle brushing."",
 ""Answer"": ""A"",
 ""A"": ""0.9"",
@@ -217,7 +217,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",10
 ""C"": ""0.0"",
 ""D"": ""0.1""
 }",26,0.9999458226168105,2.6701284564231757e-05,1.2218221731400694e-05,1.519827581223013e-05
-27,27,B,0.0,0.8,0.1,0.1,True,"{
+27,B,0.0,0.8,0.1,0.1,True,"{
 ""Reasoning"": ""The passage suggests that CT fibers convey a more emotional quality of touch, rather than the conscious aspect that helps us describe what we are sensing. This is supported by the study with G.L., where only the insular cortex (which processes emotion) was active when her arm was gently brushed to activate CT fibers."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -227,7 +227,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",10
 }
 
 Note: The probabilities do not add up to exactly 1.0 due to rounding errors. However, they are close enough to demonstrate the reasoning behind the answer.",27,5.830396276177168e-05,0.9996957820838719,7.720207748107804e-05,0.00016871187588529023
-28,28,C,0.0,0.0,1.0,0.0,True,"{
+28,C,0.0,0.0,1.0,0.0,True,"{
 ""Reasoning"": ""The passage describes the United States as a 'noble land' and a 'greater England with a nobler destiny', emphasizing its vast resources and immense power. Beveridge portrays the country as a gift from God, stating that 'It is a noble land that God has given us'. This suggests that the resources and immensity of the United States are seen as a divine gift to the American people."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -235,7 +235,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors. How
 ""C"": ""1.0"",
 ""D"": ""0.0""
 }",28,4.004901952312226e-05,4.0704583830792415e-05,0.9998730589113329,4.612788855788189e-05
-29,29,D,0.1,0.1,0.1,0.7,True,"{
+29,D,0.1,0.1,0.1,0.7,True,"{
 ""Reasoning"": ""Passage 2 suggests that the preference for national sovereignty over foreign rule is a universal and timeless desire, rooted in human nature. The author cites historical figures such as Patrick Henry, Jefferson, and Lincoln, who all advocated for liberty and self-governance. The author also states that 'it was God himself who placed in every human heart the love of liberty', implying that the desire for self-rule is an innate and fundamental aspect of human nature. This suggests that the preference for national sovereignty is not a reaction to specific historical events or policies, but rather a manifestation of a deeper human drive."",
 ""Answer"": ""D"",
 ""A"": ""0.1"",
@@ -243,7 +243,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors. How
 ""C"": ""0.1"",
 ""D"": ""0.7""
 }",29,7.032138422042965e-05,6.013074294780807e-05,3.8200006173979154e-05,0.999831228677871
-30,30,A,0.8,0.1,0.05,0.05,True,"{
+30,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""Both passages express admiration for the founding and history of the United States. Beveridge (Passage 1) describes the US as a 'noble land' with a 'glorious history', while Bryan (Passage 2) references the Declaration of Independence and quotes famous American historical figures such as Patrick Henry and Abraham Lincoln. This suggests that both authors have a strong appreciation for the country's founding principles and history."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -251,7 +251,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors. How
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",30,0.9997782615779218,6.298777536592798e-05,7.252234874203819e-05,8.610911580299522e-05
-31,31,B,0.0,1.0,0.0,0.0,True,"{
+31,B,0.0,1.0,0.0,0.0,True,"{
 ""Reasoning"": ""Beveridge views the United States as a model of liberty that should be spread to other regions through conquest, while Bryan sees the country's liberty as being undermined by imperial expansion. This difference in perspective is a central distinction between the two authors' views on liberty."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -259,7 +259,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors. How
 ""C"": ""0.0"",
 ""D"": ""0.0""
 }",31,3.587912834220487e-05,0.9999228777540285,3.4806330484796754e-05,6.436787144448715e-06
-32,32,D,0.0,0.0,0.0,1.0,True,"{
+32,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""Passage 2 suggests that Bryan values the principles of self-government and liberty, and is critical of imperialism. He argues that the Filipinos do not need encouragement to resist foreign domination, and that the idea of holding the Philippine Islands permanently is contrary to American values. Therefore, it can be inferred that Bryan would criticize Beveridge's vision of American governance of island territories as naive, since the islanders would object to being governed by Americans."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -267,7 +267,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors. How
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",32,5.6494586024896116e-05,8.885382675434611e-05,3.885492625340956e-05,0.9998157370675221
-33,33,A,0.9,0.05,0.0,0.05,True,"{
+33,A,0.9,0.05,0.0,0.05,True,"{
 ""Reasoning"": ""The passage states that exposure to light gives weed seeds a 'light break,' which stimulates their germination. This suggests that light is necessary for seeds to begin the process of growth and development."",
 ""Answer"": ""A"",
 ""A"": ""0.9"",
@@ -277,7 +277,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors. How
 }
 
 Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",33,0.9997824910931592,8.616928199773528e-05,3.3728778430648804e-05,9.761084641237234e-05
-34,34,A,0.8,0.1,0.05,0.05,True,"{
+34,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The passage suggests that Hartmann's experiment was conducted without planting any crops to avoid competition with emerging weeds. If Seydel had planted wheat or corn, the competition from the crops would likely have reduced the number of weeds that emerged, making the percentage of the surface covered with weeds lower than what Hartmann found. This is because the crops would have competed with the weeds for resources such as light, water, and nutrients."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -285,7 +285,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",33
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",34,0.9999194809063363,3.5878974378657516e-05,2.2111460954288935e-05,2.2469058705571235e-05
-35,35,A,1.0,0.0,0.0,0.0,True,"{
+35,A,1.0,0.0,0.0,0.0,True,"{
 ""Reasoning"": ""The table shows the number of emerged seedlings in soil samples disturbed in light and darkness. To find the sample with the fewest number of seedlings that emerged in darkness, we need to look at the values in the 'darkness' column. The lowest value in this column is 0, which corresponds to Sample A."",
 ""Answer"": ""A"",
 ""A"": ""1.0"",
@@ -293,7 +293,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",33
 ""C"": ""0.0"",
 ""D"": ""0.0""
 }",35,0.9992746760530716,0.00037989184529244426,7.595452148502417e-05,0.00026947758015094915
-36,36,C,0.0,0.0,1.0,0.0,True,"{
+36,C,0.0,0.0,1.0,0.0,True,"{
 ""Reasoning"": ""To answer this question, we need to examine the table and find the sample that produced the most seedlings when the soil was disturbed in light. We can see that Sample I produced 14 seedlings when the soil was disturbed in light, which is the highest number among all the samples."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -301,7 +301,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",33
 ""C"": ""1.0"",
 ""D"": ""0.0""
 }",36,2.5867244058520526e-05,8.284670332106804e-06,0.9999573846094427,8.403874221777407e-06
-37,37,C,0.0,0.0,1.0,0.0,True,"{
+37,C,0.0,0.0,1.0,0.0,True,"{
 ""Reasoning"": ""The passage describes Lady Carlotta, who is mistaken for a governess named Miss Hope, and her interactions with Mrs. Quabarl, the employer. The correct answer is the one that best captures the essence of the passage, which is Lady Carlotta's impersonation of Miss Hope and her subsequent interactions with Mrs. Quabarl. Option C is the most accurate summary of the passage."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -309,7 +309,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",33
 ""C"": ""1.0"",
 ""D"": ""0.0""
 }",37,5.3056824216422246e-05,8.888508416481524e-05,0.9996784994910122,0.00017955860060658854
-38,38,A,0.8,0.1,0.05,0.05,True,"The passage most clearly implies that other people regarded Lady Carlotta as outspoken. This is evident from the fact that certain acquaintances had given her ""plentiful admonition"" about not interfering on behalf of a distressed animal, suggesting that she was known for speaking her mind and taking action when she saw fit. Additionally, her response to Mrs. Quabarl's expectations, particularly her comment about speaking Russian, is described as ""coldly,"" implying that she was direct and unafraid to express her opinions.
+38,A,0.8,0.1,0.05,0.05,True,"The passage most clearly implies that other people regarded Lady Carlotta as outspoken. This is evident from the fact that certain acquaintances had given her ""plentiful admonition"" about not interfering on behalf of a distressed animal, suggesting that she was known for speaking her mind and taking action when she saw fit. Additionally, her response to Mrs. Quabarl's expectations, particularly her comment about speaking Russian, is described as ""coldly,"" implying that she was direct and unafraid to express her opinions.
 
 {
 ""Reasoning"": ""The passage suggests that Lady Carlotta is a straightforward and outspoken person, unafraid to express her opinions and take action when she sees fit."",
@@ -319,7 +319,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",33
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",38,0.9999489811274873,2.2827369360246585e-05,5.006524872743376e-06,2.3184978279728252e-05
-39,39,A,0.8,0.1,0.0,0.1,True,"{
+39,A,0.8,0.1,0.0,0.1,True,"{
 ""Reasoning"": ""The passage describes the children as having typical characteristics of their class and type in the twentieth century, with Irene having an 'artistic temperament' and the others being 'delicate' and 'sensitive'. This suggests that they are not unusually exceptional, but rather typical of their social class. The narrator's tone is also somewhat satirical, implying that these characteristics are common and perhaps even clichéd among children of their background."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -327,7 +327,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",33
 ""C"": ""0.0"",
 ""D"": ""0.1""
 }",39,0.9999520803362435,2.5092261743163594e-05,1.0430275071386293e-05,1.2397126941990565e-05
-40,40,B,0.1,0.8,0.05,0.05,True,"{
+40,B,0.1,0.8,0.05,0.05,True,"{
 ""Reasoning"": ""The narrator implies that Mrs. Quabarl wants the children to be 'INTERESTED in what they learn', and that the governess should 'make them feel that they are being introduced to the life-stories of men and women who really lived'. This suggests that Mrs. Quabarl values an approach to education that emphasizes active engagement and connection with the material, rather than mere rote memorization or traditional methods."",
 ""Answer"": ""B"",
 ""A"": ""0.1"",
@@ -335,7 +335,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",33
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",40,3.647566846430522e-05,0.9999368827893731,1.4065780649634039e-05,1.2575761513020264e-05
-41,41,B,0.1,0.8,0.05,0.05,True,"{
+41,B,0.1,0.8,0.05,0.05,True,"{
 ""Reasoning"": ""Mrs. Quabarl is described as 'imposingly attired' and 'autocratic' but when faced with unexpected resistance from Lady Carlotta, she becomes 'cowed and apologetic'. This suggests that her confident exterior hides a more fragile personality that is easily defied."",
 ""Answer"": ""B"",
 ""A"": ""0.1"",
@@ -343,7 +343,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",33
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",41,3.6475955431627374e-05,0.9999446304532745,9.834203670291693e-06,9.059387623541438e-06
-42,42,D,0.0,0.0,0.0,1.0,True,"{
+42,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The passage describes how Ken Dial's initial experiment with Chukar Partridges led to an unexpected finding, where the birds used their legs to climb up the hay bales instead of flying. This led to a modification of the study, where the birds were given ramps to climb, and the results were interpreted and evaluated. This sequence of events matches option D."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -351,7 +351,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",33
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",42,2.467524928259991e-05,3.3377148788057848e-06,1.4960114903218785e-05,0.9999570269209354
-43,43,A,0.9,0.05,0.03,0.02,True,"{
+43,A,0.9,0.05,0.03,0.02,True,"{
 ""Reasoning"": ""Ken Dial's research was motivated by the observation of young birds' behavior and his goal was to understand how they learn to fly. He assumed that studying the development of flight in young birds could provide insights into the evolution of flight in their ancestors. This is reflected in option A, which suggests that the acquisition of flight in young birds sheds light on the acquisition of flight in their evolutionary ancestors."",
 ""Answer"": ""A"",
 ""A"": ""0.9"",
@@ -361,7 +361,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",33
 }
 
 Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",43,0.9999854567024575,6.0199715237465826e-06,2.2649397812115853e-06,6.2583862375583286e-06
-44,44,B,0.0,1.0,0.0,0.0,True,"{
+44,B,0.0,1.0,0.0,0.0,True,"{
 ""Reasoning"": ""The passage states that the baby Chukars used their wings to keep their feet firmly pressed against the ramp, which increased traction and handling. This is similar to the function of spoilers on a race car, which push the car downward and increase traction. Therefore, the correct answer is the position of their flapping wings."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -369,7 +369,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",43
 ""C"": ""0.0"",
 ""D"": ""0.0""
 }",44,1.6450046572704318e-05,0.9999507690635179,1.3827575379954355e-05,1.8953314529420192e-05
-45,45,D,0.0,0.0,0.0,1.0,True,"{
+45,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The passage mentions that gliding animals don't use a flapping stroke, which is a key aspect of the WAIR technique used by birds. This suggests that gliding animals may not have the same ability to climb slopes using a flapping motion. The passage does not provide information about the locomotion methods of gliding animals, their use of the ground, or their behavior as young animals, so options A, B, and C are not supported by the text."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -377,7 +377,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",43
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",45,5.304293933216794e-05,2.7951841063805353e-05,1.6210875840842335e-05,0.9999027943437632
-46,46,C,0.0,0.0,0.8,0.2,True,"{
+46,C,0.0,0.0,0.8,0.2,True,"{
 ""Reasoning"": ""The authors of Passage 1 argue that women's roles in the household and as mothers are distinct from men's roles and are guided by nature. They emphasize the importance of women's 'delicate constitutions, peaceful inclinations, and the many duties of motherhood' in setting them apart from 'strenuous habits and onerous duties'. This suggests that they view women's roles as less demanding and less challenging than men's roles, which is consistent with option C."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -387,7 +387,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",43
 }
 
 Note: The probabilities do not add up to 1.0 exactly due to rounding.",46,6.813418440460379e-05,7.14127322105996e-05,0.9996071703628816,0.00025328272050320345
-47,47,D,0.0,0.0,0.0,1.0,True,"{
+47,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The author of Passage 2 argues that women's education is crucial for the progress of society. They emphasize that women must be educated to become companions of men and to understand the true principle of patriotism. The author also highlights the importance of women's education in promoting virtues and the love of mankind. Therefore, the correct answer is the one that emphasizes the importance of women's education."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -395,7 +395,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding.",46,6.8134
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",47,2.7952130932787642e-05,2.431656592873637e-05,3.373327528349212e-05,0.999913998027855
-48,48,A,0.9,0.05,0.03,0.02,True,"{
+48,A,0.9,0.05,0.03,0.02,True,"{
 ""Reasoning"": ""The author argues that the exclusion of women from participation in government and the denial of their civil and political rights is a form of oppression. The author also mentions that men who contend for their freedom and happiness should not subjugate women, implying that the current state of affairs privileges one gender over the other. This is the main argument of the passage, and option A is the only one that accurately reflects this claim."",
 ""Answer"": ""A"",
 ""A"": ""0.9"",
@@ -403,7 +403,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding.",46,6.8134
 ""C"": ""0.03"",
 ""D"": ""0.02""
 }",48,0.9999659670400021,1.62118478448941e-05,7.986719158881652e-06,9.834392994145318e-06
-49,49,A,0.9,0.05,0.03,0.02,True,"{
+49,A,0.9,0.05,0.03,0.02,True,"{
 ""Reasoning"": ""Passage 1 presents a patriarchal view, arguing that women should not participate in politics and should focus on domestic duties. Passage 2, on the other hand, argues that women should have equal rights and education to participate in politics and make informed decisions. The tone and content of Passage 2 directly challenge the views presented in Passage 1, making option A the most accurate description of the relationship between the two passages."",
 ""Answer"": ""A"",
 ""A"": ""0.9"",
@@ -411,7 +411,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding.",46,6.8134
 ""C"": ""0.03"",
 ""D"": ""0.02""
 }",49,0.99998045010067,1.5198854661995353e-05,1.6688938452387056e-06,2.6821508227050622e-06
-50,50,D,0.0,0.0,0.0,1.0,True,"{
+50,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The authors of both passages discuss the rights and roles of women in society, with the first author arguing that women are not suited for political participation and the second author arguing that women should have equal rights and education. However, both authors acknowledge that women had limited rights and opportunities compared to men during the eighteenth century. Therefore, the statement that women generally enjoyed fewer rights than men did is the most likely to be agreed upon by both authors."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -419,7 +419,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding.",46,6.8134
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",50,5.828417121100443e-05,4.2610615967145366e-05,5.4768050452876355e-05,0.999844337162369
-51,51,A,0.8,0.1,0.05,0.05,True,"{
+51,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The authors of Passage 1 argue that women are not suited for the exercise of civil and political rights due to their 'delicate constitutions, peaceful inclinations, and the many duties of motherhood'. They believe that women's roles are determined by nature and that they should focus on 'gentle occupations and the cares of the home'. In contrast, the final paragraph of Passage 2 argues that women should not be denied civil and political rights and that they possess the same reasoning ability as men. Therefore, the authors of Passage 1 would likely respond by reiterating their belief that women are not naturally suited for the exercise of civil and political rights."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -427,7 +427,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding.",46,6.8134
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",51,0.9999039268814434,4.1301905185963765e-05,1.0787366289551863e-05,4.398384708115622e-05
-52,52,D,0.0,0.0,0.0,1.0,True,"{
+52,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The passage suggests that commercially produced insecticides may weaken immunocompromised or nutritionally deficient bees further, making them more susceptible to secondary infections. This implies that the use of these insecticides can have an unintentional negative effect on the health of some bees."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -435,7 +435,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding.",46,6.8134
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",52,2.0443088141238734e-05,3.069443263188906e-05,1.1324159611764896e-05,0.999937478718775
-53,53,A,0.8,0.1,0.05,0.05,True,"{
+53,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The authors assume that clover is a typical bee food source, but they do not provide any information about its properties or characteristics. The correct answer is that the authors assume clover does not produce pyrethrums, as they are using it as a control in the experiment to test the effect of pyrethrum-producing plants on honey bee colonies. This assumption is unstated, but it is implicit in the experimental design."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -443,7 +443,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding.",46,6.8134
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",53,0.9999699603422876,1.1324474137612983e-05,4.231777177739588e-06,1.4483406397052394e-05
-54,54,D,0.0,0.0,0.0,1.0,True,"{
+54,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The table shows the percentage of colonies with and without colony collapse disorder that were infected by each of four pathogens, as well as the percentage infected by all four pathogens together. The correct answer can be found in the last row of the table, which shows that all four pathogens were present in 100% of the colonies with colony collapse disorder."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -451,7 +451,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding.",46,6.8134
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",54,8.885634729613592e-05,1.4064452020045657e-05,5.387400265305625e-05,0.9998431456028951
-55,55,A,0.76,0.19,0.0,0.05,True,"{
+55,A,0.76,0.19,0.0,0.05,True,"{
 ""Reasoning"": ""The table shows the percentage of colonies affected by each pathogen in colonies with and without colony collapse disorder. To find the pathogen that infected the highest percentage of honeybee colonies without colony collapse disorder, we need to look at the column for colonies without colony collapse disorder and find the highest percentage. The highest percentage is 100% for Fungi, but since Fungi is not an option, we look at the next highest percentage, which is 81% for Fungi, but again Fungi is not an option, so we look at the next highest percentage, which is 76% for IAPV."",
 ""Answer"": ""A"",
 ""A"": ""0.76"",
@@ -459,7 +459,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding.",46,6.8134
 ""C"": ""0.0"",
 ""D"": ""0.05""
 }",55,0.999684700197818,0.00016858911714326576,5.7825828723114495e-05,8.888485631563269e-05
-56,56,B,0.0,0.8,0.1,0.1,True,"{
+56,B,0.0,0.8,0.1,0.1,True,"{
 ""Reasoning"": ""The data in the table show that for each pathogen, the percent of colonies infected is greater for colonies with colony collapse disorder than for colonies without colony collapse disorder. This suggests that infection with varroa mites may increase a honeybee's susceptibility to secondary infections, as the authors claim. However, the data do not provide direct evidence of this relationship, so the answer is not 100% certain."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -467,7 +467,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding.",46,6.8134
 ""C"": ""0.1"",
 ""D"": ""0.1""
 }",56,0.00014421287154703285,0.9997905337836828,1.9844167861637166e-05,4.540917690861117e-05
-57,57,D,0.0,0.0,0.0,1.0,True,"{
+57,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The passage begins by describing Lymie's experience reading a book in a restaurant, including his thoughts and actions. As the passage progresses, the focus shifts to the people around him, including the waitress, a party of four, and his father, Mr. Peters. The descriptions of these characters and their interactions become more prominent, while Lymie's reading and thoughts become less central. This shift in focus is the primary change in the passage."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -475,7 +475,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding.",46,6.8134
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",57,0.0003857914073786183,0.00022329644809028186,0.0002866611369103485,0.9991042510076208
-58,58,C,0.1,0.1,0.7,0.1,True,"{
+58,C,0.1,0.1,0.7,0.1,True,"{
 ""Reasoning"": ""The first paragraph primarily focuses on describing the setting of the Alcazar Restaurant, including its physical layout, decorations, and the condition of a history book. This description sets the scene for the rest of the passage, establishing the atmosphere and context in which the events will unfold. While it does introduce the main character, Lymie, it does so in a subtle manner, primarily through his actions and interactions with the environment rather than through direct characterization. The passage does not explicitly indicate the date it takes place, nor does it foreshadow a specific event described later. Therefore, the main purpose of the first paragraph is to convey the passage's setting by describing a place and an object."",
 ""Answer"": ""C"",
 ""A"": ""0.1"",
@@ -483,7 +483,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding.",46,6.8134
 ""C"": ""0.7"",
 ""D"": ""0.1""
 }",58,1.0430355887915038e-05,1.5198518579533342e-05,0.9999581593723811,1.621175315150223e-05
-59,59,A,0.9,0.05,0.03,0.02,True,"{
+59,A,0.9,0.05,0.03,0.02,True,"{
 ""Reasoning"": ""The narrator states that Lymie closes the book and says, 'I didn't think you were coming.' This indicates that Lymie's father has arrived, which is the reason he closes the book. The other options are not supported by the text."",
 ""Answer"": ""A"",
 ""A"": ""0.9"",
@@ -491,7 +491,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding.",46,6.8134
 ""C"": ""0.03"",
 ""D"": ""0.02""
 }",59,0.9998544673863916,5.649669029515587e-05,5.1431058781349704e-05,3.760486453190227e-05
-60,60,B,0.0,0.8,0.1,0.1,True,"{
+60,B,0.0,0.8,0.1,0.1,True,"{
 ""Reasoning"": ""The last paragraph describes Mr. Peters' behavior and appearance, highlighting how he is trying to hold on to his youthful image. The text mentions how he straightens his tie, gestures with the menu to show off his diamond ring, and has a manicured hand, all of which suggest that he is trying to present himself as younger and more vibrant than he actually is. This behavior is attributed to the influence of a younger man, implying that Mr. Peters is trying to recapture his youth."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -499,7 +499,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding.",46,6.8134
 ""C"": ""0.1"",
 ""D"": ""0.1""
 }",60,2.7543909582526144e-05,0.9997505547236076,0.00011959541693192087,0.00010230594987795425
-61,61,B,0.0,0.8,0.1,0.1,True,"{
+61,B,0.0,0.8,0.1,0.1,True,"{
 ""Reasoning"": ""Passage 1 suggests that women have a subordinate station in society, but this does not mean their duties or influence are less important. Beecher argues that women's power and influence should be exercised in a different and peculiar way, through peaceful and benevolent principles. This implies that women are not inferior, but rather have a distinct role to play. Option B is the most accurate representation of Beecher's point."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -507,7 +507,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding.",46,6.8134
 ""C"": ""0.1"",
 ""D"": ""0.1""
 }",61,4.19586863092919e-05,0.9999333071449147,2.0144937460995258e-05,4.589231315078801e-06
-62,62,B,0.1,0.8,0.05,0.05,True,"{
+62,B,0.1,0.8,0.05,0.05,True,"{
 ""Reasoning"": ""Beecher emphasizes the importance of women's influence in the domestic and social circle, stating that they should cultivate their intellect, benevolence, and refinement to gain respect and influence. He also notes that women's power and conquests should be achieved through peaceful and loving means, rather than through public debate or coercion. This suggests that women's effect on public life is indirect, as they exert their influence within the home and family life, rather than directly in public spheres."",
 ""Answer"": ""B"",
 ""A"": ""0.1"",
@@ -515,7 +515,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding.",46,6.8134
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",62,1.2397404031278174e-05,0.9999744303541855,6.437113631625206e-06,6.735128151607854e-06
-63,63,A,0.8,0.1,0.05,0.05,True,"{
+63,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""Grimké's central claim in Passage 2 is that human rights are based on moral nature, not on physical characteristics such as sex or race. She argues that if rights are founded in the nature of our moral being, then the mere circumstance of sex does not give to man higher rights and responsibilities than to woman. This suggests that Grimké's central claim is that the rights of individuals are not determined by race or gender."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -523,7 +523,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding.",46,6.8134
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",63,0.9999287181727535,1.7224454911562257e-05,8.642027550783831e-06,4.5415344784119174e-05
-64,64,B,0.0,1.0,0.0,0.0,True,"{
+64,B,0.0,1.0,0.0,0.0,True,"{
 ""Reasoning"": ""Grimké argues that human rights are inherent to our moral nature and cannot be taken away, even if they are not recognized by law. This is evident in her statement that the slave's title to himself is 'as perfect now, as is that of Lyman Beecher' and that rights 'cannot be alienated'. This suggests that she believes human rights retain their moral authority regardless of whether they are recognized by law."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -531,7 +531,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding.",46,6.8134
 ""C"": ""0.0"",
 ""D"": ""0.0""
 }",64,2.2827265959283666e-05,0.9999466569111395,1.7522757681538898e-05,1.299306521964449e-05
-65,65,B,0.0,1.0,0.0,0.0,True,"{
+65,B,0.0,1.0,0.0,0.0,True,"{
 ""Reasoning"": ""Passage 1 presents a traditional view of women's roles in society, emphasizing their domestic and social duties, while Passage 2 challenges this view by arguing that women have the same moral rights as men and should not be limited by their sex. The two passages present fundamentally different perspectives on the role of women in society, with Passage 2 directly opposing the views expressed in Passage 1."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -539,7 +539,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding.",46,6.8134
 ""C"": ""0.0"",
 ""D"": ""0.0""
 }",65,2.5447832687949675e-05,0.9998775285803894,1.9845733688728906e-05,7.717785323394575e-05
-66,66,A,0.8,0.0,0.1,0.1,True,"{
+66,A,0.8,0.0,0.1,0.1,True,"{
 ""Reasoning"": ""Both authors emphasize the importance of women's roles and responsibilities, but they differ in their views on the nature of these roles. Grimké's passage suggests that women's influence should be exercised through peaceful and benevolent means, while Beecher's passage argues that women have the same moral rights and responsibilities as men. However, both authors agree that women have moral duties and responsibilities, which is the common ground between their perspectives."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -549,7 +549,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding.",46,6.8134
 }
 
 Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66,0.9998612603330658,4.5412210568672916e-05,5.3874853483045034e-05,3.945260288249537e-05
-67,67,C,0.0,0.0,1.0,0.0,True,"{
+67,C,0.0,0.0,1.0,0.0,True,"{
 ""Reasoning"": ""Maguire's study on taxi drivers found that their brains had physically changed due to their extensive navigation experience, which challenges the earlier consensus that the adult brain is incapable of reorganizing itself. This finding is significant because it provides evidence for neuroplasticity, the brain's ability to adapt and change in response to new experiences."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -557,7 +557,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""1.0"",
 ""D"": ""0.0""
 }",67,2.670096787432522e-05,1.6986106795050643e-05,0.9999296119574563,2.670096787432522e-05
-68,68,C,0.0,0.0,1.0,0.0,True,"{
+68,C,0.0,0.0,1.0,0.0,True,"{
 ""Reasoning"": ""Maguire's study of mental athletes was primarily intended to answer whether their brains were structurally different from the rest of ours, or if they were somehow just making better use of memory abilities that we all possess. This is evident from the passage, which states that the researchers wanted to find out if the memorizers' brains were-like the London cabbies'-structurally different from the rest of ours, or if they were somehow just making better use of memory abilities that we all possess."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -565,7 +565,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""1.0"",
 ""D"": ""0.0""
 }",68,2.2466609671797992e-05,6.012946726483866e-05,0.9998085272761923,0.00010887664687102104
-69,69,C,0.0,0.0,1.0,0.0,True,"{
+69,C,0.0,0.0,1.0,0.0,True,"{
 ""Reasoning"": ""The passage states that when the researchers looked at which parts of the brain were lighting up when the mental athletes were memorizing, they found that they were activating entirely different circuitry. This suggests that the mental athletes exhibited different patterns of brain activity compared to the control group. There is no mention of the control group showing less brain activity overall, demonstrating a wider range of cognitive ability, or displaying noticeably smaller hippocampal regions."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -573,7 +573,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""1.0"",
 ""D"": ""0.0""
 }",69,5.3876368990192354e-05,2.7951346301327672e-05,0.999887479441755,3.0692842953483474e-05
-70,70,A,0.8,0.1,0.05,0.05,True,"{
+70,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The passage suggests that mental athletes are successful at memorization because they use a different approach to memorization, specifically converting information into images and distributing those images along familiar spatial journeys. This approach engages different regions of the brain, including those involved in visual memory and spatial navigation. The passage does not provide evidence for the other options, and the correct answer is supported by the mental athletes' own descriptions of their thought processes."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -581,7 +581,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",70,0.9999737150817377,1.6688836991903886e-05,1.9668986454743865e-06,7.629182624870349e-06
-71,71,D,0.0,0.0,0.0,1.0,True,"{
+71,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The passage highlights the transformative impact of Eppie's presence on Silas' life, as she brings joy, hope, and new experiences, reawakening his senses and stirring his soul. The narrative emphasizes the restorative power of their relationship, as Silas' love for Eppie helps him to reconnect with the world and find new meaning. This theme is central to the passage, making option D the most fitting choice."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -589,7 +589,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",71,2.044336350904911e-05,9.238254646946391e-06,1.9847347080213858e-05,0.9999504710347638
-72,72,A,0.9,0.0,0.0,0.1,True,"{
+72,A,0.9,0.0,0.0,0.1,True,"{
 ""Reasoning"": ""The passage describes Eppie as a 'creature of endless claims and ever-growing desires, seeking and loving sunshine, and living sounds, and living movements', which suggests that she has a lot of energy and vitality. In contrast, the gold is described as something that 'needed nothing' and was 'deaf to the song of birds', implying that it is static and unchanging. Therefore, it is reasonable to conclude that Eppie has more vitality than the gold."",
 ""Answer"": ""A"",
 ""A"": ""0.9"",
@@ -597,7 +597,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""0.0"",
 ""D"": ""0.1""
 }",72,0.9999819401489384,1.239752152087549e-05,2.324535285164154e-06,3.337794255620324e-06
-73,73,A,0.8,0.1,0.05,0.05,True,"{
+73,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The narrator uses the gold as a symbol to contrast Silas's past and present life. Before Eppie, Silas's thoughts were consumed by the gold, and he was isolated from the world. The gold is described as needing nothing and being worshipped in solitude, highlighting Silas's former obsessive and isolated nature. This contrast is used to show how Eppie's presence has changed Silas's life and character."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -605,7 +605,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",73,0.9994333239602525,0.0001354110183325778,0.0001354110183325778,0.0002958540030822695
-74,74,D,0.0,0.2,0.1,0.7,True,"{
+74,D,0.0,0.2,0.1,0.7,True,"{
 ""Reasoning"": ""The passage suggests that Eppie's presence in Silas' life has a profound impact on his outlook and behavior. The narrator notes that Eppie's 'ever-growing desires' and 'endless claims' force Silas' thoughts 'onward' and carry them 'far away from their old eager pacing towards the same blank limit'. This implies that Silas is no longer stuck in his old ways and is now looking forward to a different kind of future. This is further reinforced by the narrator's statement that 'the tones that stirred Silas' heart grew articulate, and called for more distinct answers', indicating that Silas is now more open to new experiences and possibilities."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -613,7 +613,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""0.1"",
 ""D"": ""0.7""
 }",74,4.612878752210338e-05,4.19569333534377e-05,2.3898764594784825e-05,0.9998880155145297
-75,75,B,0.0,1.0,0.0,0.0,True,"{
+75,B,0.0,1.0,0.0,0.0,True,"{
 ""Reasoning"": ""The passage highlights the transformative impact of Eppie's presence on Silas's life, as she brings new experiences, emotions, and connections into his world. The narrator notes that as Eppie's mind grows into knowledge, Silas's mind grows into memory, and his soul unfolds into full consciousness. This suggests a connection between Eppie's expanding awareness and Silas's increasing engagement with life."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -621,7 +621,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""0.0"",
 ""D"": ""0.0""
 }",75,2.0801445730279752e-05,0.9999734170636226,2.6225318399206565e-06,3.1589588071771543e-06
-76,76,C,0.1,0.1,0.7,0.1,True,"{
+76,C,0.1,0.1,0.7,0.1,True,"{
 ""Reasoning"": ""The passage primarily focuses on a study that investigated why some birds fly in a V formation, and it presents the findings of this research. The study used data loggers and GPS to track the flight patterns of northern bald ibises and found that they position themselves to catch the uplifting eddies created by the bird in front. The passage also discusses the implications of this research and its potential applications to other bird species. Option C is the most accurate summary of the passage's main purpose."",
 ""Answer"": ""C"",
 ""A"": ""0.1"",
@@ -629,7 +629,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""0.7"",
 ""D"": ""0.1""
 }",76,9.536344139958248e-06,7.271462406718164e-06,0.9999636426879664,1.9549505486914406e-05
-77,77,D,0.0,0.0,0.0,1.0,True,"{
+77,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The passage states that the study took advantage of an existing project to reintroduce endangered northern bald ibises to Europe. This suggests that the researchers had access to the ibises and were able to track and observe them as part of the reintroduction project. This is the most reasonable inference that can be made about why Usherwood used northern bald ibises as the subjects of his study."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -637,7 +637,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",77,0.00036267303556675157,9.917632394134341e-05,8.213039326392501e-05,0.999456020247228
-78,78,C,0.0,0.0,1.0,0.0,True,"{
+78,C,0.0,0.0,1.0,0.0,True,"{
 ""Reasoning"": ""The author implies that pelicans, storks, and geese are likely to have similar flight patterns to ibises, as they are also long-winged birds. The author mentions that the findings of the study on ibises likely apply to other long-winged birds, such as pelicans, storks, and geese. This suggests that these birds may also be able to fly in a V formation and catch the uplifting eddies created by the bird in front, thus saving energy."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -645,7 +645,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""1.0"",
 ""D"": ""0.0""
 }",78,0.000527432699873626,8.476596962254703e-05,0.9991226543312907,0.0002651469992131429
-79,79,B,0.0,0.8,0.1,0.1,True,"{
+79,B,0.0,0.8,0.1,0.1,True,"{
 ""Reasoning"": ""Tocqueville argues that attempting to make men and women equal by giving them the same functions, duties, and rights would lead to degradation of both sexes. He believes that this approach would result in 'weak men and disorderly women', implying that both sexes would be harmed by such treatment."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -653,7 +653,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""0.1"",
 ""D"": ""0.1""
 }",79,1.7761028108436204e-05,0.9999368231886075,1.698621815739704e-05,2.8429565126590833e-05
-80,80,B,0.1,0.8,0.05,0.05,True,"{
+80,B,0.1,0.8,0.05,0.05,True,"{
 ""Reasoning"": ""Mill suggests that the relationship between men and women is the 'nearest and most intimate' and is 'connected with the greatest number of strong emotions'. He also states that this relationship was 'sure to be the last to throw off the old rule, and receive the new' because of the 'tenacity with which it clings to the forms and circumstances with which it has even accidentally become associated'. This implies that the traditional gender roles are deeply ingrained and resistant to change due to their emotional and historical significance."",
 ""Answer"": ""B"",
 ""A"": ""0.1"",
@@ -661,7 +661,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",80,0.0002651806534258771,0.9992485753246898,0.00031502126184854644,0.00017122276003577315
-81,81,A,0.8,0.1,0.05,0.05,True,"{
+81,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""Both authors discuss the changing roles of men and women in society, with the first author describing how democracy leads to greater equality between the sexes, and the second author arguing that individuals should be free to pursue any occupation regardless of their sex. Both authors seem to view these changes as part of a broader shift towards greater equality and freedom. While they may have different perspectives on the specifics of how this shift should occur, they both appear to see it as a positive development."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -669,7 +669,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",81,0.9999517227872378,2.884712466284923e-05,1.1860697950221067e-05,7.5097886518987664e-06
-82,82,A,0.8,0.1,0.0,0.1,True,"{
+82,A,0.8,0.1,0.0,0.1,True,"{
 ""Reasoning"": ""The two authors have different views on the individual's proper position in society. Tocqueville believes that men and women have different roles and duties in society, and that these roles should be respected and maintained. On the other hand, Mill believes that individuals should be free to pursue any occupation or activity that they are capable of and that society should not impose arbitrary limits on individuals based on their sex or class. This suggests that Tocqueville believes that an individual's position should be defined in important ways by that individual's sex, while Mill believes that an individual's abilities should be the determining factor."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -677,7 +677,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""0.0"",
 ""D"": ""0.1""
 }",82,0.999980152130049,1.2397468317763087e-05,1.6688899658527233e-06,5.781511667418363e-06
-83,83,B,0.2,0.6,0.1,0.1,True,"{
+83,B,0.2,0.6,0.1,0.1,True,"{
 ""Reasoning"": ""The passage begins by describing the narrator's love of reading and how it serves as an escape from their difficult home life. As the passage progresses, the focus shifts to the narrator's encounter with the book 'Great Expectations' by Charles Dickens, which becomes a pivotal moment in their life. The narrator's enchantment with the author and the book marks a turning point in the passage, making option B the most accurate choice."",
 ""Answer"": ""B"",
 ""A"": ""0.2"",
@@ -685,7 +685,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""0.1"",
 ""D"": ""0.1""
 }",83,0.00048011766935530974,0.9993929396002913,6.496130332637632e-05,6.198142702700126e-05
-84,84,A,0.8,0.1,0.05,0.05,True,"{
+84,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The narrator's love for reading and writing is a recurring theme throughout the passage. The gift of Great Expectations seems to have a profound impact on the narrator, as it solidifies his desire to become a writer. The narrator's repeated readings of the book and his conviction that Mr. Dickens wrote it just for him suggest a deep connection to the book's author and his work. This inference is further supported by the narrator's statement that he soon became convinced that he didn't want to do anything else in life but learn to do what Mr. Dickens had done."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -693,7 +693,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",84,0.9999675166709511,1.3648958444404961e-05,1.2218499917480424e-05,6.615870687025986e-06
-85,85,A,0.8,0.1,0.0,0.1,True,"{
+85,A,0.8,0.1,0.0,0.1,True,"{
 ""Reasoning"": ""The narrator mentions that he would leave the coins he'd managed to collect on the counter before he left the bookshop, and that it was only small change. This suggests that he is paying Sempere, but not the full amount that Sempere might expect. The narrator also mentions that if he'd had to buy a book with that pittance, he would probably have been able to afford only a booklet of cigarette papers, implying that the amount he pays is less than the book's worth."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -701,7 +701,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""0.0"",
 ""D"": ""0.1""
 }",85,0.9887421566392345,0.0014409581751995578,0.00012009971554546281,0.009696785470020518
-86,86,B,0.1,0.8,0.05,0.05,True,"{
+86,B,0.1,0.8,0.05,0.05,True,"{
 ""Reasoning"": ""The passage suggests that Sempere has a deep respect and admiration for Charles Dickens, as evidenced by the way he handles the volume of 'Great Expectations' and the care with which he gives it to the narrator. The statement that Dickens is a 'lifelong friend' also implies a sense of reverence and admiration. While it is possible that Sempere may have met Dickens or knows him personally, the passage does not provide enough information to support options A, C, or D."",
 ""Answer"": ""B"",
 ""A"": ""0.1"",
@@ -709,7 +709,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",86,5.143389719108939e-05,0.9999089327984844,1.752209243821585e-05,2.2111211886320002e-05
-87,87,B,0.1,0.8,0.05,0.05,True,"{
+87,B,0.1,0.8,0.05,0.05,True,"{
 ""Reasoning"": ""The passage describes the growth of the United States in terms of population, territory, and power, and then asks if this growth is possible under a Constitution that Lincoln claims is contrary to the law of God. The purpose of this discussion is to suggest that the division into free and slave states does not endanger the Union, as evidenced by the country's successful growth and expansion despite this division."",
 ""Answer"": ""B"",
 ""A"": ""0.1"",
@@ -717,7 +717,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",87,4.6844780534885146e-05,0.9999073832201638,2.711752562770069e-05,1.8654473673561133e-05
-88,88,C,0.1,0.2,0.6,0.1,True,"{
+88,C,0.1,0.2,0.6,0.1,True,"{
 ""Reasoning"": ""Passage 1 suggests that the US government's provisions for the institution of slavery, as framed in the Constitution, were based on the principle of state rights and state sovereignty, allowing each state to regulate its own affairs and mind its own business. This is evident in the passage where it is stated that 'our fathers made it' and that the Union can exist forever if each state carries out the principles upon which our institutions were founded. This implies that the Constitution provided a framework that allowed for the coexistence of free and slave states, without necessarily addressing the issue of slavery itself."",
 ""Answer"": ""C"",
 ""A"": ""0.1"",
@@ -725,7 +725,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""0.6"",
 ""D"": ""0.1""
 }",88,0.0005188145064684617,0.0008292448775263372,0.9985672398561601,8.470075984509239e-05
-89,89,B,0.0,0.8,0.1,0.1,True,"{
+89,B,0.0,0.8,0.1,0.1,True,"{
 ""Reasoning"": ""Lincoln argues that the controversy over slavery has been fueled by attempts to spread it into new territory, and that there has been comparative peace on the issue when it has been limited to its present bounds. This suggests that he would agree with the claim that the controversy would abate if attempts to introduce slavery to regions where it is not practiced were abandoned."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -733,7 +733,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""0.1"",
 ""D"": ""0.1""
 }",89,2.211221609940985e-05,0.9999522590698231,1.3231568663258724e-05,1.239714541422439e-05
-90,90,D,0.0,0.0,0.0,1.0,True,"{
+90,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The two passages present a central tension between Douglas's and Lincoln's views on the relationship between slavery and the Union. Douglas argues that the Union can exist forever with both free and slave states, while Lincoln implies that the existence of slavery is a fundamental flaw in the Union. This tension is most clearly reflected in option D, which highlights the conflicting interpretations of federal law presented by the two speakers."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -741,7 +741,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",90,0.00030491889729501894,5.906462611793662e-05,0.0016479686298294122,0.9979880478467577
-91,91,A,0.8,0.1,0.0,0.1,True,"{
+91,A,0.8,0.1,0.0,0.1,True,"{
 ""Reasoning"": ""Both passages discuss the issue of slavery in the context of the Union's expansion and the potential for conflict between free and slave states. The first passage argues that the Union can exist forever divided into free and slave states if each state is allowed to govern itself, while the second passage suggests that the issue of slavery has always been a source of conflict and that efforts to spread it into new territory have led to trouble. The correct answer is therefore related to the expansion of the Union."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -749,7 +749,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""0.0"",
 ""D"": ""0.1""
 }",91,0.9999021985596905,7.139922333379065e-05,8.641809168113227e-06,1.776040780757063e-05
-92,92,A,0.8,0.1,0.05,0.05,True,"{
+92,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The passage delves into the scientific explanation of how the Venus flytrap encodes and stores information from the touch of an insect, and how it uses this information to decide when to close its trap. The passage discusses the research and findings of several scientists, including Dieter Hodick, Andreas Sievers, and Alexander Volkov, which suggests that the primary purpose is to discuss the scientific explanation for the Venus flytrap's closing action."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -757,7 +757,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",92,0.9999346776622756,3.2720769535282825e-05,4.64885250228062e-06,2.795271568678988e-05
-93,93,C,0.0,0.0,0.8,0.2,True,"{
+93,C,0.0,0.0,0.8,0.2,True,"{
 ""Reasoning"": ""The passage states that closing the trap requires a huge expense of energy, and reopening the trap can take several hours. This suggests that the plant needs to be sure that the prey is worth its time and energy before closing the trap. The requirement for multiple triggers helps the plant to avoid wasting energy on small or insignificant prey."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -767,7 +767,7 @@ Note: The probabilities do not add up to 1.0 exactly due to rounding errors.",66
 }
 
 Note: I've assigned a high probability to option C because it directly addresses the energy conservation aspect mentioned in the passage. Option D is also a plausible answer, but it's not as directly related to the energy conservation aspect, so I've assigned a lower probability to it. Options A and B are not supported by the passage, so I've assigned a probability of 0.0 to them.",93,8.612216676696372e-05,0.0001419674749058184,0.9994367193092633,0.0003351910490639474
-94,94,D,0.0,0.0,0.0,1.0,True,"{
+94,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The passage explains that the Venus flytrap requires a second trigger hair to be touched within a short amount of time in order for its trap to close because the first trigger hair does not produce enough calcium ions to reach the threshold needed to close the trap. The second trigger hair provides the necessary supplement to the calcium concentration released by the first trigger, pushing the total concentration over the threshold and allowing the trap to close."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -775,7 +775,7 @@ Note: I've assigned a high probability to option C because it directly addresses
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",94,3.7071461798663225e-05,2.2111756153221955e-05,1.0787676182569201e-05,0.9999300291058656
-95,95,B,0.0,1.0,0.0,0.0,True,"{
+95,B,0.0,1.0,0.0,0.0,True,"{
 ""Reasoning"": ""Hodick and Sievers's model predicts that a Venus flytrap will close when the total calcium ion concentration exceeds a certain threshold. This requires a second trigger hair to be stimulated within a short period of time, typically twenty seconds, to push the calcium concentration over the threshold. If the second touch occurs after a longer period of inactivity, the calcium ion concentrations will have diminished, and the trap will not close."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -783,7 +783,7 @@ Note: I've assigned a high probability to option C because it directly addresses
 ""C"": ""0.0"",
 ""D"": ""0.0""
 }",95,7.598648787413587e-05,0.9998778256469475,1.4482130630129423e-05,3.1705734548266886e-05
-96,96,C,0.0,0.0,0.8,0.2,True,"{
+96,C,0.0,0.0,0.8,0.2,True,"{
 ""Reasoning"": ""The passage suggests that Hodick and Sievers's model proposes that the Venus flytrap stores information regarding how many hairs have been touched in the electric charge of its leaf. Volkov's experiment, however, directly applies an electrical current to the open lobes of the trap, which may not accurately simulate the natural process of the flytrap's trigger hairs being touched. This could be seen as a potential criticism of Volkov's testing of Hodick and Sievers's model."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -791,7 +791,7 @@ Note: I've assigned a high probability to option C because it directly addresses
 ""C"": ""0.8"",
 ""D"": ""0.2""
 }",96,0.0024199598055927485,0.00310647322561906,0.9915101173723413,0.0029634495964469118
-97,97,C,0.0,0.0,1.0,0.0,True,"{
+97,C,0.0,0.0,1.0,0.0,True,"{
 ""Reasoning"": ""The passage states that Volkov and his colleagues 'rigged up very fine electrodes and applied an electrical current to the open lobes of the trap' and 'modified this experiment by altering the amount of electrical current' to determine the exact electrical charge needed for the trap to close. This suggests that they made the most extensive use of information obtained from monitoring the Venus flytrap's response to varying amounts of electrical current."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -799,7 +799,7 @@ Note: I've assigned a high probability to option C because it directly addresses
 ""C"": ""1.0"",
 ""D"": ""0.0""
 }",97,5.6621813845833465e-06,8.523073031530721e-06,0.9999560137909281,2.9800954655701824e-05
-98,98,D,0.1,0.2,0.3,0.4,True,"{
+98,D,0.1,0.2,0.3,0.4,True,"{
 ""Reasoning"": ""The passage describes the character's visit to her family's ink shop, where she observes her father's interactions with a customer and is impressed by his expertise and passion for their family's ink. The character also recalls her aunt's teachings about the importance of effort and intention in creating good ink. The passage highlights the character's growing appreciation for her family's work and traditions."",
 ""Answer"": ""D"",
 ""A"": ""0.1"",
@@ -809,7 +809,7 @@ Note: I've assigned a high probability to option C because it directly addresses
 }
 
 Note: I've adjusted the probabilities to reflect my confidence in the answer. I'm fairly confident that option D is the best summary of the passage, but I'm not 100% certain, hence the probabilities don't add up to 1.0.",98,0.00015594383875788587,4.983526345626628e-05,0.0001660778038147821,0.9996281430939711
-99,99,B,0.1,0.8,0.05,0.05,True,"{
+99,B,0.1,0.8,0.05,0.05,True,"{
 ""Reasoning"": ""The passage highlights the importance of effort and intention in creating high-quality ink. The narrator's father emphasizes the value of their family's ink, which is made with care and attention to detail. The passage also contrasts this with modern ink from a bottle, which is seen as lacking in quality and thought. This suggests that the theme of the passage is that quality is achieved through deliberate effort, rather than through quick or easy means."",
 ""Answer"": ""B"",
 ""A"": ""0.1"",
@@ -817,7 +817,7 @@ Note: I've adjusted the probabilities to reflect my confidence in the answer. I'
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",99,2.24701943600289e-05,0.9999677549730802,5.006621555019701e-06,4.768211004780668e-06
-100,100,B,0.1,0.8,0.05,0.05,True,"{
+100,B,0.1,0.8,0.05,0.05,True,"{
 ""Reasoning"": ""The narrator is described as trying to notice everything so she could later tell GaoLing what she had seen, and tease out her envy. This shows that the narrator is observant and aware of her surroundings, paying attention to details such as the dark wood floors, the display cases, and the silk-wrapped boxes. This suggests that she is attuned to her immediate surroundings."",
 ""Answer"": ""B"",
 ""A"": ""0.1"",
@@ -825,7 +825,7 @@ Note: I've adjusted the probabilities to reflect my confidence in the answer. I'
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",100,5.560566488819924e-05,0.9999036287672838,2.670025495167552e-05,1.4065312876329068e-05
-101,101,B,0.1,0.8,0.05,0.05,True,"{
+101,B,0.1,0.8,0.05,0.05,True,"{
 ""Reasoning"": ""The narrator is described as trying to notice everything so she could later tell GaoLing what she had seen, and tease out her envy. This shows that the narrator is observant and aware of her surroundings, paying attention to details such as the dark wood floors, the display cases, and the silk-wrapped boxes. This suggests that she is attuned to her immediate surroundings."",
 ""Answer"": ""B"",
 ""A"": ""0.1"",
@@ -833,7 +833,7 @@ Note: I've adjusted the probabilities to reflect my confidence in the answer. I'
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",101,5.560566488819924e-05,0.9999036287672838,2.670025495167552e-05,1.4065312876329068e-05
-102,102,A,0.8,0.1,0.05,0.05,True,"{
+102,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The narrator mentions that the silk-wrapped boxes looked 'so much nicer' in the ink shop than they had in the ink-making studio, indicating that the shop presents the ink more impressively. This suggests that the shop's display cases and overall atmosphere enhance the appearance of the ink, making it more appealing to customers."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -841,7 +841,7 @@ Note: I've adjusted the probabilities to reflect my confidence in the answer. I'
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",102,0.9999718078818606,7.986773426383615e-06,5.483456382293228e-06,1.4721888330722037e-05
-103,103,D,0.0,0.2,0.1,0.7,True,"{
+103,D,0.0,0.2,0.1,0.7,True,"{
 ""Reasoning"": ""The passage emphasizes the importance of women's participation in the abolitionist cause, highlighting the moral and humanitarian aspects of the issue. The author argues that women have a vested interest in the abolition of slavery, as it affects their families, homes, and country. The passage also draws parallels between the struggle for women's rights and the fight against slavery, suggesting that both are continuations of the spirit of the American Revolution. Option D is the most accurate, as it captures the author's encouragement of women to see their participation in the abolitionist cause as just and important."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -849,7 +849,7 @@ Note: I've adjusted the probabilities to reflect my confidence in the answer. I'
 ""C"": ""0.1"",
 ""D"": ""0.7""
 }",103,7.481710942696772e-05,0.00018528412438168577,4.906333152063301e-05,0.9996908354346707
-104,104,A,0.8,0.1,0.05,0.05,True,"{
+104,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The passage is filled with rhetorical questions that challenge the reader to consider the moral implications of slavery and the role of women in discussing it. These questions are not meant to be answered literally, but rather to prompt the reader to think critically about the issue. For example, 'May not the ""ornament of a meek and quiet spirit"" exist with an upright mind and enlightened intellect?' is a rhetorical question that implies that women can be both gentle and intellectually engaged. This technique is used throughout the passage to advance Smith's main point that women should be involved in discussing and advocating against slavery."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -857,7 +857,7 @@ Note: I've adjusted the probabilities to reflect my confidence in the answer. I'
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",104,0.9999800328938703,1.2039866979734997e-05,2.3245287733151725e-06,5.6027103767083644e-06
-105,105,B,0.0,1.0,0.0,0.0,True,"{
+105,B,0.0,1.0,0.0,0.0,True,"{
 ""Reasoning"": ""The first paragraph rejects the claim that discussing slavery is outside the 'province of woman' and only a 'political question'. The author argues that it is also a question of justice, humanity, morality, and religion, and that women have a stake in the issue. This rejection of a claim and elaboration on the reasons for doing so matches option B."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -865,7 +865,7 @@ Note: I've adjusted the probabilities to reflect my confidence in the answer. I'
 ""C"": ""0.0"",
 ""D"": ""0.0""
 }",105,5.483537763992111e-06,0.9999859335335619,3.51661660951668e-06,5.0663120645579286e-06
-106,106,A,0.8,0.1,0.05,0.05,True,"{
+106,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The passage argues that women can engage in discussions about slavery and politics without losing their femininity. The author suggests that women's concerns about the welfare of their families and the morality of slavery are not mutually exclusive with their traditional roles. The correct answer reflects this idea, which is a central theme in the passage."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -873,7 +873,7 @@ Note: I've adjusted the probabilities to reflect my confidence in the answer. I'
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",106,0.999984681879289,8.6425194672751e-06,2.4437468838502008e-06,4.172250777305221e-06
-107,107,C,0.0,0.0,1.0,0.0,True,"{
+107,C,0.0,0.0,1.0,0.0,True,"{
 ""Reasoning"": ""The passage states that 'By the Constitution of the United States, the whole physical power of the North is pledged for the suppression of domestic insurrections, and should the slaves, maddened by oppression, endeavor to shake off the yoke of the taskmaster, the men of the North are bound to make common cause with the tyrant, and put down, at the point of the bayonet, every effort on the part of the slave, for the attainment of his freedom.' This indicates that the Northern states are required to help the slave states suppress a slave rebellion."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -881,7 +881,7 @@ Note: I've adjusted the probabilities to reflect my confidence in the answer. I'
 ""C"": ""1.0"",
 ""D"": ""0.0""
 }",107,9.834322070114067e-06,1.7761381678145406e-05,0.9999579210219303,1.4483274321440717e-05
-108,108,A,0.8,0.1,0.05,0.05,True,"{
+108,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The passage emphasizes the moral and humanitarian aspects of slavery, highlighting its impact on individuals and families. While it mentions the country's reputation and the potential for violent conflicts, the strongest suggestion is that slavery affects the country by lowering its reputation in the international community. The author notes that the country will be 'rendered a hissing and a reproach throughout the world' due to the system of slavery."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -889,7 +889,7 @@ Note: I've adjusted the probabilities to reflect my confidence in the answer. I'
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",108,0.9998757998809491,3.0215671957210317e-05,2.7950986485072268e-05,6.603346060865687e-05
-109,109,C,0.0,0.0,1.0,0.0,True,"{
+109,C,0.0,0.0,1.0,0.0,True,"{
 ""Reasoning"": ""The first paragraph of Passage 1 introduces a problem that the research discussed in the passage may help to address. It sets the stage for the rest of the passage, which describes a new approach to developing antibiotics and presents a promising new antibiotic. The paragraph does not present a claim that is supported and developed over the course of the passage (A), introduce a controversy that the study is intended to resolve (B), or offer a theory that is challenged by the findings presented in the passage (D)."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -897,7 +897,7 @@ Note: I've adjusted the probabilities to reflect my confidence in the answer. I'
 ""C"": ""1.0"",
 ""D"": ""0.0""
 }",109,0.0001609692207175972,1.6693104370713784e-05,0.9997438800843693,7.845759054235479e-05
-110,110,D,0.0,0.0,0.0,1.0,True,"{
+110,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The author of Passage 1 suggests that the method Lewis's team used to grow microorganisms is advantageous because it allows researchers to make use of soil bacteria that they had previously been unable to exploit. This is stated in the passage as 'Natural microbial substances from soil bacteria and fungi have been at the root of most antibiotic drug development during the past century. But only about one percent of these organisms can be grown in a lab. The rest, in staggering numbers, have remained uncultured and of limited use to medical science, until now.'"",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -905,7 +905,7 @@ Note: I've adjusted the probabilities to reflect my confidence in the answer. I'
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",110,0.0003149797614773433,5.221844645233776e-05,2.5453512140580163e-05,0.9996072290597323
-111,111,D,0.0,0.0,0.0,1.0,True,"{
+111,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The author of Passage 2 mentions that many good antibiotic families come from soil fungi and bacteria, and that the recent study's methodology opens a gateway to cultivating a wealth of potentially antibiotic-producing bacteria that have never been grown before. This suggests that the author agrees with the idea that soil and other environments can be a source of new antibiotics, which is a long-held belief."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -913,7 +913,7 @@ Note: I've adjusted the probabilities to reflect my confidence in the answer. I'
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",111,6.918643957702712e-05,5.9174965116268675e-05,7.84232166092745e-05,0.9997930961944776
-112,112,A,0.8,0.1,0.05,0.05,True,"{
+112,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The author is highlighting the significant amount of time and money required to bring teixobactin through clinical trials and to market. The phrase is used to emphasize the scale of the effort needed to make teixobactin available for consumer use, and to suggest that these costs need to be reduced in order to stay ahead of bacterial evolution."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -921,7 +921,7 @@ Note: I've adjusted the probabilities to reflect my confidence in the answer. I'
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",112,0.9999760396854332,1.18609517382642e-05,4.231796851340493e-06,7.807963204585981e-06
-113,113,A,0.8,0.1,0.05,0.05,True,"{
+113,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""Passage 1 presents the discovery of a new antibiotic, teixobactin, and its potential to combat antibiotic-resistant bacteria. Passage 2 provides an evaluation of the significance of this research, discussing its potential impact, limitations, and the challenges that lie ahead. The author of Passage 2 offers a nuanced assessment of the findings, highlighting both the promise and the caveats of the research."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -929,7 +929,7 @@ Note: I've adjusted the probabilities to reflect my confidence in the answer. I'
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",113,0.9999391476075802,4.982624883741236e-05,3.456845015035786e-06,7.509697791284638e-06
-114,114,B,0.0,0.8,0.1,0.1,True,"{
+114,B,0.0,0.8,0.1,0.1,True,"{
 ""Reasoning"": ""Both passages highlight the potential of teixobactin as an effective antibiotic against disease-causing bacteria, including those that have developed immunity to other drugs. They mention its success in killing off a wide variety of bacteria, including those that cause upper respiratory tract infections and tuberculosis, and its difficulty to select resistance. This suggests that teixobactin could be useful in combating infections that are no longer responding to treatment with other antibiotics."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -937,7 +937,7 @@ Note: I've adjusted the probabilities to reflect my confidence in the answer. I'
 ""C"": ""0.1"",
 ""D"": ""0.1""
 }",114,1.4304273228783798e-05,0.9999449285480692,2.6701310027063088e-05,1.4065868674970734e-05
-115,115,C,0.0,0.0,0.8,0.2,True,"{
+115,C,0.0,0.0,0.8,0.2,True,"{
 ""Reasoning"": ""Passage 2 mentions that teixobactin killed Gram-positive bacteria, such as S. aureus, in the laboratory, and cured experimental infection in mice. This information supports the conclusion that the mice's upper respiratory tract infections were likely not caused by gram-negative bacteria, as teixobactin is ineffective against gram-negative bacteria. This conclusion is not directly stated in Passage 1, but can be inferred from the information provided in Passage 2."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -945,7 +945,7 @@ Note: I've adjusted the probabilities to reflect my confidence in the answer. I'
 ""C"": ""0.8"",
 ""D"": ""0.2""
 }",115,2.318492024178832e-05,1.364870626059004e-05,0.9999484448431641,1.4721530333474847e-05
-116,116,C,0.0,0.0,1.0,0.0,True,"{
+116,C,0.0,0.0,1.0,0.0,True,"{
 ""Reasoning"": ""The passage describes a conversation between the narrator and Louis Comfort Tiffany, where they discuss Tiffany's new projects, including a Byzantine chapel for the World's Columbian Exposition. The narrator is impressed by Tiffany's designs and ideas, and they share a moment of creative excitement when the narrator suggests an idea for a lampshade. The passage focuses on their professional discussion and the exchange of ideas, making option C the most accurate description of what happens in the passage."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -953,7 +953,7 @@ Note: I've adjusted the probabilities to reflect my confidence in the answer. I'
 ""C"": ""1.0"",
 ""D"": ""0.0""
 }",116,1.0311330662321205e-05,4.1722147188582916e-06,0.9999758607576981,9.65569692078633e-06
-117,117,A,0.8,0.1,0.05,0.05,True,"{
+117,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The passage suggests that Tiffany is excited about the World's Columbian Exposition in Chicago because he believes it will bring him widespread recognition and fame. He mentions that 'the name of Louis Comfort Tiffany will be on the lips of millions' and that it will be 'the greatest assembly of artists since the fifteenth century'. This indicates that he sees the exposition as an opportunity to gain greater popular recognition and establish himself as a prominent artist."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -961,7 +961,7 @@ Note: I've adjusted the probabilities to reflect my confidence in the answer. I'
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",117,0.9999225201963028,4.0051098526536776e-05,1.6985956964379434e-05,2.0442748206253144e-05
-118,118,A,0.8,0.1,0.05,0.05,True,"{
+118,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The narrator mentions that Tiffany 'made a show of slinging down one large watercolor after another onto the Persian carpet, each one a precise, fine-edged rendering of what he wanted the window to be.' This indicates that Tiffany is showing the narrator his plans for stained glass windows through watercolor paintings."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -971,7 +971,7 @@ Note: I've adjusted the probabilities to reflect my confidence in the answer. I'
 }
 
 Note: The probabilities do not add up to exactly 1.0 due to rounding errors. However, they are close enough to provide a reasonable estimate of the likelihood of each option being correct.",118,0.9998950474932442,4.005001961378193e-05,3.373260580565561e-05,3.116988133632135e-05
-119,119,B,0.1,0.8,0.05,0.05,True,"{
+119,B,0.1,0.8,0.05,0.05,True,"{
 ""Reasoning"": ""The narrator's conversation with Louis Comfort Tiffany reveals their ability to think creatively and make innovative suggestions. When discussing the baptismal font, the narrator proposes an idea for a lampshade made of translucent glass, which Tiffany finds exciting. This exchange suggests that the narrator is skilled at enhancing existing ideas with technical innovations, making option B the most reasonable inference."",
 ""Answer"": ""B"",
 ""A"": ""0.1"",
@@ -979,7 +979,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors. How
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",119,2.1754774696228844e-05,0.9999597089652201,1.168201600126261e-05,6.854244082373471e-06
-120,120,A,0.8,0.1,0.05,0.05,True,"{
+120,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The passage presents a nuanced discussion of the relationship between city size and economic performance, highlighting the differences between industrialized and developing nations. It explores the findings of two studies and provides explanations for the observed patterns. The main purpose is to describe the causes and consequences of the phenomenon of urbanization without growth, rather than proposing a solution, questioning practical applications, or critiquing methodology."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -987,7 +987,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors. How
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",120,0.9997754603286729,1.3825160230329553e-05,4.9818249795497875e-05,0.0001608962613012491
-121,121,C,0.1,0.0,0.8,0.1,True,"{
+121,C,0.1,0.0,0.8,0.1,True,"{
 ""Reasoning"": ""The passage states that the researchers' latest study found that developing nations tend to get a bigger bang for their buck from smaller and medium-size cities, which builds on their initial study that found a negative relationship between city size and economic growth in developing nations. This suggests that the second study expands on the findings of the first study, providing more insight into the relationship between city size and economic growth."",
 ""Answer"": ""C"",
 ""A"": ""0.1"",
@@ -995,7 +995,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors. How
 ""C"": ""0.8"",
 ""D"": ""0.1""
 }",121,3.6953615464253637e-06,2.145693801150211e-05,0.9999672185669268,7.62913351520075e-06
-122,122,B,0.0,0.8,0.1,0.1,True,"{
+122,B,0.0,0.8,0.1,0.1,True,"{
 ""Reasoning"": ""The passage suggests that the economic impact of a megacity on a country is dependent on the country's overall urban population and the presence of knowledge-based industries. It states that having a metro with more than 10 million inhabitants produces a nationwide economic benefit only if the total urban population is 28.5 million or more. This implies that the economic impact of a megacity is not neutralized by its maintenance costs, but rather is influenced by the country's overall urbanization and economic development. Therefore, option D is incorrect. Option C is also incorrect as the passage highlights the differences in economic impact between developing and high-income countries. Option A is not supported by the passage, which does not mention physical land area as a factor. Option B is the most reasonable inference, as the passage suggests that the types of industries present in a megacity (e.g. knowledge-based industries) can influence its economic impact."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -1003,7 +1003,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors. How
 ""C"": ""0.1"",
 ""D"": ""0.1""
 }",122,9.317753826374657e-05,0.99968136024183,2.5097724637899744e-05,0.00020036449526836353
-123,123,,,,,,False,"Based on the passage, the correct answer is not directly stated, but it can be inferred from the information provided. The passage states that in 1960, 12 of the top 20 countries with the largest average city size were high-income countries, but by 2010, 14 of the top 20 were in the developing world. It also mentions that the median city in the developing world nearly quadrupled between 1960 and 2010, expanding from 220,000 to 845,000 people.
+123,,,,,,False,"Based on the passage, the correct answer is not directly stated, but it can be inferred from the information provided. The passage states that in 1960, 12 of the top 20 countries with the largest average city size were high-income countries, but by 2010, 14 of the top 20 were in the developing world. It also mentions that the median city in the developing world nearly quadrupled between 1960 and 2010, expanding from 220,000 to 845,000 people.
 
 Given this information, it is likely that the median city population size in developing countries surpassed that of high-income countries sometime between 1960 and 2010. The most plausible range is between 1980 and 1995, as this allows for a gradual increase in population size over several decades.
 
@@ -1015,7 +1015,7 @@ Response:
 ""B"": ""0.3"",
 ""C"": ""0.4"",
 ""D"": ""0.",123,,,,
-124,124,A,0.8,0.1,0.0,0.1,True,"{
+124,A,0.8,0.1,0.0,0.1,True,"{
 ""Reasoning"": ""The passage provides information about the growth of cities in developing and high-income countries. The graph is not provided, but based on the information in the passage, option A is the most likely to be supported by the graph. The passage states that the median city in the developing world nearly quadrupled in size from 1960 to 2010, while the median city in high-income countries grew modestly. This suggests that the median population of cities in developing countries grew more sharply than that of cities in high-income countries."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -1023,7 +1023,7 @@ Response:
 ""C"": ""0.0"",
 ""D"": ""0.1""
 }",124,0.999910303643919,2.318397509337808e-05,2.389916198571879e-05,4.261321900196742e-05
-125,125,A,0.8,0.1,0.05,0.05,True,"{
+125,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""Passage 1 states that since humans split from chimps, the human genome has undergone roughly 15 million changes. This suggests that the human genome has undergone a large number of changes over time, making option A the correct answer. The passage does not provide information about the size of the genome, the number of genes, or the retention of genes from Denisovans, so options B, C, and D are not supported by the passage."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -1032,7 +1032,7 @@ Response:
 ""D"": ""0.05""
 }
 Note: The probabilities do not add up to exactly 1.0 due to rounding.",125,0.9999710330542653,1.5675528247421108e-05,4.887427058131296e-06,8.403990429225764e-06
-126,126,D,0.1,0.1,0.1,0.7,True,"{
+126,D,0.1,0.1,0.1,0.7,True,"{
 ""Reasoning"": ""The passage states that NOTCH2NL is a relative of NOTCH2, a gene that scientists knew was central to early brain development. This suggests that Haussler's team was interested in NOTCH2NL because of its relationship to NOTCH2, implying that they believed related genes tend to have comparable biological roles in development."",
 ""Answer"": ""D"",
 ""A"": ""0.1"",
@@ -1041,7 +1041,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding.",125,0.999
 ""D"": ""0.7""
 }
 Note: I've assigned a relatively high probability to option D, as it is the most direct inference from the passage. However, I've also left some probability for the other options, as the passage does not explicitly rule them out, and there may be some nuance to the relationship between genes that is not fully captured by the passage.",126,6.91931565405472e-05,2.318358130428325e-05,1.9846099162792604e-05,0.999887717565097
-127,127,D,0.0,0.0,0.0,1.0,True,"{
+127,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""Passage 1 focuses on a specific gene, NOTCH2NL, and its role in human brain development, while Passage 2 discusses the overall trend of brain size increase in the human lineage over the past three million years. Passage 1 is more focused on the genetic mechanisms underlying brain evolution, while Passage 2 takes a more macroscopic view, looking at the fossil record and population-level changes. Therefore, the correct answer is the one that highlights the difference in scale and focus between the two passages."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -1049,7 +1049,7 @@ Note: I've assigned a relatively high probability to option D, as it is the most
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",127,0.0026212982389702535,0.0005670894479868324,0.0034188124889408017,0.9933927998241021
-128,128,B,0.0,1.0,0.0,0.0,True,"{
+128,B,0.0,1.0,0.0,0.0,True,"{
 ""Reasoning"": ""Both passages mention that the modern human brain is significantly larger than that of other species. Passage 1 mentions that the human brain is roughly three times larger than that of chimpanzees, while Passage 2 states that modern humans have brains that are more than three times larger than those of chimpanzees and bonobos. Therefore, the correct answer is the species mentioned in both passages."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -1057,7 +1057,7 @@ Note: I've assigned a relatively high probability to option D, as it is the most
 ""C"": ""0.0"",
 ""D"": ""0.0""
 }",128,0.0383900172222704,0.9599363321362082,0.0009917929727534087,0.0006818576687679684
-129,129,C,0.0,0.0,0.9,0.1,True,"{
+129,C,0.0,0.0,0.9,0.1,True,"{
 ""Reasoning"": ""The passage argues that a focus on human rights is essential for addressing the disadvantage faced by Aboriginal and Torres Strait Islander peoples. It emphasizes that human rights provide a framework for government policy and accountability, and that they are essential for achieving equality and addressing the social determinants of health. The passage also critiques the 'practical' approach of the previous government, which focused on expenditure rather than outcomes, and argues that a human rights approach is necessary for achieving real progress."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -1067,7 +1067,7 @@ Note: I've assigned a relatively high probability to option D, as it is the most
 }
 
 Note: I have assigned a high probability to option C because it accurately reflects the central theme of the passage, which is that human rights should be used as a framework for government policy on indigenous issues. I have assigned a low probability to option D because it is actually the opposite of what the passage argues, and options A and B are not supported by the passage.",129,1.3231279244777652e-05,9.953259612062468e-06,0.9999292543762903,4.75610848528494e-05
-130,130,D,0.0,0.0,0.0,1.0,True,"{
+130,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The passage emphasizes the importance of accountability and measuring progress in addressing Indigenous health issues. Calma argues that the government's focus on 'practical measures' and 'record expenditure' without linking it to specific outcomes has allowed them to evade accountability. This suggests that the correct answer is related to the government's ability to avoid being answerable for its policies."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -1075,7 +1075,7 @@ Note: I have assigned a high probability to option C because it accurately refle
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",130,1.4721800584687933e-05,1.1860883871874083e-05,9.953606063331517e-06,0.9999634637094801
-131,131,D,0.0,0.0,0.0,1.0,True,"{
+131,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The passage mentions that the previous federal government emphasized the 'record levels of expenditure' annually on Indigenous issues, suggesting that they focused on the financial resources devoted to these issues. This is also supported by the author's criticism of this approach, stating that the size of the input became more important than the intended outcomes."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -1083,7 +1083,7 @@ Note: I have assigned a high probability to option C because it accurately refle
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",131,4.46993592615046e-05,1.3648204361179406e-05,3.3196724144877416e-05,0.9999084557122324
-132,132,A,0.8,0.1,0.05,0.05,True,"{
+132,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The passage emphasizes the importance of Indigenous peoples' participation and engagement in addressing their own issues. Calma criticizes the previous government's approach for treating Indigenous peoples as passive recipients of policies and programs. Therefore, it is likely that Calma would agree that empowering Indigenous communities to assist in devising and implementing programs would be a more effective approach."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -1092,7 +1092,7 @@ Note: I have assigned a high probability to option C because it accurately refle
 ""D"": ""0.05""
 }
 Note: The probabilities do not add up to exactly 1.0 due to rounding.",132,0.9999771720197387,1.1861013242851088e-05,4.708643448167015e-06,6.258323570348564e-06
-133,133,A,0.8,0.1,0.05,0.05,True,"{
+133,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The passage suggests that Calma is addressing an audience that is aware of the issues faced by indigenous peoples, but may be skeptical about the government's accountability for its failed policies. Calma's emphasis on the need for a 'cultural shift' and his criticism of the previous government's approach to indigenous issues implies that he is speaking to an audience that is already informed about the issues, but may be uncertain about how to address them effectively. Option A is the most plausible answer because it reflects Calma's tone of advocating for greater accountability and his implicit criticism of the government's lack of progress in addressing indigenous issues."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -1100,7 +1100,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding.",132,0.999
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",133,0.9998715090587603,3.7605651169860556e-05,2.8844905176248033e-05,6.204038489354174e-05
-134,134,D,0.1,0.1,0.1,0.7,True,"{
+134,D,0.1,0.1,0.1,0.7,True,"{
 ""Reasoning"": ""The passage discusses the 'missing mantle problem', which refers to the rarity of mantle rocks in the asteroid belt and among meteorites on Earth. It presents various explanations for this phenomenon, including the idea that iron fragments may survive better than rocky fragments when asteroids break apart, and that differentiated bodies may have formed closer to the Sun and been disrupted by violent collisions. The passage aims to account for the scarcity of a component of differentiated asteroids, making option D the most accurate choice."",
 ""Answer"": ""D"",
 ""A"": ""0.1"",
@@ -1108,7 +1108,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding.",132,0.999
 ""C"": ""0.1"",
 ""D"": ""0.7""
 }",134,3.4270562695223006e-05,1.7880293580116351e-06,2.4674805140560564e-05,0.9999392666028062
-135,135,B,0.0,0.8,0.1,0.1,True,"{
+135,B,0.0,0.8,0.1,0.1,True,"{
 ""Reasoning"": ""The passage suggests that if collisional erosion within the asteroid belt was sufficient to explain the situation, then most differentiated bodies would have been destroyed, leaving behind only a few fragments. However, the passage also states that primitive asteroids, which are no stronger than the mantle rocks from differentiated asteroids, have survived in large numbers. This implies that if collisional erosion was the main factor, then there should be far fewer primitive asteroids than there currently are."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -1116,7 +1116,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding.",132,0.999
 ""C"": ""0.1"",
 ""D"": ""0.1""
 }",135,0.00010236120532972202,0.9997094301020518,2.974853899797978e-05,0.00015846015362050152
-136,136,B,0.0,0.8,0.1,0.1,True,"{
+136,B,0.0,0.8,0.1,0.1,True,"{
 ""Reasoning"": ""The passage states that Bottke and his colleagues proposed that the parent bodies of iron meteorites formed closer to the Sun, in the region that now contains the terrestrial planets. They suggest that these objects were disrupted by violent collisions and that the stronger iron fragments were scattered into the asteroid belt, where they survived for the age of the solar system. This matches option B."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -1126,7 +1126,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding.",132,0.999
 }
 
 Note: I've assigned a high probability to option B because it accurately reflects the explanation provided in the passage. Options A, C, and D are incorrect, but I've assigned a small probability to them because they might be plausible alternatives, although not supported by the passage.",136,1.7225070882060714e-05,0.9999644174141294,1.3648931598587901e-05,4.70858338990587e-06
-137,137,A,0.8,0.0,0.1,0.1,True,"{
+137,A,0.8,0.0,0.1,0.1,True,"{
 ""Reasoning"": ""The passage suggests that the asteroid belt is a mixture of intact primitive bodies and fragments of iron. It also mentions that primitive asteroids, the parent bodies of chondritic meteorites, are the most common type of meteorite found on Earth. This implies that the majority of the mass in the asteroid belt is likely to be in primitive asteroids. The passage does not provide any information about the reflectivity of asteroids, and basaltic asteroids are not mentioned at all."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -1134,7 +1134,7 @@ Note: I've assigned a high probability to option B because it accurately reflect
 ""C"": ""0.1"",
 ""D"": ""0.1""
 }",137,0.9999621525620093,1.2039657439560621e-05,5.662215132466629e-06,2.0145565418670744e-05
-138,138,A,0.0,0.0,0.0,0.0,False,"Based on the passage, the question is asking about the characteristics of the four largest asteroid belt objects. The passage does not provide a table, but it does discuss the characteristics of different types of asteroids.
+138,A,0.0,0.0,0.0,0.0,False,"Based on the passage, the question is asking about the characteristics of the four largest asteroid belt objects. The passage does not provide a table, but it does discuss the characteristics of different types of asteroids.
 
 The passage mentions that Vesta is a differentiated asteroid with a diameter of more than 300 miles, and it is likely that Vesta is one of the four largest asteroid belt objects. The passage also mentions that Vesta is a type V asteroid.
 
@@ -1154,7 +1154,7 @@ Based on this information, the best answer is:
 However, I must note that the passage does not provide enough information to determine the correct answer with certainty. The probabilities I provided are based on the limited information available in the passage.
 
 A more accurate",138,0.9641315541623906,0.006200857215373022,0.0023161473112139914,0.02735144131102237
-139,139,B,0.0,0.8,0.1,0.1,True,"Based on the passage, the correct answer is B) They once comprised a smaller portion of the asteroid belt than type V asteroids did.
+139,B,0.0,0.8,0.1,0.1,True,"Based on the passage, the correct answer is B) They once comprised a smaller portion of the asteroid belt than type V asteroids did.
 
 Reasoning:
 The passage discusses the ""missing mantle problem"" and proposes a model to explain the rarity of mantle rocks in the asteroid belt. According to this model, differentiated bodies, which include type V asteroids like Vesta, were relatively rare to begin with and were mostly destroyed in violent collisions. In contrast, primitive asteroids, which include type C asteroids, were more common and survived in larger numbers. Therefore, the model implies that type C asteroids once comprised a smaller portion of the asteroid belt than type V asteroids did.
@@ -1168,7 +1168,7 @@ Response:
 ""C"": ""0.1"",
 ""D"": ""0.1""
 }",139,6.203902797179459e-05,0.999852798848136,6.501880837389807e-05,2.014331551821957e-05
-140,140,B,0.1,0.8,0.05,0.05,True,"{
+140,B,0.1,0.8,0.05,0.05,True,"{
 ""Reasoning"": ""The passage describes Little Chandler's thoughts and feelings as he prepares to meet his old friend, Ignatius Gallaher, who has become a successful figure in London. The passage highlights Little Chandler's nostalgia and reflection on the past, as well as his excitement and anticipation for the present. The correct answer choice captures the essence of the passage, which is Little Chandler's introspection and consideration of both the past and the present, prompted by the invitation from his old friend."",
 ""Answer"": ""B"",
 ""A"": ""0.1"",
@@ -1176,7 +1176,7 @@ Response:
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",140,4.070800215615327e-05,0.9999530338130321,3.3376985662438997e-06,2.920486245463412e-06
-141,141,A,0.8,0.1,0.05,0.05,True,"{
+141,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The passage describes Little Chandler's thoughts and feelings as he reflects on his friend Gallaher's success. It states that 'He watched the scene and thought of life; and (as always happened when he thought of life) he became sad. A gentle melancholy took possession of him.' This suggests that thinking about Gallaher's success makes Little Chandler feel unhappy about his own life. However, it does not indicate that he is trying to downplay Gallaher's achievements or that he is angry about Gallaher's success. Instead, it seems that he genuinely admires Gallaher and is simply reminded of his own unhappiness when he thinks about his friend's success."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -1184,7 +1184,7 @@ Response:
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",141,0.9997864228454615,3.760245103621569e-05,9.951837278998448e-06,0.00016602286622329146
-142,142,D,0.0,0.0,0.0,1.0,True,"{
+142,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The passage describes Little Chandler as taking 'the greatest care of his fair silken hair and moustache' and using 'perfume discreetly on his handkerchief', indicating that he is concerned with his physical appearance. This attention to detail and desire to present himself in a certain way suggests that he is somewhat vain about his personal appearance."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -1192,7 +1192,7 @@ Response:
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",142,2.9740918455586884e-05,9.536166238264333e-06,1.9847145983387642e-05,0.9999408757693228
-143,143,D,0.0,0.0,0.0,1.0,True,"{
+143,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""This question requires the reader to analyze Little Chandler's character and identify a contradictory impulse. The correct answer, D) He derives excitement from placing himself in settings he finds menacing, highlights the contrast between Little Chandler's fearful nature and his tendency to seek out thrilling experiences. This is evident in the passage where he 'courts the causes of his fear' and 'hurried on his way apprehensively and excitedly'. This impulse is contradictory because it suggests that Little Chandler is drawn to the very things that make him anxious. The other options do not accurately capture this contradictory impulse."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -1200,7 +1200,7 @@ Response:
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",143,3.2184112193815106e-05,2.2826879574502196e-05,1.8058862953196256e-05,0.9999269301452784
-144,144,A,0.8,0.1,0.05,0.05,True,"{
+144,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The last paragraph highlights Little Chandler's reflection on the past and how he can now see signs of future greatness in his friend Gallaher. The text states that 'now that he reviewed the past, Little Chandler could remember many signs of future greatness in his friend.' This suggests that Little Chandler is looking back and realizing that Gallaher's success was not entirely unexpected, but rather a culmination of traits and characteristics that were already present. This interpretation is supported by the phrase 'who would have thought it possible eight years before?' which implies that, in hindsight, Gallaher's success seems almost inevitable."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -1208,7 +1208,7 @@ Response:
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",144,0.9999147729575428,3.426961497402184e-05,3.6474790198437164e-05,1.448263728467358e-05
-145,145,B,0.0,1.0,0.0,0.0,True,"{
+145,B,0.0,1.0,0.0,0.0,True,"{
 ""Reasoning"": ""The passage introduces an unexpected claim that consumers often support smaller brands when they are in competition with larger brands. The author provides examples and experiments that confirm this claim, including a field study at an independent bookstore. The passage does not explain a popular belief, outline a debate, or present a negative impact of a business practice. Therefore, the correct answer is the one that describes the introduction of an unexpected claim, followed by supporting examples and experiments."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -1216,7 +1216,7 @@ Response:
 ""C"": ""0.0"",
 ""D"": ""0.0""
 }",145,5.960397332006946e-06,0.9999892712848024,2.3841589328027785e-06,2.3841589328027785e-06
-146,146,D,0.0,0.0,0.0,1.0,True,"{
+146,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The passage suggests that when a large brand is framed as being in competition with a smaller brand, support for the large brand decreases. This is because consumers tend to rally around the smaller brand and view the large brand as a threat. Therefore, if customers of a large chain bookstore were given information focusing on the store's small competitors, it is likely that the large store would lose customers who would now see it as a competitor of the smaller shops."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -1224,7 +1224,7 @@ Response:
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",146,5.3040833992618984e-05,3.3195218577403115e-05,5.065697628508554e-05,0.9998631069711449
-147,147,B,0.0,1.0,0.0,0.0,True,"{
+147,B,0.0,1.0,0.0,0.0,True,"{
 ""Reasoning"": ""Passage 1 states that wild tigers are 'notoriously elusive, preferring to hide out in hard-to-reach places in jungle undergrowth and high mountains.' This suggests that their habitats are difficult for humans to access, making it challenging to count them."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -1232,7 +1232,7 @@ Response:
 ""C"": ""0.0"",
 ""D"": ""0.0""
 }",147,2.1099141288790383e-05,0.9999606030158421,9.059518293491917e-06,9.23832457560031e-06
-148,148,B,0.2,0.6,0.1,0.1,True,"{
+148,B,0.2,0.6,0.1,0.1,True,"{
 ""Reasoning"": ""The passage suggests that the increased numbers may in part reflect better surveying methods, implying that the way of counting tigers has improved. This is the closest match among the options."",
 ""Answer"": ""B"",
 ""A"": ""0.2"",
@@ -1242,7 +1242,7 @@ Response:
 }
 
 Note: The probabilities do not add up to exactly 1.0 due to rounding.",148,0.00635202598989613,0.9878803630240078,0.000418938050459741,0.005348672935636261
-149,149,A,0.8,0.1,0.05,0.05,True,"{
+149,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The passage states that the WWF and the Global Tiger Forum's estimate of 3,890 wild tigers relies on 'flawed methodologies, including the use of statistically weak extrapolations from tiger photographs and field counts of spoor.' This suggests that the estimate is based on incomplete or unreliable data, which may lead to inaccurate generalizations."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -1251,7 +1251,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding.",148,0.006
 ""D"": ""0.05""
 }
 Note: The probabilities do not add up to exactly 1.0 due to rounding.",149,0.9995558667051729,0.00024915812271872047,8.088697907399608e-05,0.00011408819303436147
-150,150,D,0.0,0.0,0.0,1.0,True,"{
+150,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""Passage 1 presents a positive trend in the global tiger population, citing a study by the World Wildlife Fund (WWF). Passage 2, however, critiques the methods used in the WWF study and argues that the results may be flawed. It also emphasizes the importance of using rigorous scientific techniques to track tiger populations. Therefore, the correct answer is the one that highlights the critical and challenging relationship between the two passages."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -1259,7 +1259,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding.",149,0.999
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",150,0.0004303794736888224,0.0003738698142626446,9.305018814795731e-05,0.9991027005239006
-151,151,A,0.8,0.1,0.05,0.05,True,"{
+151,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The passages suggest that while there may be some positive trends in wild tiger populations, the overall picture is complex and varies by country. The first passage notes that some countries, such as India and Nepal, have seen increases in tiger populations, while others have seen declines. The second passage highlights the importance of accurate counting and monitoring of source populations, implying that the overall number of wild tigers may not be as important as the health of specific populations. Therefore, it can be inferred that the authors would agree that wild tiger population sizes are recovering more fully in certain countries than in others."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -1268,7 +1268,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding.",149,0.999
 ""D"": ""0.05""
 }
 Note: The probabilities do not add up to exactly 1.0 due to rounding.",151,0.9999701392387628,9.536370854204327e-06,7.629096683363461e-06,1.2635691381820733e-05
-152,152,D,0.1,0.1,0.1,0.7,True,"{
+152,D,0.1,0.1,0.1,0.7,True,"{
 ""Reasoning"": ""The author of Passage 2 is skeptical of the WWF's claims of a global increase in tiger populations, citing methodological flaws and a lack of convincing data. They argue that such claims may distract from the real issue of protecting source populations and may lead to complacency. Therefore, they would likely respond to the conclusions in Passage 1 by asserting that such claims may lead people to believe that tigers are recovering when in fact they continue to require vigilant protection."",
 ""Answer"": ""D"",
 ""A"": ""0.1"",
@@ -1276,7 +1276,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding.",151,0.999
 ""C"": ""0.1"",
 ""D"": ""0.7""
 }",152,2.6284059760773337e-05,1.9847147166298233e-05,1.3231431444198823e-05,0.9999406373616287
-153,153,A,0.8,0.1,0.05,0.05,True,"{
+153,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The passage presents Parsons as a thoughtful and analytical person who has undergone a significant transformation in her political views. She describes her journey from being a 'sincere, earnest, political Socialist' to becoming an Anarchist, citing her careful study and consideration of the nature of power and government. Her tone is reflective and measured, indicating a rational approach to her analysis of political history. While she does express strong convictions, her language is not emotive or resentful, but rather thoughtful and considered."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -1284,7 +1284,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding.",151,0.999
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",153,0.9996757578274021,8.822916261165237e-06,9.955587943341855e-06,0.00030546366839331537
-154,154,C,0.1,0.2,0.6,0.1,True,"{
+154,C,0.1,0.2,0.6,0.1,True,"{
 ""Reasoning"": ""The passage describes Parsons' personal journey from believing in the power of government to alleviate suffering to realizing that governments are often controlled by the few and used to silence the voice of the minority. He then explains how he came to adopt Anarchism as a philosophy that allows for the fullest development of the individual units in society. The primary purpose of the speech is to provide a rationale for adopting a different ideology, in this case, Anarchism, after becoming disillusioned with the current political system."",
 ""Answer"": ""C"",
 ""A"": ""0.1"",
@@ -1292,7 +1292,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding.",151,0.999
 ""C"": ""0.6"",
 ""D"": ""0.1""
 }",154,2.0442405845884404e-05,1.3409741444093267e-05,0.9999060126121896,6.013524052040048e-05
-155,155,D,0.0,0.0,0.0,1.0,True,"{
+155,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The passage states that Parsons initially thought that 'the aggregate power operating in human society, known as government, could be made an instrument in the hands of the oppressed to alleviate their sufferings.' This indicates that she once believed that government could be used to make positive changes that citizens hoped for."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -1300,7 +1300,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding.",151,0.999
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",155,4.541515801822793e-05,1.6985984298156115e-05,1.4065586997771379e-05,0.9999235332706858
-156,156,D,0.1,0.1,0.1,0.7,True,"{
+156,D,0.1,0.1,0.1,0.7,True,"{
 ""Reasoning"": ""The passage suggests that Parsons believes that governments only respond to the needs of the people when they are forced to, and that this typically happens when vocal individuals or groups raise their voices in protest. This is evident in the sentence 'When the prison, stake or scaffold can no longer silence the voice of the protesting minority, progress moves on a step, but not until then.' This implies that Parsons thinks that positive social change will take place only when vocal individuals compel governments to address their concerns."",
 ""Answer"": ""D"",
 ""A"": ""0.1"",
@@ -1308,7 +1308,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding.",151,0.999
 ""C"": ""0.1"",
 ""D"": ""0.7""
 }",156,3.5342832628503086e-05,2.5091623164586506e-05,1.5198014030806554e-05,0.9999243675301761
-157,157,A,0.8,0.1,0.05,0.05,True,"{
+157,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""Parsons argues that political parties, once in power, will prioritize maintaining their control over advancing the interests of the people. She claims that parties will build a powerful machine to crush opposition and silence dissent, and that it is human nature to abuse power when possessed. This suggests that Parsons believes that political parties are inherently untrustworthy due to the corrupting influence of power on human nature."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -1318,7 +1318,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding.",151,0.999
 }
 
 Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",157,0.9999407567331999,2.8429615959397025e-05,9.05933254890639e-06,2.1754318291781792e-05
-158,158,A,0.8,0.1,0.05,0.05,True,"{
+158,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The passage suggests that Parsons believes that governments and political parties are inherently self-serving and will use their power to silence opposition and maintain control. This is evident in his statement that 'it made no difference what fair promises a political party, out of power, might make to the people in order to secure their confidence, when once securely established in control of the affairs of society.' Therefore, it is likely that Parsons would predict that a political system with competing parties will lead to the suppression of views deemed unfavorable."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -1326,7 +1326,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",15
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",158,0.999957921074598,2.628442790691021e-05,6.854215894092232e-06,8.940281600989867e-06
-159,159,C,0.0,0.0,1.0,0.0,True,"{
+159,C,0.0,0.0,1.0,0.0,True,"{
 ""Reasoning"": ""The passage suggests that Parsons' support for anarchism is based on the idea that it allows for the fullest development of the individual units in society, free from government restrictions. This implies that anarchism creates a situation that allows individuals to flourish, which is option C. The other options do not accurately reflect the passage's reasoning."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -1334,7 +1334,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",15
 ""C"": ""1.0"",
 ""D"": ""0.0""
 }",159,6.615941271421792e-06,3.993405992660001e-06,0.999977529640907,1.1861011828945374e-05
-160,160,D,0.1,0.1,0.2,0.6,True,"{
+160,D,0.1,0.1,0.2,0.6,True,"{
 ""Reasoning"": ""The passage primarily focuses on presenting research that explains the development of tool-using behavior in woodpecker finches, discussing the role of genetic predisposition and individual learning. While it does touch on comparisons with primates and mentions experiments, the main purpose is to present the findings on the development of tool use in woodpecker finches."",
 ""Answer"": ""D"",
 ""A"": ""0.1"",
@@ -1342,7 +1342,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",15
 ""C"": ""0.2"",
 ""D"": ""0.6""
 }",160,2.7535852335356167e-05,8.642204737287107e-06,1.7522815122499377e-05,0.9999462991278049
-161,161,A,0.8,0.1,0.05,0.05,True,"{
+161,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The passage states that the researchers split each brood into two groups and reared them separately, which suggests that they controlled for other factors that could influence the results. The correct answer is supported by the fact that the researchers found similar developmental steps in both groups, despite the difference in models. This suggests that the design of the experiment helped to minimize other differences between the groups."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -1350,7 +1350,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",15
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",161,0.9987020727609474,0.0010159505790894455,0.0001486786025260578,0.00013329805743715528
-162,162,A,0.8,0.1,0.05,0.05,True,"{
+162,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The passage suggests that the social system of primates, such as chimpanzees, allows for young animals to learn tool use through social learning, implying that they have the opportunity to observe other members of their species using tools. This is in contrast to woodpecker finches, which are solitary and do not have this opportunity. The passage does not suggest that primates can reach maturity without learning to use tools, restrict tool-related knowledge to close relatives, or experiment with tool designs at little risk."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -1358,7 +1358,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",15
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",162,0.9999362273025818,2.0443023564905707e-05,1.0132110804763762e-05,3.31975630485495e-05
-163,163,C,0.0,0.0,0.8,0.2,True,"{
+163,C,0.0,0.0,0.8,0.2,True,"{
 ""Reasoning"": ""The correct answer is supported by the fact that the novel levering technique was developed by individual finches and was not observed in the wild, suggesting that it was not a socially learned behavior. The fact that the technique was developed in response to the artificial crevices, which differed from natural crevices, also supports the conclusion that individual learning was involved. The correct answer highlights the importance of the technique being difficult to observe and acquire socially, which is a key aspect of individual learning."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -1368,7 +1368,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",15
 }
 
 Note: The probabilities do not add up to exactly 1.0 due to rounding errors. However, they are close enough to demonstrate the relative confidence in each option.",163,4.071505411406248e-05,3.8211346540430524e-05,0.9996387507643759,0.000282322834969546
-164,164,A,0.25,0.25,0.25,0.25,True,"There is no table 1 provided in the passage. However, based on the information provided, we can infer that the question is asking about the results of the experiment where woodpecker finches were raised without tool-using models.
+164,A,0.25,0.25,0.25,0.25,True,"There is no table 1 provided in the passage. However, based on the information provided, we can infer that the question is asking about the results of the experiment where woodpecker finches were raised without tool-using models.
 
 The passage states that ""young woodpecker finches that never had the opportunity to watch tool use develop this ability with similar aptitude and reached distinct developmental steps... as their siblings that were given the chance to observe tool use in adult woodpecker finches."" This suggests that the woodpecker finches raised without tool-using models were still able to develop tool use, but the passage does not provide specific numbers.
 
@@ -1383,9 +1383,9 @@ Response:
 ""C"": ""0.25"",
 ""D"": ""0.25""
 }",164,0.5730725363021977,0.32657508128628093,0.07633249919139301,0.024019883220128355
-165,165,,,,,,False,"Passage: 
+165,,,,,,False,"Passage: 
 In an experimental study we investigated whether.twig tool use in woodpecker finches is acquired.socially. This seemed plausible since previous studies.have shown that several forms of tool use in primates.develop via social learning. We took whole broods.from the Galapagos Islands. We split each brood into.two groups: half of the chicks were reared with a tool-.using model, and the other half were reared with a.non-tool-using model. We found that young.woodpecker finches that never had the opportunity to.watch tool use develop this ability with similar.aptitude and reached distinct developmental steps.that marked the appearance of new tool-oriented.behavior at a similar age as their siblings that were.given the chance to observe tool use in adult.woodpecker finches. We concluded that, in contrast.to chimpanzees, social learning is not necessary for.the acquisition of this behavior in woodpecker.finches. Instead, the developmental process seems to.be strongly dependent on genetically fixed.components. Interestingly, New Caledonian crows.also appear to have a specific genetic predisposition.for tool use, as demonstrated by the finding that they.develop basic use of stick tools without a tool-using",165,,,,
-166,166,D,0.0,0.0,0.0,1.0,True,"{
+166,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The narrator does not mention knowing any of these facts before visiting Celia's apartment. However, the narrator does mention that they had assumed Quisqueya dyed her hair when they met her, which is mentioned in the passage as something Celia tells the narrator. Therefore, the correct answer is the fact that the narrator had assumed Quisqueya dyed her hair, which is closest to option D."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -1393,7 +1393,7 @@ In an experimental study we investigated whether.twig tool use in woodpecker fin
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",166,0.0005439683516257192,4.2609265053942734e-05,8.879413276975479e-05,0.9993246282505506
-167,167,C,0.0,0.0,1.0,0.0,True,"{
+167,C,0.0,0.0,1.0,0.0,True,"{
 ""Reasoning"": ""The narrator mentions that she has met Mayor, one of Celia's sons, at the store, but she has only seen Enrique, the other son, in a photo that Celia showed her. This information is provided in the passage when Celia shows the narrator a framed picture of her two sons."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -1401,7 +1401,7 @@ In an experimental study we investigated whether.twig tool use in woodpecker fin
 ""C"": ""1.0"",
 ""D"": ""0.0""
 }",167,3.117120962709995e-05,1.6449816170324258e-05,0.9999380747862284,1.4304187974195007e-05
-168,168,B,0.0,1.0,0.0,0.0,True,"{
+168,B,0.0,1.0,0.0,0.0,True,"{
 ""Reasoning"": ""The passage suggests that Celia knows the narrator's daughter is going to Evers, a school that the narrator seems hesitant to discuss. This is evident when Celia trails off and doesn't want to say it out loud, and the narrator feels embarrassed and indignant. This implies that Celia already knows this information before the narrator visits her apartment."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -1409,7 +1409,7 @@ In an experimental study we investigated whether.twig tool use in woodpecker fin
 ""C"": ""0.0"",
 ""D"": ""0.0""
 }",168,0.0032214815823208972,0.9965559608823245,8.320576308386784e-05,0.0001393517722708331
-169,169,B,0.0,0.9,0.05,0.05,True,"{
+169,B,0.0,0.9,0.05,0.05,True,"{
 ""Reasoning"": ""The passage discusses how people tend to hold extreme views due to the 'illusion of explanatory depth', where they believe they understand complex issues but actually don't. The experiment conducted by Philip Fernbach shows that when people are forced to explain complex policies in detail, they become more moderate in their views as they realize their own ignorance. This suggests that the process of describing an issue in detail can make people more moderate in their views about the issue."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -1417,7 +1417,7 @@ In an experimental study we investigated whether.twig tool use in woodpecker fin
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",169,8.642497316951608e-06,0.9999805096784645,4.887481241310565e-06,5.960342977208006e-06
-170,170,B,0.1,0.8,0.05,0.05,True,"{
+170,B,0.1,0.8,0.05,0.05,True,"{
 ""Reasoning"": ""The passage begins by introducing the phenomenon of the 'illusion of explanatory depth', where people believe they understand complex issues but actually don't. It then describes experiments conducted by Philip Fernbach to test whether forcing people to explain complex policies in detail can weaken their extremist stands. Finally, it discusses the results of the experiments and suggests that this approach could be a starting point for addressing political extremism. This matches option B, which describes a shift from introducing a phenomenon to describing experiments and then to a recommendation based on the results."",
 ""Answer"": ""B"",
 ""A"": ""0.1"",
@@ -1425,7 +1425,7 @@ In an experimental study we investigated whether.twig tool use in woodpecker fin
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",170,1.0430616996028796e-05,0.9999822977528696,4.649075003944263e-06,2.6225551304300972e-06
-171,171,C,0.0,0.0,0.8,0.2,True,"{
+171,C,0.0,0.0,0.8,0.2,True,"{
 ""Reasoning"": ""The passage suggests that Fernbach's idea was that forcing people to explain complex policies in detail would make them realize their own ignorance and thus weaken their extremist stands. The finding that would have been most surprising to Fernbach is that when volunteers were asked to list their reasons for endorsing a particular policy, their views were generally unaffected by the exercise. This is because Fernbach believed that the slow, cognitive work of deliberate analysis would change people's judgments, but the results showed that simply listing reasons for their positions did not have the same effect."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -1435,7 +1435,7 @@ In an experimental study we investigated whether.twig tool use in woodpecker fin
 }
 
 Note: I've assigned a high probability to option C because it is the finding that is most inconsistent with Fernbach's initial hypothesis, and therefore would have been the most surprising to him. Options A and B are not supported by the passage, and option D is actually the opposite of what the passage suggests.",171,1.4959942816065596e-05,1.543675374247406e-05,0.9999467759803397,2.2827323101805273e-05
-172,172,B,0.1,0.8,0.05,0.05,True,"{
+172,B,0.1,0.8,0.05,0.05,True,"{
 ""Reasoning"": ""The passage suggests that forcing people to explain complex policies in detail can help them realize their own ignorance and become more moderate in their views. This is because the act of explaining requires a deeper understanding of the policy, which can lead to a more nuanced and less extreme perspective. Therefore, requiring politicians to explain their proposed policies in detail before an election is held is the most likely action to reduce political extremism among the citizenry."",
 ""Answer"": ""B"",
 ""A"": ""0.1"",
@@ -1443,7 +1443,7 @@ Note: I've assigned a high probability to option C because it is the finding tha
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",172,1.4483179366607057e-05,0.999949517477681,1.5198398100760493e-05,2.0800944851629066e-05
-173,173,C,0.1,0.2,0.6,0.1,True,"{
+173,C,0.1,0.2,0.6,0.1,True,"{
 ""Reasoning"": ""The passage primarily focuses on a study conducted by Matthew Klooster and colleagues on the defensive strategy of Monotropsis odorata, a rare woodland plant. The study investigates whether the plant's dried bracts serve as camouflage to hide from predators, and the results show that this strategy is effective in reducing herbivore damage and increasing fitness. While the passage touches on other topics, such as the plant's reliance on mycorrhizal fungus and its method of attracting pollinators, the main purpose is to describe the study and its findings on the plant's defensive strategy."",
 ""Answer"": ""C"",
 ""A"": ""0.1"",
@@ -1451,7 +1451,7 @@ Note: I've assigned a high probability to option C because it is the finding tha
 ""C"": ""0.6"",
 ""D"": ""0.1""
 }",173,6.436718475098482e-06,3.1587599924094403e-06,0.9999107203307805,7.968419075191362e-05
-174,174,D,0.0,0.0,0.0,1.0,True,"{
+174,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The passage states that 'variation in pigmentation as a means of escaping predation has received little attention.' This implies that camouflage in plants has been studied less than other functions of coloration in plants, such as acquiring food or attracting pollinators."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -1459,7 +1459,7 @@ Note: I've assigned a high probability to option C because it is the finding tha
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",174,3.2720734432082484e-05,1.4721350463978822e-05,1.8893393105592254e-05,0.9999336049213892
-175,175,B,0.1,0.8,0.05,0.05,True,"{
+175,B,0.1,0.8,0.05,0.05,True,"{
 ""Reasoning"": ""The passage states that Monotropsis odorata relies exclusively on mycorrhizal fungus for its resources, which frees it from the need for photosynthetic pigmentation, allowing it to adopt a broader range of coloration possibilities. This suggests that the nutrient requirements of many plants, which often require photosynthetic pigmentation, may limit their defensive options, such as camouflage. This inference is supported by the fact that Monotropsis odorata's unique nutrient requirements allow it to use camouflage as a defense mechanism."",
 ""Answer"": ""B"",
 ""A"": ""0.1"",
@@ -1467,7 +1467,7 @@ Note: I've assigned a high probability to option C because it is the finding tha
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",175,3.480540322894017e-05,0.9998951666022607,2.3898915573296246e-05,4.612907893698577e-05
-176,176,C,0.1,0.1,0.7,0.1,True,"{
+176,C,0.1,0.1,0.7,0.1,True,"{
 ""Reasoning"": ""Burke is critical of the National Assembly's approach to governance, suggesting that they prioritize popularity over prudence and are more concerned with maintaining their own power than with making wise decisions. He is particularly concerned that they are abandoning the principles of moderation and compromise, and instead are engaging in a competition to propose the most popular, rather than the most sensible, policies. This suggests that Burke is upset with the National Assembly's decision to seek the approval of the public, as he believes this leads to a focus on short-term popularity rather than long-term wisdom."",
 ""Answer"": ""C"",
 ""A"": ""0.1"",
@@ -1475,7 +1475,7 @@ Note: I've assigned a high probability to option C because it is the finding tha
 ""C"": ""0.7"",
 ""D"": ""0.1""
 }",176,3.87939526246582e-05,2.0797372451621676e-05,0.9997795120972177,0.00016089657770595566
-177,177,D,0.0,0.0,0.0,1.0,True,"{
+177,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""Burke argues that in the French Revolution, moderation is stigmatized as the virtue of cowards, and compromise as the prudence of traitors. He believes that leaders who choose to make themselves bidders at an auction of popularity will become flatterers instead of legislators. Therefore, French leaders who advocate moderate positions are likely to be undermined by their competitors who will produce more popular, but potentially more extreme, ideas."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -1483,7 +1483,7 @@ Note: I've assigned a high probability to option C because it is the finding tha
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",177,0.000519191800965034,6.49585701391055e-05,6.49585701391055e-05,0.9993508910587567
-178,178,B,0.0,0.9,0.05,0.05,True,"{
+178,B,0.0,0.9,0.05,0.05,True,"{
 ""Reasoning"": ""Burke's central claim in the last paragraph is that the British have acted wisely in preserving their constitution and making cautious revisions, rather than attempting to drastically change or replace it. He emphasizes the importance of learning from the past and preserving the legacy of their ancestors, rather than trying to follow the radical example of the French Revolution. This is evident in his statement 'Let us add, if we please, but let us preserve what they have left; and, standing on the firm ground of the British constitution, let us be satisfied to admire rather than attempt to follow in their desperate flights the aeronauts of France.'"",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -1491,7 +1491,7 @@ Note: I've assigned a high probability to option C because it is the finding tha
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",178,3.3733605006066984e-05,0.9999250231888734,2.9740404413476014e-05,1.1502801707015774e-05
-179,179,B,0.1,0.8,0.05,0.05,True,"{
+179,B,0.1,0.8,0.05,0.05,True,"{
 ""Reasoning"": ""Burke's passage is a critique of the French Revolution and the National Assembly, while also expressing admiration for the British system of government. He praises the caution and prudence of British leaders of past generations, citing their ability to balance liberty and restraint. This suggests that Burke has a deep respect for the wisdom and foresight of these leaders."",
 ""Answer"": ""B"",
 ""A"": ""0.1"",
@@ -1499,7 +1499,7 @@ Note: I've assigned a high probability to option C because it is the finding tha
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",179,2.04427871946381e-05,0.9999232948480481,3.117078047462311e-05,2.5091584282631606e-05
-180,180,D,0.0,0.0,0.0,1.0,True,"{
+180,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The impact hypothesis suggests that an extraterrestrial impact caused the Younger Dryas cooling and the disappearance of the Clovis hunters and large mammals. To provide the most support for this hypothesis, a discovery should directly link the impact to the Younger Dryas period and provide evidence of an extraterrestrial origin. Option D is the most supportive because it provides a direct link to an asteroid impact (via osmium, which is rare on Earth but common in asteroids) and dates it to approximately 13,000 years ago, which is the time period in question."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -1507,7 +1507,7 @@ Note: I've assigned a high probability to option C because it is the finding tha
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",180,8.218507160322216e-05,1.4482213487732403e-05,2.109754557472128e-05,0.999882175571748
-181,181,C,0.0,0.0,1.0,0.0,True,"{
+181,C,0.0,0.0,1.0,0.0,True,"{
 ""Reasoning"": ""The passage states that the team believes the black layers of carbonized material are the remains of wildfires that swept across the continent after the impact. This suggests that the team thinks the carbonized material was caused by rapidly spreading fires following a cosmic collision."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -1515,7 +1515,7 @@ Note: I've assigned a high probability to option C because it is the finding tha
 ""C"": ""1.0"",
 ""D"": ""0.0""
 }",181,6.556300682439378e-06,8.523190887171192e-06,0.9999687085649247,1.621194350566828e-05
-182,182,A,0.9,0.0,0.0,0.1,True,"{
+182,A,0.9,0.0,0.0,0.1,True,"{
 ""Reasoning"": ""Meltzer and his team challenged the Younger Dryas impact hypothesis by reevaluating the dates assigned to sites thought to display signs of the proposed impact. They found that only three of the 29 sites actually fell within the time frame of the Younger Dryas onset, while the rest were either earlier or later by hundreds or thousands of years. This suggests that the evidence for the impact hypothesis is not as strong as previously thought."",
 ""Answer"": ""A"",
 ""A"": ""0.9"",
@@ -1524,7 +1524,7 @@ Note: I've assigned a high probability to option C because it is the finding tha
 ""D"": ""0.1""
 }
 Note: I assigned a high probability to option A because it is the most direct and relevant evidence mentioned in the passage as the basis for Meltzer's team's challenge to the Younger Dryas impact hypothesis. Options B, C, and D are not mentioned in the passage as part of Meltzer's team's argument, so I assigned them low probabilities.",182,0.9999775892332955,8.642449925943144e-06,7.629197176004983e-06,6.13911960256651e-06
-183,183,A,0.9,0.05,0.03,0.02,True,"{
+183,A,0.9,0.05,0.03,0.02,True,"{
 ""Reasoning"": ""Passage 1 presents a hypothesis that a comet or asteroid exploded over North America 13,000 years ago, causing a cooling of the climate and the extinction of large mammals. Passage 2 discusses a critique of this hypothesis, arguing that the dating of the sites where evidence for the impact was found is not accurate, and that the hypothesis is not supported by the data. Therefore, Passage 2 presents a critique of the central hypothesis described in Passage 1."",
 ""Answer"": ""A"",
 ""A"": ""0.9"",
@@ -1532,7 +1532,7 @@ Note: I assigned a high probability to option A because it is the most direct an
 ""C"": ""0.03"",
 ""D"": ""0.02""
 }",183,0.9999687086264715,2.5450317136580647e-05,3.814567439674851e-06,2.0264889523272645e-06
-184,184,D,0.2,0.3,0.1,0.4,True,"{
+184,D,0.2,0.3,0.1,0.4,True,"{
 ""Reasoning"": ""The authors of both passages present the impact hypothesis as a topic of debate and disagreement within the scientific community. The first passage mentions that 'not all will be convinced' and that 'several leading hypotheses already explain each of these three events'. The second passage quotes a researcher who says that the hypothesis 'fails on both theoretical and empirical grounds', but also notes that impact proponents 'appear unmoved' by the criticism. This suggests that the hypothesis is a subject of controversy and debate among scientists."",
 ""Answer"": ""D"",
 ""A"": ""0.2"",
@@ -1540,7 +1540,7 @@ Note: I assigned a high probability to option A because it is the most direct an
 ""C"": ""0.1"",
 ""D"": ""0.4""
 }",184,0.0006256258046059219,0.0003736351499547037,0.0005350331378438946,0.9984657059075954
-185,185,A,0.8,0.1,0.05,0.05,True,"{
+185,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""Meltzer's findings suggest that the Younger Dryas impact hypothesis is not supported by the radiocarbon dating of the sites. If the sites are not actually dated to the Younger Dryas period, then the glass and carbon spherules found at those sites may not be evidence of an extraterrestrial impact at that time. This means that the spherules could have been formed at a different time, which is option A. The other options are not supported by the text and are therefore less likely to be correct."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -1548,7 +1548,7 @@ Note: I assigned a high probability to option A because it is the most direct an
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",185,0.9999812845431306,1.031138228788235e-05,4.291442339465487e-06,4.112632241987758e-06
-186,186,C,0.1,0.1,0.7,0.1,True,"{
+186,C,0.1,0.1,0.7,0.1,True,"{
 ""Reasoning"": ""The first paragraph highlights Nawab's resourcefulness and entrepreneurial spirit, showcasing his various moneymaking ventures, such as fixing radios, fish-farming, and running a flour mill. This suggests that the main purpose of the paragraph is to describe Nawab's various moneymaking ventures."",
 ""Answer"": ""C"",
 ""A"": ""0.1"",
@@ -1557,7 +1557,7 @@ Note: I assigned a high probability to option A because it is the most direct an
 ""D"": ""0.1""
 }
 Note: The probabilities do not add up to 1.0 due to rounding errors.",186,4.398264914289855e-05,5.3875765345772755e-05,0.9993909773826677,0.0005111642028436869
-187,187,B,0.1,0.8,0.05,0.05,True,"{
+187,B,0.1,0.8,0.05,0.05,True,"{
 ""Reasoning"": ""The passage suggests that Harouni is a self-centered person who is mainly concerned with his own comfort. He doesn't particularly care about Nawab's well-being, but rather sees the benefit of providing him with a motorcycle as a way to maintain his own comfort and convenience. This is evident in the line 'He didn’t particularly care one way or the other, except that it touched on his comfort—a matter of great interest to him.' Therefore, the most reasonable inference is that Harouni provides Nawab with a motorcycle mainly because he sees a benefit to himself."",
 ""Answer"": ""B"",
 ""A"": ""0.1"",
@@ -1566,7 +1566,7 @@ Note: The probabilities do not add up to 1.0 due to rounding errors.",186,4.3982
 ""D"": ""0.05""
 }
 Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",187,0.0007554722261729102,0.9990829303929565,4.756721133706662e-05,0.00011403016953359455
-188,188,A,0.9,0.05,0.04,0.01,True,"{
+188,A,0.9,0.05,0.04,0.01,True,"{
 ""Reasoning"": ""The passage states that Nawab receiving a motorcycle was 'much to the disgust of the farm managers', indicating that they were unhappy with the decision."",
 ""Answer"": ""A"",
 ""A"": ""0.9"",
@@ -1574,7 +1574,7 @@ Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",18
 ""C"": ""0.04"",
 ""D"": ""0.01""
 }",188,0.999967993427507,1.0311242162561918e-05,4.47019168897193e-06,1.722513864150517e-05
-189,189,D,0.1,0.2,0.3,0.4,True,"{
+189,D,0.1,0.2,0.3,0.4,True,"{
 ""Reasoning"": ""The passage states that Nawab's wife had begged to live near her family in Firoza, where they could also educate at least the two eldest daughters. With the motorcycle, Nawab can now spend every night with his wife and fulfill her wish. While the other options are also benefits of getting the motorcycle, they are not the primary reason mentioned in the passage."",
 ""Answer"": ""D"",
 ""A"": ""0.1"",
@@ -1591,7 +1591,7 @@ Note: The probabilities do not sum to 1.0, I apologize for the mistake. Here is 
 ""B"": ""0.2"",
 ""C"": ""0.3"",
 ""D"": """,189,0.0006626950257229365,0.0010260449872186868,0.004821106312134363,0.993490153674924
-190,190,B,0.1,0.8,0.05,0.05,True,"{
+190,B,0.1,0.8,0.05,0.05,True,"{
 ""Reasoning"": ""The passage explores the changing nature of public knowledge and the role of the news media in shaping it. It discusses the shift from traditional sources of authority to a more democratized and participatory approach, where the audience is increasingly involved in the production and evaluation of news. The passage also highlights the tension between journalists who resist this change and those who advocate for a more inclusive and informative approach. Therefore, the main purpose of the passage is to discuss changes in the perception of the news media as a source of public knowledge."",
 ""Answer"": ""B"",
 ""A"": ""0.1"",
@@ -1599,7 +1599,7 @@ Note: The probabilities do not sum to 1.0, I apologize for the mistake. Here is 
 ""C"": ""0.05"",
 ""D"": ""0.05""
 }",190,1.4959718127918226e-05,0.9999315786597177,1.3410105891560162e-05,4.005151626279302e-05
-191,191,D,0.0,0.0,0.0,1.0,True,"{
+191,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The passage discusses the transformation of authority and the changing expectations surrounding traditional authorities. It highlights the growing skepticism towards expert elites and the demand for transparency. The correct answer is supported by the passage's mention of the need for authorities to make explicit the frames of value that determine their decisions."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -1607,7 +1607,7 @@ Note: The probabilities do not sum to 1.0, I apologize for the mistake. Here is 
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",191,2.43165123064796e-05,2.389931724239784e-05,4.07063183954058e-05,0.9999110778520557
-192,192,A,0.8,0.1,0.05,0.05,True,"{
+192,A,0.8,0.1,0.05,0.05,True,"{
 ""Reasoning"": ""The passage suggests that the public is seeking a more neutral and informative approach to news reporting, where journalists provide raw information without putting their own slant on it. This implies that the public wants journalists to avoid making personal judgments or interpretations of the events reported."",
 ""Answer"": ""A"",
 ""A"": ""0.8"",
@@ -1617,7 +1617,7 @@ Note: The probabilities do not sum to 1.0, I apologize for the mistake. Here is 
 }
 
 Note: The probabilities do not add up to exactly 1.0 due to rounding errors.",192,0.9999824765822469,1.0430605805412937e-05,1.907310775846937e-06,5.18550117183386e-06
-193,193,A,0.25,0.25,0.25,0.25,True,"There is no table provided in the passage. However, based on the text, it can be inferred that the trust in news media has been declining over time. The passage mentions that there is a growing feeling of skepticism towards the epistemological authority of expert elites and that people are demanding ""raw news rather than constructed narratives"". This suggests that the trust in news media has decreased over time.
+193,A,0.25,0.25,0.25,0.25,True,"There is no table provided in the passage. However, based on the text, it can be inferred that the trust in news media has been declining over time. The passage mentions that there is a growing feeling of skepticism towards the epistemological authority of expert elites and that people are demanding ""raw news rather than constructed narratives"". This suggests that the trust in news media has decreased over time.
 
 However, without a table or specific data, it's impossible to determine the exact year when people were the most trusting of the news media. Therefore, I will provide a response with low confidence.
 
@@ -1630,7 +1630,7 @@ Response:
 ""C"": ""0.25"",
 ""D"": ""0.25""
 }",193,0.767460795072392,0.1584480866579348,0.037629650607101134,0.036461467662572127
-194,194,,,,,,False,"There is no table provided in the passage. However, based on the text, I can infer that the question is likely referring to a hypothetical table that is not shown.
+194,,,,,,False,"There is no table provided in the passage. However, based on the text, I can infer that the question is likely referring to a hypothetical table that is not shown.
 
 Given the context of the passage, which discusses the changing nature of news and the role of journalists, I can make an educated guess about the correct answer.
 
@@ -1646,7 +1646,7 @@ Here is my response in the required format:
 
 {
 ""Reasoning"": ""The passage discusses the changing nature of news and the role of journalists, and suggests that people's views on news organizations have been changing over time. However, it does not provide specific information about the",194,,,,
-195,195,A,0.9,0.05,0.03,0.02,True,"{
+195,A,0.9,0.05,0.03,0.02,True,"{
 ""Reasoning"": ""The passage describes Theis and Adler's research as involving direct observation of the Texas gourd vines, including counting the number of beetles and pollinators visiting the flowers, and recording the effects on seed production. The researchers also conducted experiments by manipulating the fragrance of the flowers and observing the responses of pollinators and beetles. This suggests that their research primarily relied on direct observation of the plants and their interactions with pollinators and pests."",
 ""Answer"": ""A"",
 ""A"": ""0.9"",
@@ -1654,7 +1654,7 @@ Here is my response in the required format:
 ""C"": ""0.03"",
 ""D"": ""0.02""
 }",195,0.9999671589936824,1.2635741087704858e-05,3.993371004133139e-06,1.6211894225734535e-05
-196,196,D,0.0,0.0,0.0,1.0,True,"{
+196,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""The passage states that striped cucumber beetles are among the 'bad guys' that are attracted to the Texas gourd plant's scent, and that they are repelled by the same compound that attracts squash bees. The passage also mentions that the beetles are attracted to the Texas gourd plant's flowers, but it does not provide information about their primary food source. Additionally, the passage does not provide information about the negative effects of carrying bacterial wilt disease on the beetles themselves. Therefore, the most reasonable inference is that striped cucumber beetles are attracted to the same compound in Texas gourd scent that squash bees are."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -1662,7 +1662,7 @@ Here is my response in the required format:
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",196,0.0009108998547245576,0.00040421516359447844,5.913308395306335e-05,0.998625751897728
-197,197,C,0.0,0.0,0.8,0.2,True,"{
+197,C,0.0,0.0,0.8,0.2,True,"{
 ""Reasoning"": ""The passage suggests that the researchers initially thought that increasing the floral scent of Texas gourd plants might attract more pollinators, as it is often assumed that a stronger fragrance is more appealing to bees. This idea is presented as an intuition that has not been thoroughly tested."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -1672,7 +1672,7 @@ Here is my response in the required format:
 }
 
 Note: I've assigned a high probability to option C, as it aligns with the researchers' initial assumption that increasing the floral scent might attract more pollinators. However, I've also assigned a small probability to option D, as the passage mentions that the Texas gourd vine's aroma includes 10 compounds, and it's possible that emitting more varied fragrant compounds could have a different effect.",197,3.218255854320285e-05,2.211060966579307e-05,0.9998827124533092,6.29943784817878e-05
-198,198,B,0.0,1.0,0.0,0.0,True,"{
+198,B,0.0,1.0,0.0,0.0,True,"{
 ""Reasoning"": ""The passage states that Theis and Adler's research aimed to find out if extra scent could well call in more pollinators, but also more beetles. The study's results showed that increasing the fragrance of Texas gourd plants did not attract more pollinators, but instead attracted more beetles, which damaged the plants and deterred bees. This suggests that there is an upper limit on the intensity of the aroma emitted by Texas gourd plants, and that increasing it beyond a certain point can be detrimental to the plant's reproduction."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -1680,7 +1680,7 @@ Note: I've assigned a high probability to option C, as it aligns with the resear
 ""C"": ""0.0"",
 ""D"": ""0.0""
 }",198,6.919101637192943e-05,0.9998583401843961,3.820106933196103e-05,3.426772989996505e-05
-199,199,C,0.0,0.0,0.9,0.1,True,"{
+199,C,0.0,0.0,0.9,0.1,True,"{
 ""Reasoning"": ""In Passage 1, Lincoln emphasizes the importance of respecting and following the law, even if it is flawed. He argues that violating the law can have severe consequences, including undermining the nation's values and leading to mob rule. This is evident in his statement that 'to violate the law, is to trample on the blood of his father, and to tear the character of his own, and his children's liberty.' He also notes that there is no grievance that is a fit object of redress by mob law, suggesting that breaking the law can lead to chaos and disorder."",
 ""Answer"": ""C"",
 ""A"": ""0.0"",
@@ -1689,7 +1689,7 @@ Note: I've assigned a high probability to option C, as it aligns with the resear
 ""D"": ""0.1""
 }
 Note: I've assigned a high probability to option C because it accurately reflects Lincoln's argument that breaking the law can lead to mob rule, which is a central theme in Passage 1. Options A and B are incorrect because they do not accurately capture Lincoln's argument, and option D is only partially correct, but not the most accurate representation of Lincoln's contention.",199,0.0005421241037459608,0.01823291620690021,0.9803981846709761,0.0008267750183777448
-200,200,D,0.0,0.0,0.0,1.0,True,"{
+200,D,0.0,0.0,0.0,1.0,True,"{
 ""Reasoning"": ""Thoreau argues that some unjust aspects of government are inherent to the system and will not be fixed by waiting for the majority to change or by using the government's own mechanisms for reform. He suggests that individuals should take action and 'break the law' if it requires them to be an agent of injustice to others. This implies that some unjust aspects of government are deeply ingrained and may not be easily changed through traditional means."",
 ""Answer"": ""D"",
 ""A"": ""0.0"",
@@ -1697,7 +1697,7 @@ Note: I've assigned a high probability to option C because it accurately reflect
 ""C"": ""0.0"",
 ""D"": ""1.0""
 }",200,0.005334433226307212,0.01804115428902514,0.021766171267668985,0.9548582412169987
-201,201,C,0.2,0.3,0.4,0.1,True,"{
+201,C,0.2,0.3,0.4,0.1,True,"{
 ""Reasoning"": ""Passage 1 emphasizes the importance of following the law, even if it is imperfect, and advocates for a 'political religion' of reverence for the laws. Passage 2, on the other hand, argues that individuals should not follow unjust laws and should instead work to change them, even if it means disobeying them in the meantime. Both passages are primarily concerned with the question of whether individuals should follow all of the country's laws, making option C the most accurate choice."",
 ""Answer"": ""C"",
 ""A"": ""0.2"",
@@ -1706,7 +1706,7 @@ Note: I've assigned a high probability to option C because it accurately reflect
 ""D"": ""0.1""
 }
 Note: The probabilities do not sum to 1.0 exactly due to rounding.",201,7.252921655036862e-05,2.8427638697227472e-05,0.9998706155060552,2.8427638697227472e-05
-202,202,B,0.2,0.6,0.1,0.1,True,"{
+202,B,0.2,0.6,0.1,0.1,True,"{
 ""Reasoning"": ""Both authors discuss the issue of abolitionism in their passages, but they approach it from different perspectives. Lincoln views it as a moral imperative that should be addressed through the legal system, while Thoreau sees it as a moral obligation that requires individual action, even if it means disobeying the law. However, both authors do see the cause as central to their argument, as they both use it to illustrate their broader points about the importance of following one's conscience and standing up for what is right."",
 ""Answer"": ""B"",
 ""A"": ""0.2"",
@@ -1714,7 +1714,7 @@ Note: The probabilities do not sum to 1.0 exactly due to rounding.",201,7.252921
 ""C"": ""0.1"",
 ""D"": ""0.1""
 }",202,0.0004801333356622642,0.9987025550139864,0.0005975734488053807,0.00021973820154595303
-203,203,C,0.1,0.1,0.7,0.1,True,"{
+203,C,0.1,0.1,0.7,0.1,True,"{
 ""Reasoning"": ""The passage is written in a formal and informative style, with the author presenting various developments and advancements in the field of solar panel technology. The text includes quotes from experts, references to specific research and conferences, and explanations of technical concepts. This suggests that the author is a journalist or a science writer, aiming to educate readers about the current state of the field. The text does not have the tone of a consumer evaluating options, a scientist comparing methods, or a hobbyist explaining technology."",
 ""Answer"": ""C"",
 ""A"": ""0.1"",
@@ -1722,7 +1722,7 @@ Note: The probabilities do not sum to 1.0 exactly due to rounding.",201,7.252921
 ""C"": ""0.7"",
 ""D"": ""0.1""
 }",203,1.1681702686839299e-05,1.0966496399889953e-05,0.999931936201692,4.54155992212834e-05
-204,204,B,0.0,1.0,0.0,0.0,True,"{
+204,B,0.0,1.0,0.0,0.0,True,"{
 ""Reasoning"": ""The passage states that two-sided solar panels can absorb light from both the front and back, and that this works particularly well when the solar panels are built on sand, which is highly reflective. This suggests that the panels will be able to harvest light that would otherwise be wasted, increasing their efficiency."",
 ""Answer"": ""B"",
 ""A"": ""0.0"",
@@ -1730,7 +1730,7 @@ Note: The probabilities do not sum to 1.0 exactly due to rounding.",201,7.252921
 ""C"": ""0.0"",
 ""D"": ""0.0""
 }",204,1.5675178825181705e-05,0.9999484447540541,1.8357243643178573e-05,1.7522823477579548e-05
-205,205,B,0.1,0.8,0.05,0.05,True,"{
+205,B,0.1,0.8,0.05,0.05,True,"{
 ""Reasoning"": ""The last sentence of the passage mentions a challenge related to producing good connections between semiconductors, which is a specific obstacle that needs to be addressed in order to achieve the desired outcome. This sentence is primarily focused on highlighting a hurdle that must be overcome, rather than expressing concern, making a prediction, or introducing a new area of study."",
 ""Answer"": ""B"",
 ""A"": ""0.1"",

@@ -1,6326 +1,6326 @@
-,Confidence,coerce,content,Question ID
-0,0.86,True,"{
+Confidence,coerce,content,Question ID
+0.86,True,"{
     ""Confidence"": 0.86
 }",6252_r
-1,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",6252_h
-2,0.96,True,"{
+0.96,True,"{
   ""Confidence"": 0.96
 }",4684_r
-3,0.91,True,"{
+0.91,True,"{
     ""Confidence"": 0.91
 }",4684_h
-4,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",1731_r
-5,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1731_h
-6,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",4742_r
-7,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4742_h
-8,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",4521_r
-9,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4521_h
-10,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6340_r
-11,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }
 ",6340_h
-12,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",576_r
-13,0.45,True,"{
+0.45,True,"{
     ""Confidence"": 0.45
 }
 ",576_h
-14,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",5202_r
-15,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",5202_h
-16,0.97,True,"{
+0.97,True,"{
     ""Confidence"": ""0.97""
 }",6363_r
-17,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6363_h
-18,0.93,True,"{
+0.93,True,"{
     ""Confidence"": ""0.93""
 }",439_r
-19,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",439_h
-20,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2750_r
-21,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7487_r
-22,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7487_h
-23,0.79,True,"{
+0.79,True,"{
     ""Confidence"": 0.79
 }",5272_r
-24,0.05,True,"{
+0.05,True,"{
   ""Confidence"": 0.05
 }",5272_h
-25,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",5653_h
-26,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",3999_r
-27,0.55,True,"{
+0.55,True,"{
     ""Confidence"": 0.55
 }",3999_h
-28,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",6033_r
-29,0.25,True,"{
+0.25,True,"{
     ""Confidence"": 0.25
 }",6033_h
-30,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",582_r
-31,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",582_h
-32,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }
 ",9930_r
-33,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",9930_h
-34,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7051_r
-35,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",7051_h
-36,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",8158_r
-37,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8158_h
-38,0.6,True,"{
+0.6,True,"{
     ""Confidence"": 0.6
 }
 ",9896_r
-39,0.55,True,"{
+0.55,True,"{
     ""Confidence"": 0.55
 }
 ",9896_h
-40,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",2249_r
-41,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2249_h
-42,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4640_r
-43,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",4640_h
-44,0.78,True,"{
+0.78,True,"{
     ""Confidence"": 0.78
 }
 ",9485_r
-45,0.3,True,"{
+0.3,True,"{
     ""Confidence"": 0.3
 }",9485_h
-46,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }
 ",4947_r
-47,0.08,True,"{
+0.08,True,"{
     ""Confidence"": 0.08
 }",4947_h
-48,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",9920_r
-49,0.05,True,"{
+0.05,True,"{
   ""Confidence"": 0.05
 }",9920_h
-50,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",1963_r
-51,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",1963_h
-52,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",8243_r
-53,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",8243_h
-54,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }",6590_r
-55,0.6,True,"{
+0.6,True,"{
     ""Confidence"": 0.6
 }",6590_h
-56,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8847_r
-57,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8847_h
-58,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",321_r
-59,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",321_h
-60,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",2678_r
-61,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",2678_h
-62,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4625_r
-63,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",4625_h
-64,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }
 ",4949_r
-65,0.35,True,"{
+0.35,True,"{
     ""Confidence"": 0.35
 }
 ",4949_h
-66,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",8328_r
-67,0.8,True,"{
+0.8,True,"{
     ""Confidence"": ""0.8""
 }
 ",8328_h
-68,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",3337_r
-69,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",3337_h
-70,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",5589_r
-71,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5589_h
-72,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",251_r
-73,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",251_h
-74,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",3973_r
-75,0.2,True,"{
+0.2,True,"{
     ""Confidence"": 0.2
 }",3973_h
-76,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",6630_r
-77,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",6630_h
-78,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",5547_r
-79,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5547_h
-80,0.94,True,"{
+0.94,True,"{
   ""Confidence"": 0.94
 }",35_r
-81,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",35_h
-82,0.91,True,"{
+0.91,True,"{
     ""Confidence"": 0.91
 }",8362_r
-83,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",8362_h
-84,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",1513_r
-85,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }
 ",1513_h
-86,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",9317_r
-87,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",9317_h
-88,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }
 ",39_r
-89,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }
 ",39_h
-90,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",4819_r
-91,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4819_h
-92,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",3465_r
-93,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3465_h
-94,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",1760_r
-95,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",1760_h
-96,0.92,True,"{
+0.92,True,"{
     ""Confidence"": ""0.92""
 }",2304_r
-97,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2304_h
-98,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",3723_r
-99,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3723_h
-100,0.91,True,"{
+0.91,True,"{
     ""Confidence"": ""0.91""
 }
 ",8284_r
-101,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",8284_h
-102,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",4993_r
-103,0.05,True,"{
+0.05,True,"{
     ""Confidence"": ""0.05""
 }",4993_h
-104,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }
 ",8127_r
-105,0.2,True,"{
+0.2,True,"{
     ""Confidence"": 0.2
 }
 ",8127_h
-106,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",3032_r
-107,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",3032_h
-108,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7938_r
-109,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",7938_h
-110,0.86,True,"{
+0.86,True,"{
   ""Confidence"": 0.86
 }
 ",3039_r
-111,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }
 ",3039_h
-112,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9655_r
-113,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9655_h
-114,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",2545_r
-115,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",2545_h
-116,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",2592_r
-117,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",2592_h
-118,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",1188_r
-119,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1188_h
-120,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",7966_r
-121,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",7966_h
-122,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6077_r
-123,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",6077_h
-124,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",107_r
-125,0.35,True,"{
+0.35,True,"{
     ""Confidence"": 0.35
 }",107_h
-126,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",1315_r
-127,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",1315_h
-128,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",8187_r
-129,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8187_h
-130,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",2753_r
-131,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",2753_h
-132,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",9753_r
-133,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9753_h
-134,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",6231_r
-135,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",6231_h
-136,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2876_r
-137,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2876_h
-138,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",5323_r
-139,0.92,True,"{
+0.92,True,"{
     ""Confidence"": ""0.92""
 }",5323_h
-140,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",799_r
-141,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }
 ",799_h
-142,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }
 ",3570_r
-143,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",3570_h
-144,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }
 ",2894_r
-145,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2894_h
-146,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",2927_r
-147,0.01,True,"{
+0.01,True,"{
     ""Confidence"": 0.01
 }",2927_h
-148,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",8178_r
-149,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",8178_h
-150,0.9,True,"{
+0.9,True,"{
     ""Confidence"": ""0.9""
 }",971_r
-151,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",971_h
-152,0.93,True,"{
+0.93,True,"{
     ""Confidence"": ""0.93""
 }",6687_r
-153,0.1,True,"{
+0.1,True,"{
     ""Confidence"": ""0.1""
 }",6687_h
-154,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",8575_r
-155,0.35,True,"{
+0.35,True,"{
     ""Confidence"": 0.35
 }",8575_h
-156,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",2020_r
-157,0.02,True,"{
+0.02,True,"{
     ""Confidence"": ""0.02""
 }",2020_h
-158,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9054_r
-159,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9054_h
-160,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",952_r
-161,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",952_h
-162,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",5359_r
-163,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5359_h
-164,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",3857_r
-165,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3857_h
-166,0.78,True,"{
+0.78,True,"{
     ""Confidence"": 0.78
 }",5861_r
-167,0.2,True,"{
+0.2,True,"{
     ""Confidence"": 0.2
 }",5861_h
-168,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",3145_r
-169,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3145_h
-170,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }
 ",3305_r
-171,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3305_h
-172,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",3006_r
-173,0.82,True,"{
+0.82,True,"{
     ""Confidence"": 0.82
 }",3006_h
-174,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9001_r
-175,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9001_h
-176,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",7770_r
-177,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",7770_h
-178,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }",7438_r
-179,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",7438_h
-180,0.7,True,"{
+0.7,True,"{
     ""Confidence"": 0.7
 }",7942_r
-181,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",7942_h
-182,0.9,True,"{
+0.9,True,"{
     ""Confidence"": ""0.9""
 }",9238_r
-183,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",9238_h
-184,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",1056_r
-185,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1056_h
-186,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",3154_r
-187,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3154_h
-188,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",3787_r
-189,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",3787_h
-190,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",9189_r
-191,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9189_h
-192,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7825_r
-193,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",7825_h
-194,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",7539_r
-195,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",7539_h
-196,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7231_r
-197,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7231_h
-198,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",764_r
-199,0.55,True,"{
+0.55,True,"{
     ""Confidence"": 0.55
 }",764_h
-200,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",5019_r
-201,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5019_h
-202,0.97,True,"{
+0.97,True,"{
     ""Confidence"": ""0.97""
 }",4903_r
-203,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",4903_h
-204,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",8093_r
-205,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",8093_h
-206,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",6843_r
-207,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",6843_h
-208,0.65,True,"{
+0.65,True,"{
     ""Confidence"": 0.65
 }",2165_r
-209,0.18,True,"{
+0.18,True,"{
     ""Confidence"": 0.18
 }
 ",2165_h
-210,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",1862_r
-211,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1862_h
-212,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",7850_r
-213,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",7850_h
-214,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }
 ",9123_r
-215,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9123_h
-216,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2340_r
-217,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2340_h
-218,0.7,True,"{
+0.7,True,"{
     ""Confidence"": 0.7
 }",5527_r
-219,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",5527_h
-220,0.9,True,"{
+0.9,True,"{
     ""Confidence"": ""0.9""
 }",6743_r
-221,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",6743_h
-222,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",4003_r
-223,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",4003_h
-224,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",1123_r
-225,0.82,True,"{
+0.82,True,"{
     ""Confidence"": 0.82
 }",1123_h
-226,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",8709_r
-227,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",8709_h
-228,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",4049_r
-229,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4049_h
-230,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }
 ",7640_r
-231,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7640_h
-232,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",765_r
-233,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",765_h
-234,0.93,True,"{
+0.93,True,"{
     ""Confidence"": ""0.93""
 }",2344_r
-235,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",2344_h
-236,0.9,True,"{
+0.9,True,"{
     ""Confidence"": ""0.9""
 }",4071_r
-237,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4071_h
-238,0.91,True,"{
+0.91,True,"{
     ""Confidence"": 0.91
 }",7216_r
-239,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7216_h
-240,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4216_r
-241,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4216_h
-242,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",7952_r
-243,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",7952_h
-244,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",5970_r
-245,0.07,True,"{
+0.07,True,"{
     ""Confidence"": 0.07
 }",5970_h
-246,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",3350_r
-247,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",3350_h
-248,0.7,True,"{
+0.7,True,"{
     ""Confidence"": 0.7
 }",4695_r
-249,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",4695_h
-250,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",3399_r
-251,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",3399_h
-252,0.79,True,"{
+0.79,True,"{
     ""Confidence"": 0.79
 }",4081_r
-253,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",4081_h
-254,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",9149_r
-255,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9149_h
-256,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",1224_r
-257,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",1224_h
-258,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",6292_r
-259,0.25,True,"{
+0.25,True,"{
     ""Confidence"": 0.25
 }",6292_h
-260,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",3122_r
-261,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3122_h
-262,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",510_r
-263,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",510_h
-264,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",5794_r
-265,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }
 ",5794_h
-266,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",8181_r
-267,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }
 ",8181_h
-268,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",9417_r
-269,0.05,True,"{
+0.05,True,"{
     ""Confidence"": ""0.05""
 }",9417_h
-270,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }",96_r
-271,0.08,True,"{
+0.08,True,"{
     ""Confidence"": 0.08
 }",96_h
-272,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",6681_r
-273,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6681_h
-274,0.88,True,"{
+0.88,True,"{
     ""Confidence"": ""0.88""
 }",1512_r
-275,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",1512_h
-276,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",8791_r
-277,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8791_h
-278,0.9,True,"{
+0.9,True,"{
     ""Confidence"": ""0.9""
 }",119_r
-279,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",119_h
-280,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",7791_r
-281,0.78,True,"{
+0.78,True,"{
     ""Confidence"": 0.78
 }",7791_h
-282,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }
 ",6517_r
-283,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6517_h
-284,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",33_r
-285,0.6,True,"{
+0.6,True,"{
     ""Confidence"": 0.6
 }
 ",33_h
-286,0.89,True,"{
+0.89,True,"{
     ""Confidence"": 0.89
 }",7887_r
-287,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",7887_h
-288,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }",6830_r
-289,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6830_h
-290,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",5421_r
-291,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",5421_h
-292,0.91,True,"{
+0.91,True,"{
     ""Confidence"": 0.91
 }",1068_r
-293,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",1068_h
-294,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",1347_r
-295,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",1347_h
-296,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",4747_r
-297,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4747_h
-298,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",6005_r
-299,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6005_h
-300,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",6039_r
-301,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6039_h
-302,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }
 ",3817_r
-303,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",3817_h
-304,0.77,True,"{
+0.77,True,"{
     ""Confidence"": 0.77
 }
 ",8446_r
-305,0.38,True,"{
+0.38,True,"{
     ""Confidence"": 0.38
 }",8446_h
-306,0.78,True,"{
+0.78,True,"{
     ""Confidence"": 0.78
 }
 ",5269_r
-307,0.07,True,"{
+0.07,True,"{
     ""Confidence"": 0.07
 }",5269_h
-308,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",6897_r
-309,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6897_h
-310,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }
 ",5309_r
-311,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",5309_h
-312,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",31_r
-313,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",31_h
-314,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",5674_r
-315,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",5674_h
-316,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }
 ",4386_r
-317,0.08,True,"{
+0.08,True,"{
     ""Confidence"": 0.08
 }",4386_h
-318,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }",29_r
-319,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",29_h
-320,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }
 ",4202_r
-321,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }
 ",4202_h
-322,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7507_r
-323,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",7507_h
-324,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",735_r
-325,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",735_h
-326,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }",2067_r
-327,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",2067_h
-328,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",106_r
-329,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",106_h
-330,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",9644_r
-331,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }
 ",9644_h
-332,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",8894_r
-333,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",8894_h
-334,0.89,True,"{
+0.89,True,"{
     ""Confidence"": 0.89
 }",8020_r
-335,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8020_h
-336,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",2232_r
-337,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",2232_h
-338,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",993_r
-339,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",993_h
-340,0.78,True,"{
+0.78,True,"{
     ""Confidence"": 0.78
 }
 ",9412_r
-341,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9412_h
-342,0.63,True,"{
+0.63,True,"{
     ""Confidence"": 0.63
 }",7058_r
-343,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7058_h
-344,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6789_r
-345,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6789_h
-346,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",360_r
-347,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",360_h
-348,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",304_r
-349,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",304_h
-350,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",2627_r
-351,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }
 ",2627_h
-352,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",8965_r
-353,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8965_h
-354,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4513_r
-355,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4513_h
-356,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }",5910_r
-357,0.08,True,"{
+0.08,True,"{
     ""Confidence"": 0.08
 }",5910_h
-358,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }
 ",8313_r
-359,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8313_h
-360,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",3100_r
-361,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3100_h
-362,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",5703_r
-363,0.6,True,"{
+0.6,True,"{
     ""Confidence"": 0.6
 }
 ",5703_h
-364,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",3898_r
-365,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",3898_h
-366,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",5440_r
-367,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",5440_h
-368,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",7930_r
-369,0.3,True,"{
+0.3,True,"{
     ""Confidence"": 0.3
 }
 ",7930_h
-370,0.91,True,"{
+0.91,True,"{
     ""Confidence"": 0.91
 }",621_r
-371,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",621_h
-372,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7235_r
-373,0.05,True,"{
+0.05,True,"{
     ""Confidence"": ""0.05""
 }",7235_h
-374,0.87,True,"{
+0.87,True,"{
     ""Confidence"": ""0.87""
 }",2498_r
-375,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2498_h
-376,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",713_r
-377,0.02,True,"{
+0.02,True,"{
     ""Confidence"": ""0.02""
 }",713_h
-378,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",8403_r
-379,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",8403_h
-380,0.96,True,"{
+0.96,True,"{
     ""Confidence"": 0.96
 }",2855_r
-381,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2855_h
-382,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",4269_r
-383,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4269_h
-384,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }
 ",2908_r
-385,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",2908_h
-386,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",8080_r
-387,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8080_h
-388,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",4516_r
-389,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4516_h
-390,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }
 ",1261_r
-391,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",1261_h
-392,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",3160_r
-393,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3160_h
-394,0.93,True,"{
+0.93,True,"{
   ""Confidence"": 0.93
 }",970_r
-395,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",970_h
-396,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",3912_r
-397,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3912_h
-398,0.93,True,"{
+0.93,True,"{
     ""Confidence"": ""0.93""
 }",5198_r
-399,0.45,True,"{
+0.45,True,"{
     ""Confidence"": 0.45
 }",5198_h
-400,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",8846_r
-401,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",8846_h
-402,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",259_r
-403,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",259_h
-404,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }
 ",3790_r
-405,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3790_h
-406,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9202_r
-407,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",9202_h
-408,0.4,True,"{
+0.4,True,"{
     ""Confidence"": 0.4
 }",487_r
-409,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",487_h
-410,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",7907_r
-411,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",7907_h
-412,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",518_r
-413,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",518_h
-414,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",8342_r
-415,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }
 ",8342_h
-416,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",311_r
-417,0.25,True,"{
+0.25,True,"{
     ""Confidence"": 0.25
 }",311_h
-418,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3231_r
-419,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",3231_h
-420,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",7932_r
-421,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",7932_h
-422,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7457_r
-423,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",7457_h
-424,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9783_r
-425,0.55,True,"{
+0.55,True,"{
     ""Confidence"": 0.55
 }
 ",9783_h
-426,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",5183_r
-427,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }
 ",5183_h
-428,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",8076_r
-429,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",8076_h
-430,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",6501_r
-431,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6501_h
-432,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",6790_r
-433,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",6790_h
-434,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",7772_r
-435,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7772_h
-436,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2737_r
-437,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2737_h
-438,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }
 ",7841_r
-439,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",7841_h
-440,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",6261_r
-441,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6261_h
-442,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",8205_r
-443,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",8205_h
-444,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",1247_r
-445,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",1247_h
-446,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",9335_r
-447,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",9335_h
-448,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4194_r
-449,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4194_h
-450,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",8000_r
-451,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",8000_h
-452,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",7377_r
-453,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }
 ",7377_h
-454,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",3434_r
-455,0.73,True,"{
+0.73,True,"{
     ""Confidence"": 0.73
 }
 ",3434_h
-456,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",5381_r
-457,0.25,True,"{
+0.25,True,"{
     ""Confidence"": 0.25
 }",5381_h
-458,0.93,True,"{
+0.93,True,"{
   ""Confidence"": 0.93
 }",958_r
-459,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }",958_h
-460,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",416_r
-461,0.55,True,"{
+0.55,True,"{
     ""Confidence"": 0.55
 }
 ",416_h
-462,0.91,True,"{
+0.91,True,"{
     ""Confidence"": 0.91
 }",5741_r
-463,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",5741_h
-464,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6727_r
-465,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6727_h
-466,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4381_r
-467,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",4381_h
-468,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }",5196_r
-469,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5196_h
-470,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",1112_r
-471,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1112_h
-472,0.92,True,"{
+0.92,True,"{
     ""Confidence"": ""0.92""
 }",2688_r
-473,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2688_h
-474,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",6472_r
-475,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6472_h
-476,0.91,True,"{
+0.91,True,"{
     ""Confidence"": 0.91
 }",8819_r
-477,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8819_h
-478,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",7807_r
-479,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",7807_h
-480,0.2,True,"{
+0.2,True,"{
     ""Confidence"": 0.2
 }
 ",3410_r
-481,0.2,True,"{
+0.2,True,"{
     ""Confidence"": 0.2
 }",3410_h
-482,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",80_r
-483,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",80_h
-484,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",4613_r
-485,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4613_h
-486,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",1373_r
-487,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }
 ",1373_h
-488,0.9,True,"{
+0.9,True,"{
     ""Confidence"": ""0.9""
 }",1509_r
-489,0.01,True,"{
+0.01,True,"{
     ""Confidence"": 0.01
 }
 ",1509_h
-490,0.93,True,"{
+0.93,True,"{
   ""Confidence"": ""0.93""
 }",6442_r
-491,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",6442_h
-492,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",3070_r
-493,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",3070_h
-494,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",3015_r
-495,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3015_h
-496,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }
 ",4822_r
-497,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",4822_h
-498,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7821_r
-499,0.45,True,"{
+0.45,True,"{
     ""Confidence"": 0.45
 }",7821_h
-500,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",92_r
-501,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",92_h
-502,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",9420_r
-503,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9420_h
-504,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",6599_r
-505,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",6599_h
-506,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",4442_r
-507,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",4442_h
-508,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7601_r
-509,0.03,True,"{
+0.03,True,"{
   ""Confidence"": 0.03
 }",7601_h
-510,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",3834_r
-511,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3834_h
-512,0.96,True,"{
+0.96,True,"{
     ""Confidence"": 0.96
 }",9701_r
-513,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",9701_h
-514,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",4321_r
-515,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",4321_h
-516,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }
 ",3393_r
-517,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3393_h
-518,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }
 ",4751_r
-519,0.45,True,"{
+0.45,True,"{
     ""Confidence"": 0.45
 }
 ",4751_h
-520,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",7228_r
-521,0.02,True,"{
+0.02,True,"{
   ""Confidence"": 0.02
 }",7228_h
-522,0.91,True,"{
+0.91,True,"{
     ""Confidence"": 0.91
 }
 ",9190_r
-523,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",9190_h
-524,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",2360_r
-525,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2360_h
-526,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",1147_r
-527,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",1147_h
-528,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }
 ",5665_r
-529,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",5665_h
-530,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",8074_r
-531,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8074_h
-532,0.76,True,"{
+0.76,True,"{
     ""Confidence"": 0.76
 }",4942_r
-533,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",4942_h
-534,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",3662_r
-535,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3662_h
-536,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",1562_r
-537,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1562_h
-538,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",4112_r
-539,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4112_h
-540,0.91,True,"{
+0.91,True,"{
     ""Confidence"": 0.91
 }",9049_r
-541,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",9049_h
-542,0.9,True,"{
+0.9,True,"{
     ""Confidence"": ""0.9""
 }",9275_r
-543,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9275_h
-544,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",8537_r
-545,0.3,True,"{
+0.3,True,"{
     ""Confidence"": 0.3
 }",8537_h
-546,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",794_r
-547,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",794_h
-548,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",5853_r
-549,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5853_h
-550,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7618_r
-551,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7618_h
-552,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",1593_r
-553,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",1593_h
-554,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7417_h
-555,0.9,True,"{
+0.9,True,"{
   ""Confidence"": 0.9
 }",5266_r
-556,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5266_h
-557,0.85,True,"{
+0.85,True,"{
   ""Confidence"": 0.85
 }",7146_r
-558,0.12,True,"{
+0.12,True,"{
     ""Confidence"": 0.12
 }",7146_h
-559,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",88_r
-560,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",88_h
-561,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",8694_r
-562,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8694_h
-563,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",9731_r
-564,0.05,True,"{
+0.05,True,"{
     ""Confidence"": ""0.05""
 }",9731_h
-565,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }
 ",9445_r
-566,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9445_h
-567,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",6753_r
-568,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",6753_h
-569,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }
 ",3501_r
-570,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3501_h
-571,0.82,True,"{
+0.82,True,"{
     ""Confidence"": 0.82
 }",2233_r
-572,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2233_h
-573,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",2802_r
-574,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2802_h
-575,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",4423_r
-576,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4423_h
-577,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",5662_r
-578,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5662_h
-579,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",7169_r
-580,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7169_h
-581,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }
 ",8336_r
-582,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8336_h
-583,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",2147_r
-584,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }
 ",2147_h
-585,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }
 ",7968_r
-586,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",7968_h
-587,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",6550_r
-588,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",6550_h
-589,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",7642_r
-590,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7642_h
-591,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }
 ",6163_r
-592,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6163_h
-593,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",1494_r
-594,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1494_h
-595,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",7695_r
-596,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7695_h
-597,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",7093_r
-598,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7093_h
-599,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",1408_r
-600,0.07,True,"{
+0.07,True,"{
     ""Confidence"": 0.07
 }
 ",1408_h
-601,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6690_r
-602,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6690_h
-603,0.91,True,"{
+0.91,True,"{
     ""Confidence"": 0.91
 }
 ",3400_r
-604,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3400_h
-605,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",108_r
-606,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",108_h
-607,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",5635_r
-608,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",5635_h
-609,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",8481_r
-610,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",8481_h
-611,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6603_r
-612,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6603_h
-613,0.22,True,"{
+0.22,True,"{
   ""Confidence"": 0.22
 }",1090_r
-614,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",1090_h
-615,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",5559_r
-616,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",5559_h
-617,0.97,True,"{
+0.97,True,"{
     ""Confidence"": 0.97
 }
 ",9411_r
-618,0.01,True,"{
+0.01,True,"{
     ""Confidence"": 0.01
 }",9411_h
-619,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",8142_r
-620,0.3,True,"{
+0.3,True,"{
     ""Confidence"": 0.3
 }",8142_h
-621,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }
 ",8663_r
-622,0.25,True,"{
+0.25,True,"{
     ""Confidence"": 0.25
 }",8663_h
-623,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",6595_r
-624,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",6595_h
-625,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",623_r
-626,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",623_h
-627,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }
 ",6870_r
-628,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6870_h
-629,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",4813_r
-630,0.05,True,"{
+0.05,True,"{
     ""Confidence"": ""0.05""
 }",4813_h
-631,0.93,True,"{
+0.93,True,"{
     ""Confidence"": ""0.93""
 }",6552_r
-632,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6552_h
-633,0.18,True,"{
+0.18,True,"{
     ""Confidence"": 0.18
 }",7529_r
-634,0.3,True,"{
+0.3,True,"{
     ""Confidence"": 0.3
 }
 ",7529_h
-635,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",5795_r
-636,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",5795_h
-637,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7436_r
-638,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }
 ",7436_h
-639,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4217_r
-640,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",4217_h
-641,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",5940_r
-642,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5940_h
-643,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",8500_r
-644,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",8500_h
-645,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6428_r
-646,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",6428_h
-647,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6826_r
-648,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6826_h
-649,0.82,True,"{
+0.82,True,"{
     ""Confidence"": 0.82
 }",4130_r
-650,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4130_h
-651,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",7801_r
-652,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",7801_h
-653,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7753_r
-654,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7753_h
-655,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4721_r
-656,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4721_h
-657,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",1650_r
-658,0.02,True,"{
+0.02,True,"{
     ""Confidence"": ""0.02""
 }",1650_h
-659,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",4140_r
-660,0.05,True,"{
+0.05,True,"{
   ""Confidence"": 0.05
 }",4140_h
-661,0.95,True,"{
+0.95,True,"{
     ""Confidence"": ""0.95""
 }",1617_r
-662,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",1617_h
-663,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2029_r
-664,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2029_h
-665,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",8517_r
-666,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",8517_h
-667,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",4575_r
-668,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }
 ",4575_h
-669,0.82,True,"{
+0.82,True,"{
     ""Confidence"": 0.82
 }",3992_r
-670,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",3992_h
-671,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7376_r
-672,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7376_h
-673,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }",6149_r
-674,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6149_h
-675,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4908_r
-676,0.05,True,"{
+0.05,True,"{
     ""Confidence"": ""0.05""
 }",4908_h
-677,0.65,True,"{
+0.65,True,"{
     ""Confidence"": 0.65
 }",5026_r
-678,0.3,True,"{
+0.3,True,"{
     ""Confidence"": 0.3
 }",5026_h
-679,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",8260_r
-680,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",8260_h
-681,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",4731_r
-682,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",4731_h
-683,0.91,True,"{
+0.91,True,"{
     ""Confidence"": 0.91
 }",7548_r
-684,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7548_h
-685,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",8134_r
-686,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",8134_h
-687,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }
 ",1606_r
-688,0.3,True,"{
+0.3,True,"{
     ""Confidence"": 0.3
 }
 ",1606_h
-689,0.93,True,"{
+0.93,True,"{
     ""Confidence"": ""0.93""
 }",4773_r
-690,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4773_h
-691,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",8109_r
-692,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",8109_h
-693,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6951_r
-694,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",6951_h
-695,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6004_r
-696,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",6004_h
-697,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7728_r
-698,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }
 ",7728_h
-699,0.96,True,"{
+0.96,True,"{
     ""Confidence"": ""0.96""
 }",3541_r
-700,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3541_h
-701,0.9,True,"{
+0.9,True,"{
     ""Confidence"": ""0.9""
 }",388_r
-702,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",388_h
-703,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",1794_r
-704,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",8731_r
-705,0.78,True,"{
+0.78,True,"{
     ""Confidence"": 0.78
 }",8731_h
-706,0.95,True,"{
+0.95,True,"{
     ""Confidence"": ""0.95""
 }",4919_r
-707,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",4919_h
-708,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }
 ",5537_r
-709,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5537_h
-710,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",3872_r
-711,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3872_h
-712,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",8868_r
-713,0.92,True,"{
+0.92,True,"{
     ""Confidence"": ""0.92""
 }",8868_h
-714,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",2254_r
-715,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2254_h
-716,0.93,True,"{
+0.93,True,"{
     ""Confidence"": ""0.93""
 }",3412_r
-717,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3412_h
-718,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",5459_r
-719,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",5459_h
-720,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",4955_r
-721,0.2,True,"{
+0.2,True,"{
     ""Confidence"": 0.2
 }",4955_h
-722,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7396_r
-723,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",7396_h
-724,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",5414_r
-725,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5414_h
-726,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",7399_r
-727,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",7399_h
-728,0.9,True,"{
+0.9,True,"{
     ""Confidence"": ""0.9""
 }",7414_r
-729,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7414_h
-730,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }
 ",9100_r
-731,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9100_h
-732,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4851_r
-733,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4851_h
-734,0.45,True,"{
+0.45,True,"{
     ""Confidence"": 0.45
 }
 ",2025_r
-735,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",2025_h
-736,0.55,True,"{
+0.55,True,"{
     ""Confidence"": 0.55
 }
 ",2615_r
-737,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }",2615_h
-738,0.84,True,"{
+0.84,True,"{
   ""Confidence"": 0.84
 }",7388_r
-739,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }
 ",7388_h
-740,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }",2926_r
-741,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }
 ",2926_h
-742,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",1121_r
-743,0.03,True,"{
+0.03,True,"{
     ""Confidence"": ""0.03""
 }",1121_h
-744,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",2910_r
-745,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2910_h
-746,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",8146_r
-747,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8146_h
-748,0.93,True,"{
+0.93,True,"{
   ""Confidence"": 0.93
 }",7383_r
-749,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",7383_h
-750,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",3482_r
-751,0.25,True,"{
+0.25,True,"{
     ""Confidence"": 0.25
 }
 ",3482_h
-752,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }
 ",795_r
-753,0.08,True,"{
+0.08,True,"{
     ""Confidence"": 0.08
 }",795_h
-754,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",1575_r
-755,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",1575_h
-756,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",6176_r
-757,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }
 ",6176_h
-758,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",6266_h
-759,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",2458_r
-760,0.2,True,"{
+0.2,True,"{
     ""Confidence"": 0.2
 }
 ",2458_h
-761,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",3312_r
-762,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",3312_h
-763,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",1253_r
-764,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1253_h
-765,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",6834_r
-766,0.08,True,"{
+0.08,True,"{
     ""Confidence"": 0.08
 }",6834_h
-767,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",8794_r
-768,0.08,True,"{
+0.08,True,"{
     ""Confidence"": 0.08
 }",8794_h
-769,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",3837_r
-770,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3837_h
-771,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",4398_r
-772,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4398_h
-773,0.9,True,"{
+0.9,True,"{
     ""Confidence"": ""0.9""
 }",3595_r
-774,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",3595_h
-775,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6621_r
-776,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6621_h
-777,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }
 ",8382_r
-778,0.65,True,"{
+0.65,True,"{
     ""Confidence"": 0.65
 }
 ",8382_h
-779,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",2124_r
-780,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2124_h
-781,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",3238_r
-782,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",3238_h
-783,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",5403_r
-784,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",5403_h
-785,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",5998_r
-786,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",5998_h
-787,0.7,True,"{
+0.7,True,"{
     ""Confidence"": 0.7
 }",5938_r
-788,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }
 ",5938_h
-789,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",2045_r
-790,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2045_h
-791,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",1578_r
-792,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",1578_h
-793,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",14_r
-794,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",14_h
-795,0.93,True,"{
+0.93,True,"{
   ""Confidence"": 0.93
 }",2673_r
-796,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2673_h
-797,0.86,True,"{
+0.86,True,"{
   ""Confidence"": 0.86
 }",7016_r
-798,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7016_h
-799,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",8720_r
-800,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8720_h
-801,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",8849_r
-802,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }
 ",8849_h
-803,0.91,True,"{
+0.91,True,"{
     ""Confidence"": 0.91
 }",4812_r
-804,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4812_h
-805,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",1084_r
-806,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1084_h
-807,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }",4983_r
-808,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",4983_h
-809,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }
 ",7155_r
-810,0.4,True,"{
+0.4,True,"{
     ""Confidence"": 0.4
 }",7155_h
-811,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2884_r
-812,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",2884_h
-813,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",333_r
-814,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",333_h
-815,0.9,True,"{
+0.9,True,"{
     ""Confidence"": ""0.9""
 }",7204_r
-816,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7204_h
-817,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4367_r
-818,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4367_h
-819,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }",3079_r
-820,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }
 ",3079_h
-821,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7203_r
-822,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",7203_h
-823,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9909_r
-824,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9909_h
-825,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",8864_r
-826,0.4,True,"{
+0.4,True,"{
     ""Confidence"": 0.4
 }",8864_h
-827,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",263_r
-828,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",263_h
-829,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",4337_r
-830,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",4337_h
-831,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",8895_r
-832,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }
 ",8895_h
-833,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }
 ",8447_r
-834,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",8447_h
-835,0.81,True,"{
+0.81,True,"{
     ""Confidence"": 0.81
 }
 ",5903_r
-836,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",5903_h
-837,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",1498_r
-838,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1498_h
-839,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",4190_r
-840,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",4190_h
-841,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7485_r
-842,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",7485_h
-843,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",9643_r
-844,0.35,True,"{
+0.35,True,"{
     ""Confidence"": 0.35
 }",9643_h
-845,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",8310_r
-846,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8310_h
-847,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",7590_r
-848,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }",7590_h
-849,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",500_r
-850,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",500_h
-851,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }
 ",9155_r
-852,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9155_h
-853,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9414_r
-854,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9414_h
-855,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }",3095_r
-856,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",3095_h
-857,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4631_r
-858,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }
 ",4631_h
-859,0.93,True,"{
+0.93,True,"{
     ""Confidence"": ""0.93""
 }",367_r
-860,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",367_h
-861,0.92,True,"{
+0.92,True,"{
     ""Confidence"": ""0.92""
 }",4058_r
-862,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4058_h
-863,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",8174_r
-864,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",8174_h
-865,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",4630_r
-866,0.7,True,"{
+0.7,True,"{
     ""Confidence"": 0.7
 }",4630_h
-867,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6070_r
-868,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",6070_h
-869,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",2664_r
-870,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2664_h
-871,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",1026_r
-872,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1026_h
-873,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",5908_r
-874,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",5908_h
-875,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",5050_r
-876,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",5050_h
-877,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",6328_r
-878,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6328_h
-879,0.91,True,"{
+0.91,True,"{
     ""Confidence"": 0.91
 }
 ",9733_r
-880,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9733_h
-881,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",1691_r
-882,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",1691_h
-883,0.35,True,"{
+0.35,True,"{
     ""Confidence"": 0.35
 }",673_r
-884,0.55,True,"{
+0.55,True,"{
     ""Confidence"": 0.55
 }
 ",673_h
-885,0.97,True,"{
+0.97,True,"{
     ""Confidence"": 0.97
 }",5572_r
-886,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",5572_h
-887,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }
 ",5766_r
-888,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",5766_h
-889,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",5156_r
-890,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5156_h
-891,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",733_r
-892,0.84,True,"{
+0.84,True,"{
     ""Confidence"": 0.84
 }
 ",733_h
-893,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",3526_r
-894,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",3526_h
-895,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",568_r
-896,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",568_h
-897,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9187_r
-898,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",9187_h
-899,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",2922_r
-900,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2922_h
-901,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }
 ",7911_r
-902,0.65,True,"{
+0.65,True,"{
     ""Confidence"": 0.65
 }
 ",7911_h
-903,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",1558_r
-904,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",1558_h
-905,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }
 ",101_r
-906,0.35,True,"{
+0.35,True,"{
     ""Confidence"": 0.35
 }
 ",101_h
-907,0.84,True,"{
+0.84,True,"{
     ""Confidence"": 0.84
 }
 ",3007_r
-908,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",3007_h
-909,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",7201_r
-910,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",7201_h
-911,0.95,True,"{
+0.95,True,"{
     ""Confidence"": ""0.95""
 }",303_r
-912,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",303_h
-913,0.9,True,"{
+0.9,True,"{
     ""Confidence"": ""0.9""
 }",76_r
-914,0.08,True,"{
+0.08,True,"{
     ""Confidence"": 0.08
 }
 ",76_h
-915,0.86,True,"{
+0.86,True,"{
     ""Confidence"": ""0.86""
 }",6754_r
-916,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6754_h
-917,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }",8629_r
-918,0.35,True,"{
+0.35,True,"{
     ""Confidence"": 0.35
 }
 ",8629_h
-919,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",1208_r
-920,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1208_h
-921,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",7742_r
-922,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7742_h
-923,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",8214_r
-924,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8214_h
-925,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",8944_r
-926,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8944_h
-927,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",8413_r
-928,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8413_h
-929,0.9,True,"{
+0.9,True,"{
   ""Confidence"": 0.9
 }",1775_r
-930,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1775_h
-931,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",3473_r
-932,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",3473_h
-933,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }
 ",483_r
-934,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",483_h
-935,0.84,True,"{
+0.84,True,"{
     ""Confidence"": 0.84
 }
 ",2189_r
-936,0.7,True,"{
+0.7,True,"{
     ""Confidence"": 0.7
 }
 ",2189_h
-937,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",346_r
-938,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",346_h
-939,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",5481_r
-940,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",5481_h
-941,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }",8361_r
-942,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8361_h
-943,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",1472_r
-944,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }
 ",1472_h
-945,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",5100_r
-946,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",5100_h
-947,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6765_r
-948,0.2,True,"{
+0.2,True,"{
     ""Confidence"": 0.2
 }",6765_h
-949,0.65,True,"{
+0.65,True,"{
     ""Confidence"": 0.65
 }
 ",8706_r
-950,0.55,True,"{
+0.55,True,"{
     ""Confidence"": 0.55
 }",8706_h
-951,0.97,True,"{
+0.97,True,"{
     ""Confidence"": 0.97
 }",4929_r
-952,0.93,True,"{
+0.93,True,"{
     ""Confidence"": ""0.93""
 }",4929_h
-953,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6329_r
-954,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6329_h
-955,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",2609_r
-956,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2609_h
-957,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",3_r
-958,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3_h
-959,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",2213_r
-960,0.25,True,"{
+0.25,True,"{
     ""Confidence"": 0.25
 }",2213_h
-961,0.82,True,"{
+0.82,True,"{
     ""Confidence"": 0.82
 }",4827_r
-962,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4827_h
-963,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",856_r
-964,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }
 ",856_h
-965,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",6977_r
-966,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6977_h
-967,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",5885_r
-968,0.18,True,"{
+0.18,True,"{
     ""Confidence"": 0.18
 }",5885_h
-969,0.7,True,"{
+0.7,True,"{
     ""Confidence"": 0.7
 }",624_r
-970,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",624_h
-971,0.73,True,"{
+0.73,True,"{
     ""Confidence"": 0.73
 }",290_r
-972,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }
 ",290_h
-973,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }
 ",2018_r
-974,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2018_h
-975,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",668_r
-976,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",668_h
-977,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",8921_r
-978,0.18,True,"{
+0.18,True,"{
     ""Confidence"": 0.18
 }",8921_h
-979,0.9,True,"{
+0.9,True,"{
     ""Confidence"": ""0.9""
 }",8264_r
-980,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",8264_h
-981,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9696_r
-982,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",9696_h
-983,0.04,True,"{
+0.04,True,"{
     ""Confidence"": 0.04
 }",1631_h
-984,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",5170_r
-985,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5170_h
-986,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",7205_r
-987,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7205_h
-988,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2522_r
-989,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2522_h
-990,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",2215_r
-991,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2215_h
-992,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",6968_r
-993,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6968_h
-994,0.35,True,"{
+0.35,True,"{
     ""Confidence"": 0.35
 }",6496_r
-995,0.4,True,"{
+0.4,True,"{
     ""Confidence"": 0.4
 }",6496_h
-996,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6213_r
-997,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6213_h
-998,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }",7032_r
-999,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",7032_h
-1000,0.82,True,"{
+0.82,True,"{
     ""Confidence"": 0.82
 }",7420_r
-1001,0.25,True,"{
+0.25,True,"{
     ""Confidence"": 0.25
 }",7420_h
-1002,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",1107_r
-1003,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1107_h
-1004,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",450_r
-1005,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",450_h
-1006,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }
 ",6289_r
-1007,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",6289_h
-1008,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }
 ",9966_r
-1009,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9966_h
-1010,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",135_r
-1011,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",135_h
-1012,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }
 ",1785_r
-1013,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1785_h
-1014,0.07,True,"{
+0.07,True,"{
     ""Confidence"": 0.07
 }
 ",3404_r
-1015,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",3404_h
-1016,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",2906_r
-1017,0.01,True,"{
+0.01,True,"{
     ""Confidence"": 0.01
 }",2906_h
-1018,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }
 ",8304_r
-1019,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",8304_h
-1020,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",7492_r
-1021,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }
 ",7492_h
-1022,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6100_r
-1023,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6100_h
-1024,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",4504_r
-1025,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",4504_h
-1026,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",5053_r
-1027,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",5053_h
-1028,0.95,True,"{
+0.95,True,"{
     ""Confidence"": ""0.95""
 }",5205_r
-1029,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5205_h
-1030,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }
 ",4080_r
-1031,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",4080_h
-1032,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",6918_r
-1033,0.3,True,"{
+0.3,True,"{
     ""Confidence"": 0.3
 }",6918_h
-1034,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",6802_r
-1035,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6802_h
-1036,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",5206_r
-1037,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",5206_h
-1038,0.77,True,"{
+0.77,True,"{
     ""Confidence"": 0.77
 }",532_r
-1039,0.25,True,"{
+0.25,True,"{
     ""Confidence"": 0.25
 }
 ",532_h
-1040,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",4830_r
-1041,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",4830_h
-1042,0.82,True,"{
+0.82,True,"{
     ""Confidence"": 0.82
 }
 ",4038_r
-1043,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",4038_h
-1044,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4084_r
-1045,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4084_h
-1046,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",3204_r
-1047,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",3204_h
-1048,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7110_r
-1049,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7110_h
-1050,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",330_r
-1051,0.05,True,"{
+0.05,True,"{
     ""Confidence"": ""0.05""
 }",330_h
-1052,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",4957_r
-1053,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4957_h
-1054,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }
 ",3033_r
-1055,0.12,True,"{
+0.12,True,"{
     ""Confidence"": 0.12
 }",3033_h
-1056,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }",7684_r
-1057,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",7684_h
-1058,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",1597_r
-1059,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",1597_h
-1060,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9919_r
-1061,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9919_h
-1062,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }",3597_r
-1063,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",3597_h
-1064,0.35,True,"{
+0.35,True,"{
     ""Confidence"": 0.35
 }",9038_r
-1065,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",9038_h
-1066,0.25,True,"{
+0.25,True,"{
     ""Confidence"": 0.25
 }
 ",8001_r
-1067,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",8001_h
-1068,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",590_r
-1069,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",590_h
-1070,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",647_r
-1071,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",647_h
-1072,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9102_r
-1073,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",9102_h
-1074,0.97,True,"{
+0.97,True,"{
     ""Confidence"": 0.97
 }",8015_r
-1075,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8015_h
-1076,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",3771_r
-1077,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",3771_h
-1078,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9039_r
-1079,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",9039_h
-1080,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",5082_r
-1081,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5082_h
-1082,0.96,True,"{
+0.96,True,"{
     ""Confidence"": 0.96
 }",7882_r
-1083,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",7882_h
-1084,0.35,True,"{
+0.35,True,"{
     ""Confidence"": 0.35
 }",9362_r
-1085,0.55,True,"{
+0.55,True,"{
     ""Confidence"": 0.55
 }",9362_h
-1086,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",4210_r
-1087,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",4210_h
-1088,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",8834_r
-1089,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8834_h
-1090,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",8699_r
-1091,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",8699_h
-1092,0.7,True,"{
+0.7,True,"{
     ""Confidence"": 0.7
 }",1795_r
-1093,0.25,True,"{
+0.25,True,"{
     ""Confidence"": 0.25
 }",1795_h
-1094,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",2586_r
-1095,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2586_h
-1096,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",8355_r
-1097,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",8355_h
-1098,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",2316_r
-1099,0.2,True,"{
+0.2,True,"{
     ""Confidence"": 0.2
 }",2316_h
-1100,0.78,True,"{
+0.78,True,"{
     ""Confidence"": 0.78
 }",4185_r
-1101,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",4185_h
-1102,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",8827_r
-1103,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8827_h
-1104,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",7072_r
-1105,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",7072_h
-1106,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5234_r
-1107,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",5234_h
-1108,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",8743_r
-1109,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8743_h
-1110,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",8670_r
-1111,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",8670_h
-1112,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",4768_r
-1113,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4768_h
-1114,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9972_r
-1115,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9972_h
-1116,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",7144_r
-1117,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7144_h
-1118,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2913_r
-1119,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",2913_h
-1120,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",9871_r
-1121,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9871_h
-1122,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9893_r
-1123,0.35,True,"{
+0.35,True,"{
     ""Confidence"": 0.35
 }",9893_h
-1124,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2075_r
-1125,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2075_h
-1126,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }",4302_r
-1127,0.7,True,"{
+0.7,True,"{
     ""Confidence"": 0.7
 }
 ",4302_h
-1128,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }
 ",5822_r
-1129,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5822_h
-1130,0.76,True,"{
+0.76,True,"{
     ""Confidence"": 0.76
 }",2149_r
-1131,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2149_h
-1132,0.8,True,"{
+0.8,True,"{
     ""Confidence"": ""0.8""
 }",144_r
-1133,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",144_h
-1134,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",4963_r
-1135,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }
 ",4963_h
-1136,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",8159_r
-1137,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8159_h
-1138,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",9030_r
-1139,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }
 ",9030_h
-1140,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",4775_r
-1141,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",4775_h
-1142,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",8933_r
-1143,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",8933_h
-1144,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",7749_r
-1145,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7749_h
-1146,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9828_r
-1147,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9828_h
-1148,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",9214_r
-1149,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9214_h
-1150,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",6060_r
-1151,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",6060_h
-1152,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9475_r
-1153,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",9475_h
-1154,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",6409_r
-1155,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",6409_h
-1156,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",3317_r
-1157,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",3317_h
-1158,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",7464_r
-1159,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7464_h
-1160,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",3061_r
-1161,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",3061_h
-1162,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }
 ",1355_r
-1163,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",1355_h
-1164,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",4514_r
-1165,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4514_h
-1166,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",5505_r
-1167,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",5505_h
-1168,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }
 ",5250_r
-1169,0.6,True,"{
+0.6,True,"{
     ""Confidence"": 0.6
 }
 ",5250_h
-1170,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4511_r
-1171,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4511_h
-1172,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",1730_r
-1173,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",1730_h
-1174,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",1758_r
-1175,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",1758_h
-1176,0.95,True,"{
+0.95,True,"{
     ""Confidence"": ""0.95""
 }",6650_r
-1177,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6650_h
-1178,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }
 ",6646_r
-1179,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",6646_h
-1180,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9860_r
-1181,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",9860_h
-1182,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",4139_r
-1183,0.93,True,"{
+0.93,True,"{
   ""Confidence"": 0.93
 }",4139_h
-1184,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",9393_r
-1185,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",9393_h
-1186,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",5123_r
-1187,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",5123_h
-1188,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",0_r
-1189,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",0_h
-1190,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",1864_r
-1191,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",1864_h
-1192,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",543_r
-1193,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",543_h
-1194,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",349_r
-1195,0.3,True,"{
+0.3,True,"{
     ""Confidence"": 0.3
 }",349_h
-1196,0.65,True,"{
+0.65,True,"{
     ""Confidence"": 0.65
 }",6906_r
-1197,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",6906_h
-1198,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }
 ",9765_r
-1199,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9765_h
-1200,0.82,True,"{
+0.82,True,"{
     ""Confidence"": 0.82
 }",2523_r
-1201,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",2523_h
-1202,0.96,True,"{
+0.96,True,"{
     ""Confidence"": 0.96
 }",3464_r
-1203,0.08,True,"{
+0.08,True,"{
     ""Confidence"": 0.08
 }",3464_h
-1204,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",457_r
-1205,0.9,True,"{
+0.9,True,"{
     ""Confidence"": ""0.9""
 }",457_h
-1206,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }
 ",3023_r
-1207,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }
 ",3023_h
-1208,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }
 ",7261_r
-1209,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7261_h
-1210,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",9515_r
-1211,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9515_h
-1212,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",7872_r
-1213,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",7872_h
-1214,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6625_r
-1215,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6625_h
-1216,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",2534_r
-1217,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2534_h
-1218,0.9,True,"{
+0.9,True,"{
   ""Confidence"": 0.9
 }",131_r
-1219,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",131_h
-1220,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",3704_r
-1221,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",3704_h
-1222,0.95,True,"{
+0.95,True,"{
     ""Confidence"": ""0.95""
 }",1372_r
-1223,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1372_h
-1224,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",6200_r
-1225,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6200_h
-1226,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4856_r
-1227,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4856_h
-1228,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4712_r
-1229,0.05,True,"{
+0.05,True,"{
     ""Confidence"": ""0.05""
 }
 ",4712_h
-1230,0.93,True,"{
+0.93,True,"{
     ""Confidence"": ""0.93""
 }",5544_r
-1231,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",5544_h
-1232,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",1413_r
-1233,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",1413_h
-1234,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",4113_r
-1235,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",4113_h
-1236,0.97,True,"{
+0.97,True,"{
     ""Confidence"": 0.97
 }",655_r
-1237,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",655_h
-1238,0.93,True,"{
+0.93,True,"{
     ""Confidence"": ""0.93""
 }",8137_r
-1239,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",8137_h
-1240,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",4098_r
-1241,0.58,True,"{
+0.58,True,"{
     ""Confidence"": 0.58
 }
 ",4098_h
-1242,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",592_r
-1243,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",592_h
-1244,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",8708_r
-1245,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",8708_h
-1246,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",3123_r
-1247,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3123_h
-1248,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",3047_r
-1249,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3047_h
-1250,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }
 ",3887_r
-1251,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",3887_h
-1252,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",5735_r
-1253,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5735_h
-1254,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2184_r
-1255,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",2184_h
-1256,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",2145_r
-1257,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2145_h
-1258,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }
 ",7047_r
-1259,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7047_h
-1260,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",3105_r
-1261,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3105_h
-1262,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",9233_r
-1263,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9233_h
-1264,0.84,True,"{
+0.84,True,"{
     ""Confidence"": 0.84
 }
 ",9096_r
-1265,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",9096_h
-1266,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }
 ",2769_r
-1267,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2769_h
-1268,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",5221_r
-1269,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",5221_h
-1270,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }",5833_r
-1271,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",5833_h
-1272,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",1732_r
-1273,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1732_h
-1274,0.63,True,"{
+0.63,True,"{
     ""Confidence"": 0.63
 }",265_r
-1275,0.3,True,"{
+0.3,True,"{
     ""Confidence"": 0.3
 }",265_h
-1276,0.8,True,"{
+0.8,True,"{
   ""Confidence"": 0.8
 }",5144_r
-1277,0.6,True,"{
+0.6,True,"{
     ""Confidence"": 0.6
 }",8267_r
-1278,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",8267_h
-1279,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",3937_r
-1280,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3937_h
-1281,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",761_r
-1282,0.05,True,"{
+0.05,True,"{
     ""Confidence"": ""0.05""
 }",761_h
-1283,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",7220_r
-1284,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7220_h
-1285,0.97,True,"{
+0.97,True,"{
     ""Confidence"": 0.97
 }",8439_r
-1286,0.02,True,"{
+0.02,True,"{
     ""Confidence"": ""0.02""
 }",8439_h
-1287,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }
 ",3257_r
-1288,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",3257_h
-1289,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }",4338_r
-1290,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",4338_h
-1291,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",4362_r
-1292,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",4362_h
-1293,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",316_r
-1294,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",316_h
-1295,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }
 ",8069_r
-1296,0.93,True,"{
+0.93,True,"{
   ""Confidence"": 0.93
 }",8069_h
-1297,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }
 ",1851_r
-1298,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1851_h
-1299,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",2484_r
-1300,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",2484_h
-1301,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9873_r
-1302,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9873_h
-1303,0.78,True,"{
+0.78,True,"{
     ""Confidence"": 0.78
 }",9574_r
-1304,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",9574_h
-1305,0.7,True,"{
+0.7,True,"{
     ""Confidence"": 0.7
 }",1078_r
-1306,0.35,True,"{
+0.35,True,"{
     ""Confidence"": 0.35
 }",1078_h
-1307,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",8358_r
-1308,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",8358_h
-1309,0.96,True,"{
+0.96,True,"{
     ""Confidence"": 0.96
 }
 ",7333_r
-1310,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",7333_h
-1311,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",1071_r
-1312,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",1071_h
-1313,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",103_r
-1314,0.02,True,"{
+0.02,True,"{
     ""Confidence"": ""0.02""
 }",103_h
-1315,0.82,True,"{
+0.82,True,"{
     ""Confidence"": 0.82
 }
 ",5748_r
-1316,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",5748_h
-1317,0.3,True,"{
+0.3,True,"{
     ""Confidence"": 0.3
 }",1418_r
-1318,0.2,True,"{
+0.2,True,"{
     ""Confidence"": 0.2
 }",1418_h
-1319,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }
 ",1658_r
-1320,0.65,True,"{
+0.65,True,"{
     ""Confidence"": 0.65
 }",1658_h
-1321,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",5284_r
-1322,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",5284_h
-1323,0.84,True,"{
+0.84,True,"{
     ""Confidence"": 0.84
 }
 ",1149_r
-1324,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1149_h
-1325,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7150_r
-1326,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",7150_h
-1327,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",1568_r
-1328,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }
 ",1568_h
-1329,0.96,True,"{
+0.96,True,"{
     ""Confidence"": 0.96
 }",1087_r
-1330,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",1087_h
-1331,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",6085_r
-1332,0.07,True,"{
+0.07,True,"{
     ""Confidence"": 0.07
 }",6085_h
-1333,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",8674_r
-1334,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",8674_h
-1335,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",8341_r
-1336,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",8341_h
-1337,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7811_r
-1338,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7811_h
-1339,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",6084_r
-1340,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }
 ",6084_h
-1341,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",8773_r
-1342,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8773_h
-1343,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",8757_r
-1344,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",8757_h
-1345,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",1692_r
-1346,0.2,True,"{
+0.2,True,"{
     ""Confidence"": 0.2
 }",1692_h
-1347,0.77,True,"{
+0.77,True,"{
     ""Confidence"": 0.77
 }
 ",4734_r
-1348,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4734_h
-1349,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",3387_r
-1350,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3387_h
-1351,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",3646_r
-1352,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",3646_h
-1353,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",1683_r
-1354,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",1683_h
-1355,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",8_r
-1356,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8_h
-1357,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",6062_r
-1358,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }
 ",6062_h
-1359,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6516_r
-1360,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6516_h
-1361,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",4123_r
-1362,0.4,True,"{
+0.4,True,"{
     ""Confidence"": 0.4
 }
 ",4123_h
-1363,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",8729_r
-1364,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8729_h
-1365,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6045_r
-1366,0.2,True,"{
+0.2,True,"{
     ""Confidence"": 0.2
 }",6045_h
-1367,0.95,True,"{
+0.95,True,"{
     ""Confidence"": ""0.95""
 }",567_r
-1368,0.55,True,"{
+0.55,True,"{
     ""Confidence"": 0.55
 }",567_h
-1369,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9161_r
-1370,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9161_h
-1371,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",1803_r
-1372,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",1803_h
-1373,0.7,True,"{
+0.7,True,"{
     ""Confidence"": 0.7
 }",8501_r
-1374,0.4,True,"{
+0.4,True,"{
     ""Confidence"": 0.4
 }",8501_h
-1375,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",4900_r
-1376,0.2,True,"{
+0.2,True,"{
     ""Confidence"": 0.2
 }",4900_h
-1377,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",1599_r
-1378,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1599_h
-1379,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",7931_r
-1380,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7931_h
-1381,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",9547_r
-1382,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9547_h
-1383,0.82,True,"{
+0.82,True,"{
     ""Confidence"": 0.82
 }
 ",2823_r
-1384,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2823_h
-1385,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",5467_r
-1386,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",5467_h
-1387,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3529_r
-1388,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",3529_h
-1389,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",8683_r
-1390,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",8683_h
-1391,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",1155_r
-1392,0.25,True,"{
+0.25,True,"{
     ""Confidence"": 0.25
 }
 ",1155_h
-1393,0.78,True,"{
+0.78,True,"{
     ""Confidence"": 0.78
 }
 ",6547_r
-1394,0.2,True,"{
+0.2,True,"{
     ""Confidence"": 0.2
 }
 ",6547_h
-1395,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9088_r
-1396,0.82,True,"{
+0.82,True,"{
     ""Confidence"": 0.82
 }",9088_h
-1397,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",7620_r
-1398,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",7620_h
-1399,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",8296_r
-1400,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",8296_h
-1401,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",4540_r
-1402,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",4540_h
-1403,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",9134_r
-1404,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9134_h
-1405,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }
 ",6482_r
-1406,0.1,True,"{
+0.1,True,"{
     ""Confidence"": ""0.1""
 }",6482_h
-1407,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",5826_r
-1408,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",5826_h
-1409,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",1190_r
-1410,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1190_h
-1411,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7444_r
-1412,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7444_h
-1413,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }
 ",8520_r
-1414,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",8520_h
-1415,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",960_r
-1416,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",960_h
-1417,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",7454_r
-1418,0.3,True,"{
+0.3,True,"{
     ""Confidence"": 0.3
 }",7454_h
-1419,0.93,True,"{
+0.93,True,"{
     ""Confidence"": ""0.93""
 }",36_r
-1420,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",36_h
-1421,0.9,True,"{
+0.9,True,"{
     ""Confidence"": ""0.9""
 }",7516_r
-1422,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",7516_h
-1423,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",7644_r
-1424,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",7644_h
-1425,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4438_r
-1426,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4438_h
-1427,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6161_r
-1428,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",6161_h
-1429,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }
 ",7744_r
-1430,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",7744_h
-1431,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }
 ",9587_r
-1432,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9587_h
-1433,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",8119_r
-1434,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",8119_h
-1435,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }
 ",6967_r
-1436,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6967_h
-1437,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",5718_r
-1438,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5718_h
-1439,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }",577_r
-1440,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",577_h
-1441,0.52,True,"{
+0.52,True,"{
     ""Confidence"": 0.52
 }
 ",9833_r
-1442,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",9833_h
-1443,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",4102_r
-1444,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",4102_h
-1445,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",7646_r
-1446,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7646_h
-1447,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",4151_r
-1448,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4151_h
-1449,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",3130_r
-1450,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3130_h
-1451,0.96,True,"{
+0.96,True,"{
     ""Confidence"": ""0.96""
 }",4890_r
-1452,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }
 ",4890_h
-1453,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",9975_r
-1454,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",9975_h
-1455,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7471_r
-1456,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",7471_h
-1457,0.55,True,"{
+0.55,True,"{
     ""Confidence"": 0.55
 }",1833_r
-1458,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1833_h
-1459,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",9148_r
-1460,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9148_h
-1461,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }
 ",4891_r
-1462,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4891_h
-1463,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",2287_r
-1464,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }
 ",2287_h
-1465,0.78,True,"{
+0.78,True,"{
     ""Confidence"": 0.78
 }",1330_r
-1466,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",1330_h
-1467,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2771_r
-1468,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2771_h
-1469,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",3686_r
-1470,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",3686_h
-1471,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",8283_r
-1472,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",8283_h
-1473,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",5928_r
-1474,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",5928_h
-1475,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",637_r
-1476,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",637_h
-1477,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",47_r
-1478,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",47_h
-1479,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2602_r
-1480,0.25,True,"{
+0.25,True,"{
     ""Confidence"": 0.25
 }",2602_h
-1481,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",1965_r
-1482,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1965_h
-1483,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2168_r
-1484,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }
 ",2168_h
-1485,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",5049_r
-1486,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5049_h
-1487,0.7,True,"{
+0.7,True,"{
     ""Confidence"": 0.7
 }",3334_r
-1488,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",3334_h
-1489,0.7,True,"{
+0.7,True,"{
     ""Confidence"": 0.7
 }",3019_r
-1490,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",3019_h
-1491,0.52,True,"{
+0.52,True,"{
     ""Confidence"": 0.52
 }",8764_r
-1492,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }
 ",8764_h
-1493,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }
 ",9176_r
-1494,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",9176_h
-1495,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",1360_r
-1496,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1360_h
-1497,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",5798_r
-1498,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",5798_h
-1499,0.96,True,"{
+0.96,True,"{
     ""Confidence"": 0.96
 }",9400_r
-1500,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",9400_h
-1501,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",3251_r
-1502,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",3251_h
-1503,0.8,True,"{
+0.8,True,"{
     ""Confidence"": ""0.8""
 }",6300_r
-1504,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6300_h
-1505,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",2251_r
-1506,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2251_h
-1507,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }
 ",6027_r
-1508,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",6027_h
-1509,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",1175_r
-1510,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",1175_h
-1511,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",8799_r
-1512,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }
 ",8799_h
-1513,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",3279_r
-1514,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3279_h
-1515,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2973_r
-1516,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2973_h
-1517,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",3396_r
-1518,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",3396_h
-1519,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6939_r
-1520,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6939_h
-1521,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",965_r
-1522,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",965_h
-1523,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",8574_r
-1524,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",8574_h
-1525,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",742_r
-1526,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",742_h
-1527,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",7514_r
-1528,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7514_h
-1529,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",3314_r
-1530,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3314_h
-1531,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",4898_r
-1532,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4898_h
-1533,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9340_r
-1534,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9340_h
-1535,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4672_r
-1536,0.55,True,"{
+0.55,True,"{
     ""Confidence"": 0.55
 }",4672_h
-1537,0.95,True,"{
+0.95,True,"{
   ""Confidence"": 0.95
 }",8618_r
-1538,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",8618_h
-1539,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",1217_r
-1540,0.25,True,"{
+0.25,True,"{
     ""Confidence"": 0.25
 }
 ",1217_h
-1541,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",4397_r
-1542,0.02,True,"{
+0.02,True,"{
     ""Confidence"": ""0.02""
 }",4397_h
-1543,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",6080_r
-1544,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",6080_h
-1545,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2614_r
-1546,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",2614_h
-1547,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",2620_r
-1548,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2620_h
-1549,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",8714_r
-1550,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8714_h
-1551,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",7282_r
-1552,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7282_h
-1553,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",3379_r
-1554,0.05,True,"{
+0.05,True,"{
     ""Confidence"": ""0.05""
 }",3379_h
-1555,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",7301_r
-1556,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",7301_h
-1557,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9857_r
-1558,0.6,True,"{
+0.6,True,"{
     ""Confidence"": 0.6
 }",9857_h
-1559,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",5605_r
-1560,0.07,True,"{
+0.07,True,"{
     ""Confidence"": 0.07
 }",5605_h
-1561,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",9813_r
-1562,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9813_h
-1563,0.67,True,"{
+0.67,True,"{
     ""Confidence"": 0.67
 }",5786_r
-1564,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",5786_h
-1565,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",8518_r
-1566,0.03,True,"{
+0.03,True,"{
     ""Confidence"": ""0.03""
 }",8518_h
-1567,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",6850_r
-1568,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",6850_h
-1569,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }",1516_r
-1570,0.08,True,"{
+0.08,True,"{
     ""Confidence"": 0.08
 }",1516_h
-1571,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",5098_r
-1572,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",5098_h
-1573,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",7636_r
-1574,0.12,True,"{
+0.12,True,"{
     ""Confidence"": 0.12
 }",7636_h
-1575,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",9085_r
-1576,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9085_h
-1577,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }",8023_r
-1578,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }
 ",8023_h
-1579,0.93,True,"{
+0.93,True,"{
     ""Confidence"": ""0.93""
 }",2392_r
-1580,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2392_h
-1581,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",586_r
-1582,0.91,True,"{
+0.91,True,"{
     ""Confidence"": 0.91
 }",586_h
-1583,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }
 ",3519_r
-1584,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3519_h
-1585,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7653_r
-1586,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7653_h
-1587,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",8946_r
-1588,0.08,True,"{
+0.08,True,"{
     ""Confidence"": 0.08
 }",8946_h
-1589,0.78,True,"{
+0.78,True,"{
     ""Confidence"": 0.78
 }
 ",850_r
-1590,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",850_h
-1591,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",335_r
-1592,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",335_h
-1593,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",6634_r
-1594,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",6634_h
-1595,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",8972_r
-1596,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",8972_h
-1597,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7493_r
-1598,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",7493_h
-1599,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2868_r
-1600,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }
 ",2868_h
-1601,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",4872_r
-1602,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4872_h
-1603,0.93,True,"{
+0.93,True,"{
     ""Confidence"": ""0.93""
 }",3550_r
-1604,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",3550_h
-1605,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",3842_r
-1606,0.45,True,"{
+0.45,True,"{
     ""Confidence"": 0.45
 }",3842_h
-1607,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",7262_r
-1608,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",7262_h
-1609,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",5824_r
-1610,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5824_h
-1611,0.65,True,"{
+0.65,True,"{
     ""Confidence"": 0.65
 }
 ",23_r
-1612,0.2,True,"{
+0.2,True,"{
     ""Confidence"": 0.2
 }",23_h
-1613,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",1453_r
-1614,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",1453_h
-1615,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",1684_r
-1616,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1684_h
-1617,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2310_r
-1618,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",2310_h
-1619,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9063_r
-1620,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",9063_h
-1621,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9406_r
-1622,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9406_h
-1623,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",381_r
-1624,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",381_h
-1625,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",5814_r
-1626,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",5814_h
-1627,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",5550_r
-1628,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5550_h
-1629,0.79,True,"{
+0.79,True,"{
     ""Confidence"": 0.79
 }",9308_r
-1630,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",9308_h
-1631,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",1618_r
-1632,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",1618_h
-1633,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",789_r
-1634,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",789_h
-1635,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",5983_r
-1636,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5983_h
-1637,0.93,True,"{
+0.93,True,"{
   ""Confidence"": 0.93
 }",8672_r
-1638,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8672_h
-1639,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4475_r
-1640,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4475_h
-1641,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }",5606_r
-1642,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }
 ",5606_h
-1643,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }
 ",9312_r
-1644,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",9312_h
-1645,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",5648_r
-1646,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5648_h
-1647,0.93,True,"{
+0.93,True,"{
     ""Confidence"": ""0.93""
 }",6216_r
-1648,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6216_h
-1649,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2286_r
-1650,0.88,True,"{
+0.88,True,"{
     ""Confidence"": ""0.88""
 }",2286_h
-1651,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",9993_r
-1652,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9993_h
-1653,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7578_r
-1654,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",7578_h
-1655,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",1183_r
-1656,0.6,True,"{
+0.6,True,"{
     ""Confidence"": 0.6
 }",1183_h
-1657,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",6001_r
-1658,0.3,True,"{
+0.3,True,"{
     ""Confidence"": 0.3
 }
 ",6001_h
-1659,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",5090_r
-1660,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5090_h
-1661,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",2516_r
-1662,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2516_h
-1663,0.91,True,"{
+0.91,True,"{
     ""Confidence"": 0.91
 }",4122_r
-1664,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",4122_h
-1665,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",5521_r
-1666,0.65,True,"{
+0.65,True,"{
     ""Confidence"": 0.65
 }
 ",5521_h
-1667,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",5627_r
-1668,0.07,True,"{
+0.07,True,"{
     ""Confidence"": 0.07
 }",5627_h
-1669,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",8360_r
-1670,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }
 ",8360_h
-1671,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }
 ",5872_r
-1672,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",5872_h
-1673,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",8612_r
-1674,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8612_h
-1675,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }
 ",7727_r
-1676,0.6,True,"{
+0.6,True,"{
     ""Confidence"": 0.6
 }",7727_h
-1677,0.62,True,"{
+0.62,True,"{
     ""Confidence"": 0.62
 }
 ",5968_r
-1678,0.03,True,"{
+0.03,True,"{
     ""Confidence"": ""0.03""
 }",5968_h
-1679,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",1180_r
-1680,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",1180_h
-1681,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",8762_r
-1682,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8762_h
-1683,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }",8235_r
-1684,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",8235_h
-1685,0.25,True,"{
+0.25,True,"{
     ""Confidence"": 0.25
 }",2818_r
-1686,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2818_h
-1687,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",9964_r
-1688,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9964_h
-1689,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",8703_r
-1690,0.4,True,"{
+0.4,True,"{
     ""Confidence"": 0.4
 }",8703_h
-1691,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",6608_r
-1692,0.3,True,"{
+0.3,True,"{
     ""Confidence"": 0.3
 }",6608_h
-1693,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2820_r
-1694,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2820_h
-1695,0.77,True,"{
+0.77,True,"{
     ""Confidence"": 0.77
 }
 ",7535_r
-1696,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }
 ",7535_h
-1697,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",2260_r
-1698,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",2260_h
-1699,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2239_r
-1700,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }
 ",2239_h
-1701,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",6021_r
-1702,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6021_h
-1703,0.95,True,"{
+0.95,True,"{
     ""Confidence"": ""0.95""
 }",782_r
-1704,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",782_h
-1705,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",932_r
-1706,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",932_h
-1707,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",6202_r
-1708,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",6202_h
-1709,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",2412_r
-1710,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",2412_h
-1711,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",6997_r
-1712,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",6997_h
-1713,0.93,True,"{
+0.93,True,"{
     ""Confidence"": ""0.93""
 }",9115_r
-1714,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }",9115_h
-1715,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",1156_r
-1716,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",1156_h
-1717,0.96,True,"{
+0.96,True,"{
     ""Confidence"": 0.96
 }",8107_r
-1718,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",8107_h
-1719,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",5805_r
-1720,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5805_h
-1721,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4879_r
-1722,0.5,True,"{
+0.5,True,"{
     ""Confidence"": 0.5
 }
 ",4879_h
-1723,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",3309_r
-1724,0.08,True,"{
+0.08,True,"{
     ""Confidence"": 0.08
 }",3309_h
-1725,0.91,True,"{
+0.91,True,"{
     ""Confidence"": ""0.91""
 }",8961_r
-1726,0.4,True,"{
+0.4,True,"{
     ""Confidence"": 0.4
 }",8961_h
-1727,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",1702_r
-1728,0.05,True,"{
+0.05,True,"{
     ""Confidence"": ""0.05""
 }",1702_h
-1729,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",2492_r
-1730,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",2492_h
-1731,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }
 ",3706_r
-1732,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",3706_h
-1733,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }",8276_r
-1734,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8276_h
-1735,0.96,True,"{
+0.96,True,"{
     ""Confidence"": 0.96
 }",286_r
-1736,0.6,True,"{
+0.6,True,"{
     ""Confidence"": 0.6
 }
 ",286_h
-1737,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",1608_r
-1738,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",1608_h
-1739,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",6631_r
-1740,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }
 ",6631_h
-1741,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",8278_r
-1742,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8278_h
-1743,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }
 ",7315_r
-1744,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7315_h
-1745,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",2252_r
-1746,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2252_h
-1747,0.78,True,"{
+0.78,True,"{
     ""Confidence"": 0.78
 }",7415_r
-1748,0.18,True,"{
+0.18,True,"{
     ""Confidence"": 0.18
 }",7415_h
-1749,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",8365_r
-1750,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",8365_h
-1751,0.93,True,"{
+0.93,True,"{
     ""Confidence"": ""0.93""
 }",1891_r
-1752,0.91,True,"{
+0.91,True,"{
     ""Confidence"": ""0.91""
 }",1891_h
-1753,0.91,True,"{
+0.91,True,"{
     ""Confidence"": 0.91
 }",5062_r
-1754,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",5062_h
-1755,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",6120_r
-1756,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6120_h
-1757,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",563_r
-1758,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",563_h
-1759,0.97,True,"{
+0.97,True,"{
     ""Confidence"": ""0.97""
 }",291_r
-1760,0.01,True,"{
+0.01,True,"{
     ""Confidence"": 0.01
 }",291_h
-1761,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4716_r
-1762,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",4716_h
-1763,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }
 ",7708_r
-1764,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",7708_h
-1765,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",6349_r
-1766,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",6349_h
-1767,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }",169_r
-1768,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",169_h
-1769,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",267_r
-1770,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",267_h
-1771,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",4638_r
-1772,0.01,True,"{
+0.01,True,"{
     ""Confidence"": 0.01
 }",4638_h
-1773,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7077_r
-1774,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",7077_h
-1775,0.87,True,"{
+0.87,True,"{
     ""Confidence"": ""0.87""
 }",3355_r
-1776,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3355_h
-1777,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }
 ",8279_r
-1778,0.25,True,"{
+0.25,True,"{
     ""Confidence"": 0.25
 }",8279_h
-1779,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",315_r
-1780,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",315_h
-1781,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",6728_r
-1782,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",6728_h
-1783,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9495_r
-1784,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",9495_h
-1785,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",4067_r
-1786,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",4067_h
-1787,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }
 ",245_r
-1788,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",245_h
-1789,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",252_r
-1790,0.55,True,"{
+0.55,True,"{
     ""Confidence"": 0.55
 }
 ",252_h
-1791,0.96,True,"{
+0.96,True,"{
     ""Confidence"": 0.96
 }",1111_r
-1792,0.7,True,"{
+0.7,True,"{
     ""Confidence"": 0.7
 }",1111_h
-1793,0.7,True,"{
+0.7,True,"{
     ""Confidence"": 0.7
 }",4801_r
-1794,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",4801_h
-1795,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",1713_r
-1796,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1713_h
-1797,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",50_r
-1798,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",50_h
-1799,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",1835_r
-1800,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",1835_h
-1801,0.72,True,"{
+0.72,True,"{
     ""Confidence"": 0.72
 }",7896_r
-1802,0.35,True,"{
+0.35,True,"{
     ""Confidence"": 0.35
 }
 ",7896_h
-1803,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }",3383_r
-1804,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3383_h
-1805,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",6410_r
-1806,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6410_h
-1807,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4313_r
-1808,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4313_h
-1809,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",872_r
-1810,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",872_h
-1811,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",1254_r
-1812,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",1254_h
-1813,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",8881_r
-1814,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",8881_h
-1815,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",5851_r
-1816,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",5851_h
-1817,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",5702_r
-1818,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",5702_h
-1819,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",8103_r
-1820,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",8103_h
-1821,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",2098_r
-1822,0.2,True,"{
+0.2,True,"{
     ""Confidence"": 0.2
 }
 ",2098_h
-1823,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }
 ",5128_r
-1824,0.12,True,"{
+0.12,True,"{
     ""Confidence"": 0.12
 }",5128_h
-1825,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",248_r
-1826,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",248_h
-1827,0.75,True,"{
+0.75,True,"{
     ""Confidence"": 0.75
 }",6561_r
-1828,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }",6561_h
-1829,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",1339_r
-1830,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",1339_h
-1831,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",7017_r
-1832,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",7017_h
-1833,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2110_r
-1834,0.12,True,"{
+0.12,True,"{
     ""Confidence"": 0.12
 }",2110_h
-1835,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",1569_r
-1836,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",1569_h
-1837,0.9,True,"{
+0.9,True,"{
     ""Confidence"": ""0.9""
 }",1726_r
-1838,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }
 ",1726_h
-1839,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",8384_r
-1840,0.25,True,"{
+0.25,True,"{
     ""Confidence"": 0.25
 }
 ",8384_h
-1841,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",6940_r
-1842,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",6940_h
-1843,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",4395_r
-1844,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",4395_h
-1845,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2420_r
-1846,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2420_h
-1847,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }
 ",3045_r
-1848,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",3045_h
-1849,0.96,True,"{
+0.96,True,"{
     ""Confidence"": 0.96
 }",5503_r
-1850,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5503_h
-1851,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",3703_r
-1852,0.7,True,"{
+0.7,True,"{
     ""Confidence"": 0.7
 }",3703_h
-1853,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",8191_r
-1854,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8191_h
-1855,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }
 ",5331_r
-1856,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",5331_h
-1857,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }",9808_r
-1858,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",9808_h
-1859,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",447_r
-1860,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",447_h
-1861,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",7894_r
-1862,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7894_h
-1863,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",8728_r
-1864,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8728_h
-1865,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",7828_r
-1866,0.08,True,"{
+0.08,True,"{
     ""Confidence"": 0.08
 }
 ",7828_h
-1867,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",1768_r
-1868,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1768_h
-1869,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",6808_r
-1870,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",6808_h
-1871,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",4704_r
-1872,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",4704_h
-1873,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",3869_r
-1874,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3869_h
-1875,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",1655_r
-1876,0.05,True,"{
+0.05,True,"{
     ""Confidence"": ""0.05""
 }",1655_h
-1877,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }
 ",3187_r
-1878,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3187_h
-1879,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",683_r
-1880,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",683_h
-1881,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",4170_h
-1882,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",4477_r
-1883,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",4477_h
-1884,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",461_r
-1885,0.55,True,"{
+0.55,True,"{
     ""Confidence"": 0.55
 }
 ",461_h
-1886,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",5764_r
-1887,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",5764_h
-1888,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",7522_r
-1889,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7522_h
-1890,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4502_r
-1891,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4502_h
-1892,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",9709_r
-1893,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",9709_h
-1894,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",318_r
-1895,0.35,True,"{
+0.35,True,"{
     ""Confidence"": 0.35
 }
 ",318_h
-1896,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",1145_r
-1897,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1145_h
-1898,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",5094_r
-1899,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5094_h
-1900,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",1393_r
-1901,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",1393_h
-1902,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",6623_r
-1903,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",6623_h
-1904,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",1501_r
-1905,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",1501_h
-1906,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }",6408_r
-1907,0.91,True,"{
+0.91,True,"{
     ""Confidence"": 0.91
 }",6408_h
-1908,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",376_r
-1909,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",376_h
-1910,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",410_r
-1911,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",410_h
-1912,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",1660_r
-1913,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",1660_h
-1914,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",3151_r
-1915,0.15,True,"{
+0.15,True,"{
     ""Confidence"": 0.15
 }
 ",3151_h
-1916,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",1623_r
-1917,0.2,True,"{
+0.2,True,"{
     ""Confidence"": 0.2
 }",1623_h
-1918,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",5609_r
-1919,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5609_h
-1920,0.9,True,"{
+0.9,True,"{
     ""Confidence"": ""0.9""
 }",8532_r
-1921,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",8532_h
-1922,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",5802_r
-1923,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",5802_h
-1924,0.55,True,"{
+0.55,True,"{
     ""Confidence"": 0.55
 }",5306_r
-1925,0.6,True,"{
+0.6,True,"{
     ""Confidence"": 0.6
 }
 ",5306_h
-1926,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",7086_r
-1927,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",7086_h
-1928,0.55,True,"{
+0.55,True,"{
     ""Confidence"": 0.55
 }",8897_r
-1929,0.07,True,"{
+0.07,True,"{
     ""Confidence"": 0.07
 }",8897_h
-1930,0.85,True,"{
+0.85,True,"{
     ""Confidence"": ""0.85""
 }",7488_r
-1931,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }
 ",7488_h
-1932,0.4,True,"{
+0.4,True,"{
     ""Confidence"": 0.4
 }",9615_r
-1933,0.25,True,"{
+0.25,True,"{
     ""Confidence"": 0.25
 }",9615_h
-1934,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",9217_r
-1935,0.8,True,"{
+0.8,True,"{
     ""Confidence"": 0.8
 }",9217_h
-1936,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",1672_r
-1937,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",1672_h
-1938,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2358_r
-1939,0.05,True,"{
+0.05,True,"{
     ""Confidence"": ""0.05""
 }",2358_h
-1940,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",8467_r
-1941,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8467_h
-1942,0.95,True,"{
+0.95,True,"{
     ""Confidence"": 0.95
 }
 ",274_r
-1943,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",274_h
-1944,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2473_r
-1945,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2473_h
-1946,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",5489_r
-1947,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",5489_h
-1948,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",4771_h
-1949,0.89,True,"{
+0.89,True,"{
     ""Confidence"": 0.89
 }
 ",2107_r
-1950,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2107_h
-1951,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }
 ",7500_r
-1952,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",7500_h
-1953,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",4414_r
-1954,0.35,True,"{
+0.35,True,"{
     ""Confidence"": 0.35
 }",4414_h
-1955,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",8138_r
-1956,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8138_h
-1957,0.88,True,"{
+0.88,True,"{
     ""Confidence"": 0.88
 }",8660_r
-1958,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",8660_h
-1959,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",8239_r
-1960,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8239_h
-1961,0.87,True,"{
+0.87,True,"{
     ""Confidence"": 0.87
 }",2417_r
-1962,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",2417_h
-1963,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",8771_r
-1964,0.03,True,"{
+0.03,True,"{
     ""Confidence"": 0.03
 }",8771_h
-1965,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }",2236_r
-1966,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",2236_h
-1967,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }",3767_r
-1968,0.25,True,"{
+0.25,True,"{
     ""Confidence"": 0.25
 }",3767_h
-1969,0.83,True,"{
+0.83,True,"{
     ""Confidence"": 0.83
 }",9791_r
-1970,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",9791_h
-1971,0.9,True,"{
+0.9,True,"{
     ""Confidence"": 0.9
 }
 ",9989_r
-1972,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }
 ",9989_h
-1973,0.92,True,"{
+0.92,True,"{
     ""Confidence"": 0.92
 }
 ",9965_r
-1974,0.4,True,"{
+0.4,True,"{
     ""Confidence"": 0.4
 }",9965_h
-1975,0.66,True,"{
+0.66,True,"{
     ""Confidence"": 0.66
 }",7323_r
-1976,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",7323_h
-1977,0.96,True,"{
+0.96,True,"{
     ""Confidence"": 0.96
 }",1383_r
-1978,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }
 ",1383_h
-1979,0.93,True,"{
+0.93,True,"{
     ""Confidence"": 0.93
 }",3101_r
-1980,0.02,True,"{
+0.02,True,"{
     ""Confidence"": 0.02
 }",3101_h
-1981,0.86,True,"{
+0.86,True,"{
     ""Confidence"": 0.86
 }
 ",3921_r
-1982,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3921_h
-1983,0.82,True,"{
+0.82,True,"{
     ""Confidence"": 0.82
 }
 ",6685_r
-1984,0.1,True,"{
+0.1,True,"{
     ""Confidence"": 0.1
 }",6685_h
-1985,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",3194_r
-1986,0.05,True,"{
+0.05,True,"{
     ""Confidence"": 0.05
 }",3194_h
-1987,0.94,True,"{
+0.94,True,"{
     ""Confidence"": 0.94
 }",1941_r
-1988,0.85,True,"{
+0.85,True,"{
     ""Confidence"": 0.85
 }",1941_h
-1989,0.82,True,"{
+0.82,True,"{
     ""Confidence"": 0.82
 }",7713_r
-1990,0.35,True,"{
+0.35,True,"{
     ""Confidence"": 0.35
 }",7713_h
