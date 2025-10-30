@@ -1,0 +1,374 @@
+---
+title: "Analyzing LLMC outputs"
+output:
+  html_document:
+    code_folding: hide
+---
+
+# Goal
+
+The goal of this notebook is to perform some analysis of results.
+
+# Load data
+
+```{r, message=FALSE}
+library(tidyverse)
+evals <- read_csv("processed/llm-confidence-correct.csv")
+life_eval <- read_csv("processed/life_eval.csv")
+evals <- evals %>% 
+  bind_rows(
+    life_eval %>% 
+      select(-min_age, -width) %>% 
+      mutate(question_id = as.character(question_id)) %>% 
+      rename(correct = prob)
+    )
+```
+We give shorter names to the Qsets and LLMs.
+
+```{r}
+evals <- evals %>% 
+  mutate(
+    qset = case_match(
+      qset,
+      "boolq_valid" ~ "BoolQ",
+      "lsat_ar_test" ~ "LSAT",
+      "sat_en" ~ "SAT",
+      "sciq_test" ~ "SciQ",
+      "halu_eval_qa" ~ "HaluEval",
+      "life_eval" ~ "LifeEval"
+      ),
+    llm = case_match(
+      llm,
+      "Meta-Llama-3.1-70B-Instruct" ~ "Llama-70B",
+      "Meta-Llama-3.1-8B-Instruct" ~ "Llama-8B",
+      "claude-3-7-sonnet-20250219" ~ "Claude-Sonnet-3.7",
+      "claude-3-haiku-20240307" ~ "Claude-Haiku-3",
+      "claude-sonnet-4-20250514" ~ "Claude-Sonnet-4",
+      "deepseek-r1" ~ "DeepSeek-R1",
+      "deepseek-v3" ~ "DeepSeek-V3",
+      "gpt-4o" ~ "GPT-4o",
+      "o3-2025-04-16" ~ "GPT-o3",
+      "gemini-2.5-flash" ~ "Gemini-2.5-Flash",
+      "gemini-2.5-pro" ~ "Gemini-2.5-Pro"
+    ))
+life_eval <- life_eval %>% 
+  mutate(
+    llm = case_match(
+      llm,
+      "Meta-Llama-3.1-70B-Instruct" ~ "Llama-70B",
+      "Meta-Llama-3.1-8B-Instruct" ~ "Llama-8B",
+      "claude-3-7-sonnet-20250219" ~ "Claude-Sonnet-3.7",
+      "claude-3-haiku-20240307" ~ "Claude-Haiku-3",
+      "claude-sonnet-4-20250514" ~ "Claude-Sonnet-4",
+      "deepseek-r1" ~ "DeepSeek-R1",
+      "deepseek-v3" ~ "DeepSeek-V3",
+      "gpt-4o" ~ "GPT-4o",
+      "o3-2025-04-16" ~ "GPT-o3",
+      "gemini-2.5-flash" ~ "Gemini-2.5-Flash",
+      "gemini-2.5-pro" ~ "Gemini-2.5-Pro"
+    ))
+```
+
+
+# Restricting to a common set of questions
+
+For each Qset, we restrict to a common set of questions that all LLMs answered.  This is to avoid introducing bias whereby an LLM tends to give poorly formatted answers for hard questions and thereby gets evaluated on easier questions than other LLMs.
+
+```{r}
+questions_all_answered <- evals %>% 
+  count(qset,question_id) %>% 
+  filter(n == 11) %>% 
+  transmute(q_id = paste(qset, question_id, sep = "-"))
+evals_common <- evals %>% 
+  filter(paste(qset, question_id, sep = "-") %in% questions_all_answered$q_id)
+```
+
+Originally, this is the number of questions per set:
+
+```{r}
+evals %>% 
+  distinct(qset, question_id) %>% 
+  count(qset)
+```
+
+After filtering to questions where every LLM gave an answer, here is the new number of questions per set:
+
+```{r}
+evals_common %>% 
+  distinct(qset, question_id) %>% 
+  count(qset)
+```
+
+How much is each LLM responsible for not answering certain questions?
+
+```{r}
+evals %>% 
+  count(llm, qset) %>% 
+  pivot_wider(id_cols =  llm, names_from = qset, values_from = n)
+```
+
+Ok, in no case does it look like an LLM is dodging a large number of questions.  When we end up with only 87 LSAT questions in the common set, this isn't because any one LLM is only answer half the questions.
+
+# Calibration, accuracy
+
+We compute the quantities that are in Table 1.
+
+To compute ECE, we stratify questions into $M=10$ confidence bins:
+
+$$
+Q_m = \bigl\{i\in Q:  \frac{m-1}{M} < C_i (\hat{y_i })\leq \frac{m}{M} \bigr\}
+$$
+
+We then define
+
+$$
+\text{ECE}(Q) = \frac{1}{|Q|}\sum_{m=1}^M n_m \cdot  \,\bigl| \text{accuracy}(Q_m) - \text{confidence}(Q_m)\bigr|
+$$
+
+```{r}
+stated_calib <- evals_common %>% 
+  mutate(confidence_bin = cut(stated_confidence, breaks = 10)) %>% 
+  group_by(qset, llm, confidence_bin) %>% 
+  summarize(
+    confidence = mean(stated_confidence),
+    accuracy = mean(correct),
+    avg_gini = mean(stated_gini),
+    num = n(),
+    se_confidence = sd(stated_confidence) / sqrt(num),
+    se_accuracy = sd(correct) / sqrt(num),
+    .groups = "drop")
+```
+
+We export to `table1-info.csv` all the quantities shown in Table 1.
+
+```{r}
+table1 <- stated_calib %>% 
+  group_by(qset, llm) %>% 
+  summarize(
+    num_tot = sum(num),
+    ece = sum(num * abs(accuracy - confidence)) / num_tot,
+    accuracy = sum(num * accuracy) / num_tot, # equivalent to doing mean(correct) on evals
+    confidence = sum(num * confidence) / num_tot, # equivalent to doing mean(confidence) on evals
+    avg_gini = sum(num * avg_gini) / num_tot, # equivalent to doing mean(stated_gini) on evals
+    overconfidence = confidence - accuracy,
+    .groups = "drop")
+table1
+if (!dir.exists("analysis")) dir.create("analysis")
+write_csv(table1, file = "analysis/table1-info.csv")
+```
+
+```{r}
+table1 %>% 
+  pivot_longer(c(num_tot:confidence, overconfidence), names_to = "metric", values_to = "value") %>% 
+  filter(metric != "confidence") %>% 
+  pivot_wider(id_cols = c(qset, metric), names_from = llm, values_from = value) %>% 
+  write_csv(file = "analysis/table1-similar-layout.csv")
+```
+
+```{r}
+table1 %>% 
+  ggplot(aes(y=llm, x=overconfidence)) + 
+  geom_col(position = "dodge") +
+  facet_wrap(~ qset) +
+  theme_bw()
+```
+
+
+
+## Calibration plots
+
+Here I only show a point if at least 10 responses went into it.
+
+```{r}
+stated_calib %>% 
+  filter(num >= 10) %>% 
+  ggplot(aes(x = confidence, y = accuracy)) +
+  geom_point() +
+  geom_errorbar(aes(ymax = accuracy + 2 * se_accuracy, ymin = accuracy - 2 * se_accuracy)) +
+  geom_errorbarh(aes(xmax = confidence + 2 * se_confidence, xmin = confidence - 2 * se_confidence)) +
+  geom_abline(slope = 1, intercept = 0) +
+  facet_grid(qset ~ llm) +
+  coord_equal() + xlim(-0.2,1.2) + ylim(-0.2,1.2) +
+  theme_bw() +
+  theme(
+    strip.text.x = element_text(size = 4), # For horizontal facet labels
+    strip.text.y = element_text(size = 8),  # For vertical facet labels
+    axis.text = element_text(size = 4)
+  ) +
+  labs(x = "Stated Confidence", y = "Average Accuracy")
+```
+
+```{r}
+evals_common %>% 
+  mutate(confidence_bin = cut(stated_confidence, breaks = 10)) %>% 
+  group_by(confidence_bin) %>% 
+  summarize(
+    confidence = mean(stated_confidence),
+    accuracy = mean(correct),
+    num = n(),
+    se_confidence = sd(stated_confidence) / sqrt(num),
+    se_accuracy = sd(correct) / sqrt(num),
+    .groups = "drop") %>% 
+  filter(num >= 10) %>% 
+  ggplot(aes(x = confidence, y = accuracy)) +
+  geom_point() +
+  geom_pointrange(aes(ymax = accuracy + 2 * se_accuracy, ymin = accuracy - 2 * se_accuracy)) +
+  geom_abline(slope = 1, intercept = 0) +
+  theme_bw() + 
+  coord_equal() +
+  labs(x = "Stated Confidence", y = "Average Accuracy")
+```
+
+```{r}
+evals_common %>% 
+  mutate(confidence_bin = cut(stated_confidence, breaks = 10)) %>% 
+  mutate(life_eval = if_else(qset == "LifeEval", "LifeEval", "All Other Qsets")) %>% 
+  group_by(confidence_bin, life_eval) %>% 
+  summarize(
+    confidence = mean(stated_confidence),
+    accuracy = mean(correct),
+    num = n(),
+    se_confidence = sd(stated_confidence) / sqrt(num),
+    se_accuracy = sd(correct) / sqrt(num),
+    .groups = "drop") %>% 
+  filter(num >= 10) %>% 
+  ggplot(aes(x = confidence, y = accuracy)) +
+  geom_point() +
+  geom_errorbar(aes(ymax = accuracy + 2 * se_accuracy, ymin = accuracy - 2 * se_accuracy)) +
+  geom_abline(slope = 1, intercept = 0) +
+  facet_wrap(~ life_eval) +
+  theme_bw() + 
+  labs(x = "Stated Confidence", y = "Average Accuracy")
+```
+```{r}
+evals_common %>% 
+  mutate(confidence_bin = cut(stated_confidence, breaks = 10)) %>% 
+  group_by(confidence_bin, qset) %>% 
+  summarize(
+    confidence = mean(stated_confidence),
+    accuracy = mean(correct),
+    num = n(),
+    se_confidence = sd(stated_confidence) / sqrt(num),
+    se_accuracy = sqrt(accuracy * (1-accuracy)) / sqrt(num),
+    .groups = "drop") %>% 
+  filter(num >= 10) %>% 
+  ggplot(aes(x = confidence, y = accuracy)) +
+  geom_point() +
+  geom_errorbar(aes(ymax = accuracy + 2 * se_accuracy, ymin = accuracy - 2 * se_accuracy)) +
+  geom_errorbarh(aes(xmax = confidence + 2 * se_confidence, xmin = confidence - 2 * se_confidence)) +
+  geom_abline(slope = 1, intercept = 0) +
+  facet_grid(~ qset) +
+  coord_equal() + xlim(-0.2,1.2) + ylim(-0.2,1.2) +
+  theme_bw() +
+  labs(x = "Stated Confidence", y = "Average Accuracy")
+```
+```{r}
+evals_common %>% 
+  mutate(confidence_bin = cut(stated_confidence, breaks = 10)) %>% 
+  group_by(confidence_bin, llm) %>% 
+  summarize(
+    confidence = mean(stated_confidence),
+    accuracy = mean(correct),
+    num = n(),
+    se_confidence = sd(stated_confidence) / sqrt(num),
+    se_accuracy = sqrt(accuracy * (1-accuracy)) / sqrt(num),
+    .groups = "drop") %>% 
+  filter(num >= 10) %>% 
+  ggplot(aes(x = confidence, y = accuracy)) +
+  geom_point() +
+  geom_errorbar(aes(ymax = accuracy + 2 * se_accuracy, ymin = accuracy - 2 * se_accuracy)) +
+  geom_errorbarh(aes(xmax = confidence + 2 * se_confidence, xmin = confidence - 2 * se_confidence)) +
+  geom_abline(slope = 1, intercept = 0) +
+  facet_wrap(~llm) +
+  coord_equal() + xlim(-0.2,1.2) + ylim(-0.2,1.2) +
+  theme_bw() +
+  labs(x = "Stated Confidence", y = "Average Accuracy")
+```
+
+```{r}
+evals_common %>% 
+  ggplot(aes(x=stated_confidence, y = after_stat(density))) +
+  geom_histogram(bins=10) +
+  facet_grid(qset ~ llm) +
+  theme_bw() +
+  theme(
+    strip.text.x = element_text(size = 4), # For horizontal facet labels
+    strip.text.y = element_text(size = 8),  # For vertical facet labels
+    axis.text = element_text(size = 4)
+  ) +
+  labs(x = "Stated Confidence", y = "Density", title = "Distribution of Stated Confidence")
+```
+
+## Stated vs. token confidence
+
+For the two Llama models, we get token-probability-based confidence in addition to stated confidence.  We can compare the two.
+
+```{r}
+stated_token <- evals_common %>% 
+  filter(!is.na(chosen_token_confidence)) %>% 
+  mutate(stated_confidence_bin = cut(stated_confidence, breaks = 10)) %>% 
+  group_by(qset, llm, stated_confidence_bin) %>% 
+  summarize(
+    avg_stated_confidence = mean(stated_confidence),
+    avg_token_confidence = mean(chosen_token_confidence),
+    accuracy = mean(correct),
+    num = n(),
+    se_stated_conf = sd(stated_confidence) / sqrt(num),
+    se_token_conf = sd(chosen_token_confidence) / sqrt(num),
+    .groups = "drop")
+```
+
+```{r}
+stated_token %>% 
+  filter(num >= 10) %>% 
+  ggplot(aes(x = avg_stated_confidence, y = avg_token_confidence, color = llm)) +
+  geom_point() +
+  geom_errorbar(aes(ymax = avg_token_confidence + 2 * se_token_conf, 
+                    ymin = avg_token_confidence - 2 * se_token_conf)) +
+  geom_errorbarh(aes(xmax = avg_stated_confidence + 2 * se_stated_conf, 
+                     xmin = avg_stated_confidence - 2 * se_stated_conf)) +
+  geom_abline(slope = 1, intercept = 0) +
+  facet_grid(~ qset) +
+  coord_equal() + xlim(-0.2,1.2) + ylim(-0.2,1.2) +
+  theme_bw() +
+  theme(legend.position = "bottom") +
+  labs(x = "Stated Confidence", y = "Token-Based Confidence")
+```
+
+```{r}
+stated_token %>% 
+  group_by(qset, llm) %>% 
+  summarize(
+    num_tot = sum(num),
+    ece_stated = sum(num * abs(accuracy - avg_stated_confidence)) / num_tot,
+    ece_token = sum(num * abs(accuracy - avg_token_confidence)) / num_tot,
+    .groups = "drop") %>% 
+  ggplot(aes(x=ece_stated, y=ece_token)) + 
+  geom_point(aes(color = llm)) +
+  geom_text(aes(label = qset), size = 2, nudge_y=0.02, nudge_x=-0.02) +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
+  labs(x = "Stated ECE", y = "Token ECE") +
+  theme_bw()
+```
+
+## LifeEval
+
+```{r}
+life_eval %>%
+  group_by(llm, width) %>%
+  summarize(
+    overconfidence = mean(stated_confidence - prob),
+    se_overconfidence = sd(stated_confidence - prob) / sqrt(n()),
+    .groups = "drop") %>% 
+  mutate(`Model Family` = str_extract(llm, "^[^-]+")) %>% 
+  ggplot(aes(x=width,y=overconfidence, color = llm)) +
+  geom_point() +
+  geom_pointrange(aes(ymin = overconfidence - 2 * se_overconfidence,
+                    ymax = overconfidence + 2 * se_overconfidence)) +
+  geom_line() +
+  facet_grid(~`Model Family`) +
+  geom_hline(yintercept = 0) +
+  theme_bw() +
+  theme(legend.position = "bottom") +
+  labs(x = "Width of Interval", y = "Overconfidence")
+```
