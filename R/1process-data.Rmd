@@ -1,0 +1,752 @@
+---
+title: "Processing LLMC outputs"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    number_sections: true
+---
+
+# Goal
+
+The goal of this notebook is to read in the 66 csv files of results and the seven csv files of true answers and then process them for subsequent analysis.  We will end up with one giant data frame (which we write to csv) that will have the following columns:
+
+`llm`, `qset`, `question_id`, `stated_confidence`, `chosen_token_confidence`, `max_token_confidence`, `correct`.
+
+We define these columns in terms of the following notation:
+
+- $C_i^\text{stated}(k)$ is the stated confidence for choice $k$ in question $i$
+- $C_i^\text{token}(k)$ is the token confidence for choice $k$ in question $i$
+- $y_i$ is the correct answer
+- $\hat y_i$ is an LLM's chosen answer
+
+The column `stated_confidence` is $C_i^\text{stated}(\hat y_i)$, i.e. the stated confidence associated with the LLM's chosen answer.
+
+The column `chosen_token_confidence` is $C_i^\text{token}(\hat y_i)$, i.e. the token-based confidence associated with the LLM's chosen answer.
+
+The column `max_token_confidence` is $\max_kC_i^\text{token}(k)$, i.e. the token-based confidence associated with what the LLM would choose if temperature were 0.
+
+# Load the data
+
+```{r, warning=FALSE, message=FALSE}
+library(tidyverse)
+```
+
+```{r}
+path <- "../"
+csvs <- fs::dir_ls(file.path(path, "Parsed Results"),recurse = TRUE, glob="*csv")
+```
+
+There are 66 files of LLM results in total.  Let's extract the LLM and Qset for each file:
+
+```{r}
+stems <- csvs %>% fs::path_file() %>% str_remove(".csv")
+llm <- stems %>% str_extract("[^_]+$")
+qset <- stems %>% str_remove(paste0("_", llm))
+```
+
+```{r, message=FALSE}
+all <- tibble(llm = llm, qset = qset, csv = csvs)
+all <- all %>% mutate(dat = map(csv, read_csv, show_col_types=FALSE))
+```
+The problem alluded to above is when reading `Meta-Llama-3.1-70B-Instruct/boolq_valid_Meta-Llama-3.1-70B-Instruct.csv`. In row 1250 and column 2, it expected an empty string `""` but instead got an embedded null.  This does not sound concerning to me.
+
+For now (until Noam makes change), let's remove the duplicated "Question ID" columns:
+
+```{r}
+for (i in 1:nrow(all)) {
+  # find columns with "Question ID" in it
+  ii <- which(str_detect(names(all$dat[[i]]), "Question ID"))
+  if (length(ii) > 1) {
+    # name the first one "Question ID" and then remove the duplicates
+    names(all$dat[[i]])[ii[1]] <- "Question ID"
+    all$dat[[i]] <- all$dat[[i]][, -ii[-1]]
+  }
+}
+```
+
+
+Let's also get the truth 
+
+```{r}
+truth_csvs <- fs::dir_ls(file.path(path, "Formatted Benchmarks"))
+qset_truth_name <- fs::path_file(truth_csvs) %>% str_remove(".csv") %>% str_remove("_formatted")
+truth <- map(truth_csvs, read_csv, show_col_types = FALSE)
+names(truth) <- qset_truth_name
+```
+
+There's a problem with the first csv (a lot of empty rows at end).
+
+```{r}
+# remove last row:
+truth[[1]] <- truth[[1]] %>% slice(1:119)
+```
+
+# Standardizing format
+
+We will work our way through the 7 question sets, which have different formats.  Also, the Llama models need to be treated differently because they also output token probabilities.
+
+## Boolq
+
+### Llama models
+
+Notice that even after filtering based on coerce, we still get some unexpected answers:
+
+```{r}
+all %>% 
+  filter(qset == "boolq_valid", str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>% 
+  count(Answer, sort=TRUE)
+```
+
+Let's keep only the questions where it responds True or False since that was the stipulated format of response.
+
+NOTE: Let's be sure to mention in the discussion that to the LLMs' credit, they did attempt to break out of the True/False format to say they didn't know.
+
+```{r}
+eval1 <- all %>% 
+  filter(qset == "boolq_valid", str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce, Answer %in% c("True", "False")) %>% 
+  select(llm, qset, `Question ID`, Answer, Confidence, True_prob, False_prob) %>% 
+  transmute(
+    llm,
+    qset,
+    question_id = `Question ID`,
+    stated_confidence = Confidence,
+    chosen_token_confidence = if_else(Answer == "True", True_prob, False_prob) / (True_prob + False_prob),
+    max_token_confidence = pmax(True_prob, False_prob),
+    answer = Answer == "True",
+    stated_gini = 1 - Confidence^2 - (1 - Confidence)^2,
+    token_gini = 1 - True_prob^2 - False_prob^2
+    ) %>% 
+  left_join(
+    truth$boolq_valid %>% select(question_id = `Question ID`, `Correct Answer`),
+    by = "question_id"
+    ) %>% 
+  mutate(
+    correct = answer == `Correct Answer`
+  ) %>% 
+  select(-answer, -`Correct Answer`)
+```
+
+### Non-Llama models
+
+Before we can `unnest`, we need all the data frames to have the same format of columns.
+
+```{r}
+all %>% 
+  filter(qset == "boolq_valid", !str_detect(llm, "Llama")) %>% 
+  pull(dat) %>% 
+  map_dfr(~ map_chr(.x, class))
+```
+We see that the `Answer` column for the first one (`claude-3-7-sonnet-20250219`) needs to be fixed.
+
+```{r}
+row <- which(all$qset == "boolq_valid" & all$llm == "claude-3-7-sonnet-20250219")
+all[row,"dat"][[1]][[1]]$Answer <- ifelse(all[row,"dat"][[1]][[1]]$Answer, "True", "False")
+```
+
+
+
+```{r}
+all %>% 
+  filter(qset == "boolq_valid", !str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>% 
+  count(Answer, sort=TRUE)
+```
+
+NOTE: Let's be sure to mention in the discussion that to the LLMs' credit, they did attempt to break out of the True/False format to say they didn't know.
+
+```{r}
+eval2 <- all %>% 
+  filter(qset == "boolq_valid", !str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce, Answer %in% c("True", "False")) %>% 
+  select(llm, qset, `Question ID`, Answer, Confidence) %>% 
+  transmute(
+    llm,
+    qset,
+    question_id = `Question ID`,
+    stated_confidence = Confidence,
+    answer = Answer == "True",
+    stated_gini = 1 - Confidence^2 - (1 - Confidence)^2
+    ) %>% 
+  left_join(
+    truth$boolq_valid %>% select(question_id = `Question ID`, `Correct Answer`),
+    by = "question_id"
+    ) %>% 
+  mutate(
+    correct = answer == `Correct Answer`
+  ) %>% 
+  select(-answer, -`Correct Answer`)
+```
+
+
+
+## LSAT
+
+### Llama models
+
+Notice that we get all expected answers:
+
+```{r}
+all %>% 
+  filter(qset == "lsat_ar_test", str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>% 
+  pull(Answer) %>% 
+  unique() %>% 
+  {. %in% c("A", "B", "C", "D", "E")} %>% 
+  all() %>% 
+  stopifnot()
+```
+
+Observe that the five probabilities don't always sum to 1 (but do so most of the time):
+
+```{r}
+all %>% 
+  filter(qset == "lsat_ar_test", str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>%
+  mutate(prob_sum = A+B+C+D+E) %>% 
+  ggplot(aes(x=prob_sum)) + geom_histogram()
+```
+
+```{r}
+all %>% 
+  filter(qset == "lsat_ar_test", str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>%
+  mutate(prob_sum = A_prob+B_prob+C_prob+D_prob+E_prob) %>% 
+  ggplot(aes(x=prob_sum)) + geom_histogram()
+```
+
+The prereg says we will normalize the confidences, so let's do that:
+
+```{r}
+eval3 <- all %>% 
+  filter(qset == "lsat_ar_test", str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>%
+  transmute(
+    llm,
+    qset,
+    question_id = `Question ID`,
+    Answer,
+    prob_sum = A+B+C+D+E,
+    stated_confidence = case_when(
+      Answer == "A" ~ A,
+      Answer == "B" ~ B,
+      Answer == "C" ~ C,
+      Answer == "D" ~ D,
+      Answer == "E" ~ E,
+    ) / if_else(prob_sum == 0, 1, prob_sum), # we take 0/0 to be 0.
+    prob_token_sum = A_prob+B_prob+C_prob+D_prob+E_prob,
+    chosen_token_confidence = case_when(
+      Answer == "A" ~ A_prob,
+      Answer == "B" ~ B_prob,
+      Answer == "C" ~ C_prob,
+      Answer == "D" ~ D_prob,
+      Answer == "E" ~ E_prob,
+    ) / if_else(prob_token_sum == 0, 1, prob_token_sum),
+    max_token_confidence = pmax(A_prob, B_prob, C_prob, D_prob, E_prob) / if_else(prob_token_sum == 0, 1, prob_token_sum),
+    stated_gini = 1 - (A^2 + B^2 + C^2 + D^2 + E^2) / if_else(prob_sum == 0, 1, prob_sum)^2,
+    token_gini = 1 - (A_prob^2 + B_prob^2 + C_prob^2 + D_prob^2 + E_prob^2) / if_else(prob_token_sum == 0, 1, prob_token_sum)^2,
+    ) %>% 
+  left_join(
+    truth$lsat_ar_test %>% select(question_id = `Question ID`, `Correct Answer Letter`),
+    by = "question_id"
+    ) %>% 
+  mutate(
+    correct = Answer == `Correct Answer Letter`
+  ) %>% 
+  select(-Answer, -`Correct Answer Letter`, -prob_sum, -prob_token_sum)
+```
+
+### Non-Llama models
+
+Notice that on just 2 occasions, a non-compliant response was given ("P" means pass perhaps?).
+
+```{r}
+all %>% 
+  filter(qset == "lsat_ar_test", !str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>% 
+  count(Answer)
+```
+
+```{r}
+all %>% 
+  filter(qset == "lsat_ar_test", !str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>%
+  mutate(prob_sum = A+B+C+D+E) %>% 
+  ggplot(aes(x=prob_sum)) + geom_histogram()
+```
+
+```{r}
+eval4 <- all %>% 
+  filter(qset == "lsat_ar_test", !str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce, Answer %in% LETTERS[1:5]) %>%
+  transmute(
+    llm,
+    qset,
+    question_id = `Question ID`,
+    Answer,
+    prob_sum = A+B+C+D+E,
+    stated_confidence = case_when(
+      Answer == "A" ~ A,
+      Answer == "B" ~ B,
+      Answer == "C" ~ C,
+      Answer == "D" ~ D,
+      Answer == "E" ~ E,
+    ) / if_else(prob_sum == 0, 1, prob_sum), # we take 0/0 to be 0.
+    stated_gini = 1 - (A^2 + B^2 + C^2 + D^2 + E^2) / if_else(prob_sum == 0, 1, prob_sum)^2
+    ) %>% 
+  left_join(
+    truth$lsat_ar_test %>% select(question_id = `Question ID`, `Correct Answer Letter`),
+    by = "question_id"
+    ) %>% 
+  mutate(
+    correct = Answer == `Correct Answer Letter`
+  ) %>% 
+  select(-Answer, -`Correct Answer Letter`, -prob_sum)
+```
+
+## SAT
+
+### Llama models
+
+Notice that we get one non-compliant answer ("G").
+
+```{r}
+all %>% 
+  filter(qset == "sat_en", str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>% 
+  count(Answer)
+```
+Let's look at the sums of the probabilities.
+
+```{r}
+all %>% 
+  filter(qset == "sat_en", str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>%
+  mutate(prob_sum = A+B+C+D) %>% 
+  ggplot(aes(x=prob_sum)) + geom_histogram()
+```
+
+There's a case where all probabilities are 0:
+
+```{r}
+all %>% 
+  filter(qset == "sat_en", str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>%
+  mutate(prob_sum = A+B+C+D) %>% 
+  filter(prob_sum == 0)
+```
+
+```{r}
+all %>% 
+  filter(qset == "sat_en", str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>%
+  mutate(prob_sum = A_prob+B_prob+C_prob+D_prob) %>% 
+  ggplot(aes(x=prob_sum)) + geom_histogram()
+```
+
+```{r}
+eval5 <- all %>% 
+  filter(qset == "sat_en", str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce, Answer %in% LETTERS[1:4]) %>%
+  transmute(
+    llm,
+    qset,
+    question_id = `Question ID`,
+    Answer,
+    prob_sum = A+B+C+D,
+    stated_confidence = case_when(
+      Answer == "A" ~ A,
+      Answer == "B" ~ B,
+      Answer == "C" ~ C,
+      Answer == "D" ~ D
+    ) / if_else(prob_sum == 0, 1, prob_sum), # we take 0/0 to be 0.
+    prob_token_sum = A_prob+B_prob+C_prob+D_prob,
+    chosen_token_confidence = case_when(
+      Answer == "A" ~ A_prob,
+      Answer == "B" ~ B_prob,
+      Answer == "C" ~ C_prob,
+      Answer == "D" ~ D_prob
+    ) / if_else(prob_token_sum == 0, 1, prob_token_sum),
+    max_token_confidence = pmax(A_prob, B_prob, C_prob, D_prob) / if_else(prob_token_sum == 0, 1, prob_token_sum),
+    stated_gini = 1 - (A^2 + B^2 + C^2 + D^2) / if_else(prob_sum == 0, 1, prob_sum)^2,
+    token_gini = 1 - (A_prob^2 + B_prob^2 + C_prob^2 + D_prob^2) / if_else(prob_token_sum == 0, 1, prob_token_sum)^2
+    ) %>% 
+  left_join(
+    truth$sat_en %>% select(question_id = `Question ID`, `Correct Answer Letter`),
+    by = "question_id"
+    ) %>% 
+  mutate(
+    correct = Answer == `Correct Answer Letter`
+  ) %>% 
+  select(-Answer, -`Correct Answer Letter`, -prob_sum, -prob_token_sum)
+```
+
+### Non-Llama models
+
+
+Notice that we get a few non-compliant answer ("E", "None", and NA).
+
+```{r}
+all %>% 
+  filter(qset == "sat_en", !str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>% 
+  count(Answer)
+```
+
+Let's look at the sums of the probabilities.
+
+```{r}
+all %>% 
+  filter(qset == "sat_en", !str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>%
+  mutate(prob_sum = A+B+C+D) %>% 
+  ggplot(aes(x=prob_sum)) + geom_histogram()
+```
+
+There are two cases where all probabilities are 0:
+
+```{r}
+all %>% 
+  filter(qset == "sat_en", !str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>%
+  mutate(prob_sum = A+B+C+D) %>% 
+  filter(prob_sum == 0)
+```
+
+
+```{r}
+eval6 <- all %>% 
+  filter(qset == "sat_en", !str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce, Answer %in% LETTERS[1:4]) %>%
+  transmute(
+    llm,
+    qset,
+    question_id = `Question ID`,
+    Answer,
+    prob_sum = A+B+C+D,
+    stated_confidence = case_when(
+      Answer == "A" ~ A,
+      Answer == "B" ~ B,
+      Answer == "C" ~ C,
+      Answer == "D" ~ D
+    ) / if_else(prob_sum == 0, 1, prob_sum), # we take 0/0 to be 0.
+    stated_gini = 1 - (A^2 + B^2 + C^2 + D^2) / if_else(prob_sum == 0, 1, prob_sum)^2
+    ) %>% 
+  left_join(
+    truth$sat_en %>% select(question_id = `Question ID`, `Correct Answer Letter`),
+    by = "question_id"
+    ) %>% 
+  mutate(
+    correct = Answer == `Correct Answer Letter`
+  ) %>% 
+  select(-Answer, -`Correct Answer Letter`, -prob_sum)
+```
+
+## Sciq
+
+### Llama models
+
+All compliant answers:
+
+```{r}
+all %>% 
+  filter(qset == "sciq_test", str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>% 
+  count(Answer)
+```
+Let's look at the sums of the probabilities.
+
+
+```{r}
+all %>% 
+  filter(qset == "sciq_test", str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>%
+  mutate(prob_sum = A+B+C+D) %>% 
+  ggplot(aes(x=prob_sum)) + geom_histogram()
+```
+
+```{r}
+all %>% 
+  filter(qset == "sciq_test", str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>%
+  mutate(prob_sum = A_prob+B_prob+C_prob+D_prob) %>% 
+  ggplot(aes(x=prob_sum)) + geom_histogram()
+```
+
+```{r}
+eval7 <- all %>% 
+  filter(qset == "sciq_test", str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce, Answer %in% LETTERS[1:4]) %>%
+  transmute(
+    llm,
+    qset,
+    question_id = `Question ID`,
+    Answer,
+    prob_sum = A+B+C+D,
+    stated_confidence = case_when(
+      Answer == "A" ~ A,
+      Answer == "B" ~ B,
+      Answer == "C" ~ C,
+      Answer == "D" ~ D
+    ) / if_else(prob_sum == 0, 1, prob_sum), # we take 0/0 to be 0.
+    prob_token_sum = A_prob+B_prob+C_prob+D_prob,
+    chosen_token_confidence = case_when(
+      Answer == "A" ~ A_prob,
+      Answer == "B" ~ B_prob,
+      Answer == "C" ~ C_prob,
+      Answer == "D" ~ D_prob
+    ) / if_else(prob_token_sum == 0, 1, prob_token_sum),
+    max_token_confidence = pmax(A_prob, B_prob, C_prob, D_prob) / if_else(prob_token_sum == 0, 1, prob_token_sum),
+    stated_gini = 1 - (A^2 + B^2 + C^2 + D^2) / if_else(prob_sum == 0, 1, prob_sum)^2,
+    token_gini = 1 - (A_prob^2 + B_prob^2 + C_prob^2 + D_prob^2) / if_else(prob_token_sum == 0, 1, prob_token_sum)^2
+    ) %>% 
+  left_join(
+    truth$sciq_test %>% select(question_id = `Question ID`, `Correct Answer Letter`),
+    by = "question_id"
+    ) %>% 
+  mutate(
+    correct = Answer == `Correct Answer Letter`
+  ) %>% 
+  select(-Answer, -`Correct Answer Letter`, -prob_sum, -prob_token_sum)
+```
+
+### Non-Llama models
+
+All compliant answers:
+
+```{r}
+all %>% 
+  filter(qset == "sciq_test", !str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>% 
+  count(Answer)
+```
+
+Let's look at the sums of the probabilities.
+
+```{r}
+all %>% 
+  filter(qset == "sciq_test", !str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>%
+  mutate(prob_sum = A+B+C+D) %>% 
+  ggplot(aes(x=prob_sum)) + geom_histogram()
+```
+
+One case where all probabilities are 0:
+
+```{r}
+all %>% 
+  filter(qset == "sciq_test", !str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>%
+  mutate(prob_sum = A+B+C+D) %>% 
+  filter(prob_sum == 0)
+```
+
+```{r}
+eval8 <- all %>% 
+  filter(qset == "sciq_test", !str_detect(llm, "Llama")) %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce, Answer %in% LETTERS[1:4]) %>%
+  transmute(
+    llm,
+    qset,
+    question_id = `Question ID`,
+    Answer,
+    prob_sum = A+B+C+D,
+    stated_confidence = case_when(
+      Answer == "A" ~ A,
+      Answer == "B" ~ B,
+      Answer == "C" ~ C,
+      Answer == "D" ~ D
+    ) / if_else(prob_sum == 0, 1, prob_sum), # we take 0/0 to be 0.
+    stated_gini = 1 - (A^2 + B^2 + C^2 + D^2) / if_else(prob_sum == 0, 1, prob_sum)^2
+    ) %>% 
+  left_join(
+    truth$sciq_test %>% select(question_id = `Question ID`, `Correct Answer Letter`),
+    by = "question_id"
+    ) %>% 
+  mutate(
+    correct = Answer == `Correct Answer Letter`
+  ) %>% 
+  select(-Answer, -`Correct Answer Letter`, -prob_sum)
+```
+
+## halu_eval
+
+For this Qset, we don't need to distinguish between Llama and non-Llama, because we do not get token probabilities.  Also, the format is pretty different, in that we don't have the models choose an answer, rather we seed it with a correct and a hallucinated answer, and ask for its (stated) confidence in each case.
+
+
+
+First, we notice that there are three rows where the same LLM is queried twice on the same Question ID:
+
+```{r}
+duplicates <- all %>% 
+  filter(qset == "halu_eval_qa") %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>% 
+  count(llm, `Question ID`) %>% 
+  filter(n > 1)
+duplicates
+```
+
+We will remove these duplicates.
+
+```{r}
+halu <- all %>% 
+  filter(qset == "halu_eval_qa") %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce) %>% 
+  filter(!(llm %in% duplicates$llm & `Question ID` %in% duplicates$`Question ID`)) %>% 
+  group_by(qset, llm, `Question ID`) %>% 
+  summarize(Confidence = mean(Confidence), .groups = "drop")
+```
+
+
+```{r}
+eval9 <- halu %>% 
+  transmute(
+    qset,
+    llm,
+    question_id = `Question ID`,
+    stated_confidence = Confidence,
+    correct = str_detect(question_id, "r")
+    )
+```
+
+## life_eval
+
+For this Qset, we don't need to distinguish between Llama and non-Llama, because we do not get token probabilities.  Also, the setup here is different from the previous Qsets
+
+Before we can `unnest`, we need all the data frames to have the same format of columns.
+
+```{r}
+all %>% 
+  filter(qset == "life_eval") %>% 
+  pull(dat) %>% 
+  map_dfr(~ map_chr(.x, class))
+```
+
+Let's fix the last one:
+
+```{r}
+row <- which(all$llm == "gemini-2.5-pro" & all$qset == "life_eval")
+all[row,"dat"][[1]][[1]]$Confidence <- as.numeric(all[row,"dat"][[1]][[1]]$Confidence)
+```
+
+There was one case where it responded in a sentence, and that's been coerced to NA in the above code.  We'll be sure to remove that one below.
+
+Let's look at the answers given:
+
+```{r}
+all %>% 
+  filter(qset == "life_eval") %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce, !is.na(Confidence)) %>% 
+  ggplot(aes(x=Answer)) +
+  geom_histogram(binwidth=1)
+```
+
+```{r}
+eval10 <- all %>% 
+  filter(qset == "life_eval") %>% 
+  unnest(cols = dat) %>% 
+  filter(coerce, !is.na(Confidence)) %>% 
+  left_join(truth$life_eval, by = "Question ID") %>% 
+  transmute(
+    qset,
+    llm,
+    question_id = as.character(`Question ID`),
+    answer = Answer,
+    min_age = as.numeric(str_extract(`Question Prompt`, "\\d+")),
+    width = as.numeric(str_extract(`Confidence Prompt`, "\\d+")),
+    stated_confidence = Confidence
+  )
+```
+
+Now, for each min age $a$, interval center $k$, and interval width $w$, we wish to calculate
+
+$$
+p_a(k,r) = \mathbb P(y \in [k-r,k+r]~|~y \ge a)
+$$
+
+The "Number of lives" column of the [Period Life Table](https://www.ssa.gov/oact/STATS/table4c6.html) gives us the information we need.  Let $l_x$ be the number of people surviving to age $x$ (out of an initial $l_0=100,000$).  Then,
+
+$$
+p_a(k,r) = \frac{l_{\max\{k-r,a\}}-l_{k+r+1}}{l_a}
+$$
+
+The numerator gives the number of people (out of the original 100,000) who survived to $k-r$ but did not survive until $k+r+1$.  In other words, it's the people who died in $[k-r,k+r]$.  Notice we have $\max\{k-r,a\}$ in the numerator rather than just $k-r$.  This is for the situation when an interval extends smaller than $a$.
+
+Based on the question in the prompt, we focus on the "Male" column.
+
+```{r}
+lives <- truth$PeriodLifeTable_2022_RawData[[3]]
+lives <- c(lives, rep(0, 50)) # let's extend the table with some more zeros
+interval_probs <- eval10 %>% 
+  distinct(min_age, answer, width) %>% 
+  mutate(prob = (lives[pmax(answer - width, min_age) + 1] - lives[answer + width + 2]) / lives[min_age+1])
+```
+
+```{r}
+eval10 <- eval10 %>% 
+  left_join(interval_probs, by = c("answer", "min_age", "width"))
+```
+
+
+
+# Saving processed data
+
+Let's start by combining the question set data frames:
+
+```{r}
+if (!dir.exists("processed")) dir.create("processed")
+bind_rows(
+  eval1,
+  eval2,
+  eval3,
+  eval4,
+  eval5,
+  eval6,
+  eval7,
+  eval8
+) %>% 
+  mutate(question_id = as.character(question_id)) %>% 
+  bind_rows(eval9) %>% 
+  write_csv(file = "processed/llm-confidence-correct.csv")
+```
+
+For life_eval, let's also save the output that has the answer, true_answer, and width,
+
+```{r}
+write_csv(eval10, file = "processed/life_eval.csv")
+```
+
+
