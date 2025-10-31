@@ -51,21 +51,6 @@ all <- all %>% mutate(dat = map(csv, read_csv, show_col_types=FALSE))
 ```
 The problem alluded to above is when reading `Meta-Llama-3.1-70B-Instruct/boolq_valid_Meta-Llama-3.1-70B-Instruct.csv`. In row 1250 and column 2, it expected an empty string `""` but instead got an embedded null.  This does not sound concerning to me.
 
-For now (until Noam makes change), let's remove the duplicated "Question ID" columns:
-
-```{r}
-for (i in 1:nrow(all)) {
-  # find columns with "Question ID" in it
-  ii <- which(str_detect(names(all$dat[[i]]), "Question ID"))
-  if (length(ii) > 1) {
-    # name the first one "Question ID" and then remove the duplicates
-    names(all$dat[[i]])[ii[1]] <- "Question ID"
-    all$dat[[i]] <- all$dat[[i]][, -ii[-1]]
-  }
-}
-```
-
-
 Let's also get the truth 
 
 ```{r}
