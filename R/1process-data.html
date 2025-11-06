@@ -439,17 +439,6 @@ all &lt;- all %&gt;% mutate(dat = map(csv, read_csv, show_col_types=FALSE))</cod
 In row 1250 and column 2, it expected an empty string <code>&quot;&quot;</code>
 but instead got an embedded null. This does not sound concerning to
 me.</p>
-<p>For now (until Noam makes change), let’s remove the duplicated
-“Question ID” columns:</p>
-<pre class="r"><code>for (i in 1:nrow(all)) {
-  # find columns with &quot;Question ID&quot; in it
-  ii &lt;- which(str_detect(names(all$dat[[i]]), &quot;Question ID&quot;))
-  if (length(ii) &gt; 1) {
-    # name the first one &quot;Question ID&quot; and then remove the duplicates
-    names(all$dat[[i]])[ii[1]] &lt;- &quot;Question ID&quot;
-    all$dat[[i]] &lt;- all$dat[[i]][, -ii[-1]]
-  }
-}</code></pre>
 <p>Let’s also get the truth</p>
 <pre class="r"><code>truth_csvs &lt;- fs::dir_ls(file.path(path, &quot;Formatted Benchmarks&quot;))
 qset_truth_name &lt;- fs::path_file(truth_csvs) %&gt;% str_remove(&quot;.csv&quot;) %&gt;% str_remove(&quot;_formatted&quot;)
@@ -737,11 +726,11 @@ models</h3>
   filter(coerce) %&gt;%
   mutate(prob_sum = A+B+C+D) %&gt;% 
   filter(prob_sum == 0)</code></pre>
-<pre><code>## # A tibble: 0 × 16
-## # ℹ 16 variables: llm &lt;chr&gt;, qset &lt;chr&gt;, csv &lt;fs::path&gt;, Question ID &lt;dbl&gt;,
+<pre><code>## # A tibble: 0 × 17
+## # ℹ 17 variables: llm &lt;chr&gt;, qset &lt;chr&gt;, csv &lt;fs::path&gt;, Reasoning &lt;chr&gt;,
 ## #   Answer &lt;chr&gt;, A &lt;dbl&gt;, B &lt;dbl&gt;, C &lt;dbl&gt;, D &lt;dbl&gt;, coerce &lt;lgl&gt;,
-## #   content &lt;chr&gt;, A_prob &lt;dbl&gt;, B_prob &lt;dbl&gt;, C_prob &lt;dbl&gt;, D_prob &lt;dbl&gt;,
-## #   prob_sum &lt;dbl&gt;</code></pre>
+## #   content &lt;chr&gt;, Question ID &lt;dbl&gt;, A_prob &lt;dbl&gt;, B_prob &lt;dbl&gt;, C_prob &lt;dbl&gt;,
+## #   D_prob &lt;dbl&gt;, prob_sum &lt;dbl&gt;</code></pre>
 <pre class="r"><code>all %&gt;% 
   filter(qset == &quot;sat_en&quot;, str_detect(llm, &quot;Llama&quot;)) %&gt;% 
   unnest(cols = dat) %&gt;% 
