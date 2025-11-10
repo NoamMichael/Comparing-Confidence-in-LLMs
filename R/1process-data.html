@@ -1037,13 +1037,14 @@ have the same format of columns.</p>
 ##  9 character numeric character  logical character numeric       &lt;NA&gt;       
 ## 10 character numeric numeric    logical character numeric       numeric    
 ## 11 character numeric numeric    logical character numeric       numeric</code></pre>
-<p>Let’s fix the last one:</p>
+<p>Let’s fix the one that has a <code>Confidence</code> column that is
+<code>&quot;character&quot;</code> rather than <code>&quot;numeric&quot;</code>.</p>
 <pre class="r"><code>row &lt;- which(all$llm == &quot;gemini-2.5-pro&quot; &amp; all$qset == &quot;life_eval&quot;)
 all[row,&quot;dat&quot;][[1]][[1]]$Confidence &lt;- as.numeric(all[row,&quot;dat&quot;][[1]][[1]]$Confidence)</code></pre>
 <pre><code>## Warning: NAs introduced by coercion</code></pre>
-<p>There was one case where it responded in a sentence, and that’s been
-coerced to NA in the above code. We’ll be sure to remove that one
-below.</p>
+<p>The reason that it was in character was that in one case it responded
+in a sentence rather than a number, and that’s now been coerced to NA in
+the above code. We’ll be sure to remove that one below.</p>
 <p>Let’s look at the answers given:</p>
 <pre class="r"><code>all %&gt;% 
   filter(qset == &quot;life_eval&quot;) %&gt;% 
@@ -1084,15 +1085,46 @@ did not survive until <span class="math inline">\(k+r+1\)</span>. In
 other words, it’s the people who died in <span class="math inline">\([k-r,k+r]\)</span>. Notice we have <span class="math inline">\(\max\{k-r,a\}\)</span> in the numerator rather
 than just <span class="math inline">\(k-r\)</span>. This is for the
 situation when an interval extends smaller than <span class="math inline">\(a\)</span>.</p>
-<p>Based on the question in the prompt, we focus on the “Male”
-column.</p>
-<pre class="r"><code>lives &lt;- truth$PeriodLifeTable_2022_RawData[[3]]
-lives &lt;- c(lives, rep(0, 50)) # let&#39;s extend the table with some more zeros
-interval_probs &lt;- eval10 %&gt;% 
+<p>When <code>Question ID &lt; 404</code>, the prompt is about males;
+when <code>Question ID &gt;= 404</code>, the prompt is about females.
+The relevant information for males is in column 3 of the life table; the
+relevant information for females is in column 6.</p>
+<pre class="r"><code># add column specifying the sex being asked about in the question
+eval10 &lt;- eval10 %&gt;% 
+  mutate(sex = if_else(as.numeric(question_id) &lt; 404, &quot;male&quot;, &quot;female&quot;))
+
+male_lives &lt;- truth$PeriodLifeTable_2022_RawData[[3]]
+male_lives &lt;- c(male_lives, rep(0, 50)) # let&#39;s extend the table with some more zeros
+female_lives &lt;- truth$PeriodLifeTable_2022_RawData[[6]]
+female_lives &lt;- c(female_lives, rep(0, 50)) # let&#39;s extend the table with some more </code></pre>
+<pre class="r"><code># interval_probs &lt;- eval10 %&gt;% 
+#   distinct(sex, min_age, answer, width) %&gt;% 
+#   mutate(
+#     prob = if_else(
+#       sex == &quot;male&quot;,
+#       (male_lives[pmax(answer - width, min_age) + 1] - male_lives[answer + width + 2]) / male_lives[min_age+1],
+#       (female_lives[pmax(answer - width, min_age) + 1] - female_lives[answer + width + 2]) / female_lives[min_age+1]
+#     )
+#   )
+interval_probs_male &lt;- eval10 %&gt;%
+  filter(sex == &quot;male&quot;) %&gt;% 
   distinct(min_age, answer, width) %&gt;% 
-  mutate(prob = (lives[pmax(answer - width, min_age) + 1] - lives[answer + width + 2]) / lives[min_age+1])</code></pre>
+  mutate(
+    prob = (male_lives[pmax(answer - width, min_age) + 1] - male_lives[answer + width + 2]) / male_lives[min_age+1]
+    )
+interval_probs_female &lt;- eval10 %&gt;%
+  filter(sex == &quot;female&quot;) %&gt;% 
+  distinct(min_age, answer, width) %&gt;% 
+  mutate(
+    prob = (female_lives[pmax(answer - width, min_age) + 1] - female_lives[answer + width + 2]) / female_lives[min_age+1]
+    )
+interval_probs &lt;- bind_rows(
+  interval_probs_male %&gt;% mutate(sex = &quot;male&quot;),
+  interval_probs_female %&gt;% mutate(sex = &quot;female&quot;)
+  )</code></pre>
 <pre class="r"><code>eval10 &lt;- eval10 %&gt;% 
-  left_join(interval_probs, by = c(&quot;answer&quot;, &quot;min_age&quot;, &quot;width&quot;))</code></pre>
+  left_join(interval_probs, by = c(&quot;answer&quot;, &quot;sex&quot;, &quot;min_age&quot;, &quot;width&quot;)) %&gt;% 
+  select(-sex)</code></pre>
 </div>
 </div>
 <div id="saving-processed-data" class="section level1" number="4">
