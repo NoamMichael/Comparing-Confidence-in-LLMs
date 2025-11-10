@@ -639,14 +639,14 @@ all %>%
   map_dfr(~ map_chr(.x, class))
 ```
 
-Let's fix the last one:
+Let's fix the one that has a `Confidence` column that is `"character"` rather than `"numeric"`.
 
 ```{r}
 row <- which(all$llm == "gemini-2.5-pro" & all$qset == "life_eval")
 all[row,"dat"][[1]][[1]]$Confidence <- as.numeric(all[row,"dat"][[1]][[1]]$Confidence)
 ```
 
-There was one case where it responded in a sentence, and that's been coerced to NA in the above code.  We'll be sure to remove that one below.
+The reason that it was in character was that in one case it responded in a sentence rather than a number, and that's now been coerced to NA in the above code.  We'll be sure to remove that one below.
 
 Let's look at the answers given:
 
@@ -690,19 +690,52 @@ $$
 
 The numerator gives the number of people (out of the original 100,000) who survived to $k-r$ but did not survive until $k+r+1$.  In other words, it's the people who died in $[k-r,k+r]$.  Notice we have $\max\{k-r,a\}$ in the numerator rather than just $k-r$.  This is for the situation when an interval extends smaller than $a$.
 
-Based on the question in the prompt, we focus on the "Male" column.
+When `Question ID < 404`, the prompt is about males; when `Question ID >= 404`, the prompt is about females.  The relevant information for males is in column 3 of the life table; the relevant information for females is in column 6.
 
 ```{r}
-lives <- truth$PeriodLifeTable_2022_RawData[[3]]
-lives <- c(lives, rep(0, 50)) # let's extend the table with some more zeros
-interval_probs <- eval10 %>% 
-  distinct(min_age, answer, width) %>% 
-  mutate(prob = (lives[pmax(answer - width, min_age) + 1] - lives[answer + width + 2]) / lives[min_age+1])
+# add column specifying the sex being asked about in the question
+eval10 <- eval10 %>% 
+  mutate(sex = if_else(as.numeric(question_id) < 404, "male", "female"))
+
+male_lives <- truth$PeriodLifeTable_2022_RawData[[3]]
+male_lives <- c(male_lives, rep(0, 50)) # let's extend the table with some more zeros
+female_lives <- truth$PeriodLifeTable_2022_RawData[[6]]
+female_lives <- c(female_lives, rep(0, 50)) # let's extend the table with some more 
 ```
 
 ```{r}
+# interval_probs <- eval10 %>% 
+#   distinct(sex, min_age, answer, width) %>% 
+#   mutate(
+#     prob = if_else(
+#       sex == "male",
+#       (male_lives[pmax(answer - width, min_age) + 1] - male_lives[answer + width + 2]) / male_lives[min_age+1],
+#       (female_lives[pmax(answer - width, min_age) + 1] - female_lives[answer + width + 2]) / female_lives[min_age+1]
+#     )
+#   )
+interval_probs_male <- eval10 %>%
+  filter(sex == "male") %>% 
+  distinct(min_age, answer, width) %>% 
+  mutate(
+    prob = (male_lives[pmax(answer - width, min_age) + 1] - male_lives[answer + width + 2]) / male_lives[min_age+1]
+    )
+interval_probs_female <- eval10 %>%
+  filter(sex == "female") %>% 
+  distinct(min_age, answer, width) %>% 
+  mutate(
+    prob = (female_lives[pmax(answer - width, min_age) + 1] - female_lives[answer + width + 2]) / female_lives[min_age+1]
+    )
+interval_probs <- bind_rows(
+  interval_probs_male %>% mutate(sex = "male"),
+  interval_probs_female %>% mutate(sex = "female")
+  )
+```
+
+
+```{r}
 eval10 <- eval10 %>% 
-  left_join(interval_probs, by = c("answer", "min_age", "width"))
+  left_join(interval_probs, by = c("answer", "sex", "min_age", "width")) %>% 
+  select(-sex)
 ```
 
 
