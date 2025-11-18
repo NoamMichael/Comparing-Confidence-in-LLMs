@@ -69,29 +69,25 @@ truth[[1]] <- truth[[1]] %>% slice(1:119)
 
 # Standardizing format
 
-We will work our way through the 7 question sets, which have different formats.  Also, the Llama models need to be treated differently because they also output token probabilities.
+We will work our way through the 7 question sets, which have different formats.  Also, the GPT-4 and Llama models need to be treated differently because they also output token probabilities.
 
 ## Boolq
 
-### Llama models
+### GPT-4 and Llama models
 
-Notice that even after filtering based on coerce, we still get some unexpected answers:
+Notice that after filtering based on coerce, we get all expected answers:
 
 ```{r}
 all %>% 
-  filter(qset == "boolq_valid", str_detect(llm, "Llama")) %>% 
+  filter(qset == "boolq_valid", str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce) %>% 
   count(Answer, sort=TRUE)
 ```
 
-Let's keep only the questions where it responds True or False since that was the stipulated format of response.
-
-NOTE: Let's be sure to mention in the discussion that to the LLMs' credit, they did attempt to break out of the True/False format to say they didn't know.
-
 ```{r}
 eval1 <- all %>% 
-  filter(qset == "boolq_valid", str_detect(llm, "Llama")) %>% 
+  filter(qset == "boolq_valid", str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce, Answer %in% c("True", "False")) %>% 
   select(llm, qset, `Question ID`, Answer, Confidence, True_prob, False_prob) %>% 
@@ -116,13 +112,14 @@ eval1 <- all %>%
   select(-answer, -`Correct Answer`)
 ```
 
-### Non-Llama models
+
+### Models without token probabilities
 
 Before we can `unnest`, we need all the data frames to have the same format of columns.
 
 ```{r}
 all %>% 
-  filter(qset == "boolq_valid", !str_detect(llm, "Llama")) %>% 
+  filter(qset == "boolq_valid", !str_detect(llm, "Llama|gpt")) %>% 
   pull(dat) %>% 
   map_dfr(~ map_chr(.x, class))
 ```
@@ -137,19 +134,17 @@ all[row,"dat"][[1]][[1]]$Answer <- ifelse(all[row,"dat"][[1]][[1]]$Answer, "True
 
 ```{r}
 all %>% 
-  filter(qset == "boolq_valid", !str_detect(llm, "Llama")) %>% 
+  filter(qset == "boolq_valid", !str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce) %>% 
   count(Answer, sort=TRUE)
 ```
 
-NOTE: Let's be sure to mention in the discussion that to the LLMs' credit, they did attempt to break out of the True/False format to say they didn't know.
-
 ```{r}
 eval2 <- all %>% 
-  filter(qset == "boolq_valid", !str_detect(llm, "Llama")) %>% 
+  filter(qset == "boolq_valid", !str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
-  filter(coerce, Answer %in% c("True", "False")) %>% 
+  filter(coerce) %>% 
   select(llm, qset, `Question ID`, Answer, Confidence) %>% 
   transmute(
     llm,
@@ -173,13 +168,13 @@ eval2 <- all %>%
 
 ## LSAT
 
-### Llama models
+### GPT-4 and Llama models
 
 Notice that we get all expected answers:
 
 ```{r}
 all %>% 
-  filter(qset == "lsat_ar_test", str_detect(llm, "Llama")) %>% 
+  filter(qset == "lsat_ar_test", str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce) %>% 
   pull(Answer) %>% 
@@ -193,7 +188,7 @@ Observe that the five probabilities don't always sum to 1 (but do so most of the
 
 ```{r}
 all %>% 
-  filter(qset == "lsat_ar_test", str_detect(llm, "Llama")) %>% 
+  filter(qset == "lsat_ar_test", str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce) %>%
   mutate(prob_sum = A+B+C+D+E) %>% 
@@ -202,7 +197,7 @@ all %>%
 
 ```{r}
 all %>% 
-  filter(qset == "lsat_ar_test", str_detect(llm, "Llama")) %>% 
+  filter(qset == "lsat_ar_test", str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce) %>%
   mutate(prob_sum = A_prob+B_prob+C_prob+D_prob+E_prob) %>% 
@@ -213,7 +208,7 @@ The prereg says we will normalize the confidences, so let's do that:
 
 ```{r}
 eval3 <- all %>% 
-  filter(qset == "lsat_ar_test", str_detect(llm, "Llama")) %>% 
+  filter(qset == "lsat_ar_test", str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce) %>%
   transmute(
@@ -251,13 +246,12 @@ eval3 <- all %>%
   select(-Answer, -`Correct Answer Letter`, -prob_sum, -prob_token_sum)
 ```
 
-### Non-Llama models
+### Models without token probabilities
 
-Notice that on just 2 occasions, a non-compliant response was given ("P" means pass perhaps?).
 
 ```{r}
 all %>% 
-  filter(qset == "lsat_ar_test", !str_detect(llm, "Llama")) %>% 
+  filter(qset == "lsat_ar_test", !str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce) %>% 
   count(Answer)
@@ -265,7 +259,7 @@ all %>%
 
 ```{r}
 all %>% 
-  filter(qset == "lsat_ar_test", !str_detect(llm, "Llama")) %>% 
+  filter(qset == "lsat_ar_test", !str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce) %>%
   mutate(prob_sum = A+B+C+D+E) %>% 
@@ -274,7 +268,7 @@ all %>%
 
 ```{r}
 eval4 <- all %>% 
-  filter(qset == "lsat_ar_test", !str_detect(llm, "Llama")) %>% 
+  filter(qset == "lsat_ar_test", !str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce, Answer %in% LETTERS[1:5]) %>%
   transmute(
@@ -304,13 +298,11 @@ eval4 <- all %>%
 
 ## SAT
 
-### Llama models
-
-Notice that we get one non-compliant answer ("G").
+### GPT-4 and Llama models
 
 ```{r}
 all %>% 
-  filter(qset == "sat_en", str_detect(llm, "Llama")) %>% 
+  filter(qset == "sat_en", str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce) %>% 
   count(Answer)
@@ -319,7 +311,7 @@ Let's look at the sums of the probabilities.
 
 ```{r}
 all %>% 
-  filter(qset == "sat_en", str_detect(llm, "Llama")) %>% 
+  filter(qset == "sat_en", str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce) %>%
   mutate(prob_sum = A+B+C+D) %>% 
@@ -330,7 +322,7 @@ There's a case where all probabilities are 0:
 
 ```{r}
 all %>% 
-  filter(qset == "sat_en", str_detect(llm, "Llama")) %>% 
+  filter(qset == "sat_en", str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce) %>%
   mutate(prob_sum = A+B+C+D) %>% 
@@ -339,7 +331,7 @@ all %>%
 
 ```{r}
 all %>% 
-  filter(qset == "sat_en", str_detect(llm, "Llama")) %>% 
+  filter(qset == "sat_en", str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce) %>%
   mutate(prob_sum = A_prob+B_prob+C_prob+D_prob) %>% 
@@ -348,7 +340,7 @@ all %>%
 
 ```{r}
 eval5 <- all %>% 
-  filter(qset == "sat_en", str_detect(llm, "Llama")) %>% 
+  filter(qset == "sat_en", str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce, Answer %in% LETTERS[1:4]) %>%
   transmute(
@@ -384,14 +376,14 @@ eval5 <- all %>%
   select(-Answer, -`Correct Answer Letter`, -prob_sum, -prob_token_sum)
 ```
 
-### Non-Llama models
+### Models without token probabilities
 
 
-Notice that we get a few non-compliant answer ("E", "None", and NA).
+Notice that we get a non-compliant answer ("E").
 
 ```{r}
 all %>% 
-  filter(qset == "sat_en", !str_detect(llm, "Llama")) %>% 
+  filter(qset == "sat_en", !str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce) %>% 
   count(Answer)
@@ -401,28 +393,16 @@ Let's look at the sums of the probabilities.
 
 ```{r}
 all %>% 
-  filter(qset == "sat_en", !str_detect(llm, "Llama")) %>% 
+  filter(qset == "sat_en", !str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce) %>%
   mutate(prob_sum = A+B+C+D) %>% 
   ggplot(aes(x=prob_sum)) + geom_histogram()
 ```
 
-There are two cases where all probabilities are 0:
-
-```{r}
-all %>% 
-  filter(qset == "sat_en", !str_detect(llm, "Llama")) %>% 
-  unnest(cols = dat) %>% 
-  filter(coerce) %>%
-  mutate(prob_sum = A+B+C+D) %>% 
-  filter(prob_sum == 0)
-```
-
-
 ```{r}
 eval6 <- all %>% 
-  filter(qset == "sat_en", !str_detect(llm, "Llama")) %>% 
+  filter(qset == "sat_en", !str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce, Answer %in% LETTERS[1:4]) %>%
   transmute(
@@ -451,13 +431,13 @@ eval6 <- all %>%
 
 ## Sciq
 
-### Llama models
+### GPT-4 and Llama models
 
 All compliant answers:
 
 ```{r}
 all %>% 
-  filter(qset == "sciq_test", str_detect(llm, "Llama")) %>% 
+  filter(qset == "sciq_test", str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce) %>% 
   count(Answer)
@@ -467,7 +447,7 @@ Let's look at the sums of the probabilities.
 
 ```{r}
 all %>% 
-  filter(qset == "sciq_test", str_detect(llm, "Llama")) %>% 
+  filter(qset == "sciq_test", str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce) %>%
   mutate(prob_sum = A+B+C+D) %>% 
@@ -476,7 +456,7 @@ all %>%
 
 ```{r}
 all %>% 
-  filter(qset == "sciq_test", str_detect(llm, "Llama")) %>% 
+  filter(qset == "sciq_test", str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce) %>%
   mutate(prob_sum = A_prob+B_prob+C_prob+D_prob) %>% 
@@ -485,7 +465,7 @@ all %>%
 
 ```{r}
 eval7 <- all %>% 
-  filter(qset == "sciq_test", str_detect(llm, "Llama")) %>% 
+  filter(qset == "sciq_test", str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce, Answer %in% LETTERS[1:4]) %>%
   transmute(
@@ -521,13 +501,13 @@ eval7 <- all %>%
   select(-Answer, -`Correct Answer Letter`, -prob_sum, -prob_token_sum)
 ```
 
-### Non-Llama models
+### Models without token probabilities
 
 All compliant answers:
 
 ```{r}
 all %>% 
-  filter(qset == "sciq_test", !str_detect(llm, "Llama")) %>% 
+  filter(qset == "sciq_test", !str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce) %>% 
   count(Answer)
@@ -537,27 +517,16 @@ Let's look at the sums of the probabilities.
 
 ```{r}
 all %>% 
-  filter(qset == "sciq_test", !str_detect(llm, "Llama")) %>% 
+  filter(qset == "sciq_test", !str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce) %>%
   mutate(prob_sum = A+B+C+D) %>% 
   ggplot(aes(x=prob_sum)) + geom_histogram()
 ```
 
-One case where all probabilities are 0:
-
-```{r}
-all %>% 
-  filter(qset == "sciq_test", !str_detect(llm, "Llama")) %>% 
-  unnest(cols = dat) %>% 
-  filter(coerce) %>%
-  mutate(prob_sum = A+B+C+D) %>% 
-  filter(prob_sum == 0)
-```
-
 ```{r}
 eval8 <- all %>% 
-  filter(qset == "sciq_test", !str_detect(llm, "Llama")) %>% 
+  filter(qset == "sciq_test", !str_detect(llm, "Llama|gpt")) %>% 
   unnest(cols = dat) %>% 
   filter(coerce, Answer %in% LETTERS[1:4]) %>%
   transmute(
@@ -586,32 +555,15 @@ eval8 <- all %>%
 
 ## halu_eval
 
-For this Qset, we don't need to distinguish between Llama and non-Llama, because we do not get token probabilities.  Also, the format is pretty different, in that we don't have the models choose an answer, rather we seed it with a correct and a hallucinated answer, and ask for its (stated) confidence in each case.
+For this Qset, we don't need to distinguish between models with/without token probabilities, because we do not get token probabilities.  Also, the format is pretty different, in that we don't have the models choose an answer, rather we seed it with a correct and a hallucinated answer, and ask for its (stated) confidence in each case.
 
 
-
-First, we notice that there are three rows where the same LLM is queried twice on the same Question ID:
-
-```{r}
-duplicates <- all %>% 
-  filter(qset == "halu_eval_qa") %>% 
-  unnest(cols = dat) %>% 
-  filter(coerce) %>% 
-  count(llm, `Question ID`) %>% 
-  filter(n > 1)
-duplicates
-```
-
-We will remove these duplicates.
 
 ```{r}
 halu <- all %>% 
   filter(qset == "halu_eval_qa") %>% 
   unnest(cols = dat) %>% 
-  filter(coerce) %>% 
-  filter(!(llm %in% duplicates$llm & `Question ID` %in% duplicates$`Question ID`)) %>% 
-  group_by(qset, llm, `Question ID`) %>% 
-  summarize(Confidence = mean(Confidence), .groups = "drop")
+  filter(coerce)
 ```
 
 
@@ -628,7 +580,7 @@ eval9 <- halu %>%
 
 ## life_eval
 
-For this Qset, we don't need to distinguish between Llama and non-Llama, because we do not get token probabilities.  Also, the setup here is different from the previous Qsets
+For this Qset, we don't need to distinguish between models with/without token probabilities, because we do not get token probabilities.  Also, the setup here is different from the previous Qsets
 
 Before we can `unnest`, we need all the data frames to have the same format of columns.
 
@@ -704,15 +656,6 @@ female_lives <- c(female_lives, rep(0, 50)) # let's extend the table with some m
 ```
 
 ```{r}
-# interval_probs <- eval10 %>% 
-#   distinct(sex, min_age, answer, width) %>% 
-#   mutate(
-#     prob = if_else(
-#       sex == "male",
-#       (male_lives[pmax(answer - width, min_age) + 1] - male_lives[answer + width + 2]) / male_lives[min_age+1],
-#       (female_lives[pmax(answer - width, min_age) + 1] - female_lives[answer + width + 2]) / female_lives[min_age+1]
-#     )
-#   )
 interval_probs_male <- eval10 %>%
   filter(sex == "male") %>% 
   distinct(min_age, answer, width) %>% 
