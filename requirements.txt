@@ -5,3 +5,4 @@ seaborn
 google
 openai
 json5
+huggingfacehub
