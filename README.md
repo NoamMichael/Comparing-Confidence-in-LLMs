@@ -111,3 +111,59 @@ Some benchmark items contain minor defects (typos, truncated text, missing figur
 
 ---
 
+# Directions for replication
+
+## Folder Information
+
+* `Formatted Benchmarks`
+
+    Question sets used along with the raw life tables from the SSA:
+    * BoolQ: `boolq_valid_formatted.csv` 
+    * HaluEval: `halu_eval_qa_formatted.csv` 
+    * LifeEval: `life_eval_formatted.csv`
+    * LSAT-AR: `lsat_ar_test_formatted.csv`
+    * SAT-EN:`sat_en_formatted.csv`
+    * SciQ:`sciq_test_formatted.csv`
+    * SSA life tables: `PeriodLifeTable_2022_RawData.csv`
+
+
+* `Prompts`
+
+    Prompts for each question set
+
+*  `Raw Results`
+
+    This folder will not appear in the  GitHub repo please visit our OSF site for all of our raw data: [OSF Site](https://google.com)
+
+* `Parsed Results `
+
+    Parsed model responses for each model.
+
+* `Combined Results `
+
+    Combined CSVs (raw and clean) for all models and question sets.
+
+## Question Sets
+
+**TODO**
+
+## Generating Model Responses
+
+**TODO**
+
+
+## Parsing Data
+
+**TODO**
+
+## Analysis
+
+* `combine.py`: Combine all model responses into one CSV 
+    * Outputs to: `Combined Results\combined_raw.csv`
+* `clean.py`: Clean all results per exclusion criteria
+    * Outputs to `Combined Results\combined_clean.csv`
+
+* `compare_analysis.ipynb`: Compares work between Jacob Bien and Noam Michael to ensure we agree on methodology
+
+* `analysis.ipynb`: Analysis notebook to generate all plots.
+
