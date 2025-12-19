@@ -4,7 +4,7 @@
 
 * `Formatted Benchmarks`
 
-    This folder contains all of the question sets used along with the raw life tables from the SSA:
+    Question sets used along with the raw life tables from the SSA:
     * BoolQ: `boolq_valid_formatted.csv` 
     * HaluEval: `halu_eval_qa_formatted.csv` 
     * LifeEval: `life_eval_formatted.csv`
@@ -16,11 +16,7 @@
 
 * `Prompts`
 
-    This sentence is also indented to match the level of the text above.
-
-* `Batches`
-
-    This sentence is also indented to match the level of the text above.
+    Prompts for each question set
 
 *  `Raw Results`
 
@@ -28,17 +24,11 @@
 
 * `Parsed Results `
 
-    This sentence is also indented to match the level of the text above.
+    Parsed model responses for each model.
 
 * `Combined Results `
 
-    This sentence is also indented to match the level of the text above.
-
-
-
-
-
-
+    Combined CSVs (raw and clean) for all models and question sets.
 
 # Formating Question Sets
 
