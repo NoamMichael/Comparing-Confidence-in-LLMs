@@ -6,6 +6,8 @@ from pathlib import Path
 # Global Variables
 MCQ_QSETS = ['LSAT-AR', 'SAT-EN', 'SciQ']
 SC_COLS = ["Stated Confidence A", "Stated Confidence B", "Stated Confidence C","Stated Confidence D","Stated Confidence E"]
+TP_COLS = ["Token Probability A", "Token Probability B", "Token Probability C", "Token Probability D", "Token Probability E"]
+TAFC_COLS = ["Token Probability True", "Token Probability False"]
 MODEL_NAMES = {
     "gpt-4o": "GPT-4o",
     "o3-2025-04-16": "GPT-o3",
@@ -132,6 +134,16 @@ def main():
 
     # Normalize stated confidence values to sum to 1
     combined_clean = normalize_columns(combined_clean, SC_COLS)
+
+    # Normalize the token probability to sum to 1 
+
+    #   First MCQ.
+    combined_clean = normalize_columns(combined_clean, TP_COLS)
+    #   Then 2AFC
+    combined_clean = normalize_columns(combined_clean, TAFC_COLS)
+
+    # Rename the models to display names
+
     combined_clean['Model'] = combined_clean['Model'].map(MODEL_NAMES)
 
 
