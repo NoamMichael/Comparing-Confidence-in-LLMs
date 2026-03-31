@@ -1,0 +1,12 @@
+Model,Total,no_evidence,weak_evidence,strong_evidence,strong_pct
+GPT-o3,9,1,1,7,77.77777777777777
+Gemini-2.5-Pro,9,0,3,6,66.66666666666667
+DeepSeek-R1,9,2,4,3,33.333333333333336
+Llama-3.1-8B,9,4,3,2,22.22222222222222
+Gemini-2.5-Flash,9,4,3,2,22.22222222222222
+Claude-Sonnet-3.7,9,9,0,0,0.0
+Claude Haiku 3,9,5,4,0,0.0
+Claude-Sonnet-4,9,9,0,0,0.0
+DeepSeek-V3,9,8,1,0,0.0
+GPT-4o,9,7,2,0,0.0
+Llama-3.1-70B,9,4,5,0,0.0

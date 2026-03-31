@@ -1,0 +1,29 @@
+\begin{table*}[t]
+    \centering
+    \small
+    \begin{tabular}{lccccccc}
+    \toprule
+    \textbf{Model} & \textbf{Type} & \textbf{ Score (\%)} & \textbf{ECE} & \textbf{Conf. (\%)} & \textbf{\% Rnd} & \textbf{Regression Coef.} & \textbf{$N$} \\
+    \midrule
+    Claude-Sonnet-3.7    & Reasoning & 54.5 & 0.040 & 53.1 & 92.3  & 0.176 & 751 \\
+    Claude-Sonnet-4      & Reasoning & 54.0 & 0.063 & 49.8 & 98.9  & 0.321 & 751 \\
+    DeepSeek-R1          & Reasoning & 54.5 & 0.031 & 57.3 & 30.0  & 0.054 & 750 \\
+    Gemini-2.5-Pro       & Reasoning & 53.8 & 0.025 & 53.4 & 19.3  & 0.093 & 751 \\
+    GPT-o3               & Reasoning & 54.2 & 0.029 & 54.1 & 71.6  & 0.187 & 750 \\
+    \midrule  %---------------------------------------------------------------------
+    {\textbf{Aggregate}}  &           & 54.2 & 0.038 & 53.5 & 62.4  & 0.166 & 749 \\
+    \toprule    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Claude Haiku 3       & Chat & 53.0 & 0.267 & 79.8 & 100.0  & 0.991 & 751 \\
+    DeepSeek-V3          & Chat & 53.3 & 0.124 & 63.7 & 100.0  & 0.773 & 751 \\
+    Gemini-2.5-Flash     & Chat & 53.8 & 0.098 & 63.6 & 53.0  & 0.193 & 751 \\
+    GPT-4o               & Chat & 54.5 & 0.085 & 59.8 & 100.0  & 0.598 & 751 \\
+    Llama-3.1-70B        & Chat & 53.5 & 0.185 & 72.0 & 99.5  & 0.870 & 751 \\
+    Llama-3.1-8B         & Chat & 48.4 & 0.142 & 59.9 & 100.0  & 0.936 & 751 \\
+    \midrule  %---------------------------------------------------------------------
+    {\textbf{Aggregate}}  &           & 52.8 & 0.150 & 66.5 & 92.1  & 0.727 & 751 \\
+
+    \bottomrule
+    \end{tabular}
+    \caption{Performance metrics on the LifeEval \texttt{no\_evidence}, \texttt{weak\_evidence}, \texttt{strong\_evidence} subset. We report Mean Score, Expected Calibration Error (ECE), Mean Confidence, Percentage of Rounded outputs, the Regression Coefficient between difficulty and overconfidence, and number of completions ($N$). Aggregate rows take mean of all columns except for $N$ which is the number of questions where every model in the group received a matching verdict.}
+    \label{}
+\end{table*}

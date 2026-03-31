@@ -1,0 +1,29 @@
+\begin{table*}[t]
+    \centering
+    \small
+    \begin{tabular}{lccccccc}
+    \toprule
+    \textbf{Model} & \textbf{Type} & \textbf{ Score (\%)} & \textbf{ECE} & \textbf{Conf. (\%)} & \textbf{\% Rnd} & \textbf{Regression Coef.} & \textbf{$N$} \\
+    \midrule
+    Claude-Sonnet-3.7    & Reasoning & 54.5 & 0.040 & 53.2 & 92.3  & 0.176 & 750 \\
+    Claude-Sonnet-4      & Reasoning & 54.0 & 0.064 & 49.9 & 98.9  & 0.321 & 749 \\
+    DeepSeek-R1          & Reasoning & 58.1 & 0.019 & 58.7 & 42.3  & 0.045 & 213 \\
+    Gemini-2.5-Pro       & Reasoning & 52.0 & 0.029 & 51.2 & 20.6  & 0.095 & 218 \\
+    GPT-o3               & Reasoning & 48.3 & 0.033 & 49.6 & 71.4  & 0.179 & 374 \\
+    \midrule  %---------------------------------------------------------------------
+    {\textbf{Aggregate}}  &           & 53.4 & 0.037 & 52.5 & 65.1  & 0.163 & 49 \\
+    \toprule    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Claude Haiku 3       & Chat & 53.0 & 0.267 & 79.8 & 100.0  & 0.991 & 751 \\
+    DeepSeek-V3          & Chat & 53.2 & 0.124 & 63.8 & 100.0  & 0.775 & 746 \\
+    Gemini-2.5-Flash     & Chat & 55.6 & 0.104 & 66.0 & 55.4  & 0.205 & 489 \\
+    GPT-4o               & Chat & 54.5 & 0.085 & 59.8 & 100.0  & 0.598 & 751 \\
+    Llama-3.1-70B        & Chat & 56.3 & 0.159 & 72.2 & 99.7  & 0.868 & 695 \\
+    Llama-3.1-8B         & Chat & 48.2 & 0.139 & 59.3 & 100.0  & 0.931 & 677 \\
+    \midrule  %---------------------------------------------------------------------
+    {\textbf{Aggregate}}  &           & 53.5 & 0.146 & 66.8 & 92.5  & 0.728 & 423 \\
+
+    \bottomrule
+    \end{tabular}
+    \caption{Performance metrics on the LifeEval \texttt{weak\_evidence}, \texttt{no\_evidence} subset. We report Mean Score, Expected Calibration Error (ECE), Mean Confidence, Percentage of Rounded outputs, the Regression Coefficient between difficulty and overconfidence, and number of completions ($N$). Aggregate rows take mean of all columns except for $N$ which is the number of questions where every model in the group received a matching verdict.}
+    \label{}
+\end{table*}

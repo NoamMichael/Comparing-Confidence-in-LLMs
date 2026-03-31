@@ -1,6 +1,24 @@
-# Ignore the .env file
+# Environment & secrets
 .env
-.gitignore
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+__MACOSX/
+.DS_Store
+
+# IDE / editor
+.claude/
+.vscode/
+
+# Archives
+*.zip
+
+# Previous ignores
 practice_output.json
 read_prompts.py
 doodle.py
@@ -12,5 +30,3 @@ test.md
 convince_don.ipynb
 testing_eq.ipynb
 convince_don.html
-venv
-MISC\fin_le_data.csv

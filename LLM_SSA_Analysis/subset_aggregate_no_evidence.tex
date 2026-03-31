@@ -1,0 +1,29 @@
+\begin{table*}[t]
+    \centering
+    \small
+    \begin{tabular}{lccccccc}
+    \toprule
+    \textbf{Model} & \textbf{Type} & \textbf{ Score (\%)} & \textbf{ECE} & \textbf{Conf. (\%)} & \textbf{\% Rnd} & \textbf{Regression Coef.} & \textbf{$N$} \\
+    \midrule
+    Claude-Sonnet-3.7    & Reasoning & 54.3 & 0.037 & 52.7 & 91.9  & 0.177 & 692 \\
+    Claude-Sonnet-4      & Reasoning & 46.4 & 0.071 & 47.3 & 98.6  & 0.264 & 483 \\
+    DeepSeek-R1          & Reasoning & 46.7 & 0.034 & 47.7 & 44.4  & 0.053 & 45 \\
+    Gemini-2.5-Pro       & Reasoning & 42.9 & 0.029 & 42.9 & 25.7  & 0.080 & 35 \\
+    GPT-o3               & Reasoning & 42.1 & 0.050 & 45.7 & 77.8  & 0.412 & 36 \\
+    \midrule  %---------------------------------------------------------------------
+    {\textbf{Aggregate}}  &           & 46.5 & 0.044 & 47.2 & 67.7  & 0.197 & 3 \\
+    \toprule    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Claude Haiku 3       & Chat & 52.7 & 0.270 & 79.7 & 100.0  & 0.990 & 731 \\
+    DeepSeek-V3          & Chat & 52.4 & 0.130 & 63.5 & 100.0  & 0.768 & 709 \\
+    Gemini-2.5-Flash     & Chat & 59.6 & 0.109 & 70.5 & 57.5  & 0.238 & 261 \\
+    GPT-4o               & Chat & 54.5 & 0.084 & 59.6 & 100.0  & 0.598 & 706 \\
+    Llama-3.1-70B        & Chat & 66.3 & 0.093 & 74.1 & 99.6  & 0.875 & 238 \\
+    Llama-3.1-8B         & Chat & 49.3 & 0.116 & 58.1 & 100.0  & 0.896 & 252 \\
+    \midrule  %---------------------------------------------------------------------
+    {\textbf{Aggregate}}  &           & 55.8 & 0.133 & 67.6 & 92.8  & 0.728 & 19 \\
+
+    \bottomrule
+    \end{tabular}
+    \caption{Performance metrics on the LifeEval \texttt{no\_evidence} subset. We report Mean Score, Expected Calibration Error (ECE), Mean Confidence, Percentage of Rounded outputs, the Regression Coefficient between difficulty and overconfidence, and number of completions ($N$). Aggregate rows take mean of all columns except for $N$ which is the number of questions where every model in the group received a matching verdict.}
+    \label{}
+\end{table*}

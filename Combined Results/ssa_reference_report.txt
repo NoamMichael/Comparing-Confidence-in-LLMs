@@ -1,0 +1,38 @@
+============================================================
+SSA / ACTUARIAL REFERENCE ANALYSIS — LifeEval
+============================================================
+
+Total LifeEval responses analyzed : 8,261
+Responses referencing SSA/actuarial: 6,244
+Percentage                         : 75.6%
+
+------------------------------------------------------------
+PER-KEYWORD BREAKDOWN
+------------------------------------------------------------
+  Social Security            3,842 rows
+  life table                 3,388 rows
+  actuarial                  2,741 rows
+  actuarial table              946 rows
+  SSA                          466 rows
+  mortality table               59 rows
+  SSA table                      6 rows
+
+------------------------------------------------------------
+PER-MODEL BREAKDOWN
+------------------------------------------------------------
+  Llama-3.1-70B                         751 /   751  (100.0%)
+  Gemini-2.5-Pro                        740 /   751  (98.5%)
+  Llama-3.1-8B                          740 /   751  (98.5%)
+  DeepSeek-R1                           727 /   751  (96.8%)
+  Claude-Sonnet-4                       719 /   751  (95.7%)
+  GPT-o3                                673 /   751  (89.6%)
+  Gemini-2.5-Flash                      605 /   751  (80.6%)
+  Claude-Sonnet-3.7                     544 /   751  (72.4%)
+  GPT-4o                                419 /   751  (55.8%)
+  DeepSeek-V3                           293 /   751  (39.0%)
+  Claude Haiku 3                         33 /   751  (4.4%)
+
+============================================================
+Response column used: 'Reasoning'
+Keywords searched   : SSA, Social Security, actuarial, life table, actuarial table, SSA table, mortality table
+============================================================
