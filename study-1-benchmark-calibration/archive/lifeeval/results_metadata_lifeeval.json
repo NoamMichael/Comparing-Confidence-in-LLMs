@@ -1,0 +1,54 @@
+{
+    "life_eval": {
+        "fields": [
+            "Reasoning",
+            "Answer",
+            "Confidence"
+        ],
+        "models": {
+            "gpt-4o": {
+                "file_id": "file-9YM5wSc4CSEgG1gbeNBccn",
+                "batch_id": "batch_6882b9ec28508190b161285d2f77395d",
+                "output_filename": "life_eval_gpt-4o.jsonl"
+            },
+            "claude-3-7-sonnet-20250219": {
+                "file_id": "life_eval",
+                "batch_id": "msgbatch_017CLiDL5sFo7YvgHYUkAm3N",
+                "output_filename": "life_eval_claude-3-7-sonnet-20250219.jsonl"
+            },
+            "claude-3-haiku-20240307": {
+                "file_id": "life_eval",
+                "batch_id": "msgbatch_01JMcJ9u75p5VJ2kfUk7eufo",
+                "output_filename": "life_eval_claude-3-haiku-20240307.jsonl"
+            },
+            "gemini-2.5-pro": {
+                "file_id": "none",
+                "batch_id": "batches/f7uyql7q0dw6qwiojyke77mvl7ojvnok8fpz",
+                "output_filename": "life_eval_gemini-2.5-pro.json"
+            },
+            "gpt-o3": {
+                "file_id": "file-SzLT7a9eWeyL8PxCB9fDqN",
+                "batch_id": "batch_68993302af688190b47425b5c11b3144"
+            },
+            "o3-2025-04-16": {
+                "file_id": "file-JmFXarHo8kBF7NCZ2QetWy",
+                "batch_id": "batch_689c1b40e46081909918068e373659db",
+                "output_filename": "life_eval_o3-2025-04-16.jsonl"
+            },
+            "gemini-2.5-flash": {
+                "file_id": "none",
+                "batch_id": "batches/n2yvk8gwdivrlls86y7nfik57frg445qow54",
+                "output_filename": "life_eval_gemini-2.5-flash.json"
+            },
+            "gpt-o3-2025-04-16": {
+                "file_id": "file-TXejxJw1TxaCRuPGizGPbV",
+                "batch_id": "batch_689933486ab881909c8098ec6b81ebce"
+            },
+            "claude-sonnet-4-20250514": {
+                "file_id": "life_eval",
+                "batch_id": "msgbatch_01CExU5rYMouBp8gzZ3AKJny",
+                "output_filename": "life_eval_claude-sonnet-4-20250514.jsonl"
+            }
+        }
+    }
+}
