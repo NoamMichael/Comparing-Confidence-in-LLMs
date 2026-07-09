@@ -14,14 +14,6 @@ The goal of this notebook is to perform some analysis of results.
 ```{r, message=FALSE}
 library(tidyverse)
 evals <- read_csv("processed/llm-confidence-correct.csv")
-life_eval <- read_csv("processed/life_eval.csv")
-evals <- evals %>% 
-  bind_rows(
-    life_eval %>% 
-      select(-min_age, -width) %>% 
-      mutate(question_id = as.character(question_id)) %>% 
-      rename(correct = prob)
-    )
 ```
 We give shorter names to the Qsets and LLMs.
 
@@ -34,25 +26,8 @@ evals <- evals %>%
       "lsat_ar_test" ~ "LSAT",
       "sat_en" ~ "SAT",
       "sciq_test" ~ "SciQ",
-      "halu_eval_qa" ~ "HaluEval",
-      "life_eval" ~ "LifeEval"
+      "halu_eval_qa" ~ "HaluEval"
       ),
-    llm = case_match(
-      llm,
-      "Meta-Llama-3.1-70B-Instruct" ~ "Llama-70B",
-      "Meta-Llama-3.1-8B-Instruct" ~ "Llama-8B",
-      "claude-3-7-sonnet-20250219" ~ "Claude-Sonnet-3.7",
-      "claude-3-haiku-20240307" ~ "Claude-Haiku-3",
-      "claude-sonnet-4-20250514" ~ "Claude-Sonnet-4",
-      "deepseek-r1" ~ "DeepSeek-R1",
-      "deepseek-v3" ~ "DeepSeek-V3",
-      "gpt-4o" ~ "GPT-4o",
-      "o3-2025-04-16" ~ "GPT-o3",
-      "gemini-2.5-flash" ~ "Gemini-2.5-Flash",
-      "gemini-2.5-pro" ~ "Gemini-2.5-Pro"
-    ))
-life_eval <- life_eval %>% 
-  mutate(
     llm = case_match(
       llm,
       "Meta-Llama-3.1-70B-Instruct" ~ "Llama-70B",
@@ -222,27 +197,6 @@ evals_common %>%
 ```{r}
 evals_common %>% 
   mutate(confidence_bin = cut(stated_confidence, breaks = 10)) %>% 
-  mutate(life_eval = if_else(qset == "LifeEval", "LifeEval", "All Other Qsets")) %>% 
-  group_by(confidence_bin, life_eval) %>% 
-  summarize(
-    confidence = mean(stated_confidence),
-    accuracy = mean(correct),
-    num = n(),
-    se_confidence = sd(stated_confidence) / sqrt(num),
-    se_accuracy = sd(correct) / sqrt(num),
-    .groups = "drop") %>% 
-  filter(num >= 10) %>% 
-  ggplot(aes(x = confidence, y = accuracy)) +
-  geom_point() +
-  geom_errorbar(aes(ymax = accuracy + 2 * se_accuracy, ymin = accuracy - 2 * se_accuracy)) +
-  geom_abline(slope = 1, intercept = 0) +
-  facet_wrap(~ life_eval) +
-  theme_bw() + 
-  labs(x = "Stated Confidence", y = "Average Accuracy")
-```
-```{r}
-evals_common %>% 
-  mutate(confidence_bin = cut(stated_confidence, breaks = 10)) %>% 
   group_by(confidence_bin, qset) %>% 
   summarize(
     confidence = mean(stated_confidence),
@@ -349,26 +303,4 @@ stated_token %>%
   geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
   labs(x = "Stated ECE", y = "Token ECE") +
   theme_bw()
-```
-
-## LifeEval
-
-```{r}
-life_eval %>%
-  group_by(llm, width) %>%
-  summarize(
-    overconfidence = mean(stated_confidence - prob),
-    se_overconfidence = sd(stated_confidence - prob) / sqrt(n()),
-    .groups = "drop") %>% 
-  mutate(`Model Family` = str_extract(llm, "^[^-]+")) %>% 
-  ggplot(aes(x=width,y=overconfidence, color = llm)) +
-  geom_point() +
-  geom_pointrange(aes(ymin = overconfidence - 2 * se_overconfidence,
-                    ymax = overconfidence + 2 * se_overconfidence)) +
-  geom_line() +
-  facet_grid(~`Model Family`) +
-  geom_hline(yintercept = 0) +
-  theme_bw() +
-  theme(legend.position = "bottom") +
-  labs(x = "Width of Interval", y = "Overconfidence")
 ```

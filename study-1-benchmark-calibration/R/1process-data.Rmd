@@ -9,7 +9,7 @@ output:
 
 # Goal
 
-The goal of this notebook is to read in the 66 csv files of results and the seven csv files of true answers and then process them for subsequent analysis.  We will end up with one giant data frame (which we write to csv) that will have the following columns:
+The goal of this notebook is to read in the 55 csv files of results and the six csv files of true answers and then process them for subsequent analysis.  (LifeEval has been archived — see `../archive/lifeeval/` — so its files are no longer read here.)  We will end up with one giant data frame (which we write to csv) that will have the following columns:
 
 `llm`, `qset`, `question_id`, `stated_confidence`, `chosen_token_confidence`, `max_token_confidence`, `correct`.
 
@@ -37,7 +37,7 @@ path <- "../"
 csvs <- fs::dir_ls(file.path(path, "Parsed Results"),recurse = TRUE, glob="*csv")
 ```
 
-There are 66 files of LLM results in total.  Let's extract the LLM and Qset for each file:
+There are 55 files of LLM results in total.  Let's extract the LLM and Qset for each file:
 
 ```{r}
 stems <- csvs %>% fs::path_file() %>% str_remove(".csv")
@@ -60,16 +60,9 @@ truth <- map(truth_csvs, read_csv, show_col_types = FALSE)
 names(truth) <- qset_truth_name
 ```
 
-There's a problem with the first csv (a lot of empty rows at end).
-
-```{r}
-# remove last row:
-truth[[1]] <- truth[[1]] %>% slice(1:119)
-```
-
 # Standardizing format
 
-We will work our way through the 7 question sets, which have different formats.  Also, the GPT-4 and Llama models need to be treated differently because they also output token probabilities.
+We will work our way through the 6 question sets, which have different formats.  Also, the GPT-4 and Llama models need to be treated differently because they also output token probabilities.
 
 ## Boolq
 
@@ -578,111 +571,6 @@ eval9 <- halu %>%
     )
 ```
 
-## life_eval
-
-For this Qset, we don't need to distinguish between models with/without token probabilities, because we do not get token probabilities.  Also, the setup here is different from the previous Qsets
-
-Before we can `unnest`, we need all the data frames to have the same format of columns.
-
-```{r}
-all %>% 
-  filter(qset == "life_eval") %>% 
-  pull(dat) %>% 
-  map_dfr(~ map_chr(.x, class))
-```
-
-Let's fix the one that has a `Confidence` column that is `"character"` rather than `"numeric"`.
-
-```{r}
-row <- which(all$llm == "gemini-2.5-pro" & all$qset == "life_eval")
-all[row,"dat"][[1]][[1]]$Confidence <- as.numeric(all[row,"dat"][[1]][[1]]$Confidence)
-```
-
-The reason that it was in character was that in one case it responded in a sentence rather than a number, and that's now been coerced to NA in the above code.  We'll be sure to remove that one below.
-
-Let's look at the answers given:
-
-```{r}
-all %>% 
-  filter(qset == "life_eval") %>% 
-  unnest(cols = dat) %>% 
-  filter(coerce, !is.na(Confidence)) %>% 
-  ggplot(aes(x=Answer)) +
-  geom_histogram(binwidth=1)
-```
-
-```{r}
-eval10 <- all %>% 
-  filter(qset == "life_eval") %>% 
-  unnest(cols = dat) %>% 
-  filter(coerce, !is.na(Confidence)) %>% 
-  left_join(truth$life_eval, by = "Question ID") %>% 
-  transmute(
-    qset,
-    llm,
-    question_id = as.character(`Question ID`),
-    answer = Answer,
-    min_age = as.numeric(str_extract(`Question Prompt`, "\\d+")),
-    width = as.numeric(str_extract(`Confidence Prompt`, "\\d+")),
-    stated_confidence = Confidence
-  )
-```
-
-Now, for each min age $a$, interval center $k$, and interval width $w$, we wish to calculate
-
-$$
-p_a(k,r) = \mathbb P(y \in [k-r,k+r]~|~y \ge a)
-$$
-
-The "Number of lives" column of the [Period Life Table](https://www.ssa.gov/oact/STATS/table4c6.html) gives us the information we need.  Let $l_x$ be the number of people surviving to age $x$ (out of an initial $l_0=100,000$).  Then,
-
-$$
-p_a(k,r) = \frac{l_{\max\{k-r,a\}}-l_{k+r+1}}{l_a}
-$$
-
-The numerator gives the number of people (out of the original 100,000) who survived to $k-r$ but did not survive until $k+r+1$.  In other words, it's the people who died in $[k-r,k+r]$.  Notice we have $\max\{k-r,a\}$ in the numerator rather than just $k-r$.  This is for the situation when an interval extends smaller than $a$.
-
-When `Question ID < 404`, the prompt is about males; when `Question ID >= 404`, the prompt is about females.  The relevant information for males is in column 3 of the life table; the relevant information for females is in column 6.
-
-```{r}
-# add column specifying the sex being asked about in the question
-eval10 <- eval10 %>% 
-  mutate(sex = if_else(as.numeric(question_id) < 404, "male", "female"))
-
-male_lives <- truth$PeriodLifeTable_2022_RawData[[3]]
-male_lives <- c(male_lives, rep(0, 50)) # let's extend the table with some more zeros
-female_lives <- truth$PeriodLifeTable_2022_RawData[[6]]
-female_lives <- c(female_lives, rep(0, 50)) # let's extend the table with some more 
-```
-
-```{r}
-interval_probs_male <- eval10 %>%
-  filter(sex == "male") %>% 
-  distinct(min_age, answer, width) %>% 
-  mutate(
-    prob = (male_lives[pmax(answer - width, min_age) + 1] - male_lives[answer + width + 2]) / male_lives[min_age+1]
-    )
-interval_probs_female <- eval10 %>%
-  filter(sex == "female") %>% 
-  distinct(min_age, answer, width) %>% 
-  mutate(
-    prob = (female_lives[pmax(answer - width, min_age) + 1] - female_lives[answer + width + 2]) / female_lives[min_age+1]
-    )
-interval_probs <- bind_rows(
-  interval_probs_male %>% mutate(sex = "male"),
-  interval_probs_female %>% mutate(sex = "female")
-  )
-```
-
-
-```{r}
-eval10 <- eval10 %>% 
-  left_join(interval_probs, by = c("answer", "sex", "min_age", "width")) %>% 
-  select(-sex)
-```
-
-
-
 # Saving processed data
 
 Let's start by combining the question set data frames:
@@ -704,10 +592,5 @@ bind_rows(
   write_csv(file = "processed/llm-confidence-correct.csv")
 ```
 
-For life_eval, let's also save the output that has the answer, true_answer, and width,
-
-```{r}
-write_csv(eval10, file = "processed/life_eval.csv")
-```
 
 
