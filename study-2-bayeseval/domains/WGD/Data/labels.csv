@@ -1,0 +1,237 @@
+Participant Number,Age,Weight,Identifiers,sex,ethnicity
+1,38.0,237.0,,Male,White
+2,47.0,215.0,,Male,White
+3,19.0,218.0,,Male,White
+4,20.0,95.0,,Female,Asian
+5,59.0,142.0,,Female,White
+6,47.0,150.0,,Female,White
+7,55.0,135.0,,Female,White
+8,58.0,139.0,,Female,Hispanic
+9,41.0,195.0,,Male,Black
+10,30.0,130.0,,Female,Hispanic
+11,60.0,215.0,,Male,White
+12,31.0,185.0,,Male,White
+13,26.0,195.0,,Male,Asian
+14,23.0,165.0,,Male,White
+15,55.0,120.0,,Female,Asian
+16,29.0,109.0,,Female,Asian
+17,20.0,150.0,,Male,White
+18,20.0,134.0,,Male,Asian
+19,20.0,132.0,,Male,Asian
+20,25.0,118.0,,Female,Asian
+21,22.0,130.0,,Female,Asian
+22,22.0,185.0,,Male,Asian
+23,22.0,115.0,,Female,Asian
+24,19.0,173.0,,Male,White
+25,21.0,125.0,,Female,White
+26,19.0,163.0,,Female,Asian
+27,23.0,200.0,,Male,Indian
+28,21.0,190.0,,Male,Hispanic
+29,21.0,145.0,,Male,White
+30,20.0,165.0,,Male,Asian
+31,20.0,135.0,,Male,Asian
+32,19.0,170.0,,Male,Asian
+33,20.0,122.0,,Female,Indian
+34,20.0,122.0,,Female,Asian
+35,18.0,150.0,,Male,White
+36,19.0,110.0,,Female,Asian
+37,21.0,180.0,,Male,White
+38,21.0,120.0,,Female,Hispanic
+39,19.0,125.0,,Male,Asian
+40,20.0,135.0,,Male,Asian
+41,20.0,196.0,,Male,Asian
+42,20.0,146.0,,Female,Hispanic
+43,19.0,106.0,,Female,Asian
+44,19.0,141.0,,Male,Asian
+45,20.0,131.0,,Male,Asian
+46,21.0,162.0,,Male,White
+47,23.0,131.0,,Female,White
+48,24.0,110.0,,Female,White
+49,22.0,132.0,,Female,White
+50,21.0,140.0,,Female,White
+51,19.0,140.0,,Male,Asian
+52,20.0,128.0,,Female,Asian
+53,19.0,142.0,,Female,Indian
+54,18.0,180.0,,Male,Asian
+55,26.0,120.0,,Female,White
+56,20.0,144.0,,Male,Middle Eastern
+57,21.0,159.0,,Male,White
+58,25.0,165.0,,Male,White
+59,19.0,138.0,,Male,Asian
+60,18.0,114.0,,Female,Indian
+61,19.0,125.0,,Male,White
+62,19.0,113.0,,Female,Asian
+63,19.0,116.0,,Female,Asian
+64,19.0,125.0,,Female,White
+65,19.0,115.0,,Female,Asian
+66,19.0,152.0,,Male,White
+67,19.0,120.0,,Female,Hispanic
+68,19.0,113.0,,Female,Asian
+69,18.0,126.0,,Male,Indian
+70,19.0,120.0,,Male,White
+71,18.0,134.0,,Female,White
+72,18.0,177.0,,Male,White
+73,18.0,138.0,,Male,White
+74,20.0,118.0,,Male,Asian
+75,18.0,99.0,,Female,Asian
+100,30.0,177.0,"brown shirt, jeans hersheys",Male,Middle Eastern
+101,22.0,137.4,"yellow shirt, sunglasses",Male,White
+102,32.0,152.4,"Bears shirt, blue shirt",Male,Asian
+103,21.0,122.4,"SFG hat, black flannel, Levi's 511 jeans, Nike shoes",Male,Asian
+104,22.0,182.6,light grey shirt (blond),Male,White
+105,23.0,161.6,light blue tshirt (blond),Male,White
+106,21.0,173.0,"sperry top-sides, jeans, red shirt",Male,White
+107,20.0,135.6,plaid button up and dark shorts,Male,Asian
+108,26.0,107.4,"blue/white scarf female, led patns",Female,White
+109,24.0,120.0,red jacket/black pants,Female,Indian
+110,44.0,147.0,blue tank top/jeans/black thing,Female,Indian
+111,49.0,148.0,black shirt with red and white 'F',Male,Indian
+112,19.0,147.8,"white shirt, black shoes, spiky hair",Male,Asian
+113,21.0,,"asian guy, blue/grey shirt ""rban""",Male,Hispanic
+114,22.0,117.0,"asian female, blue long sleeve",Female,Asian
+115,21.0,157.0,"purple/blue sweater, asian girl",Female,Asian
+116,19.0,122.0,"jeans+tshirt, asian girl, red long sleeve",Female,Asian
+117,21.0,178.0,"asian guy glasses, jeans blue shirt, cal on top corner",Male,Asian
+118,20.0,153.0,"indian guy, grey sweater, white shirt",Male,Indian
+119,22.0,144.0,"black tee, black jeans, white kid, funny things on tee",Male,White
+120,21.0,144.0,"grey sweater, asian guy",Male,Asian
+121,24.0,173.0,"black jacket, jeans (gilbert)",Male,Asian
+122,64.0,147.0,"blue button shirt, pants",Male,White
+123,20.0,119.0,"jeans, uggs, cal blue sweater, tammy lee (F)",Female,Asian
+124,21.0,182.0,"aAlper (male), jeans and pink tshirt, brown boots",Male,White
+125,25.0,170.0,"light grey shirt, male, (darker) grey sweat pants and white socks",Male,Asian
+126,19.0,153.0,"Asian guy with suit, glasses, and tie and dress shoes",Male,Asian
+127,22.0,164.0,"white hoodie, asian guy, glasses, jeans, taken at stairs Haas",Male,Asian
+128,18.0,179.0,Asian guy with green tshirt hoodie,Male,Asian
+129,22.0,169.0,"black jacket, asian guy",Male,Asian
+130,20.0,149.0,"light plaid neutral, asian male, glasses",Male,Asian
+131,20.0,132.0,"pink cardigan, female asian",Female,Asian
+132,18.0,131.0,"""Rita Skeeta"" (Capes)",Female,White
+133,22.0,168.0,Blue Perspectives Shirt (i.e. Max),Male,White
+134,20.0,190.6,"blue vneck, white short,s brown flipflops (Robs)",Male,White
+135,20.0,127.0,Mickey mouse sweatshirt,Male,White
+136,19.0,125.0,white dress & adventure boots with brown hair Hannah,Female,White
+137,26.0,195.0,Plaid shoes,Male,White
+138,19.0,141.0,skull shirt (CD singer),Female,White
+139,21.0,140.0,"black shirt and teal necklace, supes cute haircut and nose ring #getonmylevel",Female,White
+140,20.0,190.0,plaid flannel w/ white shirt (Ian),Male,White
+141,18.0,147.8,"Tshirt, blackball shorts, Nike tennis shoes (Connor)",Male,White
+142,21.0,128.8,"green dress, brown belt, I'm Katy",Female,White
+143,21.0,191.0,Green hair,Female,White
+144,20.0,118.6,orange top + black shorts,Female,Indian
+145,20.0,101.8,"gray cal sweater/hoodie, jeans indian female",Female,Indian
+146,19.0,171.8,"purple shirt, black under, jeans Asian male",Male,Asian
+147,21.0,134.0,"turqoise sweater, black leggings, asian female, short hair",Female,Asian
+148,19.0,132.0,"purple shirt, black long sleeve, jeans, female asian",Female,Asian
+149,19.0,148.0,"red long sleeve shirt, jeans, asian male",Male,Asian
+150,19.0,96.0,"nude tank top, jeans, asian female",Female,Asian
+151,18.0,141.8,"asian male dyed hair Berkeley sweater, shorts",Male,Asian
+152,20.0,157.8,"blue jeans with white paid collar short with white shirt underneath, asian male",Male,Asian
+153,20.0,117.0,"gym clothes, brace, asian female, band on her leg, bax?",Female,Asian
+154,21.0,127.2,"black capris, long sleeve fuzzy clothing, green scarf, (white female)",Female,White
+155,21.0,179.6,"asian male, dark gray hood on",Male,Asian
+JU2,20.0,175.6,"business casual wear, asian dude",,
+JU4,21.0,140.0,"plaid shirt, white/brown/blue asian dude",,
+M13,41.0,149.0,"plaid shirt, jeans (Don)",,
+200,22.0,218.0,"blonde, backwards black cap, flip flops",Male,Asian
+201,28.0,162.0,"brunette, white vneck, jeans, sunglasses",Female,White
+202,39.0,139.0,"black hair, gray zip jacket, new balance sneakers",Male,Asian
+203,32.0,132.0,"brunette, glasses, ""dickies"" sweatshirt",Female,Asian
+204,18.0,142.0,"brunette, white lacey tank top, jeans, gray sneakers",Female,Indian
+205,25.0,108.0,"black hair, glasses, gray vneck sweater, brown pants, brown sneakers",Female,Asian
+206,25.0,169.0,"black hair, teal shirt, navy zip jacket, khaki shorts",Male,Asian
+207,19.0,101.0,"black hair, glasses, blue shirt with a heart design on it, adidas sneakers",Female,Asian
+208,19.0,143.0,"black hair, pocket tee with two color blocks, khaki shorts, flip flops",Male,Asian
+209,27.0,140.0,"black hair, black shirt, leggings, and shoes, ring on left middle finger",Female,White
+210,19.0,171.0,"black hair, glasses, black vneck, cuffed shorts, black sneakers w/ white socks, visible blue water bottle in photo",Male,Asian
+211,22.0,150.0,"short dark hair, glasses, white t-shirt, large watch, cuffed shorts, white sneakers, majestic sun beam in photo",Male,Indian
+212,19.0,151.0,"light brown hair, striped long sleeve shirt, denim skirt with lace up front",Female,Asian
+213,21.0,178.0,"dark hair, green and blue flannel, black pants, white shoes, backpack on, hands in jean pockets",Male,Indian
+214,21.0,191.0,"gray long sleeve shirt with ""billabong"" on it, silver watch, black pants, white sneakers, one pant leg rolled up",Male,Asian
+215,20.0,158.0,"blonde wavy hair, glasses, white and black striped v-neck with pocket, jeans, black leather (or pleather) sneakers",Female,White
+216,18.0,184.0,"dark wavy/curly hair, glasses, black sweatshirt with ""SF 49ers"" logo, blue shoes",Male,Indian
+217,18.0,120.0,"dark hair, black scoop-neck shir with ""AX"" on it, sandals",Female,Asian
+218,21.0,169.0,"short dark hair, glasses, purple sweatshirt with ""nocturnal universe"" on it, black pants, adidas shoes",Male,White
+219,20.0,127.0,"short dark hair, short sleeve gray shirt with 3 buttons and pocket, red pants, gray vans w/ black laces, some sort of smart watch",Male,Indian
+220,20.0,153.0,"short dark hair, light colord white sweater, adidas sweats, boat shoes",Male,Asian
+221,20.0,116.0,"long dark hair, dark plaid over a gray t-shirt, short black shorts, brown flip-flops, holding phone",Female,Asian
+222,19.0,119.0,"short dark hair, light gray crewneck t-shirt, black sweatpants w/ white stripes, black sneakers, glasses, hands in pockets",Male,Asian
+223,37.0,187.0,"dark blonde or light brown hair, dark gray crewneck t-shirt, gray jeans, gray sneakers, holding sunglasses and phone",Male,White
+224,22.0,110.0,"dark hair, black button down shirt, light colored jeans, tan birkenstocks",Female,Asian
+225,22.0,125.0,"long dark hair, long sleeved light gray top, dark jeans, white sneakers, trashcans visible in background",Female,Asian
+226,20.0,144.0,"long dark hair, white fleece-looking jacket with buttons at collar, cuffed jeans, dark red birkenstocks, holding phone",Female,Asian
+227,20.0,184.0,"""Champion"" gray cap, black jacket over white t-shirt, light colored jeans, checkered vans",Male,Asian
+228,25.0,139.0,"long dark hair, heathered gray blazer, gold watch, black dress, black loafers, holding phone",Female,Indian
+229,21.0,131.0,"short brown hair, orange long sleeve shirt, blue jeans, white shoes, pink backpack nearby",Female,White
+230,20.0,109.0,"long dark hair, blue/black sweater, blue jeans, white shoes, white tote bag on bench nearby",Female,Asian
+231,50.0,149.0,"short dark hair, sunglasses, white t-shirt, blue pants, sandals, scale is on the floor to their left",Male,White
+232,26.0,194.0,"short dark hair, glasses, gray hoodie zipped up, blue jeans, white shoes, scale to their right",Male,Asian
+233,20.0,184.0,"short dark hair, long sleeved blue henley, black jeans, nike sneakers, silver watch",Male,White
+234,20.0,142.0,"dark hair, very circular glasses, black white and red flannel, jean shorts, flip flops",Female,Asian
+235,20.0,138.0,"long brown hair, gray sweater dress, white shoes",Female,White
+236,20.0,121.0,"dark hair pulled back, mauve-y t-shirt with tiger on it, sweater tied around waist, jeans",Female,White
+237,21.0,174.0,"short brown hair, gray t-shirt, black jeans, black shoes, scale to their right",Male,White
+238,21.0,185.0,"short light-colored hair, blue flannel, light colored jeans, brown shoes",Male,White
+239,27.0,121.0,"brown hair, white t-shirt with blue and red design at the top, blue jeans, brown ""woven""-ish shoes, scale to their left",Female,White
+240,58.0,215.0,"Cal hat, shirt with Motown logo, blue jeans, black sneakers, metal watch",Male,Black
+241,74.0,154.0,"baseball hat, distressed style jean jacket, flannel, belt w/ large belt buckle, jeans",Male,Black
+242,23.0,175.0,"short brown hair, sunglasses, blue button-down shirt with t-shirt peeking out, khaki pants, sneakers",Male,White
+243,61.0,161.0,"short gray hair, glasses, orange button down, black jeans, black leather shoes",Male,Asian
+244,61.0,165.0,"gray hair, glasses, polka dot button down, jeans, green-brown shoes",Female,White
+245,26.0,173.0,"short dark hair, wearing a suit (with a tie and all!), black bag visible on floor behind them, table also visible behind them",Male,White
+246,18.0,121.0,"short dark hair, white spaghetti strap top, blue jeans, black and white Vans, black hairtie on right wrist",Female,White
+247,29.0,161.0,"dark hair pulled back, pink and white striped button down, dark jeans, black lace up lather boots, holding phone in right hand",Female,White
+248,25.0,125.0,"short dark hair with bangs, green top with a repetitive design, black pants, dark black shoes, floral patterned cardigan thing",Female,Asian
+249,21.0,142.0,"straight dark hair, black crop top, gray pants, black belt, white sneakers, blue jacket, gold hoop earings",Female,Asian
+250,28.0,175.0,"short dark hair, blue sweatshirt, light blue heans, gray sneakers, standing in front of fountain",Male,Asian
+251,26.0,178.0,"short dark hair, white shirt, green pants, black vans, fountain in background",Male,Asian
+252,20.0,147.0,"brown short hair, light colored sweater w/ sticker on it, black pants, black leather shoes, hands in pockets",Male,White
+253,20.0,133.0,"dark hair, septum piercing, black top and gray sweater over it, black jeans, birkenstocks",Female,Asian
+254,21.0,140.0,"short dark hair, blue teeshirt, black jeans, gray sneakers",Male,Indian
+255,20.0,170.0,"short hair, light gray top, scarf, black long cardigan, dark pants, sneakers with stripes on the side, gold watch",Female,Indian
+256,20.0,183.0,"short dark hair, white button down shirt with dots, light jeans, black sneakers",Male,Other
+257,18.0,145.0,"black cap, facial hair, long sleeved blue shirt with ""UC Berkeley Haas"" on it, black shorts, black sneakers",Male,Middle Eastern
+258,21.0,182.0,"short dark hair, blue ""Mets"" t-shirt, dark shorts, dark leather loafers",Male,White
+259,20.0,120.0,"short dark hair, glasses, gray hooded sweatshirt with ""North Face"" on it, jeans, tan sneakers",Male,Asian
+260,21.0,163.0,"backwards cap, gray shirt with yellow lettering in corner, black shorts, gray sneakers with black laces, hands behind back",Male,Asian
+261,18.0,155.0,"short brown and blonde hair, ""California Berkeley"" blue hooded sweatshirt, black jeans, black sneakers with rainbow laces",Male,Asian
+262,19.0,131.0,"backwards cap, gray shirt with Amazon logo, blue pants, black vans, hands behind back",Female,Hispanic
+263,32.0,215.0,"blue shirt with ""American Eagle"" on it, gray pants, blue sneakers, holding glasses",Male,Hispanic
+264,26.0,380.0,"short curly hair, floral shirt, holdin flyers, gray pants, tan sneakers",Male,Other
+265,23.0,155.0,"dark curly hair, dark red tank top, blue jeans, white vans",Female,Hispanic
+266,26.0,200.0,"long dark hair, blue teeshirt with light blue jacket, dark jeans, sandals",Female,Indian
+267,21.0,195.0,"short dark hair, blue t-shirt, black pants, white sneakers, blue-gray jacket, one hand in pocket",Male,White
+268,21.0,205.0,"short dark hair, fleece with blue/white/red pattern, black jeans, gray sneakers",Male,White
+269,21.0,18.0,"short dark hair, gray t-shirt with some sort of photo on it, blue jeans, brown shoes, black jacket, hands in jacket pockets",Male,Indian
+270,29.0,155.0,"backwards cap, black puffy patagonia jacket zipped up, blue jeans, brown moccasin shoes",Male,Other
+271,30.0,120.0,"long brown hair, black columbia jacket zipped up (hair covering logo), light blue jeans, black sneakers, glasses",Female,White
+272,19.0,165.0,"short dark hair, beige sweater, dark blue jeans, white sneakers",Male,Asian
+273,20.0,120.0,"long dark hair, black jacket zipped up with red zipper details, dark jeans, black adidas sneakers, hands behind back",Male,Asian
+274,20.0,135.0,"long blonde-brown hair, black shirt with 3 buttons at the collar, denim jacket, black jeans with holes at knees, white sneakers",Female,Middle Eastern
+275,18.0,140.0,"black and blue zipped up jacket, another pink fuzzy jacket on top, leggings, black sneakers",Female,Asian
+276,58.0,165.0,"white, black, and red argyle sweater, gray slacks, black shoes",Female,Black
+277,23.0,205.0,"blue shirt, light blue jeans, brown belt, bright orange/red shoes, blue jacket",Male,White
+278,19.0,135.0,"short curly hair, glasses, denim jacket, black shirt, black jeans, white shoes, gold bracelets and rings",Female,Indian
+279,19.0,155.0,"long curly brown hair with green at the ends, black shirt, striped baggy pants, black sneakers with white soles",Female,White
+280,22.0,160.0,"short blonde hair, eyes closed, black denim jacket, black jeans, short black leather boots",Female,White
+281,25.0,154.0,"dark facial hair, black puffy jacket with small patagonia logo (zipped up), dark jogger-style pants, white sneakers, hands in pants pockets",Male,White
+282,25.0,180.0,"short dark hair, red and black flannel, black jeans, black shoes, red headphones in ears",Female,Hispanic
+283,39.0,170.0,"short dark hair, blue and white checked button down, khaki jeans, dark belt, brown leather shoes",Male,White
+284,56.0,220.0,"short gray hair, glasses, blue checked button down, blue jeans, black leather shoes, holding tea mug",Male,White
+285,43.0,170.0,"short brown hair, red/brown facial hair, gray blazer, blue button down, black jeans, brown belt, brown shoes",Male,White
+286,21.0,175.0,"gray hat with a man on it, yellow and blue jacket, blue shirt, red/brown pants, cheetah print sneakers",Male,White
+287,19.0,155.0,"long dark wavy hair, blue shirt with yellow collar, dark jeans, tall brown boots, gray jacket",Female,Indian
+288,45.0,130.0,"short dark hair, blue sweater with silver clasp detail at collar, plaid pants, brown leather boots",Female,Asian
+289,20.0,158.0,"eyes closed, white hooded sweatshirt, khaki pants, black leather shoes",Male,Asian
+290,20.0,126.0,"glasses, gray hooded sweatshirt underneath black jacket, black jeans with ripped knees, green/gray boots",Female,Asian
+291,21.0,113.0,"septum piercing, yellow striped shirt, black jacket, blue jeans, black lace-up boots",Female,Hispanic
+292,21.0,117.0,"black fleece sweater, dark jacket with red plaid lettering/details, blue jeans, white converse",Female,Asian
+293,21.0,113.0,"long curly blonde hair, cropped white sweater, leggings with orange detail at waist, black slippers",Female,White
+294,19.0,125.0,"long dark hair, glasses, t-shirt with white and red striped, blue jeans, socks with multicolor plaid-ish print",Female,Asian
+295,22.0,145.0,"jacket with teal, white, and pink chevon design, dark jeans, socks",Male,Asian
+296,20.0,125.0,"short dark hair, dark sweater with wide sleeves and gray collar, dark jeans, belt, no shoes",Female,Asian
+297,20.0,120.0,"long dark hair, black t-shirt, gray wide leg pants with a bow on one side, black socks",Female,Asian
+298,18.0,165.0,"short hair pulled back, white sheer t-shirt, blue jeans, white sneakers, pink wristband",Female,White
+299,23.0,177.0,"long dark hair, glasses, blue knit off-the-shoulder sweater, black pants, black flip flops",Female,Asian
+300,21.0,182.0,"short dark hair with facial hair, blue berkeley sweatshirt, light jeans, black shoes with white soles, hands in jean pockets",Male,White
+301,22.0,150.0,"hair in ponytail, navy shirt wth long sleeves and floral print, black pants, brown belt with silver buckle, black lace up boots",Female,White

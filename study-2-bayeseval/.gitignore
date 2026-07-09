@@ -1,0 +1,17 @@
+domains/**/*.zip
+domains/WGD/Data/Photos/*.jpg
+domains/WGD/Data/Photos/*.JPG
+domains/**/Photos-encoded/
+
+results/
+test-results/
+
+analysis/figs/poster/
+
+thoughts/
+
+.venv
+.claude
+*__pycache__
+.env
+
