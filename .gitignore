@@ -1,0 +1,9 @@
+# Cross-cutting ignores; each study has its own .gitignore for study-specific patterns
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+.claude/
