@@ -1,8 +1,10 @@
-# LifeEval: Measuring LLM Calibration and the Hard-Easy Effect
+# Study 1 — Measuring LLM Calibration and the Hard-Easy Effect
 
-This repository evaluates whether large language models (LLMs) say "how sure" they are in a way that matches reality. We study calibration across six benchmarks and introduce **LifeEval**, a new estimation task with ground-truth probabilities derived from actuarial life tables. Across 11 models we observe a consistent **hard-easy effect**: models are overconfident on difficult tasks and underconfident on easy ones. The code and protocol are designed to help you reproduce these findings, extend them to new models, and audit confidence in your own applications.
+This study evaluates whether large language models (LLMs) say "how sure" they are in a way that matches reality. We study calibration across five benchmarks spanning different cognitive demands. Across 11 models we observe a consistent **hard-easy effect**: models are overconfident on difficult tasks and underconfident on easy ones. The code and protocol are designed to help you reproduce these findings, extend them to new models, and audit confidence in your own applications.
 
 **Preregistration:** [OSF](https://osf.io/y8rqv/)
+
+> **Looking for LifeEval?** This study originally introduced **LifeEval**, an estimation task with ground-truth probabilities derived from SSA actuarial life tables. Its complete preregistered record — data, results, plots, and an SSA-contamination analysis — is preserved in [`archive/lifeeval/`](archive/lifeeval/), and the benchmark is actively developed in [Study 2 (BayesEval)](../study-2-bayeseval/).
 
 ---
 
@@ -15,15 +17,11 @@ This repository evaluates whether large language models (LLMs) say "how sure" th
 5. [Repository Structure](#repository-structure)
 6. [Setup](#setup)
 7. [Full Workflow](#full-workflow)
-   - [Step 1: Retrieve and Format Benchmarks](#step-1-retrieve-and-format-benchmarks)
-   - [Step 2: Generate Prompts and Run Models](#step-2-generate-prompts-and-run-models)
-   - [Step 3: Parse Raw Results](#step-3-parse-raw-results)
-   - [Step 4: Combine and Clean Results](#step-4-combine-and-clean-results)
-   - [Step 5: Run Analysis](#step-5-run-analysis)
 8. [Data Dictionary](#data-dictionary)
 9. [Models Evaluated](#models-evaluated)
-10. [Practical Guidance](#practical-guidance)
-11. [Limitations and Notes](#limitations-and-notes)
+10. [Archived: LifeEval](#archived-lifeeval)
+11. [Practical Guidance](#practical-guidance)
+12. [Limitations and Notes](#limitations-and-notes)
 
 ---
 
@@ -35,7 +33,7 @@ Accuracy alone is insufficient for safe deployment. A model that is right 60% of
 
 ## What We Tested
 
-We measure calibration on six datasets that span different cognitive demands:
+We measure calibration on five datasets that span different cognitive demands:
 
 | Dataset | N | Task Type | Description |
 |---------|---|-----------|-------------|
@@ -44,13 +42,14 @@ We measure calibration on six datasets that span different cognitive demands:
 | **SAT-EN** | 206 | 4-option MCQ | Passage-based reading comprehension |
 | **LSAT-AR** | 230 | 4-5 option MCQ | Multi-step logical/analytical reasoning |
 | **HaluEval-QA** | 2,000 | Confidence only | Self-monitoring: rate confidence in a provided answer (1,000 correct + 1,000 hallucinated) |
-| **LifeEval** | 808 | Estimation | Predict age at death given current age/gender; scored against U.S. SSA Period Life Tables with tolerance radii r in {1, 5, 10, 20} years |
+
+A sixth benchmark, **LifeEval** (808 estimation questions scored against U.S. SSA Period Life Tables), was part of the original preregistered study; see [`archive/lifeeval/`](archive/lifeeval/) for its full record and [Study 2](../study-2-bayeseval/) for its successor.
 
 ---
 
 ## How We Quantify Calibration
 
-For each question we collect the model's chosen answer and a probability distribution over all options (or, for LifeEval, a probability for each radius). We then compute:
+For each question we collect the model's chosen answer and a probability distribution over all options. We then compute:
 
 - **Accuracy**: fraction of correct answers.
 - **Confidence**: the probability the model assigns to its chosen answer.
@@ -66,7 +65,7 @@ When token-level probabilities are available, we also compare **stated** probabi
 
 Across models and tasks, calibration tracks task difficulty.
 
-- On **hard reasoning** tasks (LSAT-AR) and **tight LifeEval radii**, models are **overconfident**. They keep assigning high probabilities even as accuracy falls, which inflates ECE and positive overconfidence.
+- On **hard reasoning** tasks (LSAT-AR), models are **overconfident**. They keep assigning high probabilities even as accuracy falls, which inflates ECE and positive overconfidence.
 - On **easy knowledge** and **reading** tasks (SciQ, SAT-EN), models are often **underconfident**. Accuracy is high, yet reported confidence lags behind, yielding negative overconfidence.
 - On **self-evaluation** (HaluEval), many models struggle to lower confidence on incorrect or hallucinated content, reflecting weak self-monitoring.
 - **Stated vs token probabilities** are broadly aligned, with stated values sometimes slightly better calibrated. This suggests verbalized confidence can capture broader uncertainty than raw next-token scores.
@@ -79,50 +78,30 @@ These patterns replicate the **hard-easy effect** known from human judgment: ove
 ## Repository Structure
 
 ```
-Comparing-Confidence-in-LLMs/
+study-1-benchmark-calibration/
 ├── Workflow/                          # Data pipeline scripts
 │   ├── Retrieve_Benchmarks.ipynb      # Step 1: Download datasets from HuggingFace
 │   ├── DatasetFormatting.ipynb        # Step 1: Additional formatting utilities
-│   ├── batch_processing.py           # Step 2: Format prompts + submit batch API jobs
-│   ├── get_results_analysis.ipynb    # Step 3: Parse raw API responses
-│   ├── LlamaEvaluation.ipynb         # Step 2 (alt): Run Llama models locally
-│   └── terminate_instance.py         # Utility: clean up cloud instances
+│   ├── batch_processing.py            # Step 2: Format prompts + submit batch API jobs
+│   ├── get_results_analysis.ipynb     # Step 3: Parse raw API responses
+│   ├── LlamaEvaluation.ipynb          # Step 2 (alt): Run Llama models locally
+│   └── terminate_instance.py          # Utility: clean up cloud instances
 │
 ├── Formatted Benchmarks/              # Standardized benchmark CSVs (output of Step 1)
-│   ├── boolq_valid_formatted.csv
-│   ├── halu_eval_qa_formatted.csv
-│   ├── life_eval_formatted.csv
-│   ├── lsat_ar_test_formatted.csv
-│   ├── sat_en_formatted.csv
-│   ├── sciq_test_formatted.csv
-│   └── PeriodLifeTable_2022_RawData.csv   # SSA life tables for LifeEval scoring
-│
-├── Prompts/                           # Formatted prompts with system instructions (output of Step 2a)
-│   └── {dataset}_prompts.csv
-│
-├── Batches/                           # API batch request files (output of Step 2b)
-│   └── {model_name}/{dataset}_batch.jsonl
-│
+├── Prompts/                           # Formatted prompts with system instructions
+├── Batches/                           # API batch request files (gitignored)
 ├── Parsed Results/                    # Per-model per-dataset CSVs (output of Step 3)
-│   ├── Claude/{model_name}/{dataset}_{model}.csv
-│   ├── Deepseek/{model_name}/{dataset}_{model}.csv
-│   ├── Gemini/{model_name}/{dataset}_{model}.csv
-│   ├── GPT/{model_name}/{dataset}_{model}.csv
-│   └── Llama/{model_name}/{dataset}_{model}.csv
-│
 ├── Combined Results/                  # Aggregated data (output of Step 4)
 │   ├── combined_raw.csv               # All parsed results merged and graded
 │   ├── combined_clean.csv             # Filtered and normalized for analysis
 │   └── llm-confidence-correct.csv     # Confidence-correctness analysis
-│
 ├── Plots/                             # Generated visualizations (output of Step 5)
-│   ├── {Dataset}/Calibration Plots/   # Per-model calibration curves
-│   ├── Main Plots/                    # Aggregated analysis figures
-│   └── Summary Plots/                 # Consolidated comparisons
+├── R/                                 # Parallel analysis pipeline in R
+│   ├── 1process-data.Rmd
+│   └── 2analyze.Rmd
 │
-├── R/                                 # R analysis scripts
-│   ├── 1process-data.Rmd             # Data processing in R
-│   └── 2analyze.Rmd                  # Statistical analysis in R
+├── archive/lifeeval/                  # Preserved LifeEval record (see its README)
+│   └── ssa-contamination/             # SSA table-memorization analysis (@ddanie1)
 │
 ├── combine.py                         # Step 4a: Merge all parsed results + grade answers
 ├── clean.py                           # Step 4b: Apply exclusion criteria + normalize
@@ -149,26 +128,9 @@ Comparing-Confidence-in-LLMs/
 pip install -r requirements.txt
 ```
 
-The core dependencies are:
-
-| Package | Purpose |
-|---------|---------|
-| `pandas` | Data manipulation |
-| `numpy` | Numerical computation |
-| `matplotlib` | Plotting |
-| `seaborn` | Statistical visualizations |
-| `scipy` | Statistical tests (Pearson correlation) |
-| `openai` | OpenAI batch API |
-| `anthropic` | Anthropic Messages Batch API |
-| `google-genai` | Google Gemini batch API |
-| `json5` | Lenient JSON parsing of model responses |
-| `datasets` | HuggingFace dataset loading |
-| `huggingface_hub` | HuggingFace model access |
-| `python-dotenv` | Environment variable loading |
-
 ### API keys
 
-Create a `.env` file in the project root with the API keys for whichever providers you want to run:
+Create a `.env` file in this directory with the API keys for whichever providers you want to run:
 
 ```
 OPENAI_API_KEY=sk-...
@@ -207,9 +169,7 @@ Plots/ + summary tables + LaTeX output
 
 **Script:** `Workflow/Retrieve_Benchmarks.ipynb`
 
-This notebook downloads raw datasets from HuggingFace and formats them into standardized CSVs.
-
-**What it does for each dataset:**
+Downloads raw datasets from HuggingFace and formats them into standardized CSVs.
 
 | Dataset | Source | Formatting |
 |---------|--------|------------|
@@ -218,21 +178,8 @@ This notebook downloads raw datasets from HuggingFace and formats them into stan
 | BoolQ | `google/boolq` (validation split) | Renames columns, drops passage |
 | HaluEval | `shunk031/HaluEval` (qa subset) | Samples 1,000 rows (seed=42), retains knowledge/right_answer/hallucinated_answer |
 | SAT-EN | `hails/agieval-sat-en` | Extracts passage+question from query field, parses 4 options |
-| LifeEval | Generated from SSA life tables | Creates 808 questions: 2 genders x 101 ages x 4 radii; computes ground-truth life expectancy |
 
-**Output format:** CSVs saved to `Formatted Benchmarks/` with standardized columns:
-
-- MCQ datasets: `Question ID, Question, Option A, Option B, Option C, Option D, [Option E], Correct Answer Letter`
-- BoolQ: `Question, Correct Answer, Question ID`
-- HaluEval: `knowledge, Question, right_answer, hallucinated_answer, Question ID`
-- LifeEval: `Question Prompt, Confidence Prompt, True Lifespan, Question ID`
-
-**To run:**
-
-```bash
-jupyter notebook Workflow/Retrieve_Benchmarks.ipynb
-# Run all cells. Output goes to Formatted Benchmarks/
-```
+**Output:** CSVs saved to `Formatted Benchmarks/` with standardized columns.
 
 > **Note:** The formatted benchmarks are already included in this repo, so you can skip this step unless you want to regenerate them or modify the datasets.
 
@@ -240,216 +187,66 @@ jupyter notebook Workflow/Retrieve_Benchmarks.ipynb
 
 **Script:** `Workflow/batch_processing.py`
 
-This script handles the full prompt generation and batch submission pipeline. It reads the formatted benchmarks, wraps each question in a prompt with confidence-elicitation instructions, and submits batch jobs to the OpenAI, Anthropic, and Google APIs.
-
-**Prompt design by dataset:**
+Reads the formatted benchmarks, wraps each question in a prompt with confidence-elicitation instructions, and submits batch jobs to the OpenAI, Anthropic, and Google APIs.
 
 | Dataset | Answer Format | Confidence Format |
 |---------|--------------|-------------------|
 | BoolQ | True/False + reasoning | Single confidence float (0.0-1.0) |
 | HaluEval | Confidence only (answer pre-provided) | Single confidence float (0.0-1.0) |
-| LifeEval | Integer age prediction + reasoning | Single confidence float (0.0-1.0) for given radius |
 | LSAT-AR | Letter answer (A-E) + reasoning | Probability for each option, summing to 1.0 |
 | SciQ | Letter answer (A-D) + reasoning | Probability for each option, summing to 1.0 |
 | SAT-EN | Letter answer (A-D) + reasoning | Probability for each option, summing to 1.0 |
 
 All prompts request JSON-formatted responses. Temperature is set to 0 for deterministic output (except o3, which requires temperature=1). GPT models request top-5 log probabilities for token-level confidence.
 
-**How to configure which models to run:**
-
-Edit the `models` dictionary near the bottom of `batch_processing.py` (around line 977). Uncomment or add models to each provider's list:
-
-```python
-models = {
-    'GPT': {
-        'class': GPTModels,
-        'api_key_name': 'OPENAI_API_KEY',
-        'models': ['gpt-4o', 'o3-2025-04-16']  # Add/remove models here
-    },
-    'Claude': {
-        'class': ClaudeModels,
-        'api_key_name': 'ANTHROPIC_API_KEY',
-        'models': ['claude-3-7-sonnet-20250219']  # Add/remove models here
-    },
-    'Gemini': {
-        'class': GeminiModels,
-        'api_key_name': 'GOOGLE_API_KEY',
-        'models': ['gemini-2.5-pro']  # Add/remove models here
-    }
-}
-```
-
-**How to configure which datasets to run:**
-
-Edit the `skip_datasets` list (around line 1008) to control which benchmarks are processed:
-
-```python
-skip_datasets = [
-    # Comment out datasets you WANT to run:
-    # 'boolq_valid',
-    # 'halu_eval_qa',
-    # 'life_eval',
-    # 'lsat_ar_test',
-    # 'sat_en',
-    # 'sciq_test',
-]
-```
-
-**To run:**
+Configure which models to run via the `models` dictionary and which datasets via the `skip_datasets` list near the bottom of the script.
 
 ```bash
 cd Workflow
 python batch_processing.py
 ```
 
-**What happens:**
-
-1. Reads formatted CSVs from `Formatted Benchmarks/`
-2. Applies dataset-specific prompt formatting functions
-3. Saves prompts to `Prompts/{dataset}_prompts.csv`
-4. Creates API-specific batch files in `Batches/{model_name}/`
-5. Uploads and submits batch jobs to each provider's API
-6. Records batch job IDs in `results_metadata.json`
-
-Batch jobs run asynchronously. Check status via each provider's API or dashboard. Results must be downloaded separately before Step 3.
-
-**For Llama models:** Use `Workflow/LlamaEvaluation.ipynb` instead, which runs inference locally or on a cloud instance using HuggingFace.
+Batch jobs run asynchronously; job IDs are recorded in `results_metadata.json`. **For Llama models:** use `Workflow/LlamaEvaluation.ipynb` instead, which runs inference locally or on a cloud instance.
 
 ### Step 3: Parse Raw Results
 
 **Script:** `Workflow/get_results_analysis.ipynb`
 
-This notebook takes the raw batch API responses (JSONL files) and extracts structured data from the JSON-formatted model outputs.
+Takes the raw batch API responses (JSONL) and extracts structured data: text content from nested API structures, lenient JSON parsing (`json5`), token probabilities where available. Saves per-model CSVs to `Parsed Results/{Model Type}/{Model Name}/`.
 
-**What it does:**
-
-1. **Reads raw batch output files** from each provider (different JSON structures for GPT, Claude, Gemini, Llama, DeepSeek)
-2. **Extracts text content** from nested API response structures using `get_content()`
-3. **Parses JSON responses** using a two-stage process:
-   - `quick_parse()`: regex-based JSON extraction + `json5.loads()` for lenient parsing
-   - `parse_response()`: extracts expected fields (Reasoning, Answer, Confidence, A-E probabilities)
-4. **Extracts token probabilities** from GPT/Llama logprobs when available
-5. **Maps token probabilities to answer options** using `field_probs()`
-6. **Saves parsed CSVs** to `Parsed Results/{Model Type}/{Model Name}/{dataset}_{model}.csv`
-
-**Output columns per dataset:**
-
-| Column | BoolQ | HaluEval | LifeEval | MCQ (LSAT/SciQ/SAT) |
-|--------|-------|----------|----------|---------------------|
-| Question ID | yes | yes | yes | yes |
-| Reasoning | yes | - | yes | yes |
-| Answer | yes | - | yes | yes |
-| Confidence | yes | yes | yes | - |
-| A, B, C, D, [E] | - | - | - | yes (stated probs) |
-| {option}_prob | - | - | - | yes (token probs) |
-| True_prob, False_prob | yes | - | - | - |
-| coerce | yes | yes | yes | yes |
-| content | yes | yes | yes | yes |
-
-**To run:**
-
-```bash
-jupyter notebook Workflow/get_results_analysis.ipynb
-# Edit the file paths and model names at the top of the notebook
-# Run all cells for each model you want to parse
-```
-
-> **Note:** The parsed results for all 11 models are already included in this repo under `Parsed Results/`.
+> **Note:** The parsed results for all 11 models are already included under `Parsed Results/`.
 
 ### Step 4: Combine and Clean Results
 
-**Scripts:** `combine.py` then `clean.py` (run from the project root)
+**Scripts:** `combine.py` then `clean.py` (run from this directory)
 
-#### Step 4a: Combine (`combine.py`)
-
-Merges all per-model per-dataset parsed CSVs into a single file and grades each response against ground truth.
-
-**Grading logic by dataset:**
+`combine.py` merges all per-model per-dataset parsed CSVs and grades each response:
 
 | Dataset | Scoring Method |
 |---------|---------------|
 | LSAT-AR, SAT-EN, SciQ | Binary: 1.0 if answer matches correct letter, 0.0 otherwise |
 | BoolQ | Binary: 1.0 if answer matches True/False, 0.0 otherwise |
-| LifeEval | Probabilistic: P(death in [estimate-R, estimate+R] \| survived to current age) using SSA life tables |
 | HaluEval | Binary by suffix: `_r` (real answer) = 1.0, `_h` (hallucinated) = 0.0 |
 
-```bash
-python combine.py
-# Output: Combined Results/combined_raw.csv
-```
-
-#### Step 4b: Clean (`clean.py`)
-
-Applies exclusion criteria and normalization to create the analysis-ready dataset.
-
-**Exclusion criteria applied:**
-
-1. **Incomplete questions:** Removes questions that don't appear for all models (batch job failures)
-2. **Unparseable responses:** Removes rows where `Coerce == False` (JSON parsing failed)
-3. **Missing MCQ confidences:** Removes MCQ rows where stated confidence sums to 0
-4. **Invalid LifeEval confidence:** Removes LifeEval rows with non-numeric confidence values
-
-**Normalization:**
-
-- MCQ stated confidence distributions are normalized to sum to 1.0
-- MCQ token probability distributions are normalized to sum to 1.0
-- 2AFC (True/False) token probabilities are normalized to sum to 1.0
-- Model names are mapped to display names (e.g., `gpt-4o` -> `GPT-4o`)
+`clean.py` applies exclusion criteria (incomplete questions, unparseable responses, zero-sum MCQ confidences) and normalizes confidence distributions to sum to 1.0.
 
 ```bash
-python clean.py
-# Output: Combined Results/combined_clean.csv
+python combine.py   # -> Combined Results/combined_raw.csv
+python clean.py     # -> Combined Results/combined_clean.csv
 ```
 
-**Filtering impact (approximate):**
-
-| Dataset | Original | After Cleaning | Retention |
-|---------|----------|----------------|-----------|
-| SciQ | 1,000 | ~995 | ~99% |
-| BoolQ | 3,270 | ~2,503 | ~77% |
-| LifeEval | 808 | ~751 | ~93% |
-| HaluEval | 1,999 | ~1,790 | ~90% |
-| SAT-EN | 206 | ~173 | ~84% |
-| LSAT-AR | 230 | ~86 | ~37% |
-
-LSAT-AR has the most aggressive filtering because many models struggle with the complex JSON format required for 5-option probability distributions.
+> **Note on LifeEval rows:** the canonical `Combined Results/*.csv` shipped in this repo still contain LifeEval rows — they are the preregistered record. `clean.py` and the analysis notebooks drop those rows at load time; re-running the pipeline from `Parsed Results/` produces LifeEval-free CSVs. See [`archive/lifeeval/`](archive/lifeeval/).
 
 ### Step 5: Run Analysis
 
 **Script:** `analysis.ipynb`
 
-The main analysis notebook. Loads `Combined Results/combined_clean.csv` and produces all plots, tables, and statistical results.
+Loads the combined results and produces all plots, tables, and statistical results: ECE, overconfidence, Gini coefficients, calibration (reliability) diagrams comparing stated confidence vs token probability, reasoning vs non-reasoning model comparisons, and LaTeX summary tables. Plots are saved to `Plots/`.
 
-**What it computes:**
+**Additional analysis:**
 
-| Metric | Description |
-|--------|-------------|
-| **ECE** | Expected Calibration Error: average gap between accuracy and confidence across 10 bins |
-| **Overconfidence** | mean(confidence) - accuracy; positive = overconfident |
-| **Gini coefficient** | Measures inequality in probability distribution (second-order confidence) |
-| **Pearson r** | Correlation between stated confidence and actual probability (especially for LifeEval) |
-| **Regression coefficient** | Slope of confidence ~ ideal probability (sensitivity of stated confidence) |
-
-**Key visualizations generated:**
-
-- Calibration plots (reliability diagrams) for each model x dataset, comparing stated confidence (blue) vs token probability (red)
-- ECE bar charts by model and dataset
-- Overconfidence strip plots across all model-dataset combinations
-- LifeEval-specific: score vs. confidence scatter plots, probability by age line plots, gender differential analysis
-- Reasoning vs. non-reasoning model comparisons
-- Summary bar charts and LaTeX tables for publication
-
-**To run:**
-
-```bash
-jupyter notebook analysis.ipynb
-# Run all cells. Plots are saved to Plots/
-```
-
-**Additional analysis notebooks:**
-
-- `compare_analysis.ipynb`: Validates methodology by cross-checking results between two researchers
-- `R/1process-data.Rmd` -> `R/2analyze.Rmd`: Parallel analysis pipeline in R
+- `compare_analysis.ipynb`: validates methodology by cross-checking results between two researchers
+- `R/1process-data.Rmd` -> `R/2analyze.Rmd`: parallel analysis pipeline in R
 
 ---
 
@@ -459,7 +256,8 @@ The combined CSV files (`combined_raw.csv` and `combined_clean.csv`) contain the
 
 ```
 METADATA
-  Question Set (str) -------------- Dataset name (BoolQ, HaluEval, LifeEval, LSAT-AR, SAT-EN, SciQ)
+  Question Set (str) -------------- Dataset name (BoolQ, HaluEval, LSAT-AR, SAT-EN, SciQ; canonical
+                                    files also contain archived LifeEval rows)
   Question ID (str) --------------- Unique question identifier
   Model (str) --------------------- Model name (e.g., GPT-4o, Claude-Sonnet-4)
   Model Type (str) ---------------- Model family (GPT, Claude, Gemini, Llama, Deepseek)
@@ -471,7 +269,7 @@ RESPONSE
   Content (str) ------------------- Raw model response text
   Reasoning (str) ----------------- Extracted reasoning (NA if Coerce=False)
   Answer (str) -------------------- Extracted answer (NA if Coerce=False)
-  Score (float) ------------------- Correctness score (binary for most; probability for LifeEval)
+  Score (float) ------------------- Correctness score
 
 STATED CONFIDENCE
   Stated Confidence Answer (float)  Confidence in chosen answer
@@ -506,6 +304,18 @@ Many columns contain NA values because certain fields only apply to specific dat
 
 ---
 
+## Archived: LifeEval
+
+LifeEval asked models to predict age at death given a person's current age and gender, scored as P(death within ±r years | survived to current age) against the SSA 2022 Period Life Tables (808 questions; r ∈ {1, 5, 10, 20}). It was the estimation-task arm of the preregistered study and is the direct ancestor of Study 2's expanded LifeEval domain (4,040 questions, 20 radii, proper scoring rules).
+
+Preserved in [`archive/lifeeval/`](archive/lifeeval/):
+
+- benchmark data, prompts, batch files, and parsed model responses
+- all LifeEval plots and summary tables
+- the **SSA contamination analysis** (contributed by [@ddanie1](https://github.com/ddanie1)): a keyword flag + LLM-judge pipeline testing whether models' reasoning shows evidence of memorized life tables, and how the calibration findings hold up when contaminated responses are excluded
+
+---
+
 ## Practical Guidance
 
 If you plan to gate actions or escalate reviews based on model confidence:
@@ -513,7 +323,6 @@ If you plan to gate actions or escalate reviews based on model confidence:
 - Treat high confidence on **hard** reasoning tasks with caution. Use thresholds, secondary checks, or require corroborating signals.
 - Expect mild **underconfidence** on **easy** tasks; correct answers may deserve more trust than the reported number implies.
 - Prefer models or wrappers that expose token probabilities and make both **stated** and **token-derived** confidence auditable.
-- For estimation tasks like **LifeEval**, verify that confidence **scales with tolerance**. Flat scaling by radius signals miscalibration.
 
 ---
 

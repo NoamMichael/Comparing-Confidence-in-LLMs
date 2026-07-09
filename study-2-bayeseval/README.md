@@ -1,6 +1,10 @@
-# BayesEval
+# Study 2 — BayesEval
 
-A benchmark suite for evaluating LLM calibration on Bayesian inference tasks across diverse domains.
+A benchmark suite for evaluating LLM calibration on Bayesian inference tasks across diverse domains. Developed as an honors thesis; part of the two-study [Comparing Confidence in LLMs](../) project.
+
+> The **LifeEval** domain is the successor of the task introduced in [Study 1](../study-1-benchmark-calibration/), expanded from 808 questions / 4 radii to 4,040 questions / 20 radii and scored with proper scoring rules. Study 1's original LifeEval record is preserved in [`../study-1-benchmark-calibration/archive/lifeeval/`](../study-1-benchmark-calibration/archive/lifeeval/).
+>
+> **Note:** the WGD photo dataset (~586M) is not stored in this repository; it lives at `~/git/BayesEval/domains/WGD/Data/Photos` (gitignored either way — see `docs/pipeline_WGD.md`).
 
 ## Overview
 
