@@ -1,8 +1,22 @@
+# Core analysis
 pandas
 numpy
+scipy
 matplotlib
 seaborn
-google
+
+# Model APIs (Workflow/batch_processing.py)
 openai
+anthropic
+google-genai
+python-dotenv
+
+# Response parsing & dataset retrieval
 json5
-huggingfacehub
+requests
+datasets
+huggingface_hub
+
+# Local Llama evaluation (Workflow/LlamaEvaluation.ipynb) — GPU-only extras
+# transformers
+# torch

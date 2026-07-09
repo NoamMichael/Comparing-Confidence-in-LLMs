@@ -20,11 +20,11 @@ QSET_RENAME = {
 }
 
 GOLD_PATHS = {
-    "BoolQ": r"Formatted Benchmarks\boolq_valid_formatted.csv",
-    "HaluEval": r"Formatted Benchmarks\halu_eval_qa_formatted.csv",
-    "LSAT-AR": r"Formatted Benchmarks\lsat_ar_test_formatted.csv",
-    "SAT-EN": r"Formatted Benchmarks\sat_en_formatted.csv",
-    "SciQ": r"Formatted Benchmarks\sciq_test_formatted.csv"    
+    "BoolQ": "Formatted Benchmarks/boolq_valid_formatted.csv",
+    "HaluEval": "Formatted Benchmarks/halu_eval_qa_formatted.csv",
+    "LSAT-AR": "Formatted Benchmarks/lsat_ar_test_formatted.csv",
+    "SAT-EN": "Formatted Benchmarks/sat_en_formatted.csv",
+    "SciQ": "Formatted Benchmarks/sciq_test_formatted.csv"
 }
 
 
@@ -50,9 +50,7 @@ def folder_tree_dict(root, *, include_files=True, follow_symlinks=False, ignore_
 
 def grade_df(source_df, gold_df, qset_name):
     df = source_df.copy()
-    mask = df.index
-    #print(f"            Length: {len(mask)}")
-    
+
     if qset_name in MCQ_QSETS:
         # Make sure the QIDs are in the right order
         df["Question ID"] = df["Question ID"].astype(int) 
@@ -90,11 +88,6 @@ def grade_df(source_df, gold_df, qset_name):
 
 
     elif qset_name == "BoolQ":
-        # Make sure the QIDs are in the right order
-        # df["Question ID"] = df["Question ID"].astype(int) 
-        # df = df.sort_values(by="Question ID", ascending=True).reset_index()
-        # df["Question ID"] = df["Question ID"].astype(str)  ## make sure back as str for downstream tasks
-
         gold_df["Question ID"] = gold_df["Question ID"].astype(str)
         temp = pd.merge(source_df, gold_df, on = "Question ID")
 
@@ -105,17 +98,7 @@ def grade_df(source_df, gold_df, qset_name):
     elif qset_name == "HaluEval":
         df["Score"] = df["Question ID"].str.contains("_r").astype(float)
     else:
-        df["Score"] = "UNRECOGINIZED QUESTION SET"
-    """
-    Don wants: one column that indicates stated confidence in the correct answer, with remaining 
-    in correct answers in different columns.
-    (It would of course follow that token prob should be reorganized the same way.) 
-
-    Currently we evaluate the whether the answer was correct and then the confidence it was assigned. Is this different?
-    Don's Approach: Grade the question based off of the correct answer.
-    My Approach: Grade the question based off of the chosen answer.
-    """
-    #print(f"            Length: {len(df)}")
+        df["Score"] = "UNRECOGNIZED QUESTION SET"
     return df
 
 
@@ -125,13 +108,7 @@ def grade_df(source_df, gold_df, qset_name):
 if __name__ == "__main__":
     print(f"{"%" * 64}\nCombining All Results from {FOLDER_PATH}\n{"%" * 64}")
     combined_df = pd.DataFrame()
-    # Get the absolute path to the script's directory
-    script_dir = Path(__file__).parent
-    # Get the project root by going up two levels (from Workflow/Analysis to the root)
-    project_root = script_dir.parent.parent
-    # Construct the full path to the Parsed Results folder
     full_folder_path = Path(FOLDER_PATH)
-    print(full_folder_path)
 
     folder_abstraction_dict = folder_tree_dict(full_folder_path)[FOLDER_PATH]
     
@@ -149,11 +126,7 @@ if __name__ == "__main__":
                 splitter = f"_{model_name}"
                 qset_name = qset_file_name.split(splitter)[0]
                 qset_path = model_path / qset_file_name
-                
-                #--------- Write a function to spit out a dataframe w/ model_name, qset_name, true_answer and concat it
-
                 source_df = pd.read_csv(qset_path)
-
 
                 print(f"        {qset_name}    ")
 
@@ -176,8 +149,6 @@ if __name__ == "__main__":
 
 
     combined_df.drop(["Unnamed: 0", "Question ID.1"], axis = 1, inplace = True, errors = "ignore")
-
-    ## Still need to add correct answer and score
 
     col_rename_map ={
     # Metadata
@@ -214,15 +185,6 @@ if __name__ == "__main__":
 
     combined_df = combined_df.rename(columns = col_rename_map)
 
-
-
-    #combined_df["Question Set"] = combined_df["Question Set"].map(qset_rename)
-    print(f"\nSample row:\n")
-    print(combined_df.iloc[2048])
-    raw_path   = Path("Combined Results/combined_raw.csv")
+    raw_path = Path("Combined Results/combined_raw.csv")
     combined_df.to_csv(raw_path, index=False, encoding="utf-8")
     print(f"Successfully saved to {raw_path}")
-
-
-
-        

@@ -2,13 +2,13 @@
 """
 Build the LifeEval benchmark CSV from the 2022 US Period Life Table.
 
-For each (sex in {male, female}, age in 0-100, radius in {1, 5, 10, 20}):
+For each (sex in {male, female}, age in 0-100, radius in 1-20):
   - Fits Gompertz hazard h(x) = b*exp(cx) via MLE (ages 5-94)
   - Computes best_answer (optimal point estimate) and MAS (maximum achievable
     score) using the closed-form conditional survival CDF
   - Generates question and confidence prompts
 
-808 questions total: 101 ages x 2 sexes x 4 radii.
+4040 questions total: 101 ages x 2 sexes x 20 radii.
 
 Columns written (matches BayesEval convention):
     question_id, question_prompt, confidence_prompt, true_lifespan,

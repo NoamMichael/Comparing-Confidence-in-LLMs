@@ -41,10 +41,7 @@ def drop_bad_qid(data: pd.DataFrame):
 def drop_uncoerced(data: pd.DataFrame):
     df = data.copy()
     # this gets the qid and qset where coerce is false
-    bad_qid_qset = df[
-        (df["Coerce"] == False) | 
-        (df["Stated Confidence Answer"].astype(str).str.isnumeric())
-        ][["Question ID", "Question Set"]]
+    bad_qid_qset = df[df["Coerce"] == False][["Question ID", "Question Set"]]
     bad = set(bad_qid_qset["Question ID"] +  "_" + bad_qid_qset["Question Set"])
 
     mask = ~df["combined_name"].isin(bad)   # True = keep
@@ -94,13 +91,11 @@ def normalize_columns(df, column_list):
     # We use axis=0 to align the Series (row_sums_safe) with the DataFrame rows.
     df[column_list] = df[column_list].div(row_sums_safe, axis=0)
 
-    df['Stated Confidence Answer (MCQ)'] = df['Stated Confidence Answer (MCQ)'] / row_sums_safe
-    
     return df
 
 def main():
     # 1. Import Raw Results df
-    results_path = Path(r"Combined Results\combined_raw.csv")
+    results_path = Path("Combined Results/combined_raw.csv")
     combined_df = pd.read_csv(results_path)
 
     # LifeEval is archived (see archive/lifeeval/) and lives on in study 2;
@@ -121,8 +116,11 @@ def main():
     # Drop rows where the MCQ question summed to zero
     combined_clean = clean_mcq(combined_clean)
 
-    # Normalize stated confidence values to sum to 1
+    # Normalize stated confidence values to sum to 1; the answer's confidence
+    # is rescaled by the same row sums so it stays consistent with SC_COLS
+    sc_row_sums = combined_clean[SC_COLS].sum(axis=1).replace(0, 1)
     combined_clean = normalize_columns(combined_clean, SC_COLS)
+    combined_clean['Stated Confidence Answer (MCQ)'] = combined_clean['Stated Confidence Answer (MCQ)'] / sc_row_sums
 
     # Normalize the token probability to sum to 1 
 
