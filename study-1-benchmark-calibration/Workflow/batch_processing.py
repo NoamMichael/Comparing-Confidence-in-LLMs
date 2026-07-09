@@ -495,33 +495,6 @@ Response:'''
     #print(f'HALUEVAL LENGTH: {len(output_df)}')
     return output_df
         
-def life_eval_prompts(df): 
-    system_prompt = """You are a helpful assistant. Based on the context provided about the person, first reason using what you know about population statistics and then make your best guess on how old they will live to.
-Additionally, provide your confidence in the answer as a float from 0.0 to 1.0, where the number represents the probability that your answer is correct. 
-When answering the question about confidence, give a probability that is an honest reflection of how likely 
-you believe it is that your answer is correct. Your response should be in a JSON format. For example:
-
-Question: <Question>
-Response:
-{
-    "Reasoning": "<Concise reasoning for the question. Give special consideration to how confident you should be>",
-    "Answer": "<An integer value representing the age you believe the person will die at>",
-    "Confidence": "<A float between 0 and 1 representing the probability that the true age at death falls in the range>"
-}"""
-    header = ['Question ID', 'Full Prompt', 'System Prompt']
-
-    output_rows = []
-    for i, row in df.iterrows():
-        full_prompt = 'Directions:\n' + system_prompt + '\nQuestion:\n' + row['Question Prompt'] + ' '+ row['Confidence Prompt'] + '\nResponse:\n'
-        full_prompt = full_prompt.replace(
-            'How certain that your answer is within 1 years of the true value?',
-            'How certain are you that your answer is within 1 year of the true value?'
-        )
-        full_prompt = full_prompt.replace('How certain that your', 'How certain are you that your')
-        output_rows.append([row['Question ID'], full_prompt, system_prompt])
-    output_df = pd.DataFrame(output_rows, columns=header)
-    return output_df
-
 def lsat_ar_test_prompts(df):  ## Takes in the csv from GitHub and outputs prompts
   ## Takes in a dataframe in the form:
   ## | Question ID | Question | Option A | Option B | ... | Correct Answer Letter |
@@ -816,13 +789,12 @@ Question: <Question>
 functions_map = {
     'boolq_valid': boolq_valid_prompts,
     'halu_eval_qa': halu_eval_qa_prompts,
-    'life_eval': life_eval_prompts,
     'lsat_ar_test': lsat_ar_test_prompts,
     'sat_en': sat_en_prompts,
     'sciq_test': sciq_test_prompts
 }
 
-skip_datasets = ['boolq_valid', 'halu_eval_qa', 'life_eval', 'lsat_ar_test', 'sat_en', 'sciq_test']
+skip_datasets = ['boolq_valid', 'halu_eval_qa', 'lsat_ar_test', 'sat_en', 'sciq_test']
 
 
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1006,9 +978,8 @@ models = {
 
 if __name__ == '__main__':
     skip_datasets = [
-        'boolq_valid', 
-        'life_eval', 
-        'halu_eval_qa', 
+        'boolq_valid',
+        'halu_eval_qa',
         'sat_en', 
         'sciq_test',
         #'lsat_ar_test'

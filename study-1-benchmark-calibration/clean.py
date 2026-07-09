@@ -70,18 +70,6 @@ def clean_mcq(data: pd.DataFrame):
 
     return df
 
-def clean_LifeEval(data: pd.DataFrame):
-    df = data.copy()
-    le_df = df[df["Question Set"] == "LifeEval"]
-
-    con_isnum = pd.to_numeric(le_df['Stated Confidence Answer'], errors='coerce').notna()
-    le_bad_qid= le_df[~con_isnum]["combined_name"]
-
-
-    df = df[(~df["combined_name"].isin(le_bad_qid))]
-
-    return df
-
 def normalize_columns(df, column_list):
     """
     Normalizes specified columns in a DataFrame so that their values 
@@ -114,6 +102,10 @@ def main():
     # 1. Import Raw Results df
     results_path = Path(r"Combined Results\combined_raw.csv")
     combined_df = pd.read_csv(results_path)
+
+    # LifeEval is archived (see archive/lifeeval/) and lives on in study 2;
+    # the canonical combined_raw.csv still contains its rows, so drop them here.
+    combined_df = combined_df[combined_df["Question Set"] != "LifeEval"]
     combined_clean = combined_df.copy()
 
     # Add 'combined_name' column
@@ -128,9 +120,6 @@ def main():
 
     # Drop rows where the MCQ question summed to zero
     combined_clean = clean_mcq(combined_clean)
-
-    # Drop rows of LifeEval where the answer was not able to be converted to a float
-    combined_clean = clean_LifeEval(combined_clean)
 
     # Normalize stated confidence values to sum to 1
     combined_clean = normalize_columns(combined_clean, SC_COLS)
