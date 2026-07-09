@@ -3,7 +3,7 @@ domains/WGD/Data/Photos/*.jpg
 domains/WGD/Data/Photos/*.JPG
 domains/**/Photos-encoded/
 
-results/
+# results/ is committed: raw model outputs are the thesis's evidence
 test-results/
 
 analysis/figs/poster/
