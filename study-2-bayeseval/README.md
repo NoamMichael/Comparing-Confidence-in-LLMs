@@ -195,6 +195,22 @@ The LifeEval difficulty metric depends on a maximum-age parameter Y\_max. We swe
 
 ![Sensitivity Analysis](analysis/figs/sensitivity_ymax.png)
 
+## Human Supplement: People vs. LLMs on LifeEval
+
+A preregistered human study (AsPredicted #267677; materials and cleaned data in
+[`human-data/`](human-data/README.md)) asked 98 MTurk participants the same LifeEval
+questions: 980 observations over 88 conditions (ages {1,10,…,100} × 2 sexes × radii
+{1,5,10,20}), each with a point estimate and a 0–100 confidence rating. The supplement
+notebook [`analysis/human_supplement.ipynb`](analysis/human_supplement.ipynb) scores
+humans with the same Gompertz rule as the models and compares calibration,
+overconfidence, Brier/Murphy decomposition, and the hard–easy effect on the matched
+cells. Headlines: humans are overconfident (+0.13) and sit inside the LLM range
+(GPT-5.4 Mini −0.04 to Llama 4 Maverick +0.18), and the hard–easy effect
+(overconfidence rising with difficulty percentile) appears in every agent, human or
+machine.
+
+![Human vs LLM calibration](analysis/figs/human_supplement/calibration_human_vs_llm.png)
+
 ## Project Structure
 
 ```
@@ -214,6 +230,7 @@ BayesEval/
 ├── analysis/
 │   ├── scoring.py             # Unified scoring (Brier, Murphy, Gompertz CDF)
 │   ├── analysis.ipynb         # Main analysis notebook (RQ1–3, post-hoc)
+│   ├── human_supplement.ipynb # Human-vs-LLM LifeEval supplement
 │   ├── fast_facts.ipynb       # Auditable fact-checking for paper
 │   ├── evaluate_diff.py
 │   ├── sensitivity_ymax.py
@@ -224,8 +241,9 @@ BayesEval/
 │   ├── LifeEval/              # Actuarial mortality estimation
 │   └── MedEval/               # Differential diagnosis
 ├── docs/                      # Pipeline documentation per domain
-├── results/                   # Raw model outputs (git-ignored)
-└── thoughts/                  # Research notes and experiment logs
+├── human-data/                # Preregistered human LifeEval study (raw, cleaned, prereg)
+├── results/                   # Raw model outputs (committed as the thesis's evidence)
+└── thoughts/                  # Research notes and experiment logs (git-ignored)
 ```
 
 ## Getting Started
