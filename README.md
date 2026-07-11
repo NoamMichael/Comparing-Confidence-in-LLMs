@@ -36,13 +36,17 @@ probability distributions (SPD).
 ## Repository map
 
 ```
+├── docs/                            # Cross-study orientation: repo map, workflows,
+│                                    # difficulty-scoring explainer, LifeEval history
+├── thoughts/sessions/               # Dated session notes (plans, results, next steps)
 ├── study-1-benchmark-calibration/   # Study 1: pipeline, results, analysis, R scripts
 │   └── archive/lifeeval/            # preserved LifeEval record + SSA contamination analysis
-└── study-2-bayeseval/               # Study 2: runner, domains, analysis
+└── study-2-bayeseval/               # Study 2: runner, domains, analysis, human data
 ```
 
 Each study is self-contained with its own README, `requirements.txt`, and
-`.gitignore` — see the study READMEs for setup and full workflows.
+`.gitignore` — see the study READMEs for setup and full workflows. New to the repo?
+Start with [`docs/README.md`](docs/README.md).
 
 ## Git history notes
 
