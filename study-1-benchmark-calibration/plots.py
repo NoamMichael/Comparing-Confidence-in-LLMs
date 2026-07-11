@@ -1,6 +1,6 @@
 """Regenerate every figure under Plots/ from the combined study-1 results.
 
-Usage (from the study-1 root, after `python combine.py && python clean.py`):
+Usage (from anywhere, after `python combine.py && python clean.py`):
 
     python plots.py
 
@@ -32,8 +32,9 @@ import pandas as pd
 import seaborn as sns
 from matplotlib.patches import Patch
 
-CLEAN_CSV = Path("Combined Results/combined_clean.csv")
-PLOTS = Path("Plots")
+ROOT = Path(__file__).resolve().parent
+CLEAN_CSV = ROOT / "Combined Results" / "combined_clean.csv"
+PLOTS = ROOT / "Plots"
 
 QSET_SLUGS = {
     "BoolQ": "boolq",
