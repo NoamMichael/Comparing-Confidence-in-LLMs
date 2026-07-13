@@ -12,6 +12,7 @@ Domains:
 """
 
 import json
+import re
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -23,6 +24,21 @@ from scipy.optimize import minimize
 # ---------------------------------------------------------------------------
 # Shared
 # ---------------------------------------------------------------------------
+
+_NUM_RE = re.compile(r"-?\d+\.?\d*")
+
+
+def _numeric_answer(s: pd.Series) -> pd.Series:
+    """Like pd.to_numeric but tolerates units and prose ("81 years old",
+    "185 lbs", "98-100" -> 98). Plain to_numeric silently dropped ~48% of
+    some models' answers from mean Brier."""
+    def _extract(v):
+        if pd.isna(v):
+            return np.nan
+        m = _NUM_RE.search(str(v))
+        return float(m.group(0)) if m else np.nan
+    return s.map(_extract)
+
 
 def _merge_missing(results: pd.DataFrame, benchmark: pd.DataFrame, cols: list[str]) -> pd.DataFrame:
     """Merge only benchmark columns not already present in results."""
@@ -73,7 +89,7 @@ def murphy_decomposition(df: pd.DataFrame, n_bins: int = 10) -> dict:
 def score_wgd(results: pd.DataFrame, benchmark: pd.DataFrame) -> pd.DataFrame:
     """Ground truth is deterministic: 1.0 if within tolerance, else 0.0."""
     df = _merge_missing(results, benchmark, ["within_lbs", "true_weight"])
-    answer = pd.to_numeric(df["Answer"], errors="coerce")
+    answer = _numeric_answer(df["Answer"])
     conf = pd.to_numeric(df["Confidence"], errors="coerce")
     within = df["within_lbs"].astype(float)
     true_w = df["true_weight"].astype(float)
@@ -166,7 +182,7 @@ def lifeeval_true_probability(answer: float, min_age: float, sex: str, radius: f
 def score_lifeeval(results: pd.DataFrame, benchmark: pd.DataFrame) -> pd.DataFrame:
     """Ground truth from Gompertz conditional survival CDF."""
     df = _merge_missing(results, benchmark, ["min_age", "sex", "radius"])
-    answer = pd.to_numeric(df["Answer"], errors="coerce")
+    answer = _numeric_answer(df["Answer"])
     df["true_probability"] = [
         lifeeval_true_probability(a, age, sex, r)
         for a, age, sex, r in zip(answer, df["min_age"], df["sex"], df["radius"])
