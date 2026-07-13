@@ -1,0 +1,47 @@
+# Full study-2 re-run with reasoning capture on the DCE sets
+# (see docs/lifeeval-history.md §7 — enables the study-1 SSA contamination
+# screen). SPD sets keep their JSON-array format: `reasoning` only applies
+# to DCE prompts. Pilot-measured cost projection: ~$59 + SPD overhead.
+#
+#   python3 eval.py --config config_full_reasoning.yaml
+#   python3 eval.py --config config_full_reasoning.yaml --retry-errors
+#
+# WGD requires domains/WGD/Data/Photos-encoded (symlink to ~/git/BayesEval).
+
+domains:
+  - name: LifeEval
+    reasoning: true
+  - name: WGD
+    reasoning: true
+  - name: MedEval
+    benchmark_file: benchmark_combined.csv
+    reasoning: true
+  - name: LifeEval_SPD
+    benchmark_file: benchmark_spd.csv
+    spd: true
+  - name: WGD_SPD
+    benchmark_file: benchmark_spd.csv
+    spd: true
+  - name: MedEval_SPD
+    benchmark_file: benchmark_spd.csv
+    spd: true
+
+models:
+  - google/gemini-2.5-flash
+  - openai/gpt-5.4-mini
+  - anthropic/claude-haiku-4.5
+  - meta-llama/llama-4-maverick
+
+mode: batch
+concurrency: 12
+max_questions: null
+sample_questions: null
+output_dir: results_reasoning
+
+openrouter:
+  api_key_env: OPENROUTER_API_KEY
+  base_url: https://openrouter.ai/api/v1
+  timeout_s: 60
+  max_retries: 3
+  # Parasail serves llama-4-maverick image requests with empty content (2026-07-11)
+  ignore_providers: [Parasail]

@@ -26,7 +26,7 @@ DOMAINS_DIR = REPO_ROOT / "domains"
 # https://openrouter.ai/models
 MODEL_PRICING: dict[str, tuple[float, float]] = {
     "google/gemini-2.0-flash": (0.10, 0.40),
-    "google/gemini-2.5-flash": (0.15, 0.60),
+    "google/gemini-2.5-flash": (0.30, 2.50),  # updated 2026-07-10
     "google/gemini-2.5-flash-preview": (0.15, 0.60),
     "google/gemini-2.5-pro": (1.25, 10.00),
     "google/gemini-2.5-pro-preview": (1.25, 10.00),
@@ -39,8 +39,8 @@ MODEL_PRICING: dict[str, tuple[float, float]] = {
     "anthropic/claude-sonnet-4": (3.00, 15.00),
     "anthropic/claude-3.5-sonnet": (3.00, 15.00),
     "anthropic/claude-3.5-haiku": (0.80, 4.00),
-    "anthropic/claude-haiku-4.5": (0.80, 4.00),
-    "meta-llama/llama-4-maverick": (0.20, 0.60),
+    "anthropic/claude-haiku-4.5": (1.00, 5.00),  # updated 2026-07-10
+    "meta-llama/llama-4-maverick": (0.15, 0.60),  # updated 2026-07-10
     "meta-llama/llama-4-scout": (0.15, 0.35),
     "qwen/qwen3.6-plus": (0.325, 1.95),
 }

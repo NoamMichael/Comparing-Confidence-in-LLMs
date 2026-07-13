@@ -50,12 +50,14 @@ def load_config(path: Path) -> dict:
     cfg.setdefault("mode", "batch")
     cfg.setdefault("concurrency", 8)
     cfg.setdefault("max_questions", None)
+    cfg.setdefault("sample_questions", None)
     cfg.setdefault("output_dir", "results")
     cfg.setdefault("openrouter", {})
     cfg["openrouter"].setdefault("api_key_env", "OPENROUTER_API_KEY")
     cfg["openrouter"].setdefault("base_url", "https://openrouter.ai/api/v1")
     cfg["openrouter"].setdefault("timeout_s", 60)
     cfg["openrouter"].setdefault("max_retries", 3)
+    cfg["openrouter"].setdefault("ignore_providers", None)
     return cfg
 
 
@@ -123,27 +125,32 @@ async def _main(cfg: dict) -> None:
     output_dir = REPO_ROOT / cfg["output_dir"]
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    domain_data: dict[str, tuple[pd.DataFrame, object, bool]] = {}
+    domain_data: dict[str, tuple[pd.DataFrame, object, bool, bool]] = {}
     for d in cfg["domains"]:
         bench_file = d.get("benchmark_file", "benchmark.csv")
         bench, score_fn = load_domain(d["name"], bench_file)
         if cfg["max_questions"]:
             bench = bench.head(cfg["max_questions"]).reset_index(drop=True)
+        if cfg["sample_questions"]:
+            n = min(cfg["sample_questions"], len(bench))
+            bench = bench.sample(n=n, random_state=42).reset_index(drop=True)
         spd = d.get("spd", False)
-        domain_data[d["name"]] = (bench, score_fn, spd)
+        reasoning = d.get("reasoning", False)
+        domain_data[d["name"]] = (bench, score_fn, spd, reasoning)
 
     client = OpenRouterClient(
         api_key=api_key,
         base_url=cfg["openrouter"]["base_url"],
         timeout_s=cfg["openrouter"]["timeout_s"],
         max_retries=cfg["openrouter"]["max_retries"],
+        ignore_providers=cfg["openrouter"]["ignore_providers"],
     )
 
     title = "BayesEval"
     summary_rows: list[dict] = []
     try:
         with Dashboard(title) as dash:
-            for domain, (bench, _, _) in domain_data.items():
+            for domain, (bench, _, _, _) in domain_data.items():
                 for model in cfg["models"]:
                     dash.register(domain, model, total=len(bench))
 
@@ -158,12 +165,12 @@ async def _main(cfg: dict) -> None:
                     tok_out=row_result.tok_out,
                 )
 
-            async def process_domain(domain, bench, score_fn, spd=False):
+            async def process_domain(domain, bench, score_fn, spd=False, reasoning=False):
                 out_domain = output_dir / domain
                 out_domain.mkdir(parents=True, exist_ok=True)
                 tasks = [
                     run_task(client, domain, model, bench, cfg["mode"],
-                             cfg["concurrency"], on_event, spd=spd)
+                             cfg["concurrency"], on_event, spd=spd, reasoning=reasoning)
                     for model in cfg["models"]
                 ]
                 results_list = list(await asyncio.gather(*tasks))
@@ -190,8 +197,8 @@ async def _main(cfg: dict) -> None:
                 return domain_rows
 
             all_domain_rows = await asyncio.gather(*[
-                process_domain(domain, bench, score_fn, spd=spd)
-                for domain, (bench, score_fn, spd) in domain_data.items()
+                process_domain(domain, bench, score_fn, spd=spd, reasoning=reasoning)
+                for domain, (bench, score_fn, spd, reasoning) in domain_data.items()
             ])
             for rows in all_domain_rows:
                 summary_rows.extend(rows)
@@ -255,6 +262,7 @@ async def _retry_main(cfg: dict) -> None:
         base_url=cfg["openrouter"]["base_url"],
         timeout_s=cfg["openrouter"]["timeout_s"],
         max_retries=cfg["openrouter"]["max_retries"],
+        ignore_providers=cfg["openrouter"]["ignore_providers"],
     )
 
     summary_rows: list[dict] = []
@@ -279,6 +287,7 @@ async def _retry_main(cfg: dict) -> None:
                 bench_file = domain_cfgs[domain].get("benchmark_file", "benchmark.csv")
                 bench, score_fn = load_domain(domain, bench_file)
                 spd = domain_cfgs[domain].get("spd", False)
+                reasoning = domain_cfgs[domain].get("reasoning", False)
 
                 retry_tasks = []
                 models_to_retry = []
@@ -286,7 +295,7 @@ async def _retry_main(cfg: dict) -> None:
                     retry_bench = bench[bench["question_id"].isin(errored_ids)].reset_index(drop=True)
                     retry_tasks.append(
                         run_task(client, domain, model, retry_bench, cfg["mode"],
-                                 cfg["concurrency"], on_event, spd=spd)
+                                 cfg["concurrency"], on_event, spd=spd, reasoning=reasoning)
                     )
                     models_to_retry.append(model)
 
@@ -295,11 +304,13 @@ async def _retry_main(cfg: dict) -> None:
                 meta_cols = [c for c in bench.columns
                              if c not in {"question_prompt", "confidence_prompt",
                                           "gold_response", "image_path"}]
-                results_cols = ["question_id", "Answer", "Confidence", "raw", "error"]
+                results_cols = ["question_id", "Answer", "Confidence", "raw", "error",
+                                "tok_in", "tok_out"]
                 for model, retry_res in zip(models_to_retry, retry_results):
                     out_path = output_dir / domain / f"{slugify(model)}.csv"
                     prev = pd.read_csv(out_path)
-                    ok = prev[prev["error"].isna()][results_cols]
+                    cols = [c for c in results_cols if c in prev.columns]
+                    ok = prev[prev["error"].isna()][cols]
                     merged = pd.concat([ok, retry_res], ignore_index=True)
                     merged_with_meta = merged.merge(bench[meta_cols], on="question_id", how="left")
                     merged_with_meta.to_csv(out_path, index=False)

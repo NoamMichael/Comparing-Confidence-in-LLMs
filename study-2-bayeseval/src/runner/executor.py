@@ -39,7 +39,7 @@ def parse_spd_bins(raw: str) -> tuple[str | None, float | None, str | None]:
     if not match:
         return None, None, "no JSON array found"
     try:
-        arr = json.loads(match.group(0))
+        arr = json.loads(match.group(0), strict=False)
     except json.JSONDecodeError as e:
         return None, None, f"JSON decode: {e}"
     if not isinstance(arr, list) or len(arr) == 0:
@@ -72,7 +72,7 @@ def parse_spd_candidates(raw: str) -> tuple[str | None, float | None, str | None
     if not match:
         return None, None, "no JSON array found"
     try:
-        arr = json.loads(match.group(0))
+        arr = json.loads(match.group(0), strict=False)
     except json.JSONDecodeError as e:
         return None, None, f"JSON decode: {e}"
     if not isinstance(arr, list) or len(arr) == 0:
@@ -106,11 +106,12 @@ async def _run_one(
     row: pd.Series,
     on_event,
     task_key: tuple[str, str],
+    reasoning: bool = False,
 ) -> RowResult:
     image_path = row.get("image_path")
     image_uri = Path(image_path).read_text() if image_path else None
     resp = await client.complete(model, row["question_prompt"], row["confidence_prompt"],
-                                 image_uri=image_uri)
+                                 image_uri=image_uri, reasoning=reasoning)
     rr = RowResult(row["question_id"], resp.answer, resp.confidence, resp.raw, resp.error,
                    resp.tok_in, resp.tok_out)
     on_event(task_key, rr)
@@ -160,9 +161,15 @@ async def run_task(
     concurrency: int,
     on_event,
     spd: bool = False,
+    reasoning: bool = False,
 ) -> pd.DataFrame:
     task_key = (domain, model)
-    runner = _run_one_spd if spd else _run_one
+    if spd:
+        async def runner(client, model, r, on_event, task_key):
+            return await _run_one_spd(client, model, r, on_event, task_key)
+    else:
+        async def runner(client, model, r, on_event, task_key):
+            return await _run_one(client, model, r, on_event, task_key, reasoning=reasoning)
     if mode == "seq":
         rows = [await runner(client, model, r, on_event, task_key) for _, r in benchmark.iterrows()]
     else:
@@ -181,6 +188,8 @@ async def run_task(
                 "Confidence": r.confidence,
                 "raw": r.raw,
                 "error": r.error,
+                "tok_in": r.tok_in,
+                "tok_out": r.tok_out,
             }
             for r in rows
         ]
