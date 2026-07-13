@@ -1,0 +1,9 @@
+domain,model,n,errors,mean_brier,results_csv
+LifeEval,google/gemini-2.5-flash,50,47,0.0184794631435321,results_pilot_reasoning/LifeEval/google_gemini-2.5-flash.csv
+LifeEval,openai/gpt-5.4-mini,50,0,0.028765343175430554,results_pilot_reasoning/LifeEval/openai_gpt-5.4-mini.csv
+LifeEval,anthropic/claude-haiku-4.5,50,0,0.0180416662091615,results_pilot_reasoning/LifeEval/anthropic_claude-haiku-4.5.csv
+LifeEval,meta-llama/llama-4-maverick,50,0,0.024975963541899997,results_pilot_reasoning/LifeEval/meta-llama_llama-4-maverick.csv
+MedEval,google/gemini-2.5-flash,50,34,0.5891812810579882,results_pilot_reasoning/MedEval/google_gemini-2.5-flash.csv
+MedEval,openai/gpt-5.4-mini,50,0,0.5814631226121283,results_pilot_reasoning/MedEval/openai_gpt-5.4-mini.csv
+MedEval,anthropic/claude-haiku-4.5,50,0,0.4575258716555043,results_pilot_reasoning/MedEval/anthropic_claude-haiku-4.5.csv
+MedEval,meta-llama/llama-4-maverick,50,0,0.4796855886065254,results_pilot_reasoning/MedEval/meta-llama_llama-4-maverick.csv
