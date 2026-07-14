@@ -24,7 +24,7 @@ We evaluate four frontier LLMs — Claude Haiku 4.5, Gemini 2.5 Flash, Llama 4 M
 
 ## Prompts
 
-All prompts are sent as a single `user` message with no system message. For standard (non-SPD) question sets, a JSON format instruction is appended automatically by the runner. For SPD question sets, the format instruction is embedded in the `confidence_prompt`.
+All prompts are sent as a single `user` message with no system message. For standard (non-SPD) question sets, a JSON format instruction is appended automatically by the runner. For SPD question sets, the format instruction is embedded in the `confidence_prompt`. The summaries below cover the templates; [docs/prompts.md](docs/prompts.md) is the verbatim reference, including the exact runner-appended wrappers (standard and reasoning variants) and fully assembled example messages per question set.
 
 ### WGD (Standard)
 

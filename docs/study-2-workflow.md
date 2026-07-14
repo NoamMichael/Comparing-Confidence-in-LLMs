@@ -2,8 +2,10 @@
 
 End-to-end data flow; paths relative to `study-2-bayeseval/`. For prompts, models,
 scoring definitions, and research questions see the
-[study-2 README](../study-2-bayeseval/README.md); each domain also has a step-by-step
-pipeline doc in [`docs/`](../study-2-bayeseval/docs/).
+[study-2 README](../study-2-bayeseval/README.md); the verbatim DCE/SPD prompts for
+every question set are in
+[study-2-bayeseval/docs/prompts.md](../study-2-bayeseval/docs/prompts.md), and each
+domain has a step-by-step pipeline doc in [`docs/`](../study-2-bayeseval/docs/).
 
 ```
 domains/<Domain>/build_benchmark.py        (DCE: point estimate + scalar confidence)
