@@ -1,46 +1,50 @@
 # MedEval — Prompt Sample
 
-## System prompt
+Requests are a single `user` message — **no system prompt is sent**. The message
+is `question_prompt` + `confidence_prompt` from `Data/benchmark_combined.csv`,
+plus a JSON format wrapper appended by the runner. Note the confidence prompt
+embeds its own format instruction *and* the runner wrapper is appended, so the
+model sees both. See [`docs/prompts.md`](../../docs/prompts.md) for all templates
+and the SPD variant.
 
-```
-You are a calibrated forecaster. For every question, commit to a single best
-answer and report a confidence in [0, 1] equal to your subjective probability
-that the answer is correct. Your confidence will be scored with the Brier
-Score — a strictly proper scoring rule — so you minimise expected loss only by
-reporting your honest belief. Do not refuse, abstain, or hedge with ranges.
-Return only the JSON object requested.
-```
-
-## User prompt (question_id `med_test_00000`)
+## User message (question_id `med_test_00000_c0`, as sent in the original run)
 
 ```
 You are a diagnostic reasoning assistant. Based on the patient vignette below, pick the single most likely pathology from the candidate list. You MUST commit to one diagnosis — do not hedge or list alternatives.
 
-{"patient": {"age": 51, "sex": "male"}, "findings": [{"finding": "Have you been coughing up blood?", "value": "yes"}, {"finding": "Do you have pain somewhere, related to your reason for consulting?", "value": "yes"}, {"finding": "Characterize your pain", "value": "sensitive"}, {"finding": "Characterize your pain", "value": "a knife stroke"}, {"finding": "Do you feel pain somewhere?", "value": "posterior chest wall(R)"}, {"finding": "Do you feel pain somewhere?", "value": "posterior chest wall(L)"}, {"finding": "How intense is the pain?", "value": "5"}, {"finding": "Does the pain radiate to another location?", "value": "nowhere"}, {"finding": "How precisely is the pain located?", "value": "4"}, {"finding": "How fast did the pain appear?", "value": "5"}, {"finding": "Are you experiencing shortness of breath or difficulty breathing in a significant way?", "value": "yes"}, {"finding": "Do you smoke cigarettes?", "value": "yes"}, {"finding": "Do you constantly feel fatigued or do you have non-restful sleep?", "value": "yes"}, {"finding": "Have you recently had a loss of appetite or do you get full more quickly then usually?", "value": "yes"}, {"finding": "Have you had an involuntary weight loss over the last 3 months?", "value": "yes"}, {"finding": "Are you a former smoker?", "value": "yes"}, {"finding": "Do you have a cough?", "value": "yes"}, {"finding": "Have you traveled out of the country in the last 4 weeks?", "value": "N"}, {"finding": "Are you exposed to secondhand cigarette smoke on a daily basis?", "value": "yes"}, {"finding": "Do you have family members who have had lung cancer?", "value": "yes"}]}
+{"patient": {"age": 51, "sex": "male"}, "findings": [{"finding": "Have you been coughing up blood?", "value": "yes"}, {"finding": "Do you have pain somewhere, related to your reason for consulting?", "value": "yes"}, {"finding": "Characterize your pain:", "value": "sensitive"}, {"finding": "Characterize your pain:", "value": "a knife stroke"}, {"finding": "Do you feel pain somewhere?", "value": "posterior chest wall(R)"}, {"finding": "Do you feel pain somewhere?", "value": "posterior chest wall(L)"}, {"finding": "How intense is the pain?", "value": "5"}, {"finding": "Does the pain radiate to another location?", "value": "nowhere"}, {"finding": "How precisely is the pain located?", "value": "4"}, {"finding": "How fast did the pain appear?", "value": "5"}, {"finding": "Are you experiencing shortness of breath or difficulty breathing in a significant way?", "value": "yes"}, {"finding": "Do you smoke cigarettes?", "value": "yes"}, {"finding": "Do you constantly feel fatigued or do you have non-restful sleep?", "value": "yes"}, {"finding": "Have you recently had a loss of appetite or do you get full more quickly then usually?", "value": "yes"}, {"finding": "Have you had an involuntary weight loss over the last 3 months?", "value": "yes"}, {"finding": "Are you a former smoker?", "value": "yes"}, {"finding": "Do you have a cough?", "value": "yes"}, {"finding": "Have you traveled out of the country in the last 4 weeks?", "value": "N"}, {"finding": "Are you exposed to secondhand cigarette smoke on a daily basis?", "value": "yes"}, {"finding": "Do you have family members who have had lung cancer?", "value": "yes"}]}
 
 Candidate pathologies:
-- Bronchitis
-- Acute pulmonary edema
-- Pancreatic neoplasm
-- Stable angina
-- Pulmonary neoplasm
-- Guillain-Barré syndrome
-- Tuberculosis
-- Pneumonia
-- Atrial fibrillation
-- Myasthenia gravis
-- Anemia
-- Unstable angina
-- Possible NSTEMI / STEMI
-- Bronchiectasis
 - Myocarditis
-- Pulmonary embolism
-- Spontaneous rib fracture
+- Stable angina
+- Atrial fibrillation
+- Pancreatic neoplasm
+- Pulmonary neoplasm
 - Acute dystonic reactions
+- Anemia
+- Possible NSTEMI / STEMI
+- Bronchitis
+- Pulmonary embolism
+- Myasthenia gravis
+- Acute pulmonary edema
+- Unstable angina
+- Pneumonia
+- Spontaneous rib fracture
+- Bronchiectasis
+- Tuberculosis
 - Bronchospasm / acute asthma exacerbation
+- Guillain-Barré syndrome
 
-How confident are you (0 to 1) that your chosen pathology is the correct diagnosis? Respond with ONLY valid JSON: {"Answer": "<pathology>", "Confidence": "0.XX"}
+There are 19 candidate pathologies. Estimate the probability (0 to 1) that your chosen pathology is the correct diagnosis for this patient, given only the symptoms and candidates provided. A uniform prior would assign 0.05 to each candidate. Respond with ONLY valid JSON: {"Answer": "<pathology>", "Confidence": "0.XX"}
+
+Respond with ONLY a JSON object in this exact format:
+{"Answer": "<your estimate>", "Confidence": "<probability between 0 and 1>"}
+No other text.
 ```
+
+In the reasoning re-run (`results_reasoning/`, `config_full_reasoning.yaml`) the
+wrapper instead requests
+`{"Reasoning": "<your step-by-step reasoning>", "Answer": ..., "Confidence": ...}`.
 
 ## Expected response format
 

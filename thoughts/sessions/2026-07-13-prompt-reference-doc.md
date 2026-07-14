@@ -14,8 +14,14 @@ builder scripts, the committed benchmark CSVs, and the runner.
   MedEval DCE `confidence_prompt`s embed their own JSON instruction *and*
   get the runner wrapper appended.
 - No system prompt is ever sent — the "System prompt" sections in
-  `domains/*/sample.md` predate the harness and are stale (left as-is,
-  flagged in the doc).
+  `domains/*/sample.md` predated the harness ("calibrated forecaster" /
+  Brier-incentive framing) and were never sent in any run. Follow-up in the
+  same session: rewrote all three `sample.md` files to show the fully
+  assembled user message actually sent (incl. runner wrapper and the
+  MedEval uniform-prior confidence prompt, which the old sample also
+  misquoted). Implication for the write-up: confidence reports were
+  unincentivized — models were never told about proper-scoring-rule
+  incentives; noted as an untested moderator / limitations item.
 - Verified question counts from the committed CSVs: WGD 4,620 / WGD_SPD 928
   (SPD has one extra photo, `269.jpg`), LifeEval 4,040 / 808, MedEval
   768 / 768 (192 patients × 4 removal pcts). eval.py's hardcoded

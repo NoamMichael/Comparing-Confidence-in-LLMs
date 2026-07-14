@@ -1,17 +1,13 @@
 # WGD — Prompt Sample
 
-## System prompt
+Requests are a single `user` message — **no system prompt is sent**. The message
+content is a two-part array: the photo as a base64 data URI, then the text
+(`question_prompt` + `confidence_prompt` from `Data/benchmark.csv`, plus a JSON
+format wrapper appended by the runner). Note the confidence prompt embeds its own
+format instruction *and* the runner wrapper is appended, so the model sees both.
+See [`docs/prompts.md`](../../docs/prompts.md) for all templates and the SPD variant.
 
-```
-You are a calibrated forecaster. For every question, commit to a single best
-answer and report a confidence in [0, 1] equal to your subjective probability
-that the answer is correct. Your confidence will be scored with the Brier
-Score — a strictly proper scoring rule — so you minimise expected loss only by
-reporting your honest belief. Do not refuse, abstain, or hedge with ranges.
-Return only the JSON object requested.
-```
-
-## User prompt (question_id `wgd_1_05`)
+## User message (question_id `wgd_1_05`, as sent in the original run)
 
 Image attachment: `Data/Photos/1.jpg`
 
@@ -19,7 +15,15 @@ Image attachment: `Data/Photos/1.jpg`
 Look at this photo of a person. You MUST estimate their weight in pounds. Do not refuse or abstain — give your best guess even if uncertain. How confident are you (0 to 1) that your estimate is within 5 lbs of their true weight? If you are very unsure, use a low confidence score, but you must still provide a weight estimate.
 
 Respond with ONLY valid JSON in this exact format: {"Answer": "<weight in lbs>", "Confidence": "0.XX"}
+
+Respond with ONLY a JSON object in this exact format:
+{"Answer": "<your estimate>", "Confidence": "<probability between 0 and 1>"}
+No other text.
 ```
+
+In the reasoning re-run (`results_reasoning/`, `config_full_reasoning.yaml`) the
+wrapper instead requests
+`{"Reasoning": "<your step-by-step reasoning>", "Answer": ..., "Confidence": ...}`.
 
 ## Expected response format
 

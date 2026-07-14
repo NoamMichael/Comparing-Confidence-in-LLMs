@@ -23,9 +23,9 @@ label/photo pairing became available between the two builds).
 
 Each benchmark row carries two columns, `question_prompt` and `confidence_prompt`.
 The runner (`src/runner/openrouter_client.py`) joins them into **a single `user`
-message — there is no system prompt.** (The "System prompt" section in each
-domain's `sample.md` was drafted before the harness was built and was never sent;
-treat those files as stale.)
+message — there is no system prompt.** (Each domain's `sample.md` shows one fully
+assembled example message. Earlier versions of those files showed a "calibrated
+forecaster" system prompt that predated the harness and was never sent.)
 
 **DCE sets** go through `OpenRouterClient.complete()`, which appends a JSON format
 wrapper after the two prompts:
