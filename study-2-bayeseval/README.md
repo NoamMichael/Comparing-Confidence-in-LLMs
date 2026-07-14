@@ -272,6 +272,19 @@ Scoring for all domains is in `analysis/scoring.py`. To add a new domain,
 add a scorer function there and register it in `_SCORERS`, then create
 `domains/<name>/Data/benchmark.csv`.
 
+## Limitations
+
+**Unincentivized confidence reports.** Requests contain no system prompt and no
+mention of how confidence is scored (see [docs/prompts.md](docs/prompts.md)):
+models were never told that their stated confidence would be evaluated with a
+strictly proper scoring rule, so they had no explicit incentive to report honest
+subjective probabilities. All results therefore characterize *unincentivized,
+unframed* confidence reports — the model's default behavior when simply asked how
+confident it is. This does not affect internal comparisons (every model, domain,
+and elicitation mode was treated identically), but whether scoring-rule framing
+(e.g., telling the model its confidence will be Brier-scored) would change
+calibration is an untested moderator and a natural follow-up experiment.
+
 ## Related Work
 
 This project is part of an honors thesis on LLM calibration. See individual domain READMEs for domain-specific methodology and results.

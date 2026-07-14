@@ -21,7 +21,8 @@ builder scripts, the committed benchmark CSVs, and the runner.
   MedEval uniform-prior confidence prompt, which the old sample also
   misquoted). Implication for the write-up: confidence reports were
   unincentivized — models were never told about proper-scoring-rule
-  incentives; noted as an untested moderator / limitations item.
+  incentives; noted as an untested moderator / limitations item. Added a
+  "Limitations" section to the study-2 README recording this caveat.
 - Verified question counts from the committed CSVs: WGD 4,620 / WGD_SPD 928
   (SPD has one extra photo, `269.jpg`), LifeEval 4,040 / 808, MedEval
   768 / 768 (192 patients × 4 removal pcts). eval.py's hardcoded
