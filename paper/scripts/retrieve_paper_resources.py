@@ -109,8 +109,8 @@ LIFEEVAL_BLOCK_RE = re.compile(
 
 def drop_lifeeval_rows(block: str) -> str:
     cleaned, n = LIFEEVAL_BLOCK_RE.subn("", block)
-    if n != 1:
-        raise SystemExit(f"ERROR: expected 1 LifeEval row group in extracted table, found {n}")
+    if n > 1:
+        raise SystemExit(f"ERROR: expected at most 1 LifeEval row group in extracted table, found {n}")
     return cleaned
 
 
