@@ -1,0 +1,35 @@
+\begin{table*}
+\caption{Summary metrics for chat (non-reasoning) models (study 1).}
+\label{tab:study1_summary_chat}
+\begin{tabular}{llrrrrrr}
+\toprule
+ & Model & Claude Haiku 3 & DeepSeek-V3 & GPT-4o & Gemini-2.5-Flash & Llama-3.1-70B & Llama-3.1-8B \\
+Question Set & Metrics &  &  &  &  &  &  \\
+\midrule
+\multirow[c]{4}{*}{BoolQ} & Accuracy & 78.15 & 82.90 & \textbf{85.30} & 84.54 & 78.59 & 69.32 \\
+ & Confidence & 89.76 & 92.94 & 93.26 & \textbf{99.30} & 90.60 & 85.98 \\
+ & ECE & 0.12 & 0.10 & 0.08 & 0.15 & 0.12 & \textbf{0.17} \\
+ & (\%) Rounded & \textbf{99.88} & 91.33 & 98.36 & 89.93 & 88.17 & 96.28 \\
+\multirow[c]{4}{*}{HaluEval} & Accuracy & \textbf{52.12} & \textbf{52.12} & \textbf{52.12} & \textbf{52.12} & \textbf{52.12} & \textbf{52.12} \\
+ & Confidence & \textbf{88.65} & 67.16 & 76.49 & 60.29 & 63.73 & 71.21 \\
+ & ECE & \textbf{0.37} & 0.15 & 0.24 & 0.11 & 0.14 & 0.20 \\
+ & (\%) Rounded & \textbf{100.00} & \textbf{100.00} & \textbf{100.00} & 98.60 & 99.11 & 98.72 \\
+\multirow[c]{4}{*}{LSAT-AR} & Accuracy & 29.07 & 34.88 & 36.05 & \textbf{96.51} & 38.37 & 33.72 \\
+ & Confidence & 67.39 & 63.84 & 85.58 & \textbf{97.48} & 89.53 & 88.80 \\
+ & ECE & 0.42 & 0.32 & 0.50 & 0.04 & 0.52 & \textbf{0.57} \\
+ & (\%) Rounded & 89.53 & 90.70 & 90.70 & 98.84 & \textbf{100.00} & 94.19 \\
+\multirow[c]{4}{*}{LifeEval} & Accuracy & 53.02 & 53.26 & \textbf{54.55} & 53.79 & 53.52 & 48.39 \\
+ & Confidence & \textbf{79.76} & 63.72 & 59.77 & 63.58 & 72.03 & 59.85 \\
+ & ECE & \textbf{0.27} & 0.12 & 0.09 & 0.10 & 0.19 & 0.14 \\
+ & (\%) Rounded & \textbf{100.00} & \textbf{100.00} & \textbf{100.00} & 48.87 & 99.47 & \textbf{100.00} \\
+\multirow[c]{4}{*}{SAT-EN} & Accuracy & 88.44 & 94.80 & 93.06 & \textbf{98.84} & 91.91 & 83.82 \\
+ & Confidence & 67.51 & 72.86 & 79.39 & \textbf{88.53} & 85.82 & 85.52 \\
+ & ECE & 0.22 & \textbf{0.24} & 0.15 & 0.10 & 0.10 & 0.12 \\
+ & (\%) Rounded & 98.84 & \textbf{100.00} & 96.53 & 98.84 & 99.42 & 94.80 \\
+\multirow[c]{4}{*}{SciQ} & Accuracy & 94.07 & \textbf{97.09} & 96.88 & 96.68 & 95.38 & 91.06 \\
+ & Confidence & 84.35 & 86.55 & 91.95 & 93.44 & \textbf{94.68} & 94.51 \\
+ & ECE & \textbf{0.11} & 0.11 & 0.05 & 0.04 & 0.04 & 0.05 \\
+ & (\%) Rounded & \textbf{99.80} & 98.99 & 99.40 & 78.39 & 97.59 & 97.29 \\
+\bottomrule
+\end{tabular}
+\end{table*}
