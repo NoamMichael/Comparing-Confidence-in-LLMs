@@ -426,7 +426,15 @@ def summary_plots(df: pd.DataFrame, stats: pd.DataFrame):
     out = PLOTS / "Summary Plots"
     out.mkdir(parents=True, exist_ok=True)
 
-    palette = {m: pick_color(m) for m in stats["model"].unique()}
+    # One solid hue per family; reasoning models keep it bold, chat models get
+    # the same hue faded (patch alpha below), so lightness encodes model type
+    chat_alpha = 0.35
+    hatch_alpha = 0.6
+    palette = {m: FAMILY_PALETTES[model_family(m)][4] for m in stats["model"].unique()}
+    reasoning_handles = [
+        Patch(facecolor=(0.3, 0.3, 0.3, 1.0), label="Reasoning"),
+        Patch(facecolor=(0.3, 0.3, 0.3, chat_alpha), edgecolor=(0.3, 0.3, 0.3, hatch_alpha), linewidth=0, hatch="//", label="Chat"),
+    ]
     for col, label, filename in (
         ("ece", "ECE", "ece_all.png"),
         ("accuracy", "Accuracy (%)", "acc_all.png"),
@@ -450,7 +458,32 @@ def summary_plots(df: pd.DataFrame, stats: pd.DataFrame):
         for ax in g.axes.flat:
             ax.axvline(0, linestyle="--", linewidth=1, color="0.2")
             ax.grid(True, axis="x", linestyle=":", alpha=0.5)
+            # seaborn drops alpha from palette colors, so fade chat bars here;
+            # each bar's y-center is its model's index in MODEL_ORDER
+            for patch in ax.patches:
+                idx = int(round(patch.get_y() + patch.get_height() / 2))
+                if 0 <= idx < len(MODEL_ORDER) and MODEL_ORDER[idx] not in REASONING_MODELS:
+                    # fade the fill only; hatch draws in the full-strength
+                    # family color (hatch follows edgecolor, not facecolor)
+                    fc = patch.get_facecolor()
+                    patch.set_facecolor((fc[0], fc[1], fc[2], chat_alpha))
+                    patch.set_edgecolor((fc[0], fc[1], fc[2], hatch_alpha))
+                    patch.set_linewidth(0)
+                    patch.set_hatch("//")
         g.figure.suptitle(f"{label} Across Question Set by Model", y=1.02)
+        # center the legend in the empty sixth facet slot (below LSAT-AR)
+        slot_x = g.axes.flat[2].get_position()
+        slot_y = g.axes.flat[3].get_position()
+        g.figure.legend(
+            handles=reasoning_handles,
+            title="Model Type",
+            loc="center",
+            frameon=True,
+            fontsize="large",
+            title_fontsize="large",
+            bbox_to_anchor=(slot_x.x0 + slot_x.width / 2, slot_y.y0 + slot_y.height / 2),
+            bbox_transform=g.figure.transFigure,
+        )
         g.figure.savefig(out / filename, dpi=300, bbox_inches="tight")
         plt.close(g.figure)
         print(f"  wrote {out / filename}")
