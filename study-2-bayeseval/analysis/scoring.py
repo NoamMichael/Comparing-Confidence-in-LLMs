@@ -89,6 +89,9 @@ def murphy_decomposition(df: pd.DataFrame, n_bins: int = 10) -> dict:
 def score_wgd(results: pd.DataFrame, benchmark: pd.DataFrame) -> pd.DataFrame:
     """Ground truth is deterministic: 1.0 if within tolerance, else 0.0."""
     df = _merge_missing(results, benchmark, ["within_lbs", "true_weight"])
+    if "photo" in df.columns:
+        # Drop photo 269.jpg: present only in the SPD build (labeling error), not in the DCE set
+        df = df[df["photo"] != "269.jpg"].reset_index(drop=True)
     answer = _numeric_answer(df["Answer"])
     conf = pd.to_numeric(df["Confidence"], errors="coerce")
     within = df["within_lbs"].astype(float)

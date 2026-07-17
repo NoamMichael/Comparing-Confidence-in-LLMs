@@ -17,7 +17,11 @@ the format wrapper the runner appends at request time.
 Question counts are the committed benchmark CSVs, which match the committed
 `results/` row counts (except WGD_SPD: 924/928 scoreable). The WGD DCE set has 231
 photos vs. 232 in WGD_SPD — photo `269.jpg` appears only in the SPD build (its
-label/photo pairing became available between the two builds).
+label/photo pairing became available between the two builds). This was an
+inadvertent mismatch: photo `269.jpg` is **excluded from all analysis** (filtered
+at load time in `analysis/analysis.ipynb`, `analysis/fast_facts.ipynb`, and
+`analysis/scoring.py`), so both modes are analyzed on the same 231-photo set
+(WGD_SPD: 924 questions analyzed).
 
 ## How a request is assembled
 
