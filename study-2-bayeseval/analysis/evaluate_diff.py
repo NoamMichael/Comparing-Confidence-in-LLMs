@@ -11,10 +11,9 @@ import json
 
 import numpy as np
 import pandas as pd
-from scipy.special import exp1
 from scipy.stats import rankdata
 
-from scoring import _get_gompertz_params
+from scoring import lifeeval_true_probability
 
 
 def _eu_wgd(df: pd.DataFrame) -> np.ndarray:
@@ -24,18 +23,19 @@ def _eu_wgd(df: pd.DataFrame) -> np.ndarray:
 
 
 def _eu_lifeeval(df: pd.DataFrame) -> np.ndarray:
-    y_max = df["min_age"].max() + df["radius"].max()
-    params_map = _get_gompertz_params()
+    """Mean empirical window probability over integer guesses y in [a, y_max]."""
+    y_max = int(df["min_age"].max() + df["radius"].max())
+    cache: dict[tuple[int, str, float], float] = {}
     results = np.empty(len(df))
     for i, (_, row) in enumerate(df.iterrows()):
-        a = float(row["min_age"])
+        a = int(row["min_age"])
         r = float(row["radius"])
         sex = row["sex"].lower()
-        p = params_map[sex]
-        alpha, beta = p.b, p.c
-        A = (alpha / beta) * np.exp(beta * a)
-        Z = r + (np.exp(A) / beta) * (exp1(A) - exp1(A * np.exp(beta * r)))
-        results[i] = Z / (y_max - a) if y_max > a else 0.0
+        key = (a, sex, r)
+        if key not in cache:
+            w = [lifeeval_true_probability(float(y), a, sex, r) for y in range(a, y_max + 1)]
+            cache[key] = float(np.mean(w)) if w else 0.0
+        results[i] = cache[key]
     return results
 
 

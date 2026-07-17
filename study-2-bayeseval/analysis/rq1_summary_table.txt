@@ -13,10 +13,10 @@ Domain & Model & Accuracy & Mean Conf. & Overconf. & $\beta_1$ & ECE & ECE\texts
  & GPT-5.4 Mini         & 0.427 & 0.443 & $+$0.016 & $+$0.237\textsuperscript{***} & 0.046 & 0.087 & $+$89.0\textsuperscript{***} \\
 \midrule
 \multirow{4}{*}{LifeEval}
- & Claude Haiku 4.5     & 0.632 & 0.660 & $+$0.029 & $+$0.734\textsuperscript{***} & 0.037 & 0.162 & $+$334.8\textsuperscript{***} \\
- & Gemini 2.5 Flash     & 0.650 & 0.766 & $+$0.116 & $+$0.804\textsuperscript{***} & 0.116 & 0.103 & $-$11.6\textsuperscript{} \\
- & Llama 4 Maverick     & 0.646 & 0.819 & $+$0.174 & $+$0.794\textsuperscript{***} & 0.196 & 0.171 & $-$12.9\textsuperscript{**} \\
- & GPT-5.4 Mini         & 0.639 & 0.597 & $-$0.042 & $+$0.450\textsuperscript{***} & 0.059 & 0.052 & $-$11.9\textsuperscript{} \\
+ & Claude Haiku 4.5     & 0.623 & 0.660 & $+$0.038 & $+$0.754\textsuperscript{***} & 0.048 & 0.163 & $+$235.5\textsuperscript{***} \\
+ & Gemini 2.5 Flash     & 0.645 & 0.766 & $+$0.120 & $+$0.820\textsuperscript{***} & 0.121 & 0.099 & $-$18.1\textsuperscript{**} \\
+ & Llama 4 Maverick     & 0.634 & 0.819 & $+$0.185 & $+$0.813\textsuperscript{***} & 0.209 & 0.172 & $-$17.8\textsuperscript{***} \\
+ & GPT-5.4 Mini         & 0.630 & 0.597 & $-$0.033 & $+$0.472\textsuperscript{***} & 0.056 & 0.060 & $+$5.6\textsuperscript{} \\
 \midrule
 \multirow{4}{*}{MedEval}
  & Claude Haiku 4.5     & 0.145 & 0.823 & $+$0.678 & $+$0.120\textsuperscript{***} & 0.678 & 0.360 & $-$46.8\textsuperscript{***} \\

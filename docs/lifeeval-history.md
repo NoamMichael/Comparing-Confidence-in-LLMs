@@ -48,8 +48,13 @@ BayesEval rebuilt LifeEval as a proper-scoring domain
   1's radii) plus 808 SPD questions (4 bin widths).
 - **Prompt:** a single bare user message, no reasoning scaffold; JSON answer
   `{"Answer": …, "Confidence": …}`.
-- **Scoring:** Gompertz survival model MLE-fitted to the *same* SSA 2022 table, giving
-  a smooth analytic `true_probability`, scored with Brier + Murphy decomposition.
+- **Scoring:** originally a Gompertz survival model MLE-fitted to the *same* SSA 2022
+  table (smooth analytic `true_probability`); **reverted in July 2026** to study 1's
+  empirical table rule — `true_probability` read directly from the table's per-year
+  death probabilities, exactly as `combine.py:compute_prob` computed it (the port
+  reproduces study-1 scores bit-for-bit on the human data). The two rules agreed at
+  r ≈ 0.99; the Gompertz implementation survives in git history. Scored with Brier +
+  Murphy decomposition.
 
 ## 5. The human study
 
@@ -70,14 +75,14 @@ set aside — see §7):
 | Confidence prompt | "How certain that your answer is within {r} years…" + Directions scaffold + system prompt | "How certain are you that your answer is within {r} year(s)…", bare message |
 | Questions | 808 (radii {1,5,10,20}) | 4,040 DCE (radii 1–20, superset) + 808 SPD |
 | Source table | SSA 2022 period life table | **same file** |
-| Ground truth | Empirical table probability | Gompertz fit to the same table (r ≈ 0.99 agreement on human data) |
+| Ground truth | Empirical table probability | **same rule** (reverted from a Gompertz fit, July 2026) |
 | Response format | Free text with a `Reasoning` field | JSON only — **no reasoning text** |
 | Models | 11 (2024–25 frontier) | 4 (late-2025, via OpenRouter) |
 | Model overlap | — | **only `gemini-2.5-flash`** |
 
-**Verdict: not drop-in replaceable.** The two runs share the task and the source data,
-but only one model appears in both rosters, the prompt harness differs (scaffolded
-reasoning vs. bare JSON), and elicitation/scoring differ. Study-2 responses can't
+**Verdict: not drop-in replaceable.** The two runs share the task, the source data,
+and (since the July 2026 revert) the scoring rule, but only one model appears in both
+rosters and the prompt harness differs (scaffolded reasoning vs. bare JSON). Study-2 responses can't
 substitute for study-1's LifeEval rows in any per-model analysis; at most the
 gemini-2.5-flash cells are comparable across studies, confounded by the prompt change.
 

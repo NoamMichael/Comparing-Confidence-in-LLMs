@@ -1,6 +1,6 @@
 # LifeEval — Pipeline Diagram Specification
 
-Generate a pipeline/flowchart diagram for the LifeEval domain of the BayesEval benchmark. This is an actuarial mortality calibration benchmark using the Gompertz survival model. The diagram should clearly show two parallel tracks: **DCE (Direct Confidence Elicitation)** and **SPD (Sampled Predictive Distribution)**, and highlight the Gompertz model fitting step that feeds into both benchmark construction and scoring.
+Generate a pipeline/flowchart diagram for the LifeEval domain of the BayesEval benchmark. This is an actuarial mortality calibration benchmark scored directly against the SSA 2022 period life table (empirical rule — no parametric fit). The diagram should clearly show two parallel tracks: **DCE (Direct Confidence Elicitation)** and **SPD (Sampled Predictive Distribution)**, and highlight the life-table loading step that feeds into both benchmark construction and scoring.
 
 ## Data Source
 
@@ -9,30 +9,26 @@ Generate a pipeline/flowchart diagram for the LifeEval domain of the BayesEval b
 - `Death probability (MALE)` / `Death probability (FEMALE)` — 1-year mortality probability q_x
 - `Life expectancy (MALE)` / `Life expectancy (FEMALE)` — remaining life expectancy e_x
 
-## Gompertz Model Fitting (`scoring.py:fit_gompertz_to_life_table`)
+## Life-Table Loading (`scoring.py:_get_life_table_qx` / `_death_mass`)
 
-This step is shared by both benchmark construction and scoring. It produces parameters used throughout the pipeline.
+This step is shared by both benchmark construction and scoring. No parametric model is fitted — the table's per-year death probabilities are used directly (study 1's original empirical rule; an earlier Gompertz-fit version survives in git history).
 
-- **Hazard model:** `h(x) = b * exp(c * x)` (Gompertz law of mortality)
-- **Fit range:** Ages 5–94 only (excludes infant mortality bulge at 0–4 and sparse tail at 95+)
-- **Method:** Maximum Likelihood Estimation via `scipy.optimize.minimize` (Nelder-Mead)
-- **Parameterization:** `log(b)` is optimized to enforce positivity; initial guess `log(b) = log(1e-5)`, `c = 0.085`
-- **Output:** `GompertzParams(b, c)` fitted separately for male and female
-- **Caching:** Parameters are computed once per process via a global cache (`_GOMPERTZ_PARAMS`), populated lazily
+- **`_get_life_table_qx()`:** parses the CSV once per process into per-sex `q_x` arrays (ages 0–118), dropping the junk trailing row and asserting the age grid is contiguous
+- **`_death_mass(sex, min_age)`:** for conditioning age `m`, computes `d[x−m] = S_rel(x) · q_x` where `S_rel(x) = Π_{k=m}^{x−1}(1−q_k)` — the probability of dying in year `[x, x+1)` given survival to `m`
+- **Caching:** `q_x` arrays and per-`(sex, m)` death-mass vectors are cached lazily in module-level dicts
 
 ## Benchmark Construction (two parallel tracks)
 
 ### DCE Track: `build_benchmark.py`
 
-- **Input:** Life table + fitted Gompertz parameters (male and female)
+- **Input:** Life table (life-expectancy column for metadata; `q_x` via `analysis.scoring`)
 - **Loop:** For each sex ∈ {male, female}, for each age ∈ 0–100, for each radius ∈ 1–20
 - **Per-row computation:**
   - `true_lifespan` = age + life_expectancy (from life table, stored as metadata)
-  - `best_answer` (y*): found via `scipy.optimize.minimize_scalar` over [age, 130] — the age-at-death guess that maximizes the window probability
-  - `MAS` (Maximum Achievable Score): `window_probability(best_y, age, radius, params)` — the theoretical ceiling probability for this question
-  - `gold_response`: `{"Answer": round(best_y), "Confidence": round(MAS, 2)}` — the ideal perfectly-calibrated response
-  - `window_probability(y, a, r, params)` = P(death in [y-r, y+r] | survived to age a) = S(max(y-r, a) | a) - S(y+r | a)
-  - where `S(x | a) = exp(-(b/c)(exp(cx) - exp(ca)))` is the conditional survival function
+  - `best_answer` (y*): `scoring.lifeeval_best_answer_and_mas` — discrete argmax over integer guesses y ∈ [age, 118] of the empirical window probability; smallest age wins ties (study-1 convention)
+  - `MAS` (Maximum Achievable Score): the window probability at y* — the theoretical ceiling for this question
+  - `gold_response`: `{"Answer": y*, "Confidence": round(MAS, 2)}` — the ideal perfectly-calibrated response
+  - window probability = P(death in [floor(y−r), ceil(y+r)) | survived to age a) = Σ over window of `S_rel(x) · q_x`, clamped to [a, 119)
 - **Output:** `benchmark.csv` with columns:
   - `question_id` (sequential integer 0–4039)
   - `question_prompt` — "Given that an American {sex} has lived at least {age} years, estimate how old they will be when they die."
@@ -86,17 +82,15 @@ Both DCE and SPD results are scored identically by `score_lifeeval()`:
 
 1. **Merge** benchmark columns (`min_age`, `sex`, `radius`) onto results
 2. **For each row**, call `lifeeval_true_probability(answer, min_age, sex, radius)`:
-   - Retrieves cached Gompertz params for the sex
-   - Computes `_window_probability(answer, min_age, radius, params)`:
-     - `lo = max(answer - radius, min_age)` — clamp lower bound to conditioning age
-     - `hi = answer + radius`
-     - `true_probability = S(lo | min_age) - S(hi | min_age)`
-     - where `S(x | a) = exp(-(b/c)(exp(cx) - exp(ca)))`
-   - This is a **continuous** probability (not binary) — it's the mass the Gompertz distribution assigns to the window centered on the model's guess
+   - Retrieves the cached death-mass vector for `(sex, min_age)`
+   - `lo = max(floor(answer − radius), min_age)` — clamp lower bound to conditioning age
+   - `hi = min(ceil(answer + radius), 119)` — clamp upper bound to the table's last age
+   - `true_probability = Σ_{x=lo}^{hi−1} S_rel(x) · q_x` (0.0 if the window is empty)
+   - This is a **graded** probability (not binary) — it's the empirical mass the life table assigns to the window centered on the model's guess
 3. **Brier score:** `(Confidence - true_probability)²`
 4. Unparseable answers produce NaN scores
 
-Key distinction from WGD: true_probability is continuous (Gompertz CDF integral), not binary (hit/miss).
+Key distinction from WGD: true_probability is graded (a table probability mass), not binary (hit/miss).
 
 ## Analysis (`analysis/analysis.ipynb`)
 
@@ -104,7 +98,7 @@ Key distinction from WGD: true_probability is continuous (Gompertz CDF integral)
 - **RQ2 (Difficulty):** Groups by `radius` (difficulty axis), computes mean overconfidence (`Confidence - true_probability`) per group. Larger radius = easier = wider window = higher true_probability.
 - **RQ3 (SPD vs DCE):** Compares ECE between DCE baseline and SPD. Bootstrap significance test (n=2000). Delta ECE = ECE_baseline - ECE_SPD.
 - **Murphy decomposition:** BS = Reliability - Resolution + Uncertainty
-- **Illustration:** Overlays Gompertz conditional PDF against DCE tolerance window and SPD bin distribution for a specific question
+- **Illustration:** Overlays the empirical conditional death-probability curve against DCE tolerance window and SPD bin distribution for a specific question
 
 ## End-to-End Flow Summary
 
@@ -112,18 +106,18 @@ Key distinction from WGD: true_probability is continuous (Gompertz CDF integral)
 PeriodLifeTable_2022_RawData.csv
             │
             ▼
-  fit_gompertz_to_life_table()
-  MLE on ages 5–94
-  h(x) = b·exp(c·x)
-  → GompertzParams(b, c) × {male, female}
+  _get_life_table_qx()
+  per-sex q_x arrays (ages 0–118)
+  d[x−m] = S_rel(x)·q_x  (per-year death mass,
+  conditional on survival to m)
             │
             ├────────────────────────────────────────────┐
             ▼                                            ▼
   build_benchmark.py (DCE)                   build_spd_benchmark.py (SPD)
   101 ages × 2 sexes × 20 radii             101 ages × 2 sexes × 4 bin widths
   Precomputes best_answer & MAS              No precomputed optimal answers
-  via minimize_scalar on                     radius = bin_width / 2
-  window_probability                         top_n from {2→10,10→10,20→5,40→3}
+  via discrete argmax over                   radius = bin_width / 2
+  integer guesses (empirical rule)           top_n from {2→10,10→10,20→5,40→3}
             │                                            │
             ▼                                            ▼
      benchmark.csv (4040 rows)               benchmark_spd.csv (808 rows)
@@ -143,13 +137,13 @@ PeriodLifeTable_2022_RawData.csv
              └──────────────┬───────────────────────────┘
                             ▼
                   score_lifeeval()
-                  Gompertz params (cached, same fit)
-                  true_prob = S(lo|a) - S(hi|a)
-                    where S(x|a) = exp(-(b/c)(exp(cx)-exp(ca)))
+                  cached death-mass vectors (same table)
+                  true_prob = Σ_{x=lo}^{hi−1} S_rel(x)·q_x
+                    window [floor(y−r), ceil(y+r)) clamped to [a, 119)
                   brier = (Confidence - true_prob)²
                             │
                             ▼
                   analysis.ipynb
                   (calibration plots, ECE, Murphy,
-                   RQ1/RQ2/RQ3, Gompertz PDF overlay)
+                   RQ1/RQ2/RQ3, empirical death-mass overlay)
 ```

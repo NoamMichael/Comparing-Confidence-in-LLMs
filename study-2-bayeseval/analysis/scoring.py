@@ -7,18 +7,16 @@ get_scorer(domain_name) returns the appropriate scorer.
 
 Domains:
     WGD       — binary hit: |answer - true_weight| <= within_lbs
-    LifeEval  — Gompertz conditional survival CDF over [y-r, y+r)
+    LifeEval  — empirical SSA life-table window probability (study-1 rule)
     MedEval   — lookup in DDXPlus differential distribution
 """
 
 import json
 import re
-from dataclasses import dataclass
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from scipy.optimize import minimize
 
 
 # ---------------------------------------------------------------------------
@@ -104,86 +102,70 @@ def score_wgd(results: pd.DataFrame, benchmark: pd.DataFrame) -> pd.DataFrame:
 
 
 # ---------------------------------------------------------------------------
-# LifeEval — Gompertz mortality model
+# LifeEval — empirical SSA life-table rule (study-1 preregistered rule)
 # ---------------------------------------------------------------------------
 
-@dataclass
-class GompertzParams:
-    """Gompertz hazard parameters: h(x) = b * exp(c * x)"""
-    b: float
-    c: float
-
-
-def fit_gompertz_to_life_table(life_table_path: str, sex: str = "male") -> GompertzParams:
-    """Fit Gompertz hazard via MLE on ages 5-94 of the period life table."""
-    df = pd.read_csv(life_table_path)
-    col_prefix = "MALE" if sex.lower() == "male" else "FEMALE"
-    q_col = f"Death probability ({col_prefix})"
-
-    ages = df["Age"].values.astype(float)
-    qx = df[q_col].values.astype(float)
-
-    mask = (ages >= 5) & (ages <= 94)
-    fit_ages = ages[mask]
-    fit_qx = qx[mask]
-
-    def neg_log_likelihood(params):
-        log_b, c = params
-        b = np.exp(log_b)
-        if c <= 0:
-            return 1e12
-        exponent = -(b / c) * (np.exp(c * (fit_ages + 1)) - np.exp(c * fit_ages))
-        predicted_qx = 1.0 - np.exp(exponent)
-        predicted_qx = np.clip(predicted_qx, 1e-15, 1 - 1e-15)
-        ll = fit_qx * np.log(predicted_qx) + (1 - fit_qx) * np.log(1 - predicted_qx)
-        return -np.sum(ll)
-
-    result = minimize(
-        neg_log_likelihood,
-        x0=[np.log(1e-5), 0.085],
-        method="Nelder-Mead",
-        options={"maxiter": 10000, "xatol": 1e-12, "fatol": 1e-12},
-    )
-    return GompertzParams(b=np.exp(result.x[0]), c=result.x[1])
-
-
-def _conditional_survival(x: float, a: float, params: GompertzParams) -> float:
-    """S(x | X >= a) = exp(-(b/c)(exp(cx) - exp(ca)))"""
-    b, c = params.b, params.c
-    return float(np.exp(-(b / c) * (np.exp(c * x) - np.exp(c * a))))
-
-
-def _window_probability(y: float, a: float, r: float, params: GompertzParams) -> float:
-    """P(death in [y-r, y+r) | survived to a), closed-form via conditional survival CDF."""
-    lo = max(y - r, a)
-    hi = y + r
-    if lo >= hi:
-        return 0.0
-    return _conditional_survival(lo, a, params) - _conditional_survival(hi, a, params)
-
-
 _LIFE_TABLE = Path(__file__).resolve().parent.parent / "domains" / "LifeEval" / "Data" / "PeriodLifeTable_2022_RawData.csv"
-_GOMPERTZ_PARAMS: dict[str, GompertzParams] | None = None
+_LIFE_TABLE_QX: dict[str, tuple[np.ndarray, int]] | None = None  # sex -> (q_x, table_min)
+_DEATH_MASS: dict[tuple[str, int], np.ndarray] = {}              # (sex, m) -> d array
 
 
-def _get_gompertz_params() -> dict[str, GompertzParams]:
-    global _GOMPERTZ_PARAMS
-    if _GOMPERTZ_PARAMS is None:
-        _GOMPERTZ_PARAMS = {
-            "male": fit_gompertz_to_life_table(str(_LIFE_TABLE), "male"),
-            "female": fit_gompertz_to_life_table(str(_LIFE_TABLE), "female"),
-        }
-    return _GOMPERTZ_PARAMS
+def _get_life_table_qx() -> dict[str, tuple[np.ndarray, int]]:
+    """Parse and cache per-sex death probabilities q_x from the SSA life table."""
+    global _LIFE_TABLE_QX
+    if _LIFE_TABLE_QX is None:
+        df = pd.read_csv(_LIFE_TABLE)
+        out = {}
+        for sex in ("male", "female"):
+            col = f"Death probability ({sex.upper()})"
+            tab = df[["Age", col]].dropna().sort_values("Age")
+            ages = tab["Age"].astype(int).to_numpy()
+            q = tab[col].astype(float).to_numpy()
+            if not np.array_equal(ages, np.arange(ages[0], ages[-1] + 1)):
+                raise ValueError("life table ages not contiguous")
+            out[sex] = (q, int(ages[0]))
+        _LIFE_TABLE_QX = out
+    return _LIFE_TABLE_QX
+
+
+def _death_mass(sex: str, min_age: int) -> tuple[np.ndarray, int, int]:
+    """d[x-m] = P(die in [x, x+1) | survived to m) = S_rel(x)*q_x for x in [m, table_max]."""
+    q, table_min = _get_life_table_qx()[sex]
+    table_max = table_min + len(q) - 1
+    m = max(int(min_age), table_min)
+    key = (sex, m)
+    if key not in _DEATH_MASS:
+        qs = q[m - table_min:]
+        s_rel = np.concatenate(([1.0], np.cumprod(1.0 - qs[:-1])))
+        _DEATH_MASS[key] = s_rel * qs
+    return _DEATH_MASS[key], m, table_max
 
 
 def lifeeval_true_probability(answer: float, min_age: float, sex: str, radius: float) -> float:
-    """P(death in [answer-r, answer+r) | survived to min_age) via Gompertz."""
-    params = _get_gompertz_params()[sex.lower()]
-    return _window_probability(answer, min_age, radius, params)
+    """P(death in integer-age window [floor(answer-r), ceil(answer+r)) | survived
+    to min_age), read directly from the SSA 2022 period life table."""
+    if answer is None or not np.isfinite(answer) or not np.isfinite(min_age) or not np.isfinite(radius):
+        return np.nan
+    d, m, table_max = _death_mass(sex.strip().lower(), int(min_age))
+    lo = max(int(np.floor(answer - radius)), m)
+    hi = min(int(np.ceil(answer + radius)), table_max + 1)
+    if hi <= lo:
+        return 0.0
+    return float(min(max(d[lo - m: hi - m].sum(), 0.0), 1.0))
+
+
+def lifeeval_best_answer_and_mas(min_age: int, sex: str, radius: float) -> tuple[int, float]:
+    """Discrete argmax of the empirical window probability over integer answers
+    y in [min_age, table_max]; smallest y wins ties (study-1 convention)."""
+    d, m, table_max = _death_mass(sex.strip().lower(), int(min_age))
+    ys = np.arange(m, table_max + 1)
+    probs = np.array([lifeeval_true_probability(float(y), min_age, sex, radius) for y in ys])
+    i = int(np.argmax(probs))
+    return int(ys[i]), float(probs[i])
 
 
 def score_lifeeval(results: pd.DataFrame, benchmark: pd.DataFrame) -> pd.DataFrame:
-    """Ground truth from Gompertz conditional survival CDF."""
+    """Ground truth from the empirical SSA life-table rule."""
     df = _merge_missing(results, benchmark, ["min_age", "sex", "radius"])
     answer = _numeric_answer(df["Answer"])
     df["true_probability"] = [

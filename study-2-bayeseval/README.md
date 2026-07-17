@@ -19,12 +19,12 @@ We evaluate four frontier LLMs — Claude Haiku 4.5, Gemini 2.5 Flash, Llama 4 M
 | Domain | Description | Ground Truth Source |
 |--------|-------------|-------------------|
 | [WGD](domains/WGD/) | Weight estimation from photos | Deterministic: measured weight within tolerance |
-| [LifeEval](domains/LifeEval/) | Actuarial mortality estimation | Gompertz conditional survival CDF |
+| [LifeEval](domains/LifeEval/) | Actuarial mortality estimation | Empirical SSA life-table window probability |
 | [MedEval](domains/MedEval/) | Differential-diagnosis calibration | DDXPlus synthetic patient differentials |
 
 ## Prompts
 
-All prompts are sent as a single `user` message with no system message. For standard (non-SPD) question sets, a JSON format instruction is appended automatically by the runner. For SPD question sets, the format instruction is embedded in the `confidence_prompt`. The summaries below cover the templates; [docs/prompts.md](docs/prompts.md) is the verbatim reference, including the exact runner-appended wrappers (standard and reasoning variants) and fully assembled example messages per question set.
+All prompts are sent as a single `user` message with no system message. For standard (non-SPD) question sets, a JSON format instruction is appended automatically by the runner. For SPD question sets, the format instruction is embedded in the `confidence_prompt`. The summaries below cover the templates; [docs/prompts.md](docs/prompts.md) is the verbatim reference, including the exact runner-appended wrappers (standard and reasoning variants) and fully assembled example messages per question set. For a narrative walkthrough of how the LifeEval and WGD question sets were constructed and scored in each mode, see [docs/explainer_lifeeval_wgd.md](docs/explainer_lifeeval_wgd.md).
 
 ### WGD (Standard)
 
@@ -202,10 +202,10 @@ A preregistered human study (AsPredicted #267677; materials and cleaned data in
 questions: 980 observations over 88 conditions (ages {1,10,…,100} × 2 sexes × radii
 {1,5,10,20}), each with a point estimate and a 0–100 confidence rating. The supplement
 notebook [`analysis/human_supplement.ipynb`](analysis/human_supplement.ipynb) scores
-humans with the same Gompertz rule as the models and compares calibration,
+humans with the same empirical life-table rule as the models and compares calibration,
 overconfidence, Brier/Murphy decomposition, and the hard–easy effect on the matched
-cells. Headlines: humans are overconfident (+0.13) and sit inside the LLM range
-(GPT-5.4 Mini −0.04 to Llama 4 Maverick +0.18), and the hard–easy effect
+cells. Headlines: humans are overconfident (+0.14) and sit inside the LLM range
+(GPT-5.4 Mini −0.03 to Llama 4 Maverick +0.18), and the hard–easy effect
 (overconfidence rising with difficulty percentile) appears in every agent, human or
 machine.
 
@@ -228,7 +228,7 @@ BayesEval/
 │   └── features/
 │       └── estimate_costs.py  # Pre-run cost estimator
 ├── analysis/
-│   ├── scoring.py             # Unified scoring (Brier, Murphy, Gompertz CDF)
+│   ├── scoring.py             # Unified scoring (Brier, Murphy, empirical life-table rule)
 │   ├── analysis.ipynb         # Main analysis notebook (RQ1–3, post-hoc)
 │   ├── human_supplement.ipynb # Human-vs-LLM LifeEval supplement
 │   ├── fast_facts.ipynb       # Auditable fact-checking for paper

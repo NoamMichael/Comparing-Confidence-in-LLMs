@@ -39,21 +39,20 @@ E_U[R] = 1 / n
 
 Difficulty depends only on how many candidates survive the removal step.
 
-**LifeEval** — the reward for guessing age `y` is the Gompertz window probability
-`P(death in [y−r, y+r) | survived to a)`. Integrating that over a uniform guess on
-`[a, Y_max]` has the closed form
+**LifeEval** — the reward for guessing age `y` is the empirical window probability
+`P(death in [floor(y−r), ceil(y+r)) | survived to a)` read directly from the SSA 2022
+life table. Averaging that over a uniform guess on the integers `[a, Y_max]`:
 
 ```
-E_U[R] = Z(a, r) / (Y_max − a)
-Z(a, r) = r + (e^A / β) · [E₁(A) − E₁(A · e^(βr))]
-A       = (α / β) · e^(βa)
+E_U[R] = mean_{y = a..Y_max} P(death in window(y, r) | survived to a)
 ```
 
-with `(α, β)` the sex-specific Gompertz parameters fitted to the SSA 2022 life table,
-`E₁` the exponential integral (`scipy.special.exp1`), and `Y_max = 120` (the oldest
-reachable grid age, 100 + 20). Difficulty rises for younger ages (wider answer range)
-and narrower radii. `analysis/sensitivity_ymax.py` shows the resulting ranking is
-insensitive to the `Y_max` choice (Spearman ρ > 0.99 across 118–130).
+computed numerically per (sex, `a`, `r`) from the table's per-year death
+probabilities, with `Y_max = 120` (the oldest reachable grid age, 100 + 20). Guesses
+whose window lies past the table's last age (118) contribute 0, correctly penalizing
+the uniform guesser's wasted range. Difficulty rises for younger ages (wider answer
+range) and narrower radii. `analysis/sensitivity_ymax.py` shows the resulting ranking
+is insensitive to the `Y_max` choice.
 
 ## From expected reward to the `diff` column
 

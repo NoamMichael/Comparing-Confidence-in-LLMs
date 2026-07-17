@@ -5,10 +5,9 @@ import pandas as pd
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from pathlib import Path
-from scipy.special import exp1
 from scipy.stats import spearmanr, rankdata, linregress
 
-from scoring import _get_gompertz_params, lifeeval_true_probability
+from scoring import lifeeval_true_probability
 
 ROOT = Path(__file__).resolve().parent.parent
 MODELS = [
@@ -45,41 +44,44 @@ def main():
     ]
     le_df["overconfidence"] = le_df["Confidence"] - le_df["true_probability"]
 
-    # Precompute Z values (Y_max-independent) on benchmark questions
-    params_map = _get_gompertz_params()
-    min_ages_bench = bench["min_age"].to_numpy(dtype=float)
-    z_bench = np.empty(len(bench))
-    for i, (_, row) in enumerate(bench.iterrows()):
-        a, r = float(row["min_age"]), float(row["radius"])
-        p = params_map[row["sex"].lower()]
-        A = (p.b / p.c) * np.exp(p.c * a)
-        z_bench[i] = r + (np.exp(A) / p.c) * (exp1(A) - exp1(A * np.exp(p.c * r)))
+    # Precompute cumulative window-probability sums (Y_max-independent) on
+    # benchmark questions: cumw[k] = sum of empirical window probabilities
+    # for integer guesses y in [a, a+k].
+    y_max_hi = max(Y_MAX_RANGE)
+    min_ages_bench = bench["min_age"].to_numpy(dtype=int)
+    cumw_bench = []
+    for _, row in bench.iterrows():
+        a, r = int(row["min_age"]), float(row["radius"])
+        sex = row["sex"].lower()
+        w = [lifeeval_true_probability(float(y), a, sex, r) for y in range(a, y_max_hi + 1)]
+        cumw_bench.append(np.cumsum(w))
 
-    # Build Z lookup keyed by question_id
-    z_by_qid = dict(zip(bench["question_id"], z_bench))
-    min_age_by_qid = dict(zip(bench["question_id"], min_ages_bench))
+    def eu_at(y_max: int) -> np.ndarray:
+        """EU = mean window probability over integer guesses in [a, y_max]."""
+        return np.array([
+            cw[y_max - a] / (y_max - a + 1) if y_max >= a else 0.0
+            for cw, a in zip(cumw_bench, min_ages_bench)
+        ])
 
-    le_df["z"] = le_df["question_id"].map(z_by_qid)
-    le_df["min_age_f"] = le_df["question_id"].map(min_age_by_qid)
-    le_df = le_df.dropna(subset=["z"])
+    # Map result rows to benchmark rows by question_id
+    idx_by_qid = {qid: i for i, qid in enumerate(bench["question_id"])}
+    le_df["bench_idx"] = le_df["question_id"].map(idx_by_qid)
+    le_df = le_df.dropna(subset=["bench_idx"])
+    bench_idx = le_df["bench_idx"].to_numpy(dtype=int)
 
     # Reference difficulty ranks (Y_max=120)
-    ref_eu_bench = z_bench / (Y_MAX_REF - min_ages_bench)
-    ref_ranks_bench = rankdata(-ref_eu_bench, method="average")
+    ref_ranks_bench = rankdata(-eu_at(Y_MAX_REF), method="average")
 
     rows = []
     for y_max in Y_MAX_RANGE:
+        eu_bench = eu_at(y_max)
+
         # Spearman rho vs reference
-        denom_bench = y_max - min_ages_bench
-        with np.errstate(divide="ignore", invalid="ignore"):
-            eu_bench = np.where(denom_bench > 0, z_bench / denom_bench, 0.0)
         ranks_bench = rankdata(-eu_bench, method="average")
         rho, _ = spearmanr(ref_ranks_bench, ranks_bench)
 
         # Difficulty percentile on results for this Y_max
-        denom = y_max - le_df["min_age_f"].to_numpy()
-        with np.errstate(divide="ignore", invalid="ignore"):
-            eu = np.where(denom > 0, le_df["z"].to_numpy() / denom, 0.0)
+        eu = eu_bench[bench_idx]
         le_df["diff"] = rankdata(-eu, method="average") / len(eu)
 
         # Beta_1 per model

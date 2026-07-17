@@ -30,7 +30,7 @@ wrapper instead requests
 ## Ground truth for this question
 
 - True lifespan (life table): 74.74 years
-- Best answer (optimal point estimate): 82.65
+- Best answer (optimal integer point estimate): 86
 - MAS (maximum achievable probability for radius=1): 0.065
-- `true_probability` at scoring time = `P(death in [Answer-1, Answer+1] | survived to age 0)`,
-  computed via the Gompertz conditional survival CDF.
+- `true_probability` at scoring time = `P(death in [Answer-1, Answer+1) | survived to age 0)`,
+  read directly from the life table's per-year death probabilities (empirical rule).

@@ -35,7 +35,7 @@ analysis/figs/  +  rq*_summary tables
 | Domain | Task | Ground truth |
 |---|---|---|
 | WGD | Guess a person's weight from a photo | Binary: within `within_lbs` of measured weight |
-| LifeEval | Estimate age at death given survival to `min_age` | Gompertz conditional survival CDF over `[y−r, y+r)`, fitted to the SSA 2022 period life table |
+| LifeEval | Estimate age at death given survival to `min_age` | Empirical window probability over `[floor(y−r), ceil(y+r))`, read directly from the SSA 2022 period life table |
 | MedEval | Name the diagnosis from a DDXPlus case | Probability of the answer in the case's differential distribution |
 
 Each domain runs in two elicitation modes: **DCE** (direct confidence estimate — one

@@ -43,7 +43,11 @@ participants → 980 item-level observations. All 88 conditions received respons
   Qualtrics loop item → MinAge/Radius/SexMale). That file was not preserved, so the raw→cleaned
   step is not re-runnable as-is; `cleaned/260113LEHcleaned.csv` (from the original run) is the
   canonical dataset, and its item attributes verify exactly against the `LifeEvalQ` QID scheme.
-- `fin_le_data.csv`'s `Score` uses study 1's empirical SSA life-table rule. The supplement
-  notebook re-scores humans with this study's Gompertz rule (`analysis/scoring.py`) so humans
-  and LLMs are compared under the same ground truth; the two rules agree closely (see the
-  sensitivity section of the notebook).
+- `fin_le_data.csv`'s `Score` uses study 1's empirical SSA life-table rule — the same rule
+  study 2 now uses (`analysis/scoring.py`), so humans and LLMs are compared under the same
+  ground truth. **Caveat (found July 2026):** the study-1 wrapper that produced `Score`
+  assigned sex by row position (`female iff index >= 404`), which is correct for the
+  qid-sorted 808-row LLM files but misassigns sex on 498 of the 980 human rows. The
+  supplement notebook's consistency check reproduces `Score` bit-for-bit *after replicating
+  that assignment*, and scores all analyses with the declared (correct) sex; prefer the
+  notebook's `true_probability` over `fin_le_data.csv`'s `Score` for any human analysis.

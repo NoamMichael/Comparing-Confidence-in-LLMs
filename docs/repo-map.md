@@ -83,7 +83,7 @@ Details: [study-2-workflow.md](study-2-workflow.md) and the
 │   └── MedEval/               Differential diagnosis from DDXPlus
 ├── results/<Domain>[_SPD]/    COMMITTED  raw model outputs (the thesis's evidence)
 ├── analysis/
-│   ├── scoring.py             Unified scoring: Brier, Murphy, Gompertz survival CDF
+│   ├── scoring.py             Unified scoring: Brier, Murphy, empirical SSA life-table rule
 │   ├── evaluate_diff.py       Difficulty percentile (see difficulty-scoring.md)
 │   ├── analysis.ipynb         Main RQ1–3 analysis
 │   ├── human_supplement.ipynb Human-vs-LLM LifeEval comparison
