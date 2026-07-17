@@ -23,7 +23,9 @@ from __future__ import annotations
 import json
 import re
 import shutil
+import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 import pandas as pd
@@ -205,6 +207,61 @@ def convert_table1() -> str:
 
 
 # ---------------------------------------------------------------------------
+# 4. Rendered preview of all tables: paper/tables.pdf (one table per page).
+# ---------------------------------------------------------------------------
+PREVIEW_PREAMBLE = r"""\documentclass[10pt]{article}
+\usepackage[landscape,margin=1.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{adjustbox}
+\usepackage[T1]{fontenc}
+\setlength{\parindent}{0pt}
+\begin{document}
+{\LARGE\bfseries Paper tables preview}\\[1ex]
+Rendered from \texttt{paper/tex/*.tex} by \texttt{retrieve\_paper\_resources.py};
+regenerate with that script after any upstream change. One table per page.
+\clearpage
+"""
+
+
+def build_tables_pdf() -> str | None:
+    if shutil.which("pdflatex") is None:
+        print("WARNING: pdflatex not found — skipping tables.pdf", file=sys.stderr)
+        return None
+    parts = [PREVIEW_PREAMBLE]
+    for tex in sorted((PAPER / "tex").glob("*.tex")):
+        # inline the table (float -> center + \captionof) so the filename heading
+        # always renders above its table instead of the float jumping to page top
+        body = tex.read_text()
+        body = re.sub(r"\\begin\{table\*?\}(\[[^\]]*\])?", r"\\begin{center}", body)
+        body = re.sub(r"\\end\{table\*?\}", r"\\end{center}", body)
+        body = body.replace("\\caption{", "\\captionof{table}{")
+        # shrink-to-fit (only downscales) so wide tables never run off the page
+        body = re.sub(
+            r"(\\begin\{tabular\}.*\\end\{tabular\})",
+            r"\\begin{adjustbox}{max width=\\textwidth}\n\1\n\\end{adjustbox}",
+            body,
+            flags=re.DOTALL,
+        )
+        parts.append(f"\\section*{{\\texttt{{{tex.name.replace('_', chr(92) + '_')}}}}}")
+        parts.append("{\\small\n" + body + "\n}")
+        parts.append("\\clearpage")
+    parts.append("\\end{document}\n")
+    with tempfile.TemporaryDirectory() as td:
+        (Path(td) / "tables.tex").write_text("\n".join(parts))
+        res = subprocess.run(
+            ["pdflatex", "-interaction=nonstopmode", "-halt-on-error", "tables.tex"],
+            cwd=td, capture_output=True, text=True,
+        )
+        if res.returncode != 0:
+            print(res.stdout[-3000:], file=sys.stderr)
+            raise SystemExit("ERROR: pdflatex failed while building tables.pdf")
+        shutil.copy2(Path(td) / "tables.pdf", PAPER / "tables.pdf")
+    return "tables.pdf"
+
+
+# ---------------------------------------------------------------------------
 
 
 def main() -> int:
@@ -230,6 +287,10 @@ def main() -> int:
     print(f"converted  {TABLE1_CSV}  ->  paper/{convert_table1()}")
 
     n_files = len(MANIFEST) + len(NOTEBOOK_TABLES) + 1
+    if build_tables_pdf():
+        print(f"rendered   paper/tex/*.tex  ->  paper/tables.pdf")
+        n_files += 1
+
     print(f"\nDone: {n_files} files in {PAPER}")
     return 0
 

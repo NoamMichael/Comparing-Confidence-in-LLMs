@@ -18,6 +18,12 @@ and intermediate data files.
 
 ## Contents
 
+### `tables.pdf` — rendered preview of all tables
+
+One table per page (title page + 5 tables), compiled from `tex/*.tex` by the retrieval
+script whenever `pdflatex` is available. Wide tables are shrunk to fit the page; each
+page is headed by the source filename.
+
 ### `tex/` — LaTeX tables
 
 | File | Source | Contents |
