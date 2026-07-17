@@ -99,6 +99,20 @@ NOTEBOOK_TABLES = {
 
 TABLE_RE = re.compile(r"\\begin\{table\*?\}.*?\\end\{table\*?\}", re.DOTALL)
 
+# LifeEval was dropped from study 1 (see docs/lifeeval-history.md) but the notebook
+# outputs and the R Table 1 CSV predate the drop; remove its rows at retrieval time.
+LIFEEVAL_BLOCK_RE = re.compile(
+    r"\\multirow\[[^\]]*\]\{\d+\}\{\*\}\{LifeEval\}.*?(?=\\multirow|\\bottomrule)",
+    re.DOTALL,
+)
+
+
+def drop_lifeeval_rows(block: str) -> str:
+    cleaned, n = LIFEEVAL_BLOCK_RE.subn("", block)
+    if n != 1:
+        raise SystemExit(f"ERROR: expected 1 LifeEval row group in extracted table, found {n}")
+    return cleaned
+
 
 def notebook_table_blocks(nb_path: Path) -> list[str]:
     """All \\begin{table(*)}...\\end{table(*)} blocks printed by code cells."""
@@ -140,6 +154,7 @@ def extract_notebook_tables() -> list[str]:
                 f"ERROR: no table with marker {spec['marker']!r} found in {S1_NOTEBOOK}"
             )
         block = max(candidates, key=lambda b: b.count(r"\\"))  # most rows wins
+        block = drop_lifeeval_rows(block)
         block = ensure_caption_and_label(block, spec["caption"], spec["label"])
         dest = PAPER / dest_rel
         dest.parent.mkdir(parents=True, exist_ok=True)
@@ -163,6 +178,7 @@ METRIC_NAMES = {
 
 def convert_table1() -> str:
     df = pd.read_csv(REPO / TABLE1_CSV)
+    df = df[df["qset"] != "LifeEval"]
     df["metric"] = df["metric"].map(lambda m: METRIC_NAMES.get(m, m))
     df = df.set_index(["qset", "metric"])
     df.index.names = ["Question Set", "Metric"]

@@ -32,8 +32,9 @@ Notes:
 - The two `study1_summary_*` tables are pulled from notebook cell outputs; the script
   keys on model-name markers (not cell indices) and picks the complete variant when the
   notebook holds several. Captions/labels are normalized by the script.
-- These notebook tables (and Table 1) still include **LifeEval rows** from before
-  LifeEval was dropped from study 1 — trim when placing in the paper if needed.
+- The notebook outputs and the R Table 1 CSV predate LifeEval being dropped from
+  study 1; the script **removes the LifeEval rows** from all three study-1 tables at
+  retrieval time.
 
 ### `plots/study1/` — from `study-1-benchmark-calibration/Plots/`
 
