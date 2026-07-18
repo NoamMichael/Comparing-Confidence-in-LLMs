@@ -1,0 +1,51 @@
+% LifeEval task description + scoring + difficulty.
+% Corrected difficulty definition to match analysis/evaluate_diff.py::_eu_lifeeval
+% and add_difficulty (expected reward of a uniform guesser, then within-task
+% rank percentile). The scoring window is half-open of width 2r to match the
+% empirical rule in analysis/scoring.py::lifeeval_true_probability and the SPD
+% bin width. Model-dependent terms (acc, \hat{y}) removed from difficulty.
+
+We developed the LifeEval task which allows us to systematically vary difficulty. We compare Direct Confidence Elicitation (DCE) with Subjective Probability Distributions (SPD) prompting as shown in Figure \ref{fig:le_main_fig}.
+Under DCE, the model provides a single point estimate $\hat{y}_k$ and a scalar confidence $C_k$ that the true age at death falls within $[\hat{y}_k - r,\; \hat{y}_k + r)$. Under SPD, the model provides its top-$n$ most likely age-at-death ranges, each of a fixed width $2r$, along with the probability that each contains the true value. The model freely chooses where to place its bins. We score on the modal bin: let $\hat{y}_k$ be the center of the highest-confidence range and $C_k$ be its stated probability. In both cases, each question $k \in Q$ yields an estimate $\hat{y}_k$ and a confidence $C_k$.
+
+For a given question, let $a$ be the minimum age (e.g. 25), $s$ be the sex, and $r$ be the radius around the model's guess. Suppose a model guessed $\hat{y}(a,s)$ and has confidence $c(a,s,r)$ that the true age at death is within a radius $r$ of $\hat{y}(a,s)$. We justify why our approach fits into the framework of the other question sets as follows: imagine for a moment we had a large set of people $Q$ where person $i\in Q$ died at age $y_i$. Focusing on the subset $Q_{as}=\{i: y_i\ge a,\ \text{sex}(i)=s\}$ of people of sex $s$ who lived to at least age $a$, we can treat this as the binary question of whether the true $y_i$ falls in the model's interval:
+
+\begin{align}
+    \text{acc}_{\text{LifeEval}}(Q_{as})
+    = \frac{1}{|Q_{as}|}\sum_{i\in Q_{as}}
+      \mathbb{I}\bigl\{\hat{y}(a,s) - r \le y_i < \hat{y}(a,s) + r \bigr\},
+\end{align}
+where $\mathbb{I}$ is the indicator function. Letting $|Q_{as}|\to\infty$, we have $\text{acc}_{\text{LifeEval}}(Q_{as}) \rightarrow p\bigl(\hat{y}(a,s) \mid r,a,s\bigr)$, where $p(k \mid r,a,s)$ is defined as
+\begin{equation}
+    p(k \mid r,a,s) = \mathbb{P}\bigl( k - r \le y < k + r \,\big|\, y\geq a,\, s\bigr).
+\end{equation}
+By taking advantage of the actuarial life tables from the Social Security Administration \citep{SSA2022LifeTable}, we compute $p(k \mid r,a,s)$ as
+\begin{equation}
+    R(k \mid r,a,s) \;=\; p(k \mid r,a,s) \;=\; \sum_{i=k-r}^{k+r-1} S_i(a,s)\,q_i(s),
+    \label{Def: p(k,r|a,s)}
+\end{equation}
+so that the window spans exactly $2r$ integer ages, matching the SPD bin width. Here $q_i(s)$ is the probability that a person of sex $s$ who has just turned age $i$ dies before reaching age $i+1$ (the one-year death probability from the life table), and $S_i(a,s)$ is the conditional probability of surviving from age $a$ to age $i$. While $q_i(s)$ is read directly from the life tables, $S_i(a,s)$ is computed as
+\begin{equation}
+    \begin{split}
+        S_i(a, s) &= \mathbb{P}\bigl( \text{survive to age } i \,\big|\, a,s\bigr)\\
+        &= \prod_{j=a}^{i-1} \bigl(1-q_j(s)\bigr),
+    \end{split}
+\end{equation}
+with the convention $S_a(a,s)=1$.
+
+\paragraph{Difficulty.}
+The difficulty of a LifeEval question must depend only on the question $(a,s,r)$, not on any model's answer. We measure it by the \emph{expected reward of a uniform guesser} over the plausible answer space $[a,\,Y_{\max}]$, where $Y_{\max} = 120$ is a conservative upper bound on human lifespan.\footnote{See Appendix~\ref{app:limits_of_integration} for how this value was chosen.} The lower limit is $a$ rather than $0$ because a person known to have survived to age $a$ cannot die before $a$, so no informed guesser would answer below $a$. A guesser who picks an age $k$ uniformly at random from $\{a,\dots,Y_{\max}\}$ earns expected reward
+\begin{equation}
+    R_{\text{unif}}(a,s,r)
+    = \mathbb{E}_{k \sim \mathrm{Unif}\{a,\dots,Y_{\max}\}}\!\bigl[\,R(k \mid r,a,s)\,\bigr]
+    = \frac{1}{Y_{\max}-a+1}\sum_{k=a}^{Y_{\max}} R(k \mid r,a,s).
+    \label{eq:le_expected_reward}
+\end{equation}
+A large $R_{\text{unif}}$ means even a blind guess tends to capture the true-age mass (an easy question); a small value means the mass is hard to hit (a hard question). To place LifeEval on the same scale as WGD and MedEval---whose analogous uniform-guesser rewards are $2r/(w_{\max}-w_{\min})$ and $1/|\text{candidates}|$ respectively---we report difficulty as the within-task rank percentile of the \emph{negated} expected reward:
+\begin{equation}
+    \mathcal{D}(a,s,r)
+    = \frac{\operatorname{rank}_{Q}\!\bigl(-R_{\text{unif}}(a,s,r)\bigr)}{|Q|}
+    \;\in\; (0,1],
+    \label{eq:le_difficulty}
+\end{equation}
+so that $\mathcal{D}$ increases with difficulty ($\mathcal{D}\to 1$ hardest, $\mathcal{D}\to 0$ easiest) and is directly comparable across tasks.
