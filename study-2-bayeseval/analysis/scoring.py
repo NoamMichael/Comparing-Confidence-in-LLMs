@@ -108,6 +108,7 @@ def score_wgd(results: pd.DataFrame, benchmark: pd.DataFrame) -> pd.DataFrame:
 _LIFE_TABLE = Path(__file__).resolve().parent.parent / "domains" / "LifeEval" / "Data" / "PeriodLifeTable_2022_RawData.csv"
 _LIFE_TABLE_QX: dict[str, tuple[np.ndarray, int]] | None = None  # sex -> (q_x, table_min)
 _DEATH_MASS: dict[tuple[str, int], np.ndarray] = {}              # (sex, m) -> d array
+_DEATH_CDF: dict[tuple[str, int], np.ndarray] = {}              # (sex, m) -> cumulative mass C
 
 
 def _get_life_table_qx() -> dict[str, tuple[np.ndarray, int]]:
@@ -141,25 +142,41 @@ def _death_mass(sex: str, min_age: int) -> tuple[np.ndarray, int, int]:
     return _DEATH_MASS[key], m, table_max
 
 
+def _death_cdf(sex: str, min_age: int) -> tuple[np.ndarray, int, int]:
+    """Prefix sums of the death mass: C[k] = P(die in [m, m+k) | survived to m),
+    so any window mass is C[hi-m] - C[lo-m]. len(C) = len(d) + 1."""
+    d, m, table_max = _death_mass(sex, min_age)
+    key = (sex, m)
+    if key not in _DEATH_CDF:
+        _DEATH_CDF[key] = np.concatenate(([0.0], np.cumsum(d)))
+    return _DEATH_CDF[key], m, table_max
+
+
 def lifeeval_true_probability(answer: float, min_age: float, sex: str, radius: float) -> float:
     """P(death in integer-age window [floor(answer-r), ceil(answer+r)) | survived
     to min_age), read directly from the SSA 2022 period life table."""
     if answer is None or not np.isfinite(answer) or not np.isfinite(min_age) or not np.isfinite(radius):
         return np.nan
-    d, m, table_max = _death_mass(sex.strip().lower(), int(min_age))
+    C, m, table_max = _death_cdf(sex.strip().lower(), int(min_age))
     lo = max(int(np.floor(answer - radius)), m)
     hi = min(int(np.ceil(answer + radius)), table_max + 1)
     if hi <= lo:
         return 0.0
-    return float(min(max(d[lo - m: hi - m].sum(), 0.0), 1.0))
+    return float(min(max(C[hi - m] - C[lo - m], 0.0), 1.0))
 
 
 def lifeeval_best_answer_and_mas(min_age: int, sex: str, radius: float) -> tuple[int, float]:
     """Discrete argmax of the empirical window probability over integer answers
-    y in [min_age, table_max]; smallest y wins ties (study-1 convention)."""
-    d, m, table_max = _death_mass(sex.strip().lower(), int(min_age))
+    y in [min_age, table_max]; smallest y wins ties (study-1 convention).
+
+    Vectorized over all guesses via the death-mass prefix sums: each guess's
+    window mass is one subtraction C[hi-m] - C[lo-m]."""
+    C, m, table_max = _death_cdf(sex.strip().lower(), int(min_age))
     ys = np.arange(m, table_max + 1)
-    probs = np.array([lifeeval_true_probability(float(y), min_age, sex, radius) for y in ys])
+    lo = np.maximum(np.floor(ys - radius).astype(int), m)
+    hi = np.minimum(np.ceil(ys + radius).astype(int), table_max + 1)
+    probs = np.where(hi > lo, C[hi - m] - C[lo - m], 0.0)
+    probs = np.clip(probs, 0.0, 1.0)
     i = int(np.argmax(probs))
     return int(ys[i]), float(probs[i])
 
