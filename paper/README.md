@@ -32,7 +32,6 @@ page is headed by the source filename.
 | `study1_summary_reasoning.tex` | extracted from `study-1-benchmark-calibration/analysis.ipynb` output | Accuracy / confidence / ECE / % rounded-confidence per question set, reasoning models |
 | `study1_summary_chat.tex` | extracted from `study-1-benchmark-calibration/analysis.ipynb` output | Same, chat (non-reasoning) models |
 | `study2_rq1_summary.tex` | `study-2-bayeseval/analysis/rq1_summary_table.txt` | Study 2 master results: accuracy, mean conf., overconfidence, β₁, ECE, ECE_SPD, ΔECE% per domain × model |
-| `study2_sensitivity_ymax.tex` | `study-2-bayeseval/analysis/sensitivity_ymax_table.txt` | Y_max robustness of the LifeEval difficulty metric |
 
 Notes:
 - The two `study1_summary_*` tables are pulled from notebook cell outputs; the script
@@ -60,7 +59,6 @@ Notes:
 | `calibration_spd_combined.png` | RQ3: calibration curves under SPD prompting |
 | `overconfidence_by_difficulty.png`, `rq2_overconfidence_by_percentile.png` | RQ2: hard–easy effect |
 | `rq3_overconfidence_by_percentile_spd.png`, `rq3_ece_spd_improvement.png`, `rq3_ece_pct_change.png` | RQ3: SPD effect on calibration |
-| `sensitivity_ymax.png` | Y_max robustness figure |
 | `posthoc_sex_bias_wgd.png` | Post-hoc: sex bias in WGD weight estimates |
 | `wgd_demographics.png`, `wgd_weight_age.png`, `medeval_pathologies.png` | Dataset descriptives (medeval one sourced from `figs/poster/`) |
 | `human_supplement/*.png` | Human-vs-LLM LifeEval comparison: calibration, hard–easy effect, overconfidence by radius and by age |

@@ -56,8 +56,6 @@ Four models via OpenRouter: `anthropic/claude-haiku-4.5`, `google/gemini-2.5-fla
   LifeEval cells ([human-data/](../study-2-bayeseval/human-data/README.md))
 - `analysis/fast_facts.ipynb` — auditable recomputation of every number cited in the
   write-up
-- `analysis/sensitivity_ymax.py` — robustness of the LifeEval difficulty metric to
-  the `Y_max` parameter
 
 ## Re-running
 

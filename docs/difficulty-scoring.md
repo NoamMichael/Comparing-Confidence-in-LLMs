@@ -51,8 +51,10 @@ computed numerically per (sex, `a`, `r`) from the table's per-year death
 probabilities, with `Y_max = 120` (the oldest reachable grid age, 100 + 20). Guesses
 whose window lies past the table's last age (118) contribute 0, correctly penalizing
 the uniform guesser's wasted range. Difficulty rises for younger ages (wider answer
-range) and narrower radii. `analysis/sensitivity_ymax.py` shows the resulting ranking
-is insensitive to the `Y_max` choice.
+range) and narrower radii. Under the empirical SSA rule the death distribution has
+bounded support (ages 0–118), so `Y_max` is pinned by the grid rather than a free
+parameter — unlike the retired Gompertz rule, whose unbounded exponential tail left
+the truncation point genuinely arbitrary.
 
 ## From expected reward to the `diff` column
 

@@ -87,7 +87,6 @@ Details: [study-2-workflow.md](study-2-workflow.md) and the
 │   ├── evaluate_diff.py       Difficulty percentile (see difficulty-scoring.md)
 │   ├── analysis.ipynb         Main RQ1–3 analysis
 │   ├── human_supplement.ipynb Human-vs-LLM LifeEval comparison
-│   ├── sensitivity_ymax.py    Robustness of difficulty to the Y_max parameter
 │   └── figs/                  Generated figures
 ├── human-data/                Preregistered human LifeEval study (AsPredicted #267677)
 ├── docs/                      Per-domain pipeline walkthroughs

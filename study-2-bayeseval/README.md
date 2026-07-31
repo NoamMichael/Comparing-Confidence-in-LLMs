@@ -189,12 +189,6 @@ We examine whether models systematically over- or under-estimate weight differen
 
 ![Sex Bias in WGD](analysis/figs/posthoc_sex_bias_wgd.png)
 
-### Sensitivity of LifeEval Difficulty Metric to Y\_max
-
-The LifeEval difficulty metric depends on a maximum-age parameter Y\_max. We sweep Y\_max from 101 to 140 and measure rank-correlation (Spearman ρ) of difficulty percentiles against the reference (Y\_max = 120), alongside the mean overconfidence slope (β₁). Both metrics are stable across the range, confirming the difficulty ranking is robust to the Y\_max choice.
-
-![Sensitivity Analysis](analysis/figs/sensitivity_ymax.png)
-
 ## Human Supplement: People vs. LLMs on LifeEval
 
 A preregistered human study (AsPredicted #267677; materials and cleaned data in
@@ -233,7 +227,6 @@ BayesEval/
 │   ├── human_supplement.ipynb # Human-vs-LLM LifeEval supplement
 │   ├── fast_facts.ipynb       # Auditable fact-checking for paper
 │   ├── evaluate_diff.py
-│   ├── sensitivity_ymax.py
 │   ├── rq1_summary_table.txt  # LaTeX summary table
 │   └── figs/                  # All generated figures
 ├── domains/

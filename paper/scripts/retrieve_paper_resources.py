@@ -59,8 +59,7 @@ MANIFEST: list[tuple[Path, Path]] = [
     (S2 / "analysis/figs/rq3_overconfidence_by_percentile_spd.png", Path("plots/study2/rq3_overconfidence_by_percentile_spd.png")),
     (S2 / "analysis/figs/rq3_ece_spd_improvement.png",            Path("plots/study2/rq3_ece_spd_improvement.png")),
     (S2 / "analysis/figs/rq3_ece_pct_change.png",                 Path("plots/study2/rq3_ece_pct_change.png")),
-    # -- study 2: robustness + post-hoc --------------------------------------
-    (S2 / "analysis/figs/sensitivity_ymax.png",    Path("plots/study2/sensitivity_ymax.png")),
+    # -- study 2: post-hoc ---------------------------------------------------
     (S2 / "analysis/figs/posthoc_sex_bias_wgd.png", Path("plots/study2/posthoc_sex_bias_wgd.png")),
     # -- study 2: dataset descriptives ---------------------------------------
     (S2 / "analysis/figs/wgd_demographics.png",           Path("plots/study2/wgd_demographics.png")),
@@ -73,7 +72,6 @@ MANIFEST: list[tuple[Path, Path]] = [
     (S2 / "analysis/figs/human_supplement/overconfidence_by_age.png",    Path("plots/study2/human_supplement/overconfidence_by_age.png")),
     # -- study 2: tables already saved as LaTeX ------------------------------
     (S2 / "analysis/rq1_summary_table.txt",      Path("tex/study2_rq1_summary.tex")),
-    (S2 / "analysis/sensitivity_ymax_table.txt", Path("tex/study2_sensitivity_ymax.tex")),
 ]
 
 # ---------------------------------------------------------------------------
