@@ -1,0 +1,251 @@
+{
+  "corr_delta_vs_dce_pooled": {
+    "r": -0.9207142916605212,
+    "p": 2.157516587519517e-05,
+    "n": 12
+  },
+  "corr_spd_vs_dce_pooled": {
+    "r": 0.9059122002213659,
+    "p": 4.949574198328635e-05,
+    "n": 12
+  },
+  "within_domain": {
+    "LifeEval": {
+      "corr_delta_vs_dce": {
+        "r": -0.9193750250626418,
+        "p": 0.08062497493735821,
+        "n": 4
+      },
+      "corr_spd_vs_dce": {
+        "r": -0.4057095207964453,
+        "p": 0.5942904792035546,
+        "n": 4
+      },
+      "ece_spd_mean": 0.12823745297148392,
+      "ece_spd_cv": 0.4327064354812812,
+      "modal_mass_range": 0.20942225993725505
+    },
+    "MedEval": {
+      "corr_delta_vs_dce": {
+        "r": -0.2978365069684464,
+        "p": 0.7021634930315537,
+        "n": 4
+      },
+      "corr_spd_vs_dce": {
+        "r": 0.9324084500496047,
+        "p": 0.06759154995039518,
+        "n": 4
+      },
+      "ece_spd_mean": 0.4025048545969685,
+      "ece_spd_cv": 0.12422222029438129,
+      "modal_mass_range": 0.10881901041666664
+    },
+    "WGD": {
+      "corr_delta_vs_dce": {
+        "r": -0.9978958908473667,
+        "p": 0.00210410915263326,
+        "n": 4
+      },
+      "corr_spd_vs_dce": {
+        "r": -0.8911007520422847,
+        "p": 0.10889924795771533,
+        "n": 4
+      },
+      "ece_spd_mean": 0.07650162337662338,
+      "ece_spd_cv": 0.21024755098547313,
+      "modal_mass_range": 0.02080086580086582
+    }
+  },
+  "corr_gap_vs_ece_spd": {
+    "r": 0.9960028933255387,
+    "p": 7.981487717127933e-12,
+    "n": 12
+  },
+  "backfires": [
+    {
+      "domain": "WGD",
+      "label": "Claude Haiku 4.5",
+      "retention_dce": 1.0,
+      "ece_dce_all": 0.0792012987012987,
+      "ece_dce_matched": 0.09920995670995673,
+      "sece_dce_matched": 0.14364718614718572,
+      "ece_spd": 0.0951948051948052,
+      "sece_spd": 0.09519480519480478,
+      "delta_pct_all": 20.19349020250881,
+      "delta_pool_matched": -0.004015151515152887,
+      "delta_pool_ci_lo": -0.035162608225109845,
+      "delta_pool_ci_hi": 0.028312229437227877,
+      "delta_pool_p": 0.798,
+      "delta_strat_matched": -0.04845238095238094,
+      "delta_strat_ci_lo": -0.08201677489177517,
+      "delta_strat_ci_hi": -0.024336038961038874,
+      "delta_strat_p": 0.0
+    },
+    {
+      "domain": "WGD",
+      "label": "GPT-5.4 Mini",
+      "retention_dce": 0.9991341991341991,
+      "ece_dce_all": 0.06045927209705369,
+      "ece_dce_matched": 0.05053260869565218,
+      "sece_dce_matched": 0.1032282608695652,
+      "ece_spd": 0.0846103896103896,
+      "sece_spd": 0.09679653679653653,
+      "delta_pct_all": 39.94609375145427,
+      "delta_pool_matched": 0.034793478260868996,
+      "delta_pool_ci_lo": -0.00511331521739169,
+      "delta_pool_ci_hi": 0.07434918478260816,
+      "delta_pool_p": 0.093,
+      "delta_strat_matched": -0.005663043478261104,
+      "delta_strat_ci_lo": -0.040037500000000247,
+      "delta_strat_ci_hi": 0.026439402173912798,
+      "delta_strat_p": 0.7050000000000001
+    },
+    {
+      "domain": "LifeEval",
+      "label": "Claude Haiku 4.5",
+      "retention_dce": 1.0,
+      "ece_dce_all": 0.046375399805601764,
+      "ece_dce_matched": 0.05303777856968149,
+      "sece_dce_matched": 0.22403219089493803,
+      "ece_spd": 0.1664534176970813,
+      "sece_spd": 0.16929528494104606,
+      "delta_pct_all": 258.9261082272656,
+      "delta_pool_matched": 0.11341563912739852,
+      "delta_pool_ci_lo": 0.08442416474612471,
+      "delta_pool_ci_hi": 0.13411026817897748,
+      "delta_pool_p": 0.0,
+      "delta_strat_matched": -0.05473690595389197,
+      "delta_strat_ci_lo": -0.07126750298965905,
+      "delta_strat_ci_hi": -0.03743960854732139,
+      "delta_strat_p": 0.0
+    },
+    {
+      "domain": "LifeEval",
+      "label": "Llama 4 Maverick",
+      "retention_dce": 1.0,
+      "ece_dce_all": 0.06702387136331678,
+      "ece_dce_matched": 0.11227854947387386,
+      "sece_dce_matched": 0.13731861987307747,
+      "ece_spd": 0.1816355720272444,
+      "sece_spd": 0.18168676302446599,
+      "delta_pct_all": 171.0013139089671,
+      "delta_pool_matched": 0.06935702255336994,
+      "delta_pool_ci_lo": 0.045017579346608085,
+      "delta_pool_ci_hi": 0.094003196285579,
+      "delta_pool_p": 0.0,
+      "delta_strat_matched": 0.044368143151388456,
+      "delta_strat_ci_lo": 0.02298419405107557,
+      "delta_strat_ci_hi": 0.06743625572085388,
+      "delta_strat_p": 0.0
+    }
+  ],
+  "n_cells": 12,
+  "pool_sig_improved": 8,
+  "pool_sig_worsened": 2,
+  "strat_sig_improved": 10,
+  "strat_sig_worsened": 1,
+  "robust_backfires": [
+    {
+      "domain": "LifeEval",
+      "label": "Llama 4 Maverick"
+    }
+  ],
+  "robustness_debias": [
+    {
+      "domain": "WGD",
+      "label": "Claude Haiku 4.5",
+      "delta_pool_raw": -0.004015151515152887,
+      "delta_pool_debiased": -0.008353679653680904,
+      "delta_strat_raw": -0.04845238095238094,
+      "delta_strat_debiased": -0.04146053391053389
+    },
+    {
+      "domain": "WGD",
+      "label": "Gemini 2.5 Flash",
+      "delta_pool_raw": -0.22788961038960961,
+      "delta_pool_debiased": -0.2319568542568536,
+      "delta_strat_raw": -0.2180194805194805,
+      "delta_strat_debiased": -0.20726948051948044
+    },
+    {
+      "domain": "WGD",
+      "label": "Llama 4 Maverick",
+      "delta_pool_raw": -0.13169913419913232,
+      "delta_pool_debiased": -0.13000165945165754,
+      "delta_strat_raw": -0.11706709956709951,
+      "delta_strat_debiased": -0.1086377344877344
+    },
+    {
+      "domain": "WGD",
+      "label": "GPT-5.4 Mini",
+      "delta_pool_raw": 0.034793478260868996,
+      "delta_pool_debiased": 0.037922391304347255,
+      "delta_strat_raw": -0.005663043478261104,
+      "delta_strat_debiased": 0.005902463768115707
+    },
+    {
+      "domain": "LifeEval",
+      "label": "Claude Haiku 4.5",
+      "delta_pool_raw": 0.11341563912739852,
+      "delta_pool_debiased": 0.11473200876436226,
+      "delta_strat_raw": -0.05473690595389197,
+      "delta_strat_debiased": -0.04604868813210977
+    },
+    {
+      "domain": "LifeEval",
+      "label": "Gemini 2.5 Flash",
+      "delta_pool_raw": -0.21448379512496887,
+      "delta_pool_debiased": -0.2266592189522831,
+      "delta_strat_raw": -0.21407778996514515,
+      "delta_strat_debiased": -0.22474264094065372
+    },
+    {
+      "domain": "LifeEval",
+      "label": "Llama 4 Maverick",
+      "delta_pool_raw": 0.06935702255336994,
+      "delta_pool_debiased": 0.0718370511796941,
+      "delta_strat_raw": 0.044368143151388456,
+      "delta_strat_debiased": 0.05798555774319272
+    },
+    {
+      "domain": "LifeEval",
+      "label": "GPT-5.4 Mini",
+      "delta_pool_raw": -0.021491600545967993,
+      "delta_pool_debiased": -0.02441122925883929,
+      "delta_strat_raw": -0.028325303173213925,
+      "delta_strat_debiased": -0.035518075450441666
+    },
+    {
+      "domain": "MedEval",
+      "label": "Claude Haiku 4.5",
+      "delta_pool_raw": -0.30467622803375305,
+      "delta_pool_debiased": -0.318454526644864,
+      "delta_strat_raw": -0.304676228033755,
+      "delta_strat_debiased": -0.3307819572004216
+    },
+    {
+      "domain": "MedEval",
+      "label": "Gemini 2.5 Flash",
+      "delta_pool_raw": -0.3317164991168148,
+      "delta_pool_debiased": -0.3488061905553196,
+      "delta_strat_raw": -0.3317164991168187,
+      "delta_strat_debiased": -0.3655907885561929
+    },
+    {
+      "domain": "MedEval",
+      "label": "Llama 4 Maverick",
+      "delta_pool_raw": -0.29716356105525177,
+      "delta_pool_debiased": -0.30955123466636325,
+      "delta_strat_raw": -0.2971635610552487,
+      "delta_strat_debiased": -0.32233821383302647
+    },
+    {
+      "domain": "MedEval",
+      "label": "GPT-5.4 Mini",
+      "delta_pool_raw": -0.2882488373548541,
+      "delta_pool_debiased": -0.30356105089652086,
+      "delta_strat_raw": -0.2882488373548506,
+      "delta_strat_debiased": -0.3197377262437394
+    }
+  ]
+}
