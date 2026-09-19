@@ -29,6 +29,7 @@ from scipy import stats as sp_stats
 
 from evaluate_diff import add_difficulty
 from human_io import HUMAN_MODEL, MODEL_SLUGS, difficulty_column
+from scoring import medeval_max_achievable
 
 # --------------------------------------------------------------------------
 # Config
@@ -292,6 +293,283 @@ def fig_overconfidence_by_percentile(dfs: dict[str, pd.DataFrame], series: list[
     name = "rq3_overconfidence_by_percentile_spd.png" if spd else "rq2_overconfidence_by_percentile.png"
     path = out_dir / name
     fig.savefig(path)
+    plt.close(fig)
+    return path
+
+
+# MAS (max achievable true probability) config per domain. WGD is excluded:
+# a perfect weight guess always lands in the band, so MAS is identically 1.
+_MAS_DOMAINS = ["LifeEval", "MedEval"]
+
+
+def _mas_column(df: pd.DataFrame, domain: str) -> pd.Series:
+    """Per-question MAS: the highest true probability any answer could attain.
+
+    LifeEval ships it as the benchmark ``MAS`` column (best-answer window mass);
+    MedEval's is the largest probability in the differential."""
+    if domain == "LifeEval":
+        return pd.to_numeric(df["MAS"], errors="coerce")
+    if domain == "MedEval":
+        return df["differential_json"].map(medeval_max_achievable)
+    raise KeyError(f"MAS not defined for domain {domain!r}")
+
+
+def fig_overconfidence_by_mas(dfs: dict[str, pd.DataFrame], series: list[Series],
+                              out_dir: Path) -> Path:
+    """Overconfidence vs. MAS (max achievable true probability), one panel per
+    domain: a per-series OLS fit line over the question-level points. WGD is
+    omitted (its MAS is identically 1). Matches the DCE overconfidence-figure
+    style."""
+    fig, axes = plt.subplots(1, len(_MAS_DOMAINS), figsize=(6.5, 3.5),
+                             sharey=True, layout="constrained")
+    for ax, domain in zip(axes, _MAS_DOMAINS):
+        ddf = dfs[domain].copy()
+        ddf["MAS_val"] = _mas_column(ddf, domain)
+        for s in series:
+            sub = ddf[ddf["model"] == s.key].dropna(subset=["MAS_val", "overconfidence"])
+            if sub.empty or sub["MAS_val"].nunique() < 2:
+                continue
+            slope, intercept, _, _, _ = sp_stats.linregress(
+                sub["MAS_val"], sub["overconfidence"])
+            x_line = np.array([sub["MAS_val"].min(), sub["MAS_val"].max()])
+            ax.plot(x_line, intercept + slope * x_line, color=s.color,
+                    linewidth=1.4, label=s.label)
+        ax.axhline(0, color="black", linestyle="--", alpha=0.4, linewidth=0.8)
+        ax.set_xlabel("Maximum Achievable Score")
+        ax.set_title(domain)
+        ax.grid(alpha=0.3)
+        ax.set_axisbelow(True)
+    axes[0].set_ylabel("Overconfidence")
+    axes[0].legend(loc="upper right")
+    path = out_dir / "overconfidence_by_mas.png"
+    fig.savefig(path)
+    plt.close(fig)
+    return path
+
+
+# Equal-count MAS strata (lowest ceiling first). Low MAS = hardest questions.
+_MAS_STRATA = {3: ["Low MAS", "Mid MAS", "High MAS"], 2: ["Low MAS", "High MAS"]}
+_MIN_STRATUM_N = 100  # below this, fall back to a median split
+
+
+def _label_mas_strata(ddf: pd.DataFrame, n_strata: int):
+    """Assign each row an equal-count MAS stratum, with edges shared across models.
+
+    MAS is right-skewed, so bins are quantile- (equal-count) not width-based. The
+    edges come from the pooled per-domain MAS so every model is cut identically.
+    Returns (labelled_frame, stratum_names) or (None, None) if the quantile edges
+    collapse (too many ties to form ``n_strata`` distinct bins)."""
+    names = _MAS_STRATA[n_strata]
+    edges = np.quantile(ddf["MAS_val"], np.linspace(0, 1, n_strata + 1))
+    edges = np.unique(edges)
+    if len(edges) != n_strata + 1:
+        return None, None  # ties collapsed a bin boundary
+    edges[0], edges[-1] = -np.inf, np.inf  # keep the extremes inside the end bins
+    out = ddf.copy()
+    out["stratum"] = pd.cut(out["MAS_val"], bins=edges, labels=names)
+    return out, names
+
+
+def ece_by_mas_stratum(dfs: dict[str, pd.DataFrame], series: list[Series],
+                       out_dir: Path, n_strata: int = 3, seed: int = 42):
+    """Does calibration (ECE) depend on a question's Maximum Achievable Score?
+
+    For LifeEval and MedEval (WGD's MAS is identically 1, so it is excluded),
+    split questions into equal-count MAS strata and compute ECE per (model,
+    stratum) with a bootstrap 95% CI. The headline test per (domain, model) is
+    ΔECE = ECE(Low MAS) − ECE(High MAS) with a bootstrap two-sided p-value — the
+    same machinery used for the DCE−SPD contrast. A per-domain row pooling all
+    models is added as the ``"(pooled)"`` model.
+
+    Returns ``(per_stratum, contrasts, fig_path)``:
+      per_stratum : domain, model, stratum, mas_lo, mas_hi, n, ece, ece_ci_lo, ece_ci_hi
+      contrasts   : domain, model, delta_ece (Low−High), p, sig
+    """
+    rng = np.random.default_rng(seed)
+    per_rows, contrast_rows = [], []
+    # boots[(domain, model)] = {stratum: (ece, boot_array)} for the figure + contrasts.
+    boots: dict[tuple[str, str], dict] = {}
+    strata_used: dict[str, list[str]] = {}
+
+    for domain in _MAS_DOMAINS:
+        ddf = dfs[domain].copy()
+        ddf["MAS_val"] = _mas_column(ddf, domain)
+        ddf = ddf.dropna(subset=["MAS_val", "Confidence", "true_probability"])
+
+        # Pick the finest strata whose smallest (present model × stratum) cell
+        # still has enough rows for a stable 11-bin ECE; else coarsen.
+        chosen, names = None, None
+        for k in (n_strata, 2):
+            labelled, cand_names = _label_mas_strata(ddf, k)
+            if labelled is None:
+                continue
+            counts = labelled.groupby(["model", "stratum"], observed=True).size()
+            present = counts[counts.index.get_level_values("model").isin([s.key for s in series])]
+            if present.empty or present.min() >= _MIN_STRATUM_N:
+                chosen, names = labelled, cand_names
+                break
+            chosen, names = labelled, cand_names  # keep as fallback if even k=2 is thin
+        strata_used[domain] = names
+        lo_name, hi_name = names[0], names[-1]
+
+        # Per (model, stratum) ECE + bootstrap; then the Low−High contrast.
+        pooled_by_stratum = {nm: chosen[chosen["stratum"] == nm] for nm in names}
+        contrast_series = list(series) + [Series("(pooled)", "(pooled)", "#888888", "s")]
+        for s in contrast_series:
+            sub_all = (chosen if s.key == "(pooled)"
+                       else chosen[chosen["model"] == s.key])
+            if sub_all.empty:
+                continue
+            cell_boot = {}
+            for nm in names:
+                cell = sub_all[sub_all["stratum"] == nm]
+                if cell.empty:
+                    continue
+                ece = compute_ece(cell["Confidence"], cell["true_probability"])
+                boot = bootstrap_ece(cell["Confidence"], cell["true_probability"], rng=rng)
+                cell_boot[nm] = (ece, boot)
+                lo, hi = np.percentile(boot, [2.5, 97.5])
+                per_rows.append({
+                    "domain": domain, "model": s.label, "stratum": nm,
+                    "mas_lo": float(cell["MAS_val"].min()),
+                    "mas_hi": float(cell["MAS_val"].max()),
+                    "n": int(len(cell)), "ece": ece,
+                    "ece_ci_lo": lo, "ece_ci_hi": hi,
+                })
+            boots[(domain, s.key)] = {"series": s, "cells": cell_boot}
+            if lo_name in cell_boot and hi_name in cell_boot:
+                ece_lo, boot_lo = cell_boot[lo_name]
+                ece_hi, boot_hi = cell_boot[hi_name]
+                p_val = two_sided_p(boot_lo - boot_hi)
+                contrast_rows.append({
+                    "domain": domain, "model": s.label,
+                    "delta_ece": ece_lo - ece_hi, "p": p_val,
+                    "sig": _ece_sig_label(p_val),
+                })
+
+    per_stratum = pd.DataFrame(per_rows)
+    contrasts = pd.DataFrame(contrast_rows)
+    fig_path = _fig_ece_by_mas(boots, strata_used, series, out_dir)
+    return per_stratum, contrasts, fig_path
+
+
+def _fig_ece_by_mas(boots: dict, strata_used: dict[str, list[str]],
+                    series: list[Series], out_dir: Path) -> Path:
+    """Grouped bars of ECE by MAS stratum, one facet per domain. Bars are the
+    model colour; the stratum is shown by fade (Low MAS solid → High MAS faint).
+    Error bars are bootstrap 95% CIs; a bracket over the Low-vs-High pair carries
+    the ΔECE significance stars."""
+    fig, axes = plt.subplots(1, len(_MAS_DOMAINS), figsize=(8.0, 3.6),
+                             sharey=True, layout="constrained")
+    global_top = 0.0
+    for ax, domain in zip(axes, _MAS_DOMAINS):
+        names = strata_used[domain]
+        k = len(names)
+        alphas = np.linspace(1.0, 0.3, k)  # Low MAS solid → High MAS faint
+        present = [s for s in series if boots.get((domain, s.key), {}).get("cells")]
+        x = np.arange(len(present))
+        group_w = 0.8
+        bw = group_w / k
+        for i, s in enumerate(present):
+            cells = boots[(domain, s.key)]["cells"]
+            for j, nm in enumerate(names):
+                if nm not in cells:
+                    continue
+                ece, boot = cells[nm]
+                lo, hi = np.percentile(boot, [2.5, 97.5])
+                xpos = x[i] + (j - (k - 1) / 2) * bw
+                ax.bar(xpos, ece, bw * 0.92, color=s.color, alpha=alphas[j],
+                       edgecolor="white", linewidth=0.4,
+                       yerr=[[ece - lo], [hi - ece]], capsize=2,
+                       error_kw={"linewidth": 0.6})
+                global_top = max(global_top, hi)
+            # Low-vs-High significance bracket over the group.
+            key = (domain, s.key)
+            contrast = boots.get(key, {}).get("cells", {})
+            if names[0] in contrast and names[-1] in contrast:
+                ece_lo, boot_lo = contrast[names[0]]
+                ece_hi, boot_hi = contrast[names[-1]]
+                p_val = two_sided_p(boot_lo - boot_hi)
+                label = _ece_sig_label(p_val)
+                x0 = x[i] - (k - 1) / 2 * bw
+                x1 = x[i] + (k - 1) / 2 * bw
+                y = max(np.percentile(boot_lo, 97.5), np.percentile(boot_hi, 97.5)) + 0.01
+                ax.plot([x0, x0, x1, x1], [y, y + 0.005, y + 0.005, y],
+                        color="#333333", linewidth=0.6)
+                ax.text(x[i], y + 0.006, label, ha="center", va="bottom",
+                        fontsize=5.5, color="#333333")
+        ax.set_title(domain)
+        ax.set_xticks(x)
+        ax.set_xticklabels([s.label for s in present], rotation=30, ha="right")
+        ax.grid(axis="y", alpha=0.3)
+        ax.set_axisbelow(True)
+    axes[0].set_ylim(0, global_top + 0.05)
+    axes[0].set_ylabel("ECE")
+    # Figure-level legend above the panels keys the fade to the strata without
+    # overlapping any bars (grey swatches, same fades as the bars).
+    names0 = strata_used[_MAS_DOMAINS[0]]
+    handles = [plt.Rectangle((0, 0), 1, 1, fc="#555555", alpha=a)
+               for a in np.linspace(1.0, 0.3, len(names0))]
+    fig.legend(handles, names0, loc="outside upper center", ncol=len(names0),
+               title="MAS stratum", frameon=False)
+    path = out_dir / "ece_by_mas.png"
+    fig.savefig(path)
+    plt.close(fig)
+    return path
+
+
+def fig_overconfidence_by_mas_strata(dfs: dict[str, pd.DataFrame], series: list[Series],
+                                     out_dir: Path, n_strata: int = 3, dpi: int = 600) -> Path:
+    """Mean overconfidence by MAS stratum, grouped bars per model, one facet per
+    domain (WGD excluded). Shading runs Low MAS faint → **High MAS most shaded**.
+    Error bars are 95% CIs of the mean; the dashed line marks perfect calibration
+    (overconfidence = 0). Saved at ``dpi`` (default 600)."""
+    fig, axes = plt.subplots(1, len(_MAS_DOMAINS), figsize=(8.0, 3.6),
+                             sharey=False, layout="constrained")
+    strata_names = None
+    for ax, domain in zip(axes, _MAS_DOMAINS):
+        ddf = dfs[domain].copy()
+        ddf["MAS_val"] = _mas_column(ddf, domain)
+        ddf["oc"] = (pd.to_numeric(ddf["Confidence"], errors="coerce")
+                     - pd.to_numeric(ddf["true_probability"], errors="coerce"))
+        ddf = ddf.dropna(subset=["MAS_val", "oc"])
+        labelled, names = _label_mas_strata(ddf, n_strata)
+        if labelled is None:
+            labelled, names = _label_mas_strata(ddf, 2)
+        strata_names = names
+        k = len(names)
+        alphas = np.linspace(0.3, 1.0, k)  # Low MAS faint → High MAS most shaded
+        present = [s for s in series if not labelled[labelled["model"] == s.key].empty]
+        x = np.arange(len(present))
+        bw = 0.8 / k
+        lo, hi = 0.0, 0.0
+        for i, s in enumerate(present):
+            sub = labelled[labelled["model"] == s.key]
+            for j, nm in enumerate(names):
+                cell = sub.loc[sub["stratum"] == nm, "oc"]
+                if cell.empty:
+                    continue
+                m = cell.mean()
+                ci = 1.96 * cell.std(ddof=1) / np.sqrt(len(cell))
+                xpos = x[i] + (j - (k - 1) / 2) * bw
+                ax.bar(xpos, m, bw * 0.92, color=s.color, alpha=alphas[j],
+                       edgecolor="white", linewidth=0.4,
+                       yerr=ci, capsize=2, error_kw={"linewidth": 0.6})
+                lo, hi = min(lo, m - ci), max(hi, m + ci)
+        ax.axhline(0, color="black", linestyle="--", alpha=0.4, linewidth=0.8)
+        ax.set_title(domain)
+        ax.set_xticks(x)
+        ax.set_xticklabels([s.label for s in present], rotation=30, ha="right")
+        ax.set_ylim(lo - 0.03, hi + 0.03)
+        ax.grid(axis="y", alpha=0.3)
+        ax.set_axisbelow(True)
+    axes[0].set_ylabel("Overconfidence")
+    handles = [plt.Rectangle((0, 0), 1, 1, fc="#555555", alpha=a)
+               for a in np.linspace(0.3, 1.0, len(strata_names))]
+    fig.legend(handles, strata_names, loc="outside upper center", ncol=len(strata_names),
+               title="MAS stratum", frameon=False)
+    path = out_dir / "overconfidence_by_mas_strata.png"
+    fig.savefig(path, dpi=dpi)
     plt.close(fig)
     return path
 

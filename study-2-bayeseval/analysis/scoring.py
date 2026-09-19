@@ -215,6 +215,18 @@ def medeval_true_probability(answer: str, differential_json: str) -> float:
     return 0.0
 
 
+def medeval_max_achievable(differential_json: str) -> float:
+    """MAS for MedEval: the largest probability in the differential — the true
+    probability attained by answering the single most-likely pathology."""
+    try:
+        differential = json.loads(differential_json)
+    except (TypeError, json.JSONDecodeError):
+        return np.nan
+    if not differential:
+        return np.nan
+    return float(max(float(prob) for _, prob in differential))
+
+
 def score_medeval(results: pd.DataFrame, benchmark: pd.DataFrame) -> pd.DataFrame:
     """Ground truth from DDXPlus differential probability distribution."""
     df = _merge_missing(results, benchmark, ["true_pathology", "differential_json"])
