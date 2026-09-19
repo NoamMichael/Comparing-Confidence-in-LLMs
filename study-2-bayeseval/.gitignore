@@ -10,6 +10,8 @@ analysis/figs/poster/
 
 thoughts/
 
+*.local.md
+
 .venv
 .claude
 *__pycache__

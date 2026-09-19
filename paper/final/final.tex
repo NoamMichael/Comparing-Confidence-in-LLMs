@@ -1,0 +1,1362 @@
+\documentclass{article}
+
+\usepackage{booktabs}
+%%%
+% Notes
+%%%
+
+\usepackage{natbib}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{listings}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{booktabs}
+\usepackage{inconsolata}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{hyperref}
+\hypersetup{hidelinks} %this omits the green box around citations
+\usepackage{tcolorbox}
+\usepackage{wrapfig}
+\usepackage{lineno}
+\usepackage{microtype}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage[title,titletoc]{appendix}
+
+% ── color palette ──────────────────────────────────────────────
+\definecolor{userbg}{HTML}{E8F0FE}
+\definecolor{llmbg}{HTML}{F0F4E8}
+\definecolor{systembg}{HTML}{FFF3E0}
+\definecolor{codetext}{HTML}{2E3440}
+\definecolor{jsonkey}{HTML}{5E81AC}
+\definecolor{jsonstr}{HTML}{A3BE8C}
+\definecolor{jsonnum}{HTML}{D08770}
+
+% ── tcolorbox styles ───────────────────────────────────────────
+\tcbuselibrary{skins, breakable}
+
+\newtcolorbox{systembox}{
+    colback=systembg, colframe=systembg!70!black,
+    fonttitle=\bfseries\small, title=System Prompt,
+    breakable, boxrule=0.4pt, arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+
+\newtcolorbox{userbox}{
+    colback=userbg, colframe=userbg!70!black,
+    fonttitle=\bfseries\small, title=User,
+    breakable, boxrule=0.4pt, arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+
+\newtcolorbox{llmbox}{
+    colback=llmbg, colframe=llmbg!70!black,
+    fonttitle=\bfseries\small, title=LLM Response,
+    breakable, boxrule=0.4pt, arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+
+% ── JSON listing style ─────────────────────────────────────────
+\lstdefinestyle{json}{
+    basicstyle=\ttfamily\footnotesize\color{codetext},
+    stringstyle=\color{jsonstr},
+    numberstyle=\color{jsonnum},
+    breaklines=true,
+    showstringspaces=false,
+    tabsize=2,
+    columns=fullflexible
+}
+
+
+% Define a custom style for the User Prompt (e.g., green background)
+\tcbset{
+  promptstyle/.style={
+    colback=green!5!white,
+    colframe=green!50!black,
+    title=\textbf{System Prompt},
+    fonttitle=\bfseries,
+    nobeforeafter,
+    boxrule=0.8pt,
+    left skip=0pt, right skip=0pt,
+    width=\linewidth % 50% width minus padding
+  }
+}
+
+\tcbset{
+  promptstyle/.style={
+    colback=blue!5!white,
+    colframe=blue!50!black,
+    title=\textbf{User Prompt},
+    fonttitle=\bfseries,
+    nobeforeafter,
+    boxrule=0.8pt,
+    left skip=0pt, right skip=0pt,
+    width=\linewidth % 50% width minus padding
+  }
+}
+
+\title{Confidence Calibration in Large Language Models}
+
+\author{
+  Noam Michael$^{\dagger\ddagger}$,\;
+  Daniel BenShushan$^{\dagger}$,\;
+  Jacob Bien$^{\ddagger}$,\;
+  Don A. Moore$^{\dagger}$
+}
+
+
+\date{
+  $^{\dagger}$U.C. Berkeley \quad $^{\ddagger}$University of Southern California \\[0.3em]
+  {\small
+  \texttt{\{}
+  \href{mailto:noam_michael@berkeley.edu}{\texttt{noam\_michael@berkeley.edu}},\;
+  \href{mailto:daniel.benshushan@berkeley.edu}{\texttt{daniel.benshushan@berkeley.edu}},\;
+  \href{mailto:jbien@usc.edu}{\texttt{jbien@usc.edu}},\;
+  \href{mailto:dm@berkeley.edu}{\texttt{dm@berkeley.edu}}
+  \texttt{\}}
+  }
+}
+\usepackage{booktabs}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We investigate the calibration of large language models' (LLMs') confidence across diverse tasks. Our preregistered first study shows that many prominent LLMs are, like people, too sure they are right: confidence exceeds accuracy, on average. Importantly, however, this tendency is moderated by a hard-easy effect, wherein overconfidence is greatest on difficult tests; by contrast, easy tests show underconfidence. A challenge unique to LLM confidence calibration studies is that the LLMs may have access to the benchmark tasks' answers, so researchers may be assessing calibration in ``open-book exam'' settings.  Motivated by these two observations, we develop tasks that both afford continuous quantifiable manipulations of difficulty and are novel. Study 2 compares human and LLM judgments on these new tasks; they are similarly overconfident. LLMs can benefit from debiasing treatments that have helped reduce humans' overconfidence: reporting their uncertainty in Subjective Probability Distributions (SPDs). These results demonstrate that biases in LLM confidence parallel those of humans and that interventions from cognitive science can help debias them.
+\end{abstract}
+
+
+
+
+\section{Introduction}
+Human judgment is vulnerable to many biases, of which overconfidence may be the most consequential \citep{Kahneman_2011}. \citet{Bazerman_Moore_2013} called it the mother of all biases, for two reasons. First, it is both durable and sizable. Second, it enables other biases, since overconfidence in the accuracy of our judgment can blind us to our errors and vulnerabilities. When asked which one bias he would choose to get rid of if he had a magic wand, Daniel Kahneman famously chose overconfidence \citep{Shariatmadari_2015}. 
+
+Well-calibrated confidence is foundational to effective decision making. Deciding whether to proceed through the intersection depends on your confidence that it is safe to do so. Deciding how much to invest depends on your confidence that the investment will increase in value. Deciding whether to take a job depends on your confidence that it is better than the other options. Yet human confidence judgments are often poorly calibrated. People are regularly overconfident \citep{Harvey_1997}. In addition, confidence judgments exhibit a ``hard-easy'' effect: overconfidence is most pronounced on difficult tasks \citep{Lichtenstein_Fischhoff_1977}.
+
+Many explanations for overconfidence highlight human frailties, foibles, and failures. For instance, some focus on human motivations, such as the desire to feel that we are virtuous and competent \citep{Kruger_Dunning_1999, Huffman_Raymond_Shvets_2022, Drobner_Goerg_2024}. Other explanations highlight the motivation to believe we are better than other people \citep{Brown_2012,Epley_Dunning_2000}. If it gives us pleasure to believe in ourselves, then there may be utility in holding overconfident beliefs \citep{Koszegi_2006}.  
+
+A distinct set of explanations focus on cognitive over motivational accounts. Cognitive explanations argue that overconfidence can result from human error, or from the noisy relationship between subjective confidence and objective accuracy. For instance, the tendency to be too certain in the accuracy of our knowledge can arise from the fact that we are fallible; when we are wrong and don't know it, we cannot help but appear overconfident \citep{Moore_2023, Walters_2017}. Overconfidence is not universal, however; the noisy relationship between accuracy and confidence can produce underconfidence as tasks become easier and performance increases more than confidence \citep{Juslin_1993}. 
+
+The most parsimonious explanation for the hard-easy effect is that it is a regression-to-the-mean artifact, a byproduct of the imperfect relationship between confidence and accuracy \citep{Boundy-Singer_Ziemba_Goris_2023, Krueger_Mueller_2002}. Changes in difficulty have a more direct influence on accuracy than on confidence \citep{Erev_1994}. As task difficulty increases, performance drops, but if confidence is imperfectly responsive to this drop in accuracy, overconfidence must grow. Conversely, as a task becomes easier and performance increases, noisy confidence judgments produce underconfidence. 
+
+We might hope that artificially intelligent agents would be less biased by motivational factors and would therefore exhibit better-calibrated confidence. On the other hand, if LLMs' confidence is, as with people, a noisy and fallible signal of accuracy, then we might expect to see similar confidence biases. Evidence suggests deep neural networks are routinely more certain than they are accurate \citep{Oelrich_2020,Abdar_2021}, and are often poorly calibrated \citep{guo2017calibrationmodernneuralnetworks, xu2025languagemodelsmirrorhuman}. Nevertheless, recent work has suggested that large language models might overcome these weaknesses through their increasing sophistication and reasoning abilities \citep{Kadavath_2022, Xiao_2025,Leng_2025,chhikara2025,confTunerYiboLi,Finlay_2026}.
+
+Indeed, reasoning and self-reflection seem to be helpful for debiasing overconfidence. In humans, an important cause of overconfidence is the tendency to focus on a favored answer and the neglect of alternatives \citep{Augenblick2026,Juslin_2007,Soll_2024}. Forcing people to consider alternatives can reduce overconfidence. One way to do so is to specifically direct them to consider what they do not know \citep{Walters_2017}. An even simpler approach invites them to report their subjective probability distribution, which requires them to assign probabilities, (which can include zero) to alternatives outside the range they regard as most likely \citep{Goldstein_Rothschild_2014}.  
+
+\subsection{AI Confidence}
+We should want our artificially intelligent systems to possess well-calibrated confidence. An autonomous vehicle, for instance, ought to be appropriately confident that it is safe to proceed into an intersection. A large language model ought to have a sense of its limits so that it can report when it does not know something. In high-stakes domains such as medicine, law, and finance, a model's stated confidence may determine whether a human reviews its output at all. The utility of these systems depends on calibration: the degree to which a model's stated confidence reflects its actual probability of being correct \citep{Dawid01091982, guo2017calibrationmodernneuralnetworks}. A model that reports 80\% confidence should be correct approximately 80\% of the time \citep{Xiong_2024}.
+
+Miscalibration is costly in both directions. Overconfident models will neglect their limitations and confidently report misinformation. Underconfident models will decline to act when they should and might unnecessarily activate costly backup or second opinions. Evidence suggests that deep neural networks are vulnerable to overconfidence \citep{guo2017calibrationmodernneuralnetworks, Oelrich_2020, Abdar_2021}, and a growing body of work has documented overconfidence in the verbalized claims of LLMs \citep{Tian2023Calibration, yang2024verbalizedconfidencescoresllms, Xu2025, Tripathi2025}. LLMs' usefulness as guides, advisers, and autonomous agents depends on their having truthful and accurate information \citep{Afroogh2024}. Hallucination, in which an LLM confidently reports falsehoods, fundamentally undermines their value \citep{kalai2025languagemodelshallucinate}. Hence the proviso: ``ChatGPT can make mistakes. Check important info'' \citep{gpt_o3}. Other LLMs come with similar warnings. 
+
+Ideally, an LLM ought to provide only truthful information. This is unrealistic---for at least two reasons. First, it ignores the complexity of irreducible uncertainties. Few things can be known with certainty and perfect Bayesian rationality only provides probabilistic credences. Second, it neglects the limits in the LLM's information \citep{Tripathi2025}. LLMs generally lack access to verifiable ground truth, and must rely on the imperfect information available to them. 
+
+Accepting these constraints, a more realistic possibility is well-calibrated confidence. That is, the LLM should be able to faithfully report the probability that it is correct, conditional on its own limitations and vulnerability to error. This would allow users to rely on an LLM's stated confidence. To do so, users must trust that confidence indicates accuracy. Calibrated confidence also enables autonomous systems to know when they are too uncertain to act. Without well-calibrated confidence, users might trust faulty outputs or doubt accurate outputs. Hallucination and miscalibration are therefore epistemic risks that cut to the very heart of the usefulness of AI.
+
+This motivates our tests of the confidence calibration of commercially available LLMs in a variety of contexts. Our first study presents an analysis of popular open- and closed-source LLMs on a variety of reasoning tasks. We find that: \textbf{1) }LLMs are, on average, overconfident; \textbf{2) }Models are more overconfident on hard tasks and underconfident on the easiest tasks; \textbf{3)} Reasoning models provide more nuanced confidence estimates. Our second study compares humans and LLMs, finding them both overconfident, and showing that asking LLMs to report their subjective probability distribution via histogram elicitation reduces their confidence, as has been shown previously with people \citep{Moore_Tenney_Haran_2015}.
+
+We contribute to the current literature in several ways. First, by documenting miscalibration in LLM confidence judgments, we shed light on the origins of those judgments. Second, we report a head-to-head comparison between human and LLM confidence calibration that highlights the similarities between them. Third, we develop novel tasks useful for testing confidence judgments in both humans and LLMs. These tasks allow for:
+\begin{itemize}
+    \setlength\itemsep{0em}  % Adjusts space between items
+    \setlength\parskip{0em}  % Adjusts space between paragraphs within items
+    \item A numerical measure of task difficulty grounded in empirical probabilities.
+    \item Systematic manipulation of task difficulty.
+    \item Evaluation of model performance based on quantitative elements of the problem.
+\end{itemize}
+
+
+If models' overconfidence grows with difficulty, investigating model calibration requires variation in task difficulty. Prior methods have sought to vary difficulty through intuitive human assessment, LLM-as-a-judge ratings \citep{CCRC, gobara2024llmsimplicitlydeterminesuitable}, scaling the context provided \citep{GRACE}, or psychometric methods such as Item Response Theory (IRT). Each approach has limitations. Human-derived difficulty labels do not transfer reliably to LLMs: tasks that are trivial for people like counting the occurrences of a letter in a word can be genuinely difficult for frontier models \citep{berry_good}, while models routinely solve PhD-level mathematics that would challenge all but a handful of human experts \citep{luong2025robustmathematicalreasoning}. LLM-based difficulty ratings are subject to the same biases under investigation \citep{tabib2025trustworthydifficultyassessmentslarge}. IRT requires large response matrices and yields sample-dependent parameters \citep{Attali_2020}. More fundamentally, nearly all existing evaluations treat difficulty as a coarse categorical variable, obscuring the functional relationship between difficulty and calibration. A difficulty measure grounded in computable probabilities, rather than subjective judgment, would permit more precise analysis of how calibration degrades as a function of task demands.
+
+Scaling the amount of context provided can mitigate some of these issues; however, it is not clear how each piece of context may impact overall difficulty. Because of this, simply adding or removing more context may not reflect the true intellectual difficulty.
+
+Study 1 examines confidence calibration in eleven LLMs across six tests. Some of these tests are more aligned with models' abilities than others, affording a post-hoc analysis of the hard-easy effect by comparing tests on which models performed well vs. poorly. To isolate the effect of difficulty from other task features and to break away from standard benchmarks that may have been part of LLM training, we develop new tasks, LifeEval in Study 1 and MedEval and Weight Guessing in Study 2. These ask for probabilistic confidence judgments that we then compare to empirical probabilities. This method varies difficulty while sidestepping the constraints of previous approaches. Study 2 tests an approach to debiasing confidence judgments and compares LLM judgments head-to-head with humans.  
+
+LLM data, materials, and code are available at https://github.com/NoamMichael/Comparing-Confidence-in-LLMs . Study 2's human data are available at https://researchbox.org/8350 (CODE: HURJAJ).
+
+\renewcommand{\arraystretch}{1.3}
+
+
+\section{Metrics}
+
+% NOAM: Explain the 1.0 bin
+For any multiple choice question set $Q$, we let
+$y_i,\hat y_i \in \{1,\ldots,K\}$ denote the correct option and the model's chosen option, respectively, for question $i\in Q$ (where $K$ denotes the number of choices).  We let $C_i(k)\in[0,1]$ denote the model's confidence that option $k$ is correct, where $\sum_{k=1}^KC_i(k)=1$.
+We define accuracy as
+\begin{align}
+    \text{acc}(Q) = \frac{1}{|Q|}\sum_{i\in Q}\mathbb{I}\{\hat{y_i}=y_i\},
+\end{align}
+where $\mathbb{I}$ is the indicator function, and confidence as
+\begin{align}
+    \text{conf}(Q) = \frac{1}{|Q|}\sum_{i\in Q}C_i(\hat{y}_i).
+\end{align}
+
+\subsection{Expected Calibration Error (ECE)}
+
+Expected Calibration Error (ECE) quantifies the misalignment between a model's predicted confidence and its empirical accuracy \citep{Pavlovic_2025,Naeini_Cooper_Hauskrecht_2015}. 
+We first partition a question set $Q$ 
+into 10 disjoint equally spaced bins by confidence:
+
+\begin{align*}
+    Q_m = \bigl\{i\in Q:  \frac{m-1}{M} < C_i (\hat{y_i })\leq \frac{m}{M} \bigr\}
+\end{align*}
+for $m=1,\ldots,10$; we then modify $Q_{10}$ to exclude confidence 1.0, moving these instances of absolute certainty to an additional bin $Q_{11}=\{i\in Q: C_i (\hat{y_i })=1.0\}$.
+We then compute
+
+\begin{align}
+    \text{ECE}(Q) = \frac{1}{|Q|}\sum_{m=1}^M n_m  \,\bigl| \text{acc}(Q_m) - \text{conf}(Q_m)\bigr|
+\end{align}
+where $n_m$ is the number of questions in $Q_m$. 
+\subsection{Overconfidence}
+
+Since ECE does not reveal whether miscalibration is due to over- or underconfidence, we needed a separate measure of overconfidence. Following prior work \citep{KLAYMAN1999216}, we define overconfidence over a question set $Q$ as
+{
+\begin{equation}
+    \text{overconfidence}(Q) = \text{conf}(Q) - \text{acc}(Q).
+\end{equation}}
+
+
+
+The definitions above cover multiple-choice question sets, where the binary indicator $\mathbb{I}\{\hat{y}_i = y_i\}$ scores each answer as simply right or wrong. The probabilistic tasks of Study 2 generalize this: each domain defines a reward function $R_i \in [0,1]$ that scores the model's response on question $i$ against ground truth. In WGD (a task introduced in Section~\ref{sec:wgd}), $R_i$ is a binary indicator of whether the true weight falls within the model's predicted interval; in LifeEval and MedEval, $R_i$ is the ground-truth probability of the model's chosen answer (defined per domain in Sections~\ref{sec:lifeeval} and~\ref{sec:medeval}). Writing $C_i$ for the model's stated confidence on question $i$, accuracy, confidence, overconfidence, and ECE are computed exactly as in Eqs.~(1)--(4) with $R_i$ in place of the indicator and $C_i$ in place of $C_i(\hat{y}_i)$. Overconfidence thus reveals the direction of miscalibration while ECE captures its magnitude regardless of direction.
+
+\subsection{Maximum Achievable Score (MAS)}
+\label{sec:mas}
+
+Alongside model accuracy and our difficulty metric $\mathcal{D}$ (Section~\ref{sec:difficulty}), we want a model-independent sense of how much room a question leaves for a good answer. For a question with answer space $\mathcal{A}$ and reward function $R$, define
+\begin{align}
+    \mathrm{MAS} = \max_{a \in \mathcal{A}} R(a), \qquad
+\end{align}
+MAS is the reward of an oracle that knows the ground-truth distribution and answers optimally; it is therefore also the highest confidence a well-calibrated solver could justify. For any hit-rate question set whose answer is a boolean True or False MAS trivially is $1$. However, it becomes much more informative for the probabilistic question sets of Study 2 where "correctness" is measured in the context of a distribution of possibility. Therefore, while MAS is fixed for WGD at $1$, for MedEval MAS is the reward of the highest-probability pathology while for LifeEval, MAS is the reward of the optimal age guess \footnote{While there is no closed form solution for MAS in the context of LifeEval, solving for it via search is computationally inexpensive} Together with model accuracy and the uniform-guesser difficulty $\mathcal{D}$, MAS gives a third, purely task-intrinsic lens on difficulty: a low MAS marks a question that no solver, however capable, could answer with high reward and should therefore should moderate their confidence regardless of expertise.
+
+\subsection{Measuring Confidence}
+
+For each answer, we prompted models to provide a numerical confidence score from 0 to 1.0 representing the probability they are correct. In the case of multiple choice questions, models assigned probabilities to each of the answer options. When the provided probabilities did not sum to 1, we normalized probabilities $P_i$:
+\begin{align}
+P_i
+&=
+\frac{s_i}{\sum_{j\in S}s_j},
+\end{align}
+where $S$ is the set of options and each $s_i$ represents a stated confidence for a given option.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END OF METRICS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Study 1} 
+Study 1 sought responses from eleven large language models on question sets that span a wide range of modalities. They afford a comparison between reasoning and chat models. While there is no strict definition for this distinction, it is generally understood that "reasoning" models are larger and trained to "think" through their responses by breaking them down into logical steps along the lines of Chain-of-Thought (CoT) reasoning \citep{wu2022promptchainerchaininglargelanguage}. In contrast, "chat" models provide lighter and faster alternatives \citep{reasonVchat}. A customer service help line might employ a chat model to answer questions while a software engineer may use a reasoning model for help writing code. While we should expect more \textit{accurate} results from reasoning models, both could still possess well-calibrated confidence. Study 1 therefore measures both confidence and accuracy in both reasoning and chat models from the same families, thereby affording measures of overconfidence.
+
+\begin{table*}[tp]
+\centering
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llccccccccccc}
+        \toprule
+        ~ & \textbf{Question Set} & \textbf{Length} & \textbf{After Cleaning}& \textbf{Answer Fields} & \textbf{Context} & \textbf{Task Description} \\ \toprule
+        ~ & BoolQ & 3270 & 2503 & True, False & None & True or False trivia questions \\ \hline
+        ~ & SciQ & 1000 & 995 & A, B, C, D & None & Scientific trivia questions \\ \hline
+        ~ & LSAT-AR & 230 & 86 & A, B, C, D, E & Premise for logical question & Find optimal solution for complex situation \\ \hline
+        ~ & SAT-EN & 206 & 173 & A, B, C, D & Passage & Answering questions about a reading passage \\ \hline
+        ~ & HaluEval-QA & 2000 & 1790 & N/A & Short passage & Pre-generated Model responses to questions \\ \hline
+        ~ & LifeEval & 808 & 751 & Predicted age at death  & Sex, Minimum Age & Estimate age at death given minimum age and sex \\ \hline
+\end{tabular}
+}
+\caption{The six question sets in Study 1.}
+
+\label{tab:qset_info}
+\end{table*}
+
+\subsection{Method}
+Our plan\footnote{In the interest of increasing the credibility of our results we \href{https://osf.io/92hjz/files/y8rqv}{preregistered our research plans: https://osf.io/92hjz/files/y8rqv}. This precommitted us to conducting and reporting a set of planned analyses. Appendix \ref{Appendix: deviations} reports deviations from our preregistered plans.} tested eleven large language models on six question sets (see Table \ref{tab:qset_info}) testing eleven large language models. Five of them were marketed as reasoning models: DeepSeek-R1 \citep{dsr1}, Gemini 2.5 Pro \citep{gem_pro}, GPT-o3 \citep{gpt_o3}, Claude Sonnet 4 \citep{claude_sonnet_4}, and Claude Sonnet 3.7 \citep{claude_sonnet_37}. We compared these models to six "chat" models: DeepSeek-V3 \citep{dsv3}, Gemini 2.5 Flash \citep{gem_flash}, GPT-4o \citep{gpt4} and Claude Haiku 3 \citep{claude_haiku} as well as two locally-run, instruction-tuned, versions of Llama 3.1 (8B and 70B, quantized) \citep{llama_70, llama_8}. 
+
+Each model/question-set pairing yields confidence distributions, accuracy averages, and calibration metrics. We counted a response as correct if the answer option assigned the highest probability matched the ground truth (with proportional scoring for ties). We compared confidence to observed accuracy to compute calibration statistics, most centrally Expected Calibration Error (ECE) \citep{Naeini_Cooper_Hauskrecht_2015} and overconfidence. We evaluated all models under identical conditions so that observed differences in calibration or overconfidence could be attributed to the model.
+
+For each question set, we employed one-shot prompting (i.e., providing an example in the prompt) that instructed the model to return its output in JSON format. Except for HaluEval, we also incorporated a chain-of-thought prompting strategy to encourage more faithful, step-by-step reasoning. We repeated the system prompt within the input to reinforce adherence to the formatting rules. In the case of multiple choice questions (MCQ), we prompted models to select an answer and state the likelihood that each of the options is correct. This allows us to not only observe the confidence assigned to the response but also the distribution of confidence in other answer options.
+
+
+\subsection{Question Sets}
+We selected question sets intended to capture a spectrum of conditions under which calibration can succeed or fail. Some questions, like true/false items, entail a two-alternative forced choice (so-called 2AFC formats). Peak scoring focuses on the favored option and the agent's confidence that it is correct, and so can be applied to multiple choice questions \citep{Moore_Tenney_Haran_2015,Keren_1988}. This affords the calculation of overconfidence and ECE over options. Table \ref{tab:qset_info} contains a brief description of each question set used in our analysis.
+
+
+\subsubsection{BoolQ and SciQ}
+To measure model calibration in general knowledge, we used 1000 multiple choice questions (MCQ) from the SciQ dataset \citep{SciQ} as well as 3270 True/False questions from the BoolQ dataset \citep{clark2019boolqexploringsurprisingdifficulty}. We scored models against ground truth. 
+
+\subsubsection{LSAT-AR}
+To evaluate calibration in logical reasoning, we used 230 questions from the LSAT Analytical Reasoning section \citep{zhong2021arlsat}. Each question contained five multiple choice answer options. These tasks required multi-step reasoning, rule application, and inference. 
+
+\subsubsection{SAT-EN}
+For contextual understanding, we evaluated models on 206 passage-based inference questions drawn from the SAT English section \citep{zhong2023agieval}. Each passage was accompanied by multiple choice comprehension questions requiring information extraction, inference, and reasoning about nuanced textual details. 
+
+\subsubsection{HaluEval}
+To assess confidence where LLMs are prone to hallucinating, we drew on the HaluEval question set \citep{HaluEval}: 2000 question-answer pairs, 1000 accurate answers and 1000 hallucinated answers\footnote{After data cleaning, we were left with 933 truthful answers and 857 faulty ones.}. Here, we prompted models not to produce an answer, but instead to state their confidence in the given answer's correctness. Because half of these answers were deliberately hallucinated, this setting provided a test of whether models could recognize erroneous responses.  
+
+Therefore, we scored each question based on the provided label:
+\begin{align}
+    \text{acc}_{HaluEval}({Q}) = \frac{1}{|Q|}\sum_{i\in Q} y_i.
+\end{align}
+where $y_i \in \{0,1\}$ indicates whether the provided answer was correct.
+
+\subsection{LifeEval}
+We developed a new task, which we call LifeEval, to manipulate difficulty while holding constant the nature of the question. LifeEval asks for an estimate of the lifespan of a person given their age and sex. Models then reported the probability that their estimate would fall within one of several tolerance radii (1, 5, 10, or 20 years) of the true lifespan. We assessed actual probability using U.S. Social Security Administration Period Life Tables \citep{SSA2022LifeTable}.\footnote{Appendix \ref{sec:LifeEval Contamination Analysis} replicates our analyses omitting responses that indicate they may have had knowledge of the Period Life Tables. The results are largely unchanged.} Manipulating radius, age, and sex enabled us to vary task difficulty holding all else constant. Unlike existing benchmarks, LifeEval provides a gradient of difficulty that the model can actively detect. For instance, if the model is told that a male has already lived 80 years, it can be confident in its guess landing within a 20-year radius of the truth. However, if it only knows the sex and must get within 1 year, it should be clear to the model that the actual probability is low. 
+
+ For a given question, let $a$ be the minimum age (e.g. 25), $s$ be the sex, and $r$ be the radius around the model's guess. The model provides a single point estimate $\hat{y}(a,s)$  and a scalar confidence $c(a,s,r)$ that the true age at death falls within $r$ of $\hat{y}(a,s)$.  Imagine a large set of people $Q$ where person $i\in Q$ died at age $y_i$. Focusing on the subset $Q_{as}=\{i: y_i\ge a,\ \text{sex}(i)=s\}$ of people of sex $s$ who lived to at least age $a$, we can treat this as the binary question of whether the true $y_i$ falls in the model's interval:
+
+\begin{align}
+    \text{acc}_{\text{LifeEval}}(Q_{as})
+    = \frac{1}{|Q_{as}|}\sum_{i\in Q_{as}}
+      \mathbb{I}\bigl\{\hat{y}(a,s) - r \le y_i < \hat{y}(a,s) + r \bigr\},
+\end{align}
+where $\mathbb{I}$ is the indicator function. Letting $|Q_{as}|\to\infty$, we have $\text{acc}_{\text{LifeEval}}(Q_{as}) \rightarrow p\bigl(\hat{y}(a,s) \mid r,a,s\bigr)$, where $p(k \mid r,a,s)$ is defined as
+\begin{equation}
+    p(k \mid r,a,s) = \mathbb{P}\bigl( k - r \le y < k + r \,\big|\, y\geq a,\, s\bigr).
+\end{equation}
+The actuarial life tables from the Social Security Administration \citep{SSA2022LifeTable}, allow us to compute $p(k \mid r,a,s)$ as
+\begin{equation}
+    R(k \mid r,a,s) \;=\; p(k \mid r,a,s) \;=\; \sum_{i=k-r}^{k+r-1} S_i(a,s)\,q_i(s),
+    \label{Def: p(k,r|a,s)}
+\end{equation}
+so that the window spans exactly $2r$ integer ages. Here $q_i(s)$ is the probability that a person of sex $s$ who has just turned age $i$ dies before reaching age $i+1$ (the one-year death probability from the life table), and $S_i(a,s)$ is the conditional probability of surviving from age $a$ to age $i$. While $q_i(s)$ is read directly from the life tables, $S_i(a,s)$ is computed as
+\begin{equation}
+        S_i(a, s) = \mathbb{P}\bigl( \text{survive to age } i \,\big|\, a,s\bigr)
+        = \prod_{j=a}^{i-1} \bigl(1-q_j(s)\bigr),
+\end{equation}
+with the convention $S_a(a,s)=1$.
+
+The difficulty of a LifeEval question depends only on the question $(a,s,r)$, not on any model's answer. We measure it by the \emph{expected reward of a uniform guesser} over the plausible answer space $[a,\,Y_{\max}]$, where $Y_{\max} = 120$ is a conservative upper bound on human lifespan. The lower limit is $a$ rather than $0$ because a person known to have survived to age $a$ cannot die before $a$, so no informed guesser would answer below $a$. A guesser who picks an age $k$ uniformly at random from $\{a,\dots,Y_{\max}\}$ earns expected reward
+\begin{equation}
+    R_{\text{unif}}(a,s,r)
+    = \mathbb{E}_{k \sim \mathrm{Unif}\{a,\dots,Y_{\max}\}}\!\bigl[\,R(k \mid r,a,s)\,\bigr]
+    = \frac{1}{Y_{\max}-a+1}\sum_{k=a}^{Y_{\max}} R(k \mid r,a,s).
+    \label{eq:le_expected_reward}
+\end{equation}
+A large $R_{\text{unif}}$ means even a blind guess tends to capture the true-age mass (an easy question); a small value means the mass is hard to hit (a hard question). 
+
+
+\subsection{Results and Discussion}
+
+\begin{figure*}[th!]
+    \centering
+    \includegraphics[width=\textwidth]{./Special_Plots/2x3CalPlots.png}
+    \caption{Aggregate calibration plots for each question set, showing accuracy conditional on confidence. \textbf{\color{red}{Reasoning}} models in red and \textbf{Non-Reasoning} in black. Observations are averaged within confidence bins, [0,0.1),[0.1,0.2)...[0.9,1),[1]. }
+    \label{fig:cal_plot}
+    \vspace{-5pt}
+\end{figure*}
+
+
+Across all question sets, models verbally report 88\% confidence on average in their favored answer option being correct. They are, in fact, correct for 79\% of questions. The calibration plots in Figure \ref{fig:cal_plot} shows a positive relationship between confidence and accuracy. The diagonal identity line reflects perfect calibration. Observations to the southeast of the identity line, where confidence exceeds accuracy, indicate overconfidence. 
+
+
+\begin{figure*}[th!]
+    \centering
+    \includegraphics[width=\textwidth]{./plots/study1/oc_all.png}
+    \caption{Overconfidence by question set and model, Study 1.}
+    \label{fig:oc_bar_plot}
+    \vspace{-5pt}
+\end{figure*}
+
+We find that models' tendency toward overconfidence varies by question set. Figure \ref{fig:oc_bar_plot} shows that models tended to be overconfident on some tasks like logical reasoning and hallucination detection (\textit{LSAT-AR} and \textit{HaluEval} respectively). Models struggle to think through complex tasks and fail to adequately detect when they have gone astray. While accuracy was fixed for HaluEval at 52.12\% and  LifeEval had an upper bound of 56.8\%, LSAT-AR proved the most difficult of the unbounded question sets with an average accuracy of 58.6\%. By contrast, models excelled at SciQ and SAT-EN, and were underconfident. 
+
+% We observe stronger correlations between stated confidence and actual probability of being correct for reasoning models. This correlation is, on average, 0.94 for the five reasoning models (GPT-o3, DeepSeek-R1, Gemini 2.5-Pro, Claude Sonnet-3.7 and Sonnet-4) and only 0.48 for the other models. See supplementary Figure \ref{scatter_plots}.
+
+In terms of ECE, we found that reasoning models fared much better than their counterparts. Ranking by sample-weighted mean ECE across all question sets we found that GPT-o3 performed the best with an ECE of 0.061 followed by: DeepSeek-R1, Claude Sonnet 3.7 and Gemini 2.5 Pro. It should be noted that all reasoning models sat above their non-reasoning analogues. This would suggest that the extra effort taken by the models to consider the nature of the task can improve calibration alongside raw performance.
+
+LLMs can report their confidence in the accuracy of their judgments, but that confidence deviates predictably from actual accuracy. We find 9\% overconfidence (the difference between models' 88\% stated confidence and their 79\% accuracy). Nevertheless, confidence reported by the models in our study is less responsive than is accuracy to variations in difficulty. Consequently, we observe the ``hard-easy'' effect documented in human confidence judgments: Overconfidence rises with difficulty \citep{Erev_1994}. 
+
+This is particularly evident in LifeEval, the test we devised to provide exogenous variation in difficulty holding other task characteristics constant. As Figure \ref{fig:oc_by_radii_nt} shows, overconfidence is greatest on difficult questions, which require an answer within 1 year of the actual age at death. On the easiest questions, where answers within 20 years count as correct, we observe underconfidence, on average. The effect of difficulty on overconfidence is greatest for chat models and is reduced for reasoning models, which better align their confidence with accuracy.
+
+\begin{figure*}[th!]
+    \centering
+    \includegraphics[width=\textwidth]{./plots/study1/oc_by_radii_nt.png}
+    \caption{Overconfidence on LifeEval by model and difficulty, Study 1. Difficulty and overconfidence drop as radius grows.}
+    \label{fig:oc_by_radii_nt}
+    \vspace{-5pt}
+\end{figure*}
+
+\section{Study 2}
+
+Study 2 sought to build on Study 1's development of LifeEval by adding two more tasks that afforded continuous, exogenous difficulty manipulations. Study 2 also compares confidence calibration in LLMs with that of human research participants. Moreover, we compare two methods of question framing: Direct Confidence Elicitation (DCE) and Subjective Probability Distribution (SPD). The former asks the respondent for confidence that their favored answer is correct while the latter elicits likelihoods for a range of possibilities. Haran et al. \citeyearpar{Haran_2010} called these histogram questions Subjective Probability Interval ElicitationS (SPIES). Evidence suggests that they help calibrate confidence judgments by forcing people to think through the range of possibilities \citep{Goldstein_Rothschild_2014}, akin to the debiasing instruction to consider the alternatives \citep{Hirt_Markman_1995}. 
+
+
+\subsection{Method}
+\label{sec:methods}
+
+Study 2 evaluates four newer language models: Claude Haiku 4.5, Gemini 2.5 Flash, Llama 4 Maverick, and GPT-5.4 Mini on three tasks. The domains share a common set of calibration metrics. We prompt every model under both Direct Confidence Elicitation (DCE), where the model reports a single scalar confidence, and Subjective Probability Distributions (SPDs), where the model distributes probability mass across multiple outcomes. We begin by defining our metrics, then describe each domain in turn.
+
+
+\subsubsection{Measuring Difficulty}
+\label{sec:difficulty}
+
+We adopt the difficulty framework of \citet{elee}, formalized by \citet{littlewood_difficulty}, who define difficulty as the expected score of a random strategy over the answer space. Specifically, for a question with answer space $\mathcal{A}$ and reward function $R$, we take
+
+\begin{align}
+    \bar{R} = \mathbb{E}_{U(\mathcal{A})}[R],
+\end{align}
+the expected reward of an uninformed guesser drawn uniformly from $\mathcal{A}$: a question is easy when even a blind guess yields a high expected reward. We use a uniform prior rather than a model-specific one because difficulty should reflect the epistemic structure of the question, not the ability of a particular solver. A fine-tuned model may solve Math Olympiad problems \citep{goog_imo}, but the problems themselves remain difficult.
+
+Because low expected reward corresponds to a hard question, we report difficulty as the within-domain rank percentile of the \emph{negated} expected reward,
+\begin{align}
+    \mathcal{D} = \frac{\operatorname{rank}_Q\!\bigl(-\bar{R}\bigr)}{|Q|} \;\in\; (0,1],
+\end{align}
+so that higher-percentile questions are harder ($\mathcal{D}\to 1$ hardest, $\mathcal{D}\to 0$ easiest). This transformation is unit-free, invariant to scaling of the answer space, and directly comparable across domains. The computation of $\bar{R}$ is domain-specific and described in each dataset's section below.
+
+The uniform-guesser difficulty $\mathcal{D}$ is best read alongside the Maximum Achievable Score (Section~\ref{sec:mas}) and model accuracy, which together give three complementary, purely task-intrinsic views of how hard a question is. The difficulty $\mathcal{D}$ sets the floor: how a strategy-free guess fares. MAS sets the ceiling: the reward an oracle with perfect knowledge could attain. Model accuracy falls between the two, revealing how much of the achievable headroom a given solver actually captures. Reading all three together separates questions that are hard for every solver (low MAS) from those that are merely hard for a particular model (accuracy far below MAS).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{LifeEval}
+\label{sec:lifeeval}
+
+\begin{figure}[t!]
+  \centering
+  \includegraphics[width=\linewidth]{./Special_Plots/le_main_fig.png}
+  \caption{Direct Confidence Elicitation (DCE) versus Subjective Probability Distributions (SPD). Both methods begin with an identical underlying query (green, Shared Prompt) but differ in how the model is asked to express its uncertainty. (Top, DCE) The model is asked for a single point estimate together with a stated confidence that this estimate falls within a fixed-width interval (here, ±5 years). The output is a scalar value and a scalar confidence (e.g., {"Answer": 77, "Confidence": 0.62}), corresponding to a single point on a calibration plot. (Bottom, SPD) The model is instead asked to distribute probability mass across a set of mutually exclusive, equal-width intervals (here, ten 10-year age bins), yielding a discrete distribution over outcomes. The modal probability can be compared directly to an empirical reference (overlaid black curve), and plotted on a calibration plot similar to DCE.}
+  \label{fig:le_main_fig}
+\end{figure}
+
+We treat Direct Confidence Elicitation (DCE) in the same way we did LifeEval responses in Study 1 and compare them with Subjective Probability Distributions (SPD) prompting as shown in Figure \ref{fig:le_main_fig}.
+Under DCE, the model provides a single point estimate $\hat{y}_k$ and a scalar confidence $C_k$ that the true age at death falls within $[\hat{y}_k - r,\; \hat{y}_k + r)$. Under SPD, the model provides its top-$n$ most likely age-at-death ranges, each of a fixed width $2r$, along with the probability that each contains the true value. The model freely chooses where to place its bins. We score on the modal bin: let $\hat{y}_k$ be the center of the highest-confidence range and $C_k$ be its stated probability. In both cases, each question $k \in Q$ yields an estimate $\hat{y}_k$ and a confidence $C_k$.
+
+We compute $p(k \mid r,a,s)$ as in \eqref{Def: p(k,r|a,s)}, so that the window spans exactly $2r$ integer ages, matching the SPD bin width. 
+To place LifeEval on the same scale as WGD and MedEval---whose analogous uniform-guesser rewards are $2r/(w_{\max}-w_{\min})$ and $1/|\text{candidates}|$ respectively---we report difficulty as the within-task rank percentile of the \emph{negated} expected reward:
+\begin{equation}
+    \mathcal{D}(a,s,r)
+    = \frac{\operatorname{rank}_{Q}\!\bigl(-R_{\text{unif}}(a,s,r)\bigr)}{|Q|}
+    \;\in\; (0,1],
+    \label{eq:le_difficulty}
+\end{equation}
+so that $\mathcal{D}$ increases with difficulty ($\mathcal{D}\to 1$ hardest, $\mathcal{D}\to 0$ easiest) and is directly comparable across tasks.
+
+
+\subsubsection{Weight Guessing Dataset (WGD)}
+\label{sec:wgd}
+
+The Weight Guessing Dataset (WGD) evaluates Vision Language Models (VLMs) on body weight estimation. This task provides models with one of 232 photos gathered from participants in and around the UC Berkeley campus and prompts them to estimate the weight of the subject as well as state their confidence that the correct value $w$ is within some radius $R$ of their guess. Photographic subjects had a median weight of 145 lbs ($\text{mean} = 150.1 \pm 33.1$, range 95--380 lbs) and a median age of 21 ($\text{mean} = 24.4 \pm 10.1$, range 18--74). The sample was 53.8\% male and 44.9\% female, with the largest ethnic groups being Asian (42.8\%) and White (36.4\%). Each photo is paired with 20 tolerance radii ($R \in \{1, \ldots, 20\}$ lbs); the DCE benchmark covers 231 of the 232 photos, giving 4,620 DCE questions, while the SPD set uses four radii ($R \in \{1, 5, 10, 20\}$ lbs, corresponding to bins of width $\{2, 10, 20, 40\}$ lbs) over all 232 photos, giving $232 \times 4 = 928$ SPD questions. We evaluate models under both DCE and SPD prompting.
+
+Regardless of prompting method, we grade the model on whether their guess for the $k^{th}$ question $\hat{w}_k$ is within some variable radius $R_k$ of the true weight $w^*_k$. More concretely, whether $\hat{w}_k \in [w^*_k - R_k, w^*_k + R_k] =: w_k$. Likewise, to measure calibration we consider confidence $C_k$ as the model's certainty that $\hat{w}_k \in w_k$. Question set level Accuracy and confidence are then:
+\begin{align}
+    \operatorname{acc}_{\text{WGD}}(Q) &= \frac{1}{|Q|}\sum_{k \in Q}\mathbb{I}\bigl(w_k \in \hat{w}_k\bigr) \\
+    \operatorname{conf}_{\text{WGD}}(Q) &= \frac{1}{|Q|}\sum_{k \in Q} C_k
+\end{align}
+
+While under DCE the model directly provides $\hat{w}_k$ \& $C_k$ in its response, under SPD we have the model provide several ranges of possible weights with width $2R$ and grade the range with the highest assigned probability against the ground truth $w^*_k$. 
+
+
+The WGD reward is $\mathbb{I}(|y - w_{\text{true}}| \leq R)$, which equals 1 when the guess $y$ falls within $[w_{\text{true}} - R,\; w_{\text{true}} + R]$ and 0 otherwise. For a uniform guesser over the answer space $[w_{\text{lo}},\, w_{\text{hi}}]$, the expected reward is:
+
+\begin{align}
+    \bar{R}_{\text{WGD}} = \frac{1}{w_{\text{hi}} - w_{\text{lo}}} \int_{w_{\text{lo}}}^{w_{\text{hi}}} \mathbb{I}(|y - w_{\text{true}}| \leq R)\, dy = \frac{1}{w_{\text{hi}} - w_{\text{lo}}} \int_{w_{\text{true}} - R}^{w_{\text{true}} + R} dy = \frac{2R}{w_{\text{hi}} - w_{\text{lo}}}
+\end{align}
+
+where $w_{\text{hi}}$ and $w_{\text{lo}}$ are constants representing the maximum and minimum guess within the dataset that could be recorded as a hit. For example, the maximum true weight is 380 and therefore $w_{\text{hi}}$ is 380 plus the maximum radius of 20: 400. Likewise,   $w_{\text{lo}}$ is 95 minus 20: 75. Difficulty $\mathcal{D}$ is then the negated rank percentile of $\bar{R}_{\text{WGD}}$ as in Section~\ref{sec:difficulty}, so WGD difficulty depends only on the tolerance radius $R$, recovering radius as the natural difficulty axis.
+
+\subsubsection{MedEval}
+\label{sec:medeval}
+
+MedEval evaluates calibration on differential-diagnosis tasks using 192 synthetic patients drawn from the DDXPlus dataset \citep{ddx}, spanning 33 unique pathologies (Figure~\ref{fig:medeval-pathologies}). These patients are entirely synthetic: each vignette is algorithmically generated from a Bayesian network and does not correspond to any real individual or clinical outcome. Synthetic patients had a mean age of $39.6 \pm 22.1$ (range 0--105) and were 52.1\% male. The most frequent ground-truth diagnoses include stable angina (6.2\%), pulmonary embolism (5.7\%), and bronchitis (5.7\%). Each synthetic patient's vignette (age, sex, symptoms) is presented alongside a list of candidate pathologies ($\text{mean} = 15.0 \pm 4.1$ candidates at baseline, range 10--27). DDXPlus provides a ground-truth probability distribution over diagnoses for each synthetic patient, so the true probability of a model's chosen diagnosis $d_k$ is read directly from the differential: $p_k = P(d_k \mid \text{vignette})$. With four removal levels, MedEval yields 768 DCE questions and 768 SPD questions, both drawn from the same 192-patient pool. We evaluate models under both DCE and SPD prompting.
+
+Under DCE, the model selects a single diagnosis and reports a scalar confidence $C_k$. Under SPD, the model assigns a probability to every candidate pathology, with probabilities summing to 1. We score on the modal diagnosis: let $d_k$ be the pathology assigned the highest probability and $C_k$ be that probability. In both cases, each question $k \in Q$ yields a diagnosis $d_k$ and a confidence $C_k$.
+
+To vary difficulty while preserving exact ground-truth probabilities, we remove candidate pathologies from the answer set rather than removing symptoms. If the original differential contains probabilities $P(d_1), \ldots, P(d_n)$ and we remove a subset of the least-likely candidates, the remaining probabilities are simply renormalized. This avoids the need to recompute posterior distributions under partial evidence. We evaluate at four removal levels (0\%, 10\%, 25\%, 50\%), producing a difficulty gradient: fewer candidates yield higher true probabilities for the top diagnosis, making the task easier.
+
+As with LifeEval, accuracy is the average true probability rather than a binary hit rate:
+
+\begin{align}
+    \label{acc_conf}
+    \operatorname{acc}_{\text{MedEval}}(Q) &= \frac{1}{|Q|}\sum_{k \in Q} p_k \\
+    \operatorname{conf}_{\text{MedEval}}(Q) &= \frac{1}{|Q|}\sum_{k \in Q} C_k
+\end{align}
+where $p_k$ denotes the probability of a chosen pathology for the $k^{th}$ question in MedEval. This method of scoring ensures that a model picking the most likely diagnosis with 90\% confidence when the differential assigns it only 15\% is correctly identified as overconfident.
+
+For a uniform guesser over the $n$ candidate pathologies, the expected reward reduces to
+\begin{align}
+    \bar{R}_{\text{MedEval}} = \frac{1}{n}\sum_{i=1}^{n} p^*_i = \frac{1}{n}
+\end{align}
+since the differential probabilities sum to 1. Difficulty $\mathcal{D}$ is then the negated rank percentile of $\bar{R}_{\text{MedEval}}$ as in Section~\ref{sec:difficulty}, so MedEval difficulty depends only on the number of candidates $n$, which is controlled by the removal level.
+
+
+\subsection{Humans}
+To compare our LLM results with human judgments, we \href{https://aspredicted.org/9pr63s.pdf}{preregistered a plan} to collect human data on LifeEval and weight guessing.\footnote{Link to preregistration: https://aspredicted.org/9pr63s.pdf. We omitted MedEval because testing human judgments on MedEval would have necessitated a pool of participants with more specialized medical knowledge.} 
+
+\paragraph{Participants.} We opened the study to 300 participants on Prolific, screening for those residing in the United States, with native English ability and at least a 90\% approval rate. Following our preregistered criteria, we excluded participants who failed either of two attention-check questions, who completed the survey in under five minutes, or who received a score below 0.20 on Qualtrics's reCAPTCHA v3 human-likelihood index.  
+
+\paragraph{Design.} The study crossed one between-subjects factor with several within-subjects factors. The between-subjects factor was elicitation method, with two levels: Direct Confidence and Subjective Probability Distribution (SPD). Within subjects, every participant completed two judgment tasks: estimating human life expectancies and estimating body weights from photographs. Each task had 20 items, for 40 items in total.
+
+Item difficulty varied within-subjects. For Direct Confidence items this was the tolerance R within which an estimate had to fall to count as correct: 1, 5, 10, or 20 (years or pounds, respectively). For SPD items it was the width of the response bins: 1, 5, 10, or 20 units wide. These difficulties aligned for 2 of the 4 conditions: a tolerance interval of 5 units was as wide as a 10-unit bin; tolerance of 10 corresponded to 20-unit bins. We focus our analyses on these comparable conditions.
+
+The life-expectancy task additionally varied the target's attained age (1, 10, 20, 30, 40, 50, 60, 70, 80, 90, or 100 years) and the target's gender. The weight task drew from a pool of 50 photographs, of which each participant saw 20.
+
+\paragraph{Procedure.} After consenting, participants answered two screening questions. Then the experimental task asked them to estimate (1) life expectancies and (2) body weights. Each task had twenty rounds in which participants encountered two questions: a point estimate (of life expectancy or body weight) and certainty that the estimate was close to the truth.
+
+LifeEval's questions had the form “Given that an American [female] has lived at least [30] years, estimate how old [she] will be when [she] dies” followed by a text box requiring a numerical response less than 120 and greater than the age in the question. 
+
+The weight guessing questions asked, "Estimate the weight (in pounds) of the person in this photo" followed by a text box requiring a numerical response. 
+
+Each estimate was followed by a question assessing the respondent's certainty. Those in the direct confidence condition answered the question, "How certain are you that your estimate is within [\textit{R}] of the true value?" by moving a slider on a 0–100\% scale. The tolerance radius \textit{R} varied within-subjects across questions (1, 5, 10, or 20 units).
+
+Those in the SPD condition answered the question, "How likely is it that the true value will fall into each of the following ranges?" by setting a bank of sliders, one per bin. The bins were mutually exclusive and jointly spanned the plausible range of values, and their width varied across items (1, 5, 10, or 20 units).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\linewidth]{./plots/study2/medeval_pathologies.png}
+  \caption{Distribution of ground-truth pathologies across the 192 MedEval synthetic patients, Study 2. The dataset includes 33 unique diagnoses with no single pathology exceeding 6.2\% of the sample.}
+  \label{fig:medeval-pathologies}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Results}
+\label{sec:results}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We organize our results around three key results. First, we find that both models and people are generally overconfident under DCE prompting, with miscalibration ranging from mild in WGD and LifeEval to extreme in MedEval. Second, both models and people exhibit a hard--easy effect where overconfidence is worst on the hardest questions and diminishes as tasks get easier though the strength of this effect varies dramatically across domains. Third, SPD prompting improves calibration where it is needed most, cutting MedEval ECE by 40 to 50\% across models, but can induce underconfidence where DCE responses are already well-calibrated. Table~\ref{tab:rq1_summary} summarizes these findings.
+
+
+
+
+\begin{table}[t]
+\centering
+\caption{Summary of model calibration across domains, Study 2. Accuracy denotes mean correctness (WGD) or mean true probability (LifeEval, MedEval). Overconfidence = Mean Confidence $-$ Accuracy. $\beta_1$ is the OLS slope of overconfidence on difficulty percentile. ECE\textsubscript{SPD} and $\Delta$ECE show the effect of subjective probability distribution prompting.}
+\label{tab:rq1_summary}
+\begin{tabular}{llccccccc}
+\toprule
+\hline Domain & Model & Accuracy & Mean Conf. & Overconf. & $\beta_1$ & ECE & ECE\textsubscript{SPD} & $\Delta$ECE (\%) \\
+\midrule
+\multirow{5}{*}{WGD}
+ & Claude Haiku 4.5     & 0.385 & 0.274 & $-$0.111 & $+$0.452\textsuperscript{***} & 0.123 & 0.081 & $-$34.0\textsuperscript{*} \\
+ & Gemini 2.5 Flash     & 0.421 & 0.638 & $+$0.217 & $+$0.580\textsuperscript{***} & 0.217 & 0.072 & $-$67.0\textsuperscript{***} \\
+ & Llama 4 Maverick     & 0.372 & 0.588 & $+$0.216 & $+$0.493\textsuperscript{***} & 0.216 & 0.074 & $-$66.0\textsuperscript{***} \\
+ & GPT-5.4 Mini         & 0.427 & 0.443 & $+$0.016 & $+$0.244\textsuperscript{***} & 0.046 & 0.087 & $+$89.0\textsuperscript{***} \\
+ & Humans               & 0.341 & 0.536 & $+$0.195 & $+$0.268\textsuperscript{***} & 0.216 & 0.220 & $+$1.8\textsuperscript{} \\
+\midrule
+\multirow{5}{*}{LifeEval}
+ & Claude Haiku 4.5     & 0.623 & 0.660 & $+$0.038 & $+$0.778\textsuperscript{***} & 0.048 & 0.163 & $+$235.5\textsuperscript{***} \\
+ & Gemini 2.5 Flash     & 0.645 & 0.766 & $+$0.120 & $+$0.846\textsuperscript{***} & 0.121 & 0.099 & $-$18.1\textsuperscript{***} \\
+ & Llama 4 Maverick     & 0.634 & 0.819 & $+$0.185 & $+$0.837\textsuperscript{***} & 0.209 & 0.172 & $-$17.8\textsuperscript{***} \\
+ & GPT-5.4 Mini         & 0.630 & 0.597 & $-$0.033 & $+$0.486\textsuperscript{***} & 0.056 & 0.060 & $+$5.6\textsuperscript{} \\
+ & Humans               & 0.498 & 0.646 & $+$0.148 & $+$0.531\textsuperscript{***} & 0.178 & 0.135 & $-$24.5\textsuperscript{***} \\
+\midrule
+\multirow{4}{*}{MedEval}
+ & Claude Haiku 4.5     & 0.145 & 0.823 & $+$0.678 & $+$0.120\textsuperscript{***} & 0.678 & 0.360 & $-$46.8\textsuperscript{***} \\
+ & Gemini 2.5 Flash     & 0.148 & 0.870 & $+$0.722 & $+$0.130\textsuperscript{***} & 0.722 & 0.420 & $-$41.9\textsuperscript{***} \\
+ & Llama 4 Maverick     & 0.148 & 0.786 & $+$0.637 & $+$0.115\textsuperscript{***} & 0.637 & 0.361 & $-$43.4\textsuperscript{***} \\
+ & GPT-5.4 Mini         & 0.148 & 0.914 & $+$0.766 & $+$0.158\textsuperscript{***} & 0.766 & 0.463 & $-$39.5\textsuperscript{***} \\
+\bottomrule
+\multicolumn{9}{l}{\footnotesize \textsuperscript{*}$p<0.05$, \textsuperscript{**}$p<0.01$, \textsuperscript{***}$p<0.001$} \\
+\end{tabular}
+\end{table}
+
+\paragraph{Overconfidence in Direct Elicitation}
+We find that direct confidence elicitations (DCE) produce overconfidence. The calibration curves in Figure \ref{fig:calibration-dce} show that  confidence generally exceeded accuracy. This difference was most pronounced when looking at MedEval wherein average overconfidence was above 0.6 for all models. 
+
+Weight-guessing produced differences between the best and worst models. GPT-5.4 Mini fared surprisingly well with ECE of only 0.046 while Gemini 2.5 Flash produced higher errors of 0.217. Claude Haiku 4.5 was underconfident. Human judgments were consistently overconfident and about as poorly calibrated as the most overconfident LLMs.
+
+LifeEval also produced systematic overconfidence, with some variation. Llama 4 Maverick was the worst of the four with an overconfidence of 0.185 and ECE of 0.209. Claude Haiku 4.5 was fairly well-calibrated with an ECE of 0.048 (the lowest across all benchmarks). Figure \ref{fig:calibration-dce} shows that Gemini 2.5 Flash and our human responses were consistently overconfident across all but the lowest confidence levels.
+
+MedEval produced the worst calibration. All four models exhibited overconfidence, with ECE scores ranging from 0.637 to 0.766. Confidence was consistently above 0.78 while accuracy hovered around 0.15. The calibration curves in Figure \ref{fig:calibration-dce} illustrate this: models cluster near the southeast corner of the panel. Even when a model reports 90\% confidence in a diagnosis, the empirical probability assigned to that diagnosis is rarely above 20\%. The uniformity of this failure across model families suggests that the problem is not model-specific but rather a fundamental difficulty with the task structure.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{./plots/study2/calibration_combined.png}
+\caption{Calibration curves under DCE prompting for WGD, LifeEval, and MedEval, Study 2. The dashed diagonal represents perfect calibration. Points below the diagonal indicate overconfidence. MedEval shows worse calibration than the other two domains.}
+\label{fig:calibration-dce}
+\end{figure*}
+
+\paragraph{Difficulty}
+
+Figure \ref{fig:rq2-overconf-difficulty} plots overconfidence as a function of task difficulty. Best-fit linear regression coefficients appear in the $\beta_1$ column of Table \ref{tab:rq1_summary}. Across all three domains and all four models, $\beta_1$ is positive and significant. This replicates the hard--easy effect: models are most overconfident on the hardest questions and become progressively less overconfident, often crossing into underconfidence, as questions get easier. 
+
+MedEval presents a distinctive picture. The $\beta_1$ values are significant but small. Even after removing 50\% of candidate diagnoses, overconfidence barely decreases. Models do not meaningfully recalibrate as MedEval questions get easier. This contrasts with WGD and LifeEval where models at least partially tracked difficulty, and suggests that the overconfidence observed in MedEval is not driven by task difficulty alone but by a more fundamental failure to assess uncertainty in differential diagnosis.
+
+\begin{figure*}[h!]
+\centering
+\includegraphics[width=\textwidth]{./plots/study2/rq2_overconfidence_by_percentile.png}
+\caption{Regression lines comparing average overconfidence with percentile of task difficulty under DCE. As tasks become easier (right to left), overconfidence decreases often to the point of \textit{underconfidence}, demonstrating a hard--easy effect analogous to that observed in human cognition. Exact slopes can be found in Table \ref{tab:rq1_summary}.}
+\label{fig:rq2-overconf-difficulty}
+\end{figure*}
+
+
+\paragraph{Maximum Achievable Score (MAS)} We can understand task difficulty through three complementary lenses: model accuracy, the expected reward of a naive guesser and Maximum Achievable Score (MAS). Table\ref{tab:mas} reports MAS by domain. While MAS in WGD is fixed to 1 by nature and is therefore less informative, we see a wide range in MedEval and an even wider one in LifeEval with some questions being nearly impossible to answer correctly and others being trivial. Figure \ref{fig:oc-mas} explores the relationship between MAS and overconfidence. We see that for LifeEval, model's were expectedly overconfident on questions with low MAS while underconfident on those with high MAS. Since MedEval whad a much tighter range of MAS, never going beyond 0.34, this effect is present to a lesser extent but still directionally visible. This aligns with the trends we saw in similar analysis of task difficulty above. 
+
+
+\begin{figure*}[h!]
+\centering
+\includegraphics[width=\textwidth]{./plots/study2/oc_by_mas.png}
+\caption{Comparing overconfidence at different levels of MAS for LifeEval and MedEval}
+\label{fig:ece-mas}
+\end{figure*}
+
+\begin{table}[t]
+\centering
+\caption{Study 2's Maximum Achievable Score (MAS) by domain---the reward attainable by an oracle answering optimally (Section~\ref{sec:mas}). A low MAS caps how much confidence even a perfect solver could justify. WGD is a hit-rate task, so MAS $\equiv 1$ by construction.}
+\label{tab:mas}
+\begin{tabular}{lccccc}
+\toprule
+Domain & Min & Mean & Median & Max \\
+\midrule
+WGD       & 1.000 & 1.000 & 1.000 & 1.000 \\
+LifeEval  & 0.065 & 0.673 & 0.741 & 1.000 \\
+MedEval   & 0.060 & 0.158 & 0.155 & 0.339 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Subjective Probability Distributions (SPDs) prompting.}
+
+\begin{figure*}[h!]
+\centering
+\includegraphics[width=\textwidth]{./plots/study2/rq3_ece_spd_improvement.png}
+\caption{Comparing ECE scores under DCE (bold) and SPD (shaded) prompting, Study 2. Stars represent significance levels and daggers highlight when SPD fared worse the DCE.}
+\label{fig:ece-spd}
+\end{figure*}
+
+SPD prompting tended to improve calibration relative to the DCE baseline. The $\Delta$ECE column in Table~\ref{tab:rq1_summary} reports the percent change in ECE from DCE to SPD, and Figure~\ref{fig:calibration-spd} shows the resulting calibration curves.
+
+The effect of SPD prompting was largest in MedEval. ECE dropped for every model, with reductions ranging from $-$39.5\% (GPT-5.4 Mini) to $-$46.8\% (Claude Haiku 4.5). The calibration curves in Figures \ref{fig:ece-spd} and \ref{fig:calibration-spd} confirm this visually: where DCE produced curves hugging the bottom of the plot, SPD pulls them substantially closer to the diagonal. Models are still overconfident under SPD (MedEval ECE\textsubscript{SPD} ranges from 0.360 to 0.463) but the improvement is notable given how resistant MedEval was to difficulty manipulation. Forcing models to distribute probability mass across multiple diagnoses rather than commit to a single answer appears to partially counteract the tendency to fixate on one diagnosis with inflated confidence.
+
+In WGD, SPD improved calibration for three of the four models. Gemini 2.5 Flash and Llama 4 Maverick saw the largest gains ($-$67\% and $-$66\% respectively), bringing their ECE\textsubscript{SPD} below 0.08. Claude Haiku 4.5, already reasonably calibrated under DCE, improved modestly ($-$34\%). The exception was GPT-5.4 Mini, which had the lowest DCE ECE of any model on WGD (0.046) but saw its calibration degrade under SPD ($+$89\%). This suggests that SPD is most helpful when DCE calibration is poor, and can introduce noise when a model is already well-calibrated. 
+
+LifeEval showed a similar pattern. Gemini 2.5 Flash, and Llama 4 Maverick saw modest improvements under SPD. Claude Haiku 4.5 was again the outlier: it was the best-calibrated model under DCE, but ECE jumped under SPD elicitation. Looking at Figure~\ref{fig:calibration-spd}, Claude Haiku 4.5's LifeEval curve shows underconfidence at mid-range, suggesting the model spreads probability too much across its ten ranges when the task does not warrant it. When comparing overconfidence by difficulty under SPD prompting in Figure \ref{fig:oc-spd}, we found little change in model behavior. The only notable change was on MedEval where we saw a slight decrease in the slope of the regression line making most models slightly negative.
+
+
+Taken together, these results suggest SPD prompting is most beneficial in domains where DCE calibration is worst, and can be counterproductive when models are already well-calibrated. The mechanism appears to be that requiring models to consider the full distribution of outcomes, SPD reduces the anchoring that drives overconfidence. But this same mechanism can overshoot, pulling well-calibrated models into underconfidence.
+
+To our surprise, the calibration of human confidence judgments did not reliably improve with SPD prompting. This finding is so anomalous relative to the prior literature \citep{Moore_Tenney_Haran_2015}, it led us to wonder whether 40 rounds of SPD elicitations might have fatigued participants. Indeed, the data show that the rate at which SPD responses lazily attached all their confidence to a single bin increased from 14\% in the first 20 rounds to 20\% in the last 20 rounds. Fatigue, therefore, could plausibly have impaired human SPD responses more than DCE responses, underscoring the frailty of humans relative to LLMs.
+
+\begin{figure*}[h!]
+\centering
+\includegraphics[width=\textwidth]{./plots/study2/calibration_spd_combined.png}
+\caption{Calibration curves under SPD prompting, Study 2. MedEval was excluded from human studies since it required advanced education in its subjects.}
+\label{fig:calibration-spd}
+\end{figure*}
+
+
+\begin{figure*}[h!]
+\centering
+\includegraphics[width=\textwidth]{./plots/study2/rq3_overconfidence_by_percentile_spd.png}
+\caption{Overconfidence by percentile under SPD prompting. Compared to DCE (Figure~\ref{fig:rq2-overconf-difficulty}), SPD leads to little change in the hard-easy effect.}
+\label{fig:oc-spd}
+\end{figure*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Discussion}
+\label{sec:discussion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Our results paint a consistent picture: LLMs are overconfident, and their overconfidence parallels that documented in human cognition, even if they are less prone to fatigue. We discuss the implications of each finding in turn, then address limitations of our approach.
+
+The presence of hard-easy effects in AI confidence is important because it highlights a parallel between AI and human judgment that sheds light on its origins, and points the way toward potential debiasing strategies. The hard-easy effect arises because confidence is a noisy signal of accuracy. Confidence is less responsive to difficulty than is accuracy. However, there is more to it than that. Fallible agents will sometimes be wrong because they do not know everything \citep{Moore_2023}. Out-of-sample judgments may include unknown unknowns---that is, relevant knowledge the agent lacks but is not aware of.
+
+It is possible to imagine an agent refining its confidence in light of feedback. Commercial LLMs are refined through reinforcement learning with human feedback (RLHF). However, RLHF might actually increase the overconfidence models report \citep{Tian2023Calibration}. If human users prefer models that express confident assurance, RLHF may train the LLM to report greater confidence. 
+
+LLMs' competence and confidence have led many users to rely on them heavily and unquestioningly \citep{Hou_2025}. This trust might be misplaced if models express greater confidence than their accuracy justifies \citep{Steyvers2025}. When models faced difficult tasks, they maintained the same high level of confidence. As we saw in LifeEval, models failed to sufficiently reduce their confidence as performance declined with task difficulty. For LLMs to deserve users' trust, they must be able to reliably report their limitations. Many users are aware of LLMs' impressive capabilities but are wary of adoption because of the unpredictable nature of hallucination. If users do not know when models will fail, they must either constantly monitor the model or remove it from their workflow.
+
+Our data also show that reasoning models are capable of more nuanced confidence judgments that more closely track their actual accuracy. Similarly, SPD elicitation in Study 2 forced models to think through their confidence in a way that improved their calibration. Thoughtful reflection, especially when accompanied by a consideration of alternative hypotheses or perspectives, improves confidence calibration in both people and machines. 
+
+In humans, one of the most useful general-purpose debiasing strategies is getting people to reflect on why it is they might be wrong \citep{Lord_1984}. More specifically, inviting people to consider what information they lack helps them moderate their tendency toward overconfidence \citep{Walters_2017}. The better performance of the reasoning models we examine offers a notable parallel. It is possible that prompts or training regimens that encourage models to engage in more reflection and self-criticism could further improve calibration and reduce overconfidence. 
+
+Psychological research distinguishes three forms of overconfidence in humans: overplacement is the exaggerated belief that you are better than others; overestimation is thinking you are better than you are; overprecision is the excessive certainty that you know the truth \citep{Moore_Healy_2008}. We employed single-item confidence measures that ask, ``How sure are you that this answer is correct?'' These sorts of item-confidence measures perfectly confound overestimation and overprecision, since being too certain of your answer is the same as overestimating your chance of being correct. However, it is possible to unconfound these two using higher-order measures. One approach elicits an estimate of the respondent's score on some test, and their certainty about that estimate. This affords the possibility of being excessively certain of an underestimate, such as the student who is convinced she failed an exam when in reality she passed. Future research should distinguish between these different forms of overconfidence in LLMs. 
+
+
+\subsection{Overconfidence is the Default}
+
+Under DCE prompting, all four models were overconfident in at least two of the three domains. The degree of miscalibration varied widely but the direction was almost always the same. WGD and LifeEval produced ECE values in the 0.04--0.22 range, while MedEval pushed ECE above 0.63 for every model. This aligns with prior findings that deep neural networks are systematically more certain than they are accurate \citep{Oelrich_2020, Abdar_2021} and extends them to the verbalized confidence setting.
+
+The severity of MedEval miscalibration deserves particular attention. Models consistently reported 80--90\% confidence in diagnoses whose ground-truth probability was below 20\%. Unlike WGD and LifeEval, where some models achieved near-perfect calibration, no model came close in MedEval. We suspect this reflects the nature of the task: differential diagnosis involves distributing probability across many competing hypotheses, and models appear to anchor on the most salient diagnosis rather than reason about the full differential. This behavior mirrors diagnostic overconfidence in clinical medicine, where prematurely committing to a diagnosis before adequately considering alternatives is a well-documented source of error.
+
+\subsection{The Hard--Easy Effect}
+
+LLMs and people both exhibited a hard--easy effect: overconfidence was greatest on the hardest questions and decreased as tasks became easier. This is precisely the pattern described in the human judgment literature \citep{Lichtenstein_Fischhoff_1977} and is consistent with the regression-to-the-mean account \citep{Erev_1994}: changes in difficulty affect accuracy more than confidence, so overconfidence must grow as accuracy falls.
+
+The strength of the effect varied across domains in an informative way. LifeEval showed the steepest slopes. MedEval, despite having the worst overall calibration, showed nearly flat slopes removing half the candidate diagnoses barely moved overconfidence. This suggests that MedEval's miscalibration is not primarily driven by difficulty but by a more categorical failure to reason about uncertainty in diagnostic contexts. The hard--easy effect, while universal, is most informative in domains where the difficulty gradient is wide enough to expose it.
+
+\subsection{SPDs as a Debiasing Mechanism}
+
+SPD prompting substantially reduced ECE for every model. This is notable because MedEval was precisely the domain where DCE calibration was worst and where difficulty manipulation had the least effect. SPD prompting appears to work by forcing models to distribute probability across multiple outcomes rather than committing to a single answer with inflated confidence. In effect, SPDs counteract the anchoring that drives overconfidence by requiring models to explicitly consider alternatives.
+
+However, SPD prompting was not a panacea. Since it requires more effort, it taxed our human respondents, who simplified the task by putting 100\% confidence in a single bin. The result from these fatigued respondents showed more overconfidence and worse calibration. On the other hand, in domains where models were already well-calibrated under DCE such as Claude Haiku 4.5 on LifeEval or GPT-5.4 Mini on WGD, SPD prompting induced underconfidence. This suggests that SPD elicitations reduce confidence by prompting respondents to spread out their confidence judgments. This reduces overconfidence but can exacerbate underconfidence. Practitioners considering SPD prompting should assess baseline calibration before adopting it.
+
+\subsection{Limitations}
+
+We note several limitations. First, we evaluated only particular models, available at the time we collected the data. Whether other models, including more recent models, would exhibit the same patterns is an open question. Second, our task domains, while diverse, do not cover all forms of reasoning. Absent are tasks involving logical deduction, commonsense reasoning, or long-horizon planning, where calibration dynamics may differ. Third, MedEval relies on synthetic patients from DDXPlus rather than real clinical cases; while this provides ground-truth differentials, the distribution of pathologies and symptom profiles may not reflect clinical practice. Fourth, models may have had access to the SSA tables for LifeEval.\footnote{The answers for other question sets, such as SciQ, are even more likely to have been present in the models' training data.} This information should have increased both accuracy and confidence. To assess the extent of this potential exposure, we conduct a contamination analysis in Appendix \ref{sec:LifeEval Contamination Analysis}, where we attempt to evaluate how much access models may have had to the LifeEval data or the SSA tables during training. Even so, our analysis of over- and underconfidence remains informative, since contamination should inflate accuracy and confidence together. Fifth, our SPD format asks models for exactly ten ranges or diagnoses, and the effect of varying this number is unexplored.
+
+
+
+\section*{Acknowledgments}
+
+This section has been omitted for peer review.
+
+% We thank the Center for Advanced Research Computing (CARC) at the University of Southern California for providing computing resources that have contributed to the research results reported within this publication. We are also deeply grateful to Lambda.ai for generously providing access to their computing resources in the spirit of open research. In addition, we acknowledge the support of USC's JumpStart program and UC Berkeley's Undergraduate Research Apprentice Program (URAP), which provided valuable support for Noam's research with Jacob and Don. We would also like to thank Kelly Hu, Aleksandre Natchkebia, and Josh Moore for their assistance.
+
+\begin{center}
+\end{center}
+
+\bibliographystyle{apalike}
+\bibliography{custom}
+
+\vspace{0.5cm}
+
+\appendix
+
+\begin{appendices}
+\section{Study 1 Deviations from Preregistration}
+\label{Appendix: deviations}
+Link to preregistration: : https://osf.io/92hjz/files/y8rqv
+\begin{itemize}
+  \item \textbf{LifeEval scoring rule.} For \textit{LifeEval}, we scored answers using the conditional true (actuarial) probability of age at death falling within a radius $R$ around the point estimate (rather than a binary “within true range” indicator). This choice reduces threshold sensitivity and aligns the metric with probabilistic calibration.
+
+  \item \textbf{GPT-o3 inference settings.} 
+  For \textit{GPT-o3}, we were constrained to a temperature of $1.0$ and increased the total token budget to accommodate longer responses on complex question sets like LSAT-AR. We were also not able to obtain logprobs from model responses.
+
+  \item \textbf{Question-set sizes.} The plan specified the first 1,000 BoolQ questions and the full 10,000-pair HaluEval set. We instead ran all 3,270 BoolQ questions and a 2000-pair HaluEval subset (1000 accurate and 1000 hallucinated answers).
+  
+  \item \textbf{Analyses planned but not reported.} The plan specified significance tests of ECE and overconfidence against zero at the preregistered p < .005 threshold, a paired t-test comparing peak stated and token probabilities, counts of answer–probability disagreements, and an exploratory Gini-coefficient analysis of the probability distributions. Appendix \ref{sec:tokenprobs} reports the stated-versus-token comparison descriptively. As for the others, we have concluded that they are consistent with and less informative than the analyses reported in the paper. 
+
+\end{itemize}
+
+\section{Study 2 Deviations from Preregistration}
+\label{Appendix: deviations2}
+Link to preregistration: https://aspredicted.org/9pr63s.pdf
+
+\begin{itemize}
+  \item \textbf{Study 2 human study (LWH).} The preregistration and survey design incorporated an error: the tolerance radius \textit{R} was inconsistent between DCE and SPD conditions. SPD scoring uses favored bins of width \textit{R} while DCE employed ±\textit{R} windows of width 2\textit{R}. Therefore, analyses reported in the text compare SPD bins of width 10 (comparable to ±5) and bins of width 20 (comparable to ±10). 
+  
+  \item \textbf{Preregistered analyses.} As predicted, confidence (M=.56) exceeds accuracy (M=.33), paired t (278) = 18, p < .005. As predicted, overconfidence grows with difficulty for each of the four task X elicitation conditions, all p values < .001.  After correcting for the error described above, however, there is no consistent difference in overconfidence between SPD and DCE.
+\end{itemize}
+
+\section{LLM Data Cleaning and Exclusion Criteria}
+\label{Appendix: DataCleaning}
+Any response that we could not parse, whether due to improper formatting or incomplete output, was omitted from our analysis. A few responses to multiple-choice questions provided all zeroes for their stated confidence scores. As we did not define a procedure for handling such cases in our preregistration, we chose to drop them from our analysis. In some cases (n = 54), models attempted to hedge their responses by saying "maybe" or "I'm not sure". Although we find these cases promising from the standpoint of human computer interaction, we did not assign a scoring rubric for such responses and felt it improper to do so post-hoc in order to measure calibration from these questions. Because of this, we chose to omit these cases from our analysis. To keep questions balanced across models, we further restricted evaluation to the subset of questions that every model answered successfully.
+
+\section{AI Use Disclaimer}
+
+Generative AI (ChatGPT, Gemini, Claude, RooCode) was used, in part, throughout this research project to aid the researchers in background research, generating and debugging code snippets, document formatting, proofreading, and improving the readability of this text. The methodology, analysis, and findings presented are entirely the intellectual property of the researchers and did not originate from generative AI.
+
+\section{LifeEval Plots}
+See Figures \ref{fig:diff_gender} and \ref{fig:best_age}. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./Special_Plots/diff_gender_dark_r_no_title.png}
+    \caption{LifeEval allows for the monotonic decrease in task difficulty given age, sex, and radius. As the Maximum Achievable Score (MAS) increases, the task difficulty decreases.}
+    \label{fig:diff_gender}
+\end{figure}
+
+
+\vspace{0.5cm}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./Special_Plots/best_age.png}
+    \caption{Best age to guess as a function of minimum age, sex, and radii. We see that the optimal age is constant until a certain minimum age is reached. Additionally, females have slightly higher overall life expectancy.}
+    \label{fig:best_age}
+\end{figure}
+
+
+
+
+\section{Pre-Registered Analysis of Token Probabilities}
+\label{sec:tokenprobs}
+
+In accordance with our pre-registered analysis plan, we conducted a comparison between model token probabilities and stated confidence. Our original intent was to evaluate both metrics against ground-truth correctness to compute Expected Calibration Error (ECE) and measure overconfidence. However, we observed that this approach creates a methodological conflict when using Chain-of-Thought (CoT) reasoning. Specifically, if a model explicitly mentions an answer during its reasoning process 
+(e.g., \textit{"...therefore the answer should be: C"}), the downstream token probabilities for the final answer selection are significantly biased. Despite this limitation, we provide the following analysis to maintain transparency with our pre-registration.
+
+\subsection{Normalization Methodology}
+For models that provide token probabilities—either as raw logit scores or log-probabilities over the top $k$ tokens. We normalized the values across the set of viable tokens to ensure a proper probability distribution. For instance, when a model returns log-probabilities for the top $k$ tokens and the correct answer is present, we exponentiate the log-probabilities and restrict the calculation to the subset of relevant target tokens $T$ (e.g., ['A', 'B', 'C', ...]). The normalized probability $P_i$ is calculated as follows:
+
+$$P_i = \frac{p_i}{\sum_{j \in T} p_j}$$
+
+where $p_i = e^{\ell_i}$ represents the exponentiated log-probability for token $i$. This ensures that the resulting probabilities sum to 1 over the restricted set, allowing for consistent comparison across different examples and models.
+
+\subsection{Results and Findings}
+We performed this comparison for GPT-4o and both versions of Llama-3.1. In general, we found that the ECE for stated confidence aligns closely with token probabilities, although stated confidence often exhibits slightly better calibration. This disparity is likely because token probabilities are not inherently designed to capture the probability of total correctness, whereas stated confidence allows the model to provide a more holistic self-assessment. 
+
+A notable stylistic difference emerged in how these values are distributed: while stated confidences are frequently rounded to multiples of 5\%, fewer than 1\% of token probabilities follow such a pattern. Furthermore, token probabilities tended to be higher than the corresponding stated confidence values. A detailed comparison by question set is provided in Figure \ref{tp_v_sc_ece}.
+
+
+
+\subsection{Limitations and GPT-4o Constraints}
+Our analysis of GPT-4o was constrained by the API’s limitation to the top 5 tokens. This restriction meant that in several instances, certain answer options were not visible in the returned data. In these cases, we opted to assign a probability value of 0. While the true value is invariably higher than zero, these instances represent the least likely options; consequently, we do not expect this practice to significantly impact our overall findings.
+
+
+\begin{figure}[h]
+    \includegraphics[width  = \textwidth]{./Special_Plots/sc_ece_v_tp_ece_FINAL.png}
+    \caption{Comparison between the calibration error of stated confidence versus token probability for models when available. In most cases, Stated ECE was lower than Token ECE. Given the nature of HaluEval, we did not get token probabilities from the models. Because of this, HaluEval is left out from this analysis.}
+    \label{tp_v_sc_ece}    
+\end{figure}
+
+\clearpage
+\onecolumn
+% ═══════════════════════════════════════════════════════════════
+\section{Prompts}\label{sec:prompts}
+% ═══════════════════════════════════════════════════════════════
+
+This section presents the prompt templates and representative example interactions for each of the five question sets in our benchmark suite.
+All models received a system-level instruction specifying the expected JSON output schema, followed by a user turn containing the question.
+Temperature was set to $0$ for deterministic output across all models, with the exception of o3, which requires temperature $= 1$.
+For GPT-family models, we additionally requested top-5 log probabilities to enable token-level confidence analysis.
+
+Each subsection below shows: (1)~the system prompt template describing the expected output format, (2)~an example user query drawn from or modeled after the dataset, and (3)~an illustrative LLM response in the required JSON schema.
+
+% ───────────────────────────────────────────────────────────────
+\subsection{BoolQ}\label{sec:prompt-boolq}
+% ───────────────────────────────────────────────────────────────
+
+
+\begin{systembox}
+
+You are a helpful assistant. Based on what you know, first reason through the question and give your best answer.
+Additionally, provide your confidence in the answer as a float from 0.0 to 1.0, where the number represents the probability that your answer is correct. 
+When answering the question about confidence, give a probability that is an honest reflection of how likely 
+you believe it is that your answer is correct. Your response should be in a JSON format. For example:
+
+Question: <Question>
+
+Response: 
+
+\begin{lstlisting}[style=json]
+{
+    "Reasoning": "<Concise reasoning for the question. Give special consideration to how confident you should be>",
+    "Answer": "<True or False>",
+    "Confidence": "<Probability that your answer is correct. As a float from 0.0 to 1.0>"
+}
+\end{lstlisting}
+
+
+When answering the question about confidence, give a probability that is an honest reflection of how likely you believe it is that your answer is correct.
+\end{systembox}
+
+\begin{userbox}
+The Sahara Desert is the largest desert in the world.
+\end{userbox}
+
+\begin{llmbox}
+\begin{lstlisting}[style=json]
+{
+  "Reasoning": "The Sahara is ...",
+  "Answer": "False",
+  "Confidence": 0.85
+}
+\end{lstlisting}
+\end{llmbox}
+
+% ───────────────────────────────────────────────────────────────
+\subsection{SciQ}\label{sec:prompt-sciq}
+% ───────────────────────────────────────────────────────────────
+
+\begin{systembox}
+You are a helpful assistant. Given the following question, analyze the options, and provide a concise reasoning for your selected answer. Your reasoning should not exceed 100 words. 
+Based on your reasoning, provide the best answer and the likelihood that each option is correct as a float from 0.0 to 1.0 in a JSON format. The probabilities should sum to 1. For example:
+
+\textbf{Question}: <Question>\\
+\textbf{Options}:
+\begin{verbatim}
+A) <Option A>
+B) <Option B>
+C) <Option C>
+D) <Option D>
+\end{verbatim}
+
+\newpage
+Response:
+\begin{lstlisting}[style=json]
+{
+    "Reasoning": "<Concise reasoning for the question. Give special consideration to how confident you should be>",
+    "Answer": "<Your answer choice here, as a single letter and nothing else>",
+    "A": "<Probability choice A is correct. As a float from 0.0 to 1.0>",
+    "B": "<Probability choice B is correct. As a float from 0.0 to 1.0>",
+    "C": "<Probability choice C is correct. As a float from 0.0 to 1.0>",
+    "D": "<Probability choice D is correct. As a float from 0.0 to 1.0>"
+}
+\end{lstlisting}
+
+When answering the question about confidence, give a probability that is an honest reflection of how likely you believe it is that your answer is correct.
+\end{systembox}
+
+\begin{userbox}
+What is the powerhouse of the cell?\\[4pt]
+A) Ribosome \newline B) Nucleus \newline C) Mitochondria \newline D) Golgi apparatus
+\end{userbox}
+
+\begin{llmbox}
+\begin{lstlisting}[style=json]
+{
+  "Reasoning": "Mitochondria are...",
+  "Answer": "C",
+  "A": 0.01,
+  "B": 0.03,
+  "C": 0.95,
+  "D": 0.01
+}
+\end{lstlisting}
+\end{llmbox}
+
+% ───────────────────────────────────────────────────────────────
+\subsection{SAT-EN}\label{sec:prompt-saten}
+% ───────────────────────────────────────────────────────────────
+
+
+\begin{systembox}
+You are a helpful assistant. Given the following passage, analyze the question and the possible options. Then, provide a concise reasoning for what is the best answer. Your reasoning should not exceed 100 words. 
+Based on your reasoning, Provide the best answer and the likelihood that each option is correct as a float from 0.0 to 1.0 in a JSON format. The probabilities should sum to 1.0. For example:
+
+\textbf{Question}: <Question>\\
+\textbf{Options}:\\
+A) <Option A>\\
+B) <Option B>\\
+C) <Option C>\\
+D) <Option D>\\
+
+
+\textbf{Response}:
+
+
+
+\begin{lstlisting}[style=json]
+{
+    "Reasoning": "<Concise reasoning for the question. Give special consideration to how confident you should be>",
+    "Answer": "<Your answer choice here, as a single letter and nothing else>",
+    "A": "<Probability choice A is correct. As a float from 0.0 to 1.0>",
+    "B": "<Probability choice B is correct. As a float from 0.0 to 1.0>",
+    "C": "<Probability choice C is correct. As a float from 0.0 to 1.0>",
+    "D": "<Probability choice D is correct. As a float from 0.0 to 1.0>"
+}
+\end{lstlisting}
+When answering the question about confidence, give a probability that is an honest reflection of how likely you believe it is that your answer is correct.
+\end{systembox}
+
+
+\begin{userbox}
+\textbf{Passage:} Akira came directly, breaking all tradition. Was that it? Had he followed form-had he asked his mother to speaks...\\[4pt]
+\textbf{Question:}  Which choice best describes what happens in the passage?[4pt]
+Options:\\
+A) One character argues with another character who intrudes on her home.\\
+B) One character receives a surprising request from another character.\\
+C) One character reminisces about choices she has made over the years.\\
+D) One character criticizes another character for pursuing an unexpected course of action.\\
+\end{userbox}
+
+\begin{llmbox}
+\begin{lstlisting}[style=json]
+{
+  "Reasoning": "The passage describes...",
+  "Answer": "B",
+  "A": 0.05,
+  "B": 0.88,
+  "C": 0.04,
+  "D": 0.03
+}
+\end{lstlisting}
+\end{llmbox}
+
+% ───────────────────────────────────────────────────────────────
+\subsection{LSAT-AR}\label{sec:prompt-lsatar}
+% ───────────────────────────────────────────────────────────────
+
+\begin{systembox}You are a helpful assistant. Given the following question, analyze the options, and provide a concise reasoning for your selected answer. Your reasoning should not exceed 100 words. 
+Based on your reasoning, Provide the best answer and the likelihood that each option is correct as a float from 0.0 to 1.0 in a JSON format. The probabilities should sum to 1. For example:
+\begin{verbatim}
+Question: <Question>
+Options:
+A) <Option A>
+B) <Option B>
+C) <Option C>
+D) <Option D>
+E) <Option E>
+\end{verbatim}
+
+
+Response:
+
+\begin{lstlisting}[style=json]
+{
+  "Reasoning": "<your step-by-step reasoning>",
+  "Answer": "<A, B, C, D, or E>",
+  "A": <float>, 
+  "B": <float>, 
+  "C": <float>,
+  "D": <float>, 
+  "E": <float>
+}
+\end{lstlisting}
+When answering the question about confidence, give a probability that is an honest reflection of how likely you believe it is that your answer is correct.
+\end{systembox}
+
+\begin{userbox}
+
+
+\textbf{Context}: Of the eight students—George, Helen, Irving, Kyle, Lenore, Nina, Olivia, and Robert—in a seminar, exactly six will give individual oral reports during three consecutive days—Monday, Tuesday, and Wednesday. Exactly two reports will be given each day—one in the morning and one in the afternoon—according to the following conditions: Tuesday is the only day on which George can give a report. Neither Olivia nor Robert can give an afternoon report. If Nina gives a report, then on the next day Helen and Irving must both give reports, unless Nina's report is given on Wednesday.
+
+
+\textbf{Question}: Which one of the following could be the schedule of the students' reports?\\
+\textbf{Options}:
+\begin{verbatim}
+A) Mon. morning: Helen; Mon. afternoon: Robert Tues. morning:...
+B) Mon. morning: Irving; Mon. afternoon: Olivia Tues. morning:...
+C) Mon. morning: Lenore; Mon. afternoon: Helen Tues. morning:...
+D) Mon. morning: Nina; Mon. afternoon: Helen Tues. morning:...
+E) Mon. morning: Olivia; Mon. afternoon: Nina Tues. morning:...
+\end{verbatim}
+
+
+\end{userbox}
+
+\begin{llmbox}
+\begin{lstlisting}[style=json]
+{
+  "Reasoning": "Since Helen needs to...",
+  "Answer": "B",
+  "A": 0.15,
+  "B": 0.40,
+  "C": 0.02,
+  "D": 0.38,
+  "E": 0.05
+}
+\end{lstlisting}
+\end{llmbox}
+
+% ───────────────────────────────────────────────────────────────
+\subsection{HaluEval-QA}\label{sec:prompt-halueval}
+% ───────────────────────────────────────────────────────────────
+
+\begin{systembox}
+
+You are a helpful assistant. Based on the context provided, you have answered the question to the best of your ability. 
+Now, you must provide the probability that your answer is correct. Do not change your previous answer or any reasoning. 
+Only provide the confidence you have in your old answer as a float from 0.0 to 1.0
+Your role is to provide the probability that said answer is correct. Your response should be in a JSON format. For example:\\
+\textbf{Context}: <Context> \\
+\textbf{Question}: <Question>\\
+\textbf{Answer}: <Your old answer>\\
+\textbf{Response}:\\
+
+\begin{lstlisting}[style=json]
+{
+    "Confidence": "<The probability that your answer is correct as a float from 0.0 to 1.0>"
+}
+\end{lstlisting}
+
+\end{systembox}
+
+\begin{userbox}
+\textbf{Context:} The Great Wall of China is a series of fortifications built along the historical northern borders of China to protect against various nomadic groups. The wall spans approximately 13,170 miles and was constructed over many centuries, with the most well-known sections built during the Ming Dynasty (1368--1644).\\[4pt]
+\textbf{Question:} How long is the Great Wall of China?\\[4pt]
+\textbf{Candidate Answer:} The Great Wall of China is approximately 5,500 miles long and was primarily built during the Han Dynasty.
+\end{userbox}
+\begin{llmbox}
+
+\begin{lstlisting}[style=json]
+{
+  "Confidence": 0.15
+}
+\end{lstlisting}
+\end{llmbox}
+
+\noindent
+
+% ───────────────────────────────────────────────────────────────
+\subsection{LifeEval}\label{sec:prompt-lifeeval}
+% ───────────────────────────────────────────────────────────────
+
+\begin{systembox}
+You are a helpful assistant. Based on the context provided about the person, first reason using what you know about population statistics and then make your best guess on how old they will live to.
+Additionally, provide your confidence in the answer as a float from 0.0 to 1.0, where the number represents the probability that your answer is correct. 
+When answering the question about confidence, give a probability that is an honest reflection of how likely 
+you believe it is that your answer is correct. Your response should be in a JSON format. For example:\\
+
+\textbf{Question}: <Question>\\
+\textbf{Response}:\\
+\begin{lstlisting}[style=json]
+{
+    "Reasoning": "<Concise reasoning for the question. Give special consideration to how confident you should be>",
+    "Answer": "<An integer value representing the age you believe the person will die at>",
+    "Confidence": "<A float between 0 and 1 representing the probability that the true age at death falls in the range>"
+}
+\end{lstlisting}
+
+\end{systembox}
+
+\begin{userbox}
+Given that an American male has lived at least 25 years, estimate how old he will be when he dies. How certain are you that your answer is within 5 year of the true value?
+\end{userbox}
+\begin{llmbox}
+\begin{lstlisting}[style=json]
+{
+  "Reasoning": "Most people live to...",
+  "Answer": 78,
+  "Confidence": 0.35
+}
+\end{lstlisting}
+\end{llmbox}
+
+\noindent
+
+
+% ───────────────────────────────────────────────────────────────
+\section{LifeEval Contamination Analysis}\label{sec:LifeEval Contamination Analysis}
+% ───────────────────────────────────────────────────────────────
+LifeEval is constructed from the Social Security Administration (SSA) 2022 Period Life Tables, which are publicly available actuarial data. Because these tables are likely present in the training corpora of many LLMs, there is a risk that some models have memorized or been exposed to the underlying data, inflating their apparent performance. We conducted a two-stage analysis to identify and quantify this contamination, then analyzed the subset of responses judged to be uncontaminated.
+
+We searched the reasoning field of all $8,261$ LifeEval responses ($751$ questions $\times$ $11$ models) for keywords indicative of SSA data awareness. This flagged 6,244 responses ($75.6\%$). However, many flagged responses mentioned these terms in a general context without demonstrating specific knowledge of table values, indicating substantial over-flagging. To reduce false positives, we used Claude Sonnet 4 (claude-sonnet-4-20250514) as an automated judge to evaluate whether each response exhibited evidence of having accessed the specific SSA actuarial life table data. The judge classified responses into three verdict categories: no evidence, weak evidence, and strong evidence. 
+
+\vspace{0.5cm}
+
+\begin{table*}[h]
+    \centering
+    \small
+    \begin{tabular}{lccp{6cm}}
+    \toprule
+    \textbf{Verdict} & \textbf{Count} & \textbf{\%} & \textbf{Description} \\
+    \midrule
+    \texttt{no\_evidence}     & 4,188 & 50.7 & General demographic knowledge only \\
+    \texttt{weak\_evidence}   & 2,225 & 26.9 & Some specificity suggesting possible exposure \\
+    \texttt{strong\_evidence} & 1,846 & 22.3 & Clear use of specific actuarial values \\
+    \bottomrule
+    \end{tabular}
+    \caption{Distribution of LLM judge verdicts across all 8,261 LifeEval responses.}
+    \label{tab:verdict_distribution}
+\end{table*}
+\vspace{10pt} 
+
+\vspace{0.5cm}
+
+
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabular}{lcccc}
+    \toprule
+    \textbf{Model} & \textbf{\texttt{no\_evidence}} & \textbf{\texttt{weak\_evidence}} & \textbf{\texttt{strong\_evidence}} & \textbf{Strong \%} \\
+    \midrule
+    Claude Haiku 3       & 731  & 20  & 0   & 0.0  \\
+    GPT-4o               & 706  & 45  & 0   & 0.0  \\
+    Claude-Sonnet-3.7    & 692  & 58  & 1   & 0.1  \\
+    Claude-Sonnet-4      & 483  & 266 & 2   & 0.3  \\
+    DeepSeek-V3          & 709  & 37  & 5   & 0.7  \\
+    Llama-3.1-70B        & 238  & 457  & 56  & 7.5  \\  
+    Llama-3.1-8B         & 252  & 425  & 74  & 9.9  \\  
+    Gemini-2.5-Flash     & 261  & 228 & 262 & 34.9 \\
+    GPT-o3               & 36   & 338 & 376 & 50.1 \\
+    DeepSeek-R1          & 45   & 168 & 537 & 71.5 \\
+    Gemini-2.5-Pro       & 35   & 183 & 533 & 71.0 \\
+    \bottomrule
+    \end{tabular}
+    \caption{Distribution of contamination verdicts per model across all 751 LifeEval questions.}
+    \label{tab:verdict_by_model}
+\end{table}
+\vspace{10pt}
+
+We restrict the calibration analysis to the 4,188 "no evidence" responses to assess model calibration on LifeEval items where models relied on general knowledge rather than memorized actuarial data. This restriction does not eliminate overconfidence or mute the hard-easy effect. Figure~\ref{fig:oc_by_rad_sub} demonstrates that the observed effects hold, even at the individual model level. The high contamination rates, seen in Table~\ref{tab:verdict_by_model}, for DeepSeek-R1, Gemini-2.5-Pro, and GPT-o3 mean that their full-dataset LifeEval performance may substantially reflect memorization rather than reasoning. Researchers using LifeEval or similar benchmarks derived from public actuarial, demographic, or statistical tables should consider contamination screening as part of their evaluation pipeline.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{./Special_Plots/oc_by_radii_subset.png}
+    \caption{Overconfidence as a function of model and radius, Study 1; difficulty decreases with larger accuracy radius. Specifically on the \texttt{no\_evidence} subset.}
+    \label{fig:oc_by_rad_sub}
+\end{figure}
+
+
+\begin{table*}[h]
+    \centering
+    \small
+    \begin{tabular}{lccccccc}
+    \toprule
+    \textbf{Model} & \textbf{Type} & \textbf{Score (\%)} & \textbf{ECE} & \textbf{Conf. (\%)} & \textbf{\% Rnd} & \textbf{Regression Coef.} & \textbf{$N$} \\
+    \midrule
+    Claude-Sonnet-3.7    & Reasoning & 54.3 & 0.037 & 52.7 & 91.9  & 0.177 & 692 \\
+    Claude-Sonnet-4      & Reasoning & 46.4 & 0.071 & 47.3 & 98.6  & 0.264 & 483 \\
+    DeepSeek-R1          & Reasoning & 46.7 & 0.034 & 47.7 & 44.4  & 0.053 & 45 \\
+    Gemini-2.5-Pro       & Reasoning & 42.9 & 0.029 & 42.9 & 25.7  & 0.080 & 35 \\
+    GPT-o3               & Reasoning & 42.1 & 0.050 & 45.7 & 77.8  & 0.412 & 36 \\
+    \midrule
+    {\textbf{Aggregate}}  &           & 46.5 & 0.044 & 47.2 & 67.7  & 0.197 & 3 \\
+    \midrule
+    Claude Haiku 3       & Chat & 52.7 & 0.270 & 79.7 & 100  & 0.990 & 731 \\
+    DeepSeek-V3          & Chat & 52.4 & 0.130 & 63.5 & 100  & 0.768 & 709 \\
+    Gemini-2.5-Flash     & Chat & 59.6 & 0.109 & 70.5 & 57.5  & 0.238 & 261 \\
+    GPT-4o               & Chat & 54.5 & 0.084 & 59.6 & 100  & 0.598 & 706 \\
+    Llama-3.1-70B        & Chat & 66.3 & 0.093 & 74.1 & 99.6  & 0.875 & 238 \\
+    Llama-3.1-8B         & Chat & 49.3 & 0.116 & 58.1 & 100  & 0.896 & 252 \\
+    \midrule
+    {\textbf{Aggregate}}  &           & 55.8 & 0.133 & 67.6 & 92.8  & 0.728 & 19 \\
+    \bottomrule
+    \end{tabular}
+    \caption{Performance metrics on the LifeEval \texttt{no\_evidence} subset (rows where the LLM judge found no evidence of SSA table memorization). Aggregate rows take mean of all columns except for $N$ which is the number of questions where every model in the group received a \texttt{no\_evidence} verdict. "\% Rnd" discusses the rate models rounded their confidence estimate to the nearest 10\%.}
+    \label{le_info_subset}
+\end{table*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% PLOTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\begin{figure*}[htbp] % [t] places it at the top of the page
+    \centering
+    \includegraphics[width=0.8\textwidth]{./Special_Plots/all_plots.png}
+    \caption{Side by side plots of all models (rows) and all question sets (columns). GPT-4o, Llama-3.1-70B, and Llama-3.1-8B all display their token probabilities in red.}
+    \label{6_11_plots}
+\end{figure*}
+
+
+
+\begin{figure*}[ht] 
+    \centering
+    % First Image
+    \includegraphics[width=0.75\textwidth]{./Special_Plots/scatter_plots.png}
+    \caption{Each plot displays the relationship between Stated Confidence and actual Score for various model families. Each scatter plot illustrates how accurately a given family of models estimates their own performance to their true score. The prevalence of horizontal lines show the tendency for certain models to round their probability estimates.}
+    \label{scatter_plots}
+
+    %\vspace{0.5cm} % Adds some breathing room between the two images
+
+
+\end{figure*}
+
+
+\clearpage
+\begin{figure*}
+    \centering
+    \includegraphics[width=0.8\textwidth]{./Special_Plots/acc_all_nt.png}
+    \caption{Accuracy for each model on all question sets. SAT-EN and SciQ had the highest performance while LSAT-AR saw the biggest variation between models, Study 1.}
+    \label{acc_all}
+
+    \includegraphics[width=0.8\textwidth]{./Special_Plots/ece_all_nt.png}   
+    \caption{ECE for each model on all question sets. Some questions sets like LSAT-AR and HaluEval saw high variability in ECE between models. Easier question sets like SciQ saw fairly consistent scores between models.}
+    \label{ece_all}
+\end{figure*}
+
+
+
+% Show table of all results
+
+\begin{table*}
+    \centering
+    \tiny
+    \begin{tabular}{ll | ccccc}
+        \toprule
+         &  & Claude-Sonnet-3.7 & Claude-Sonnet-4 & DeepSeek-R1 & GPT-o3 & Gemini-2.5-Pro \\
+       \textbf{ Question Set} & \textbf{Metrics} &  &  &  &  &  \\
+        \midrule
+        \multirow[c]{4}{*}{BoolQ} & Accuracy & 83.14 & 84.30 & 84.50 & 86.06 & 84.90 \\
+         & Confidence & 95.57 & 91.97 & 95.61 & 82.59 & 99.35 \\
+         & ECE & 0.12 & 0.08 & 0.11 & 0.04 & 0.15 \\
+         & (\%) Rounded & 46.06 & 96.20 & 68.08 & 50.38 & 73.95 \\
+         \midrule
+       \multirow[c]{4}{*}{HaluEval} & Accuracy & 52.12 & 52.12  & 52.12 & 52.12 & 52.12 \\
+         & Confidence & 59.91 & 95.68 & 61.07 & 53.84 & 60.14 \\
+         & ECE & 0.08 & 0.45 & 0.11 & 0.02 & 0.11 \\
+         & (\%) Rounded & 99.94 & 100.00 & 99.27 & 55.08 & 100.00 \\
+        \midrule
+        \multirow[c]{4}{*}{LSAT-AR} & Accuracy & 41.86 & 45.35 & 95.35 & 96.51 & 96.51 \\
+         & Confidence & 80.93 & 71.40 & 99.72 & 81.52 & 97.99 \\
+         & ECE & 0.39 & 0.33 & 0.05 & 0.15 & 0.01 \\
+         & (\%) Rounded & 95.35 & 94.19 & 96.51 & 72.09 & 37.21 \\
+        \midrule
+        \multirow[c]{4}{*}{LifeEval} & Accuracy & 54.49 & 53.98 & 54.43 & 54.25 & 53.84 \\
+         & Confidence & 53.11 & 49.79 & 57.23 & 54.13 & 53.42 \\
+         & ECE & 0.04 & 0.06 & 0.03 & 0.03 & 0.03 \\
+         & (\%) Rounded & 90.15 & 98.80 & 29.03 & 69.77 & 17.98 \\
+        \midrule
+        \multirow[c]{4}{*}{SAT-EN} & Accuracy & 97.69 & 98.84 & 94.22 & 97.69 & 98.84 \\
+         & Confidence & 84.16 & 82.63 & 87.06 & 75.55 & 92.74 \\
+         & ECE & 0.14 & 0.17 & 0.10 & 0.22 & 0.07 \\
+         & (\%) Rounded & 97.11 & 100.00 & 94.80 & 83.82 & 63.01 \\
+        \midrule
+        \multirow[c]{4}{*}{SciQ} & Accuracy & 97.29 & 96.88 & 97.59 & 98.09 & 97.59 \\
+         & Confidence & 92.49 & 91.72 & 93.41 & 82.65 & 95.44 \\
+         & ECE & 0.05 & 0.05 & 0.04 & 0.15 & 0.03 \\
+         & (\%) Rounded & 73.37 & 99.60 & 66.23 & 77.19 & 29.75 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Performance of reasoning models across all question sets, Study 1.}
+
+    \vspace{1cm}
+    
+    \begin{tabular}{ll | cccccc}
+    \toprule
+     & Model & Claude Haiku 3 & DeepSeek-V3 & GPT-4o & Gemini-2.5-Flash & Llama-3.1-70B & Llama-3.1-8B \\
+    Question Set & Metrics &  &  &  &  &  &  \\
+    \midrule
+    \multirow[c]{4}{*}{BoolQ} & Accuracy & 78.15 & 82.90 & 85.30 & 84.54 & 78.59 & 69.32 \\
+     & Confidence & 89.76 & 92.94 & 93.26 & 99.30 & 90.60 & 85.98 \\
+     & ECE & 0.12 & 0.10 & 0.08 & 0.15 & 0.12 & 0.17 \\
+     & (\%) Rounded & 99.88 & 91.33 & 98.36 & 89.93 & 88.17 & 96.28 \\
+    \midrule
+    \multirow[c]{4}{*}{HaluEval} & Accuracy & 52.12 & 52.12 & 52.12 & 52.12 & 52.12 & 52.12 \\
+     & Confidence & 88.65 & 67.16 & 76.49 & 60.29 & 63.73 & 71.21 \\
+     & ECE & 0.37 & 0.15 & 0.24 & 0.11 & 0.14 & 0.20 \\
+     & (\%) Rounded & 100.00 & 100.00 & 100.00 & 98.60 & 99.11 & 98.72 \\
+    \midrule
+    \multirow[c]{4}{*}{LSAT-AR} & Accuracy & 29.07 & 34.88 & 36.05 & 96.51 & 38.37 & 33.72 \\
+     & Confidence & 67.39 & 63.84 & 85.58 & 97.48 & 89.53 & 88.80 \\
+     & ECE & 0.42 & 0.32 & 0.50 & 0.04 & 0.52 & 0.57 \\
+     & (\%) Rounded & 89.53 & 90.70 & 90.70 & 98.84 & 100.00 & 94.19 \\
+    \midrule
+    \multirow[c]{4}{*}{LifeEval} & Accuracy & 53.02 & 53.26 & 54.55 & 53.79 & 53.52 & 48.39 \\
+     & Confidence & 79.76 & 63.72 & 59.77 & 63.58 & 72.03 & 59.85 \\
+     & ECE & 0.27 & 0.12 & 0.09 & 0.10 & 0.19 & 0.14 \\
+     & (\%) Rounded & 100.00 & 100.00 & 100.00 & 48.87 & 99.47 & 100.00 \\
+    \midrule
+    \multirow[c]{4}{*}{SAT-EN} & Accuracy & 88.44 & 94.80 & 93.06 & 98.84 & 91.91 & 83.82 \\
+     & Confidence & 67.51 & 72.86 & 79.39 & 88.53 & 85.82 & 85.52 \\
+     & ECE & 0.22 & 0.24 & 0.15 & 0.10 & 0.10 & 0.12 \\
+     & (\%) Rounded & 98.84 & 100.00 & 96.53 & 98.84 & 99.42 & 94.80 \\
+    \midrule
+    \multirow[c]{4}{*}{SciQ} & Accuracy & 94.07 & 97.09 & 96.88 & 96.68 & 95.38 & 91.06 \\
+     & Confidence & 84.35 & 86.55 & 91.95 & 93.44 & 94.68 & 94.51 \\
+     & ECE & 0.11 & 0.11 & 0.05 & 0.04 & 0.04 & 0.05 \\
+     & (\%) Rounded & 99.80 & 98.99 & 99.40 & 78.39 & 97.59 & 97.29 \\
+    \bottomrule
+    \end{tabular}
+    \caption{Performance of chat models across all question sets, Study 1.}
+
+\end{table*}
+
+
+\clearpage
+
+\begin{table*}[t]
+    \centering
+
+    \begin{tabular}{l|ccccc| c}
+        \toprule
+        \textbf{Provider}      &  \textbf{Google} & \textbf{OpenAI} & \textbf{Anthropic} & \textbf{Lambda} & \textbf{DeepSeek} & \textbf{Total}\\
+        \midrule
+        Spend (USD)   &  228.59   & 234.17 &  94.53    &   941.78 & $7.41^*$ & 1,506.48\\
+        \bottomrule
+        
+    \end{tabular}
+    \caption{Total spend by provider. New users on Google's platform receive $\$300$ in compute credits which we did not surpass. Lambda generously provided us with a $\$5,000$ research grant to cover our compute costs on their services.  We ran both Llama models using one NVIDIA H100 GPU over a combined 283 hours. Recording token distributions for later analysis significantly slowed down TPS. We suggest avoiding this when replicating our results. We did not keep track of our total spend on DeepSeek but we estimate the price based on publicly available pricing and our input and output token counts.} 
+    \label{provider_spend}
+\end{table*}
+
+
+\begin{table*}[ht]
+    \centering
+    \small
+    \begin{tabular}{l|lll}
+        \toprule
+        \textbf{Model}      & \textbf{Publisher}    & \textbf{Type}     & \textbf{Model Card} \\
+        \midrule
+        Claude Haiku 3      & Anthropic             & Chat              & \href{https://assets.anthropic.com/m/61e7d27f8c8f5919/original/Claude-3-Model-Card.pdf}{Click Here} \\
+        Claude Sonnet 3.7   & Anthropic             & Reasoning         & \href{https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf}{Click Here} \\
+        Claude Sonnet 4     & Anthropic             & Reasoning         & \href{https://www-cdn.anthropic.com/6d8a8055020700718b0c49369f60816ba2a7c285.pdf}{Click Here} \\ 
+        DeepSeek V3         & DeepSeek              & Chat              & \href{https://huggingface.co/deepseek-ai/DeepSeek-V3}{Click Here} \\
+        DeepSeek R1         & DeepSeek              & Reasoning         & \href{https://huggingface.co/deepseek-ai/DeepSeek-R1}{Click Here} \\ 
+        Gemini 2.5 Flash    & Google                & Chat              & \href{https://modelcards.withgoogle.com/assets/documents/gemini-2.5-flash.pdf}{Click Here} \\
+        Gemini 2.5 Pro      & Google                & Reasoning         & \href{https://modelcards.withgoogle.com/assets/documents/gemini-2.5-pro.pdf}{Click Here} \\ 
+        Llama 3.1 8B        & Meta                  & Chat              & \href{https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct}{Click Here} \\
+        Llama 3.1 70B       & Meta                  & Chat         & \href{https://huggingface.co/meta-llama/Llama-3.1-70B-Instruct}{Click Here} \\ 
+        GPT 4o              & OpenAI                & Chat              & \href{https://openai.com/index/gpt-4o-system-card/}{Click Here} \\
+        GPT o3              & OpenAI                & Reasoning         & \href{https://openai.com/index/o3-o4-mini-system-card/}{Click Here} \\
+        \bottomrule
+    \end{tabular}
+    \caption{Information about each model used in Study 1.}
+
+\end{table*}
+
+
+
+\clearpage
+\end{appendices}
+\end{document}
