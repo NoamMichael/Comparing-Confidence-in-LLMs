@@ -8741,50 +8741,6 @@ wgd_spd_268_40,200.0,0.45,"```json
   {""min"": 190, ""max"": 230, ""confidence"": 0.20}
 ]
 ```",,1716,77,268.jpg,20,205.0,40,3
-wgd_spd_269_02,161.0,0.18,"```json
-[
-  {""min"": 160, ""max"": 162, ""confidence"": 0.18},
-  {""min"": 158, ""max"": 160, ""confidence"": 0.16},
-  {""min"": 162, ""max"": 164, ""confidence"": 0.15},
-  {""min"": 156, ""max"": 158, ""confidence"": 0.13},
-  {""min"": 164, ""max"": 166, ""confidence"": 0.12},
-  {""min"": 154, ""max"": 156, ""confidence"": 0.10},
-  {""min"": 166, ""max"": 168, ""confidence"": 0.08},
-  {""min"": 152, ""max"": 154, ""confidence"": 0.05},
-  {""min"": 168, ""max"": 170, ""confidence"": 0.02},
-  {""min"": 150, ""max"": 152, ""confidence"": 0.01}
-]
-```",,1716,231,269.jpg,1,18.0,2,10
-wgd_spd_269_10,165.0,0.25,"```json
-[
-  {""min"": 160, ""max"": 170, ""confidence"": 0.25},
-  {""min"": 170, ""max"": 180, ""confidence"": 0.22},
-  {""min"": 150, ""max"": 160, ""confidence"": 0.20},
-  {""min"": 180, ""max"": 190, ""confidence"": 0.15},
-  {""min"": 140, ""max"": 150, ""confidence"": 0.10},
-  {""min"": 190, ""max"": 200, ""confidence"": 0.05},
-  {""min"": 130, ""max"": 140, ""confidence"": 0.02},
-  {""min"": 200, ""max"": 210, ""confidence"": 0.01},
-  {""min"": 120, ""max"": 130, ""confidence"": 0.00},
-  {""min"": 210, ""max"": 220, ""confidence"": 0.00}
-]
-```",,1716,231,269.jpg,5,18.0,10,10
-wgd_spd_269_20,170.0,0.35,"```json
-[
-  {""min"": 160, ""max"": 180, ""confidence"": 0.35},
-  {""min"": 140, ""max"": 160, ""confidence"": 0.30},
-  {""min"": 180, ""max"": 200, ""confidence"": 0.20},
-  {""min"": 120, ""max"": 140, ""confidence"": 0.10},
-  {""min"": 200, ""max"": 220, ""confidence"": 0.05}
-]
-```",,1716,121,269.jpg,10,18.0,20,5
-wgd_spd_269_40,170.0,0.5,"```json
-[
-  {""min"": 150, ""max"": 190, ""confidence"": 0.50},
-  {""min"": 190, ""max"": 230, ""confidence"": 0.35},
-  {""min"": 110, ""max"": 150, ""confidence"": 0.15}
-]
-```",,1716,77,269.jpg,20,18.0,40,3
 wgd_spd_270_02,161.0,0.18,"```json
 [
   {""min"": 160, ""max"": 162, ""confidence"": 0.18},

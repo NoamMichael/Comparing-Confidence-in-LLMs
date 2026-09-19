@@ -3979,26 +3979,6 @@ wgd_spd_268_40,Look at this photo of a person. You MUST estimate their weight in
 Respond with ONLY a JSON array in this exact format:
 [{""min"": <low_weight>, ""max"": <high_weight>, ""confidence"": <probability between 0 and 1>}, ...]
 No other text.",268.jpg,20,205.0,40,3
-wgd_spd_269_02,Look at this photo of a person. You MUST estimate their weight in pounds. Do not refuse or abstain — give your best guess even if uncertain.,"Using weight ranges of exactly 2 lbs (e.g. [150, 152)), report your top 10 most likely ranges for this person's weight. Each range must be exactly 2 lbs wide. You choose where to place them.
-
-Respond with ONLY a JSON array in this exact format:
-[{""min"": <low_weight>, ""max"": <high_weight>, ""confidence"": <probability between 0 and 1>}, ...]
-No other text.",269.jpg,1,18.0,2,10
-wgd_spd_269_10,Look at this photo of a person. You MUST estimate their weight in pounds. Do not refuse or abstain — give your best guess even if uncertain.,"Using weight ranges of exactly 10 lbs (e.g. [150, 160)), report your top 10 most likely ranges for this person's weight. Each range must be exactly 10 lbs wide. You choose where to place them.
-
-Respond with ONLY a JSON array in this exact format:
-[{""min"": <low_weight>, ""max"": <high_weight>, ""confidence"": <probability between 0 and 1>}, ...]
-No other text.",269.jpg,5,18.0,10,10
-wgd_spd_269_20,Look at this photo of a person. You MUST estimate their weight in pounds. Do not refuse or abstain — give your best guess even if uncertain.,"Using weight ranges of exactly 20 lbs (e.g. [150, 170)), report your top 5 most likely ranges for this person's weight. Each range must be exactly 20 lbs wide. You choose where to place them.
-
-Respond with ONLY a JSON array in this exact format:
-[{""min"": <low_weight>, ""max"": <high_weight>, ""confidence"": <probability between 0 and 1>}, ...]
-No other text.",269.jpg,10,18.0,20,5
-wgd_spd_269_40,Look at this photo of a person. You MUST estimate their weight in pounds. Do not refuse or abstain — give your best guess even if uncertain.,"Using weight ranges of exactly 40 lbs (e.g. [150, 190)), report your top 3 most likely ranges for this person's weight. Each range must be exactly 40 lbs wide. You choose where to place them.
-
-Respond with ONLY a JSON array in this exact format:
-[{""min"": <low_weight>, ""max"": <high_weight>, ""confidence"": <probability between 0 and 1>}, ...]
-No other text.",269.jpg,20,18.0,40,3
 wgd_spd_270_02,Look at this photo of a person. You MUST estimate their weight in pounds. Do not refuse or abstain — give your best guess even if uncertain.,"Using weight ranges of exactly 2 lbs (e.g. [150, 152)), report your top 10 most likely ranges for this person's weight. Each range must be exactly 2 lbs wide. You choose where to place them.
 
 Respond with ONLY a JSON array in this exact format:
